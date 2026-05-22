@@ -10,13 +10,6 @@ import SearchModal from "@/components/layout/SearchModal";
 import { useLanguage } from "@/lib/i18n/context";
 import { t, languageLabels, type Language } from "@/lib/i18n/translations";
 
-const moduleColors: Record<string, string> = {
-  "AI": "#7c3aed",
-  "COMPUTE": "#2563eb",
-  "NETWORK": "#0891b2",
-  "DATA CENTER": "#059669",
-};
-
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -25,6 +18,7 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const { lang, setLang } = useLanguage();
 
   useEffect(() => {
@@ -46,7 +40,6 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Keyboard shortcut: Cmd/Ctrl+K for search
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -68,13 +61,14 @@ export default function Header() {
   return (
     <>
       <header
+        ref={headerRef}
         className={`sticky top-0 z-50 bg-white transition-shadow ${
           scrolled ? "shadow-[0_1px_0_0_#e5e5e5]" : ""
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center px-6 py-3.5 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0 mr-8">
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">
               CIH
             </div>
@@ -83,77 +77,25 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav — centered */}
-          <nav className="hidden flex-1 items-center justify-center gap-0.5 lg:flex">
+          {/* Desktop nav */}
+          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
             {mainNav.map((item) => {
               if (item.label === "Products") {
                 return (
                   <div key={item.label} ref={megaRef} className="relative">
                     <button
                       onClick={() => { setMegaOpen(!megaOpen); setMobileOpen(false); }}
-                      className={`flex items-center gap-1 rounded-md px-3.5 py-2 text-sm font-medium transition-colors ${
+                      className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                         megaOpen
                           ? "text-[#0d0d0d] bg-[#f5f5f5]"
-                          : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                          : "text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
                       }`}
                     >
                       {t("nav.products", lang)}
                       <ChevronDown
-                        className={`h-3.5 w-3.5 transition-transform ${megaOpen ? "rotate-180" : ""}`}
+                        className={`h-4 w-4 transition-transform ${megaOpen ? "rotate-180" : ""}`}
                       />
                     </button>
-                    {megaOpen && (
-                      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-[760px] rounded-xl border border-[#e5e5e5] bg-white p-1 shadow-xl">
-                        <div className="flex divide-x divide-[#e5e5e5]">
-                          {productModules.map((mod) => {
-                            const modProducts = products.filter((p) => p.module === mod);
-                            const color = moduleColors[mod] || "#0d0d0d";
-                            return (
-                              <div key={mod} className="flex-1 px-5 py-4">
-                                <div className="flex items-center gap-2 mb-3">
-                                  <span
-                                    className="block w-2 h-2 rounded-full flex-shrink-0"
-                                    style={{ backgroundColor: color }}
-                                  />
-                                  <p className="text-xs font-semibold uppercase tracking-widest text-[#737373]">
-                                    {mod}
-                                  </p>
-                                </div>
-                                <ul className="space-y-1.5">
-                                  {modProducts.map((p) => (
-                                    <li key={p.id}>
-                                      <Link
-                                        href={`/products/#${p.id}`}
-                                        onClick={() => setMegaOpen(false)}
-                                        className="block rounded-md px-3 py-2 text-sm hover:bg-[#f5f5f5] transition-colors leading-tight"
-                                      >
-                                        <div className="font-medium text-[#0d0d0d]">{p.name}</div>
-                                        <div className="text-xs text-[#8c8c8c] mt-0.5 line-clamp-1">
-                                          {p.tagline}
-                                        </div>
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            );
-                          })}
-                        </div>
-                        {/* Footer */}
-                        <div className="border-t border-[#e5e5e5] px-5 py-3 flex items-center justify-between">
-                          <Link
-                            href="/products/"
-                            onClick={() => setMegaOpen(false)}
-                            className="text-xs font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
-                          >
-                            {t("mega.viewAll", lang)} &rarr;
-                          </Link>
-                          <span className="text-xs text-[#a3a3a3]">
-                            {products.length} {t("mega.products", lang)}
-                          </span>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 );
               }
@@ -161,7 +103,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-md px-3.5 py-2 text-sm font-medium text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                  className="rounded-md px-4 py-2 text-[15px] font-semibold text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
                 >
                   {t(`nav.${item.label.toLowerCase()}`, lang)}
                 </Link>
@@ -170,8 +112,7 @@ export default function Header() {
           </nav>
 
           {/* Right actions */}
-          <div className="hidden items-center gap-1 lg:flex flex-shrink-0 ml-8">
-            {/* Search */}
+          <div className="hidden items-center gap-1 lg:flex flex-shrink-0">
             <button
               onClick={() => setSearchOpen(true)}
               className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
@@ -183,7 +124,6 @@ export default function Header() {
               </span>
             </button>
 
-            {/* Language switcher */}
             <div ref={langRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
@@ -211,7 +151,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Separator */}
             <div className="w-px h-5 bg-[#e5e5e5] mx-1.5" />
 
             <Button href="/contact/" variant="primary" size="sm">
@@ -229,6 +168,38 @@ export default function Header() {
           </button>
         </div>
 
+        {/* Mega menu — full width panel */}
+        {megaOpen && (
+          <div className="absolute left-0 right-0 top-full border-t border-[#e5e5e5] bg-white shadow-lg">
+            <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+              <div className="grid grid-cols-4 gap-x-12 gap-y-6">
+                {productModules.map((mod) => (
+                  <div key={mod}>
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#8c8c8c]">
+                      {mod}
+                    </p>
+                    <ul className="space-y-2.5">
+                      {products
+                        .filter((p) => p.module === mod)
+                        .map((p) => (
+                          <li key={p.id}>
+                            <Link
+                              href={`/products/#${p.id}`}
+                              onClick={() => setMegaOpen(false)}
+                              className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
+                            >
+                              {p.name}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="border-t border-[#e5e5e5] bg-white px-6 pb-6 pt-4 lg:hidden">
@@ -238,7 +209,7 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-md px-3 py-2.5 text-base font-medium text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                  className="rounded-md px-3 py-2.5 text-base font-semibold text-[#0d0d0d] hover:bg-[#f5f5f5]"
                 >
                   {t(`nav.${item.label.toLowerCase()}`, lang)}
                 </Link>
@@ -252,17 +223,12 @@ export default function Header() {
                     key={p.id}
                     href={`/products/#${p.id}`}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f5f5f5]"
+                    className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f5f5f5]"
                   >
-                    <span
-                      className="inline-block w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: moduleColors[p.module] || "#0d0d0d" }}
-                    />
                     {p.name}
                   </Link>
                 ))}
               </div>
-              {/* Mobile search */}
               <div className="mt-3 border-t border-[#e5e5e5] pt-4">
                 <button
                   onClick={() => { setMobileOpen(false); setSearchOpen(true); }}
@@ -272,7 +238,6 @@ export default function Header() {
                   {t("search.placeholder", lang)}
                 </button>
               </div>
-              {/* Mobile language */}
               <div className="mt-2 flex gap-2">
                 {(Object.keys(languageLabels) as Language[]).map((l) => (
                   <button
@@ -298,7 +263,6 @@ export default function Header() {
         )}
       </header>
 
-      {/* Search Modal */}
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} lang={lang} />
     </>
   );
