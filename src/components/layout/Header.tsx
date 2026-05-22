@@ -18,7 +18,6 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLElement>(null);
   const { lang, setLang } = useLanguage();
 
   useEffect(() => {
@@ -61,117 +60,118 @@ export default function Header() {
   return (
     <>
       <header
-        ref={headerRef}
         className={`sticky top-0 z-50 bg-white transition-shadow ${
           scrolled ? "shadow-[0_1px_0_0_#e5e5e5]" : ""
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center px-6 py-3.5 lg:px-8">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">
-              CIH
-            </div>
-            <span className="text-base font-semibold tracking-tight text-[#0d0d0d]">
-              CN-INFRA HUB
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
-            {mainNav.map((item) => {
-              if (item.label === "Products") {
-                return (
-                  <div key={item.label} ref={megaRef} className="relative">
-                    <button
-                      onClick={() => { setMegaOpen(!megaOpen); setMobileOpen(false); }}
-                      className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
-                        megaOpen
-                          ? "text-[#0d0d0d] bg-[#f5f5f5]"
-                          : "text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
-                      }`}
-                    >
-                      {t("nav.products", lang)}
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform ${megaOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                  </div>
-                );
-              }
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="rounded-md px-4 py-2 text-[15px] font-semibold text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
-                >
-                  {t(`nav.${item.label.toLowerCase()}`, lang)}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right actions */}
-          <div className="hidden items-center gap-1 lg:flex flex-shrink-0">
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
-              aria-label="Search"
-            >
-              <Search className="h-4 w-4" strokeWidth={1.5} />
-              <span className="hidden xl:inline text-[10px] text-[#a3a3a3] border border-[#e5e5e5] rounded px-1.5 py-0.5 leading-none font-mono">
-                {isMac ? "\u2318" : "Ctrl"}K
+        <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
+          <div className="flex items-center">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">
+                CIH
+              </div>
+              <span className="text-base font-semibold tracking-tight text-[#0d0d0d]">
+                CN-INFRA HUB
               </span>
-            </button>
+            </Link>
 
-            <div ref={langRef} className="relative">
+            {/* Desktop nav */}
+            <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+              {mainNav.map((item) => {
+                if (item.label === "Products") {
+                  return (
+                    <div key={item.label} ref={megaRef} className="relative">
+                      <button
+                        onClick={() => { setMegaOpen(!megaOpen); setMobileOpen(false); }}
+                        className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
+                          megaOpen
+                            ? "text-[#0d0d0d] bg-[#f5f5f5]"
+                            : "text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                        }`}
+                      >
+                        {t("nav.products", lang)}
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${megaOpen ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                    </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="rounded-md px-4 py-2 text-[15px] font-semibold text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                  >
+                    {t(`nav.${item.label.toLowerCase()}`, lang)}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Right actions */}
+            <div className="hidden items-center gap-1 lg:flex flex-shrink-0">
               <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
-                aria-label="Switch language"
+                onClick={() => setSearchOpen(true)}
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                aria-label="Search"
               >
-                <Globe className="h-4 w-4" strokeWidth={1.5} />
+                <Search className="h-4 w-4" strokeWidth={1.5} />
+                <span className="hidden xl:inline text-[10px] text-[#a3a3a3] border border-[#e5e5e5] rounded px-1.5 py-0.5 leading-none font-mono">
+                  {isMac ? "\u2318" : "Ctrl"}K
+                </span>
               </button>
-              {langOpen && (
-                <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e5e5e5] bg-white py-1 shadow-lg">
-                  {(Object.keys(languageLabels) as Language[]).map((l) => (
-                    <button
-                      key={l}
-                      onClick={() => handleLangChange(l)}
-                      className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${
-                        lang === l
-                          ? "text-[#0d0d0d] font-medium bg-[#f5f5f5]"
-                          : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
-                      }`}
-                    >
-                      {languageLabels[l]}
-                    </button>
-                  ))}
-                </div>
-              )}
+
+              <div ref={langRef} className="relative">
+                <button
+                  onClick={() => setLangOpen(!langOpen)}
+                  className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                  aria-label="Switch language"
+                >
+                  <Globe className="h-4 w-4" strokeWidth={1.5} />
+                </button>
+                {langOpen && (
+                  <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e5e5e5] bg-white py-1 shadow-lg">
+                    {(Object.keys(languageLabels) as Language[]).map((l) => (
+                      <button
+                        key={l}
+                        onClick={() => handleLangChange(l)}
+                        className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${
+                          lang === l
+                            ? "text-[#0d0d0d] font-medium bg-[#f5f5f5]"
+                            : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                        }`}
+                      >
+                        {languageLabels[l]}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="w-px h-5 bg-[#e5e5e5] mx-1.5" />
+
+              <Button href="/contact/" variant="primary" size="sm">
+                {t("nav.contact", lang)}
+              </Button>
             </div>
 
-            <div className="w-px h-5 bg-[#e5e5e5] mx-1.5" />
-
-            <Button href="/contact/" variant="primary" size="sm">
-              {t("nav.contact", lang)}
-            </Button>
+            {/* Mobile toggle */}
+            <button
+              className="lg:hidden rounded-md p-2 text-[#0d0d0d] hover:bg-[#f5f5f5] ml-auto"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
-
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden rounded-md p-2 text-[#0d0d0d] hover:bg-[#f5f5f5] ml-auto"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
         </div>
 
-        {/* Mega menu — full width panel */}
+        {/* Mega menu — spanning logo to Contact */}
         {megaOpen && (
-          <div className="absolute left-0 right-0 top-full border-t border-[#e5e5e5] bg-white shadow-lg">
-            <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 pb-4 lg:px-8">
+            <div className="rounded-xl border border-[#e5e5e5] bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-4 gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
