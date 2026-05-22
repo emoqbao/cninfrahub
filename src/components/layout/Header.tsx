@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChevronDown, Menu, X, Search, Globe } from "lucide-react";
 import { mainNav } from "@/lib/navigation";
 import { products, productModules } from "@/lib/products";
@@ -11,6 +12,7 @@ import { useLanguage } from "@/lib/i18n/context";
 import { t, languageLabels, type Language } from "@/lib/i18n/translations";
 
 export default function Header() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -118,33 +120,41 @@ export default function Header() {
             <div className="hidden items-center gap-1 lg:flex flex-shrink-0">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
-                aria-label="Search"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-[13px] font-medium text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
               >
                 <Search className="h-4 w-4" strokeWidth={1.5} />
-                <span className="hidden xl:inline text-[10px] text-[#a3a3a3] border border-[#e5e5e5] rounded px-1.5 py-0.5 leading-none font-mono">
-                  {isMac ? "\u2318" : "Ctrl"}K
-                </span>
+                {t("search.placeholder", lang)}
+                <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border border-[#e5e5e5] bg-[#fafafa] px-1.5 py-0.5 text-[11px] text-[#a3a3a3]">
+                  {isMac ? (
+                    <><span className="text-xs">⌘</span>K</>
+                  ) : (
+                    "Ctrl+K"
+                  )}
+                </kbd>
               </button>
 
+              {/* Language switcher */}
               <div ref={langRef} className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
-                  aria-label="Switch language"
+                  className="flex items-center gap-1.5 rounded-md px-3 py-2 text-[13px] font-medium text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
                 >
                   <Globe className="h-4 w-4" strokeWidth={1.5} />
+                  {languageLabels[lang]}
+                  <ChevronDown
+                    className={`h-3 w-3 transition-transform ${langOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {langOpen && (
-                  <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e5e5e5] bg-white py-1 shadow-lg">
+                  <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e5e5e5] bg-white shadow-lg py-1 z-50">
                     {(Object.keys(languageLabels) as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => handleLangChange(l)}
                         className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${
                           lang === l
-                            ? "text-[#0d0d0d] font-medium bg-[#f5f5f5]"
-                            : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                            ? "bg-[#f5f5f5] text-[#0d0d0d] font-semibold"
+                            : "text-[#525252] hover:bg-[#f5f5f5]"
                         }`}
                       >
                         {languageLabels[l]}
@@ -189,7 +199,11 @@ export default function Header() {
                           <li key={p.id}>
                             <Link
                               href={`/products/#${p.id}`}
-                              onClick={() => setMegaOpen(false)}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                router.push(`/products/#${p.id}`);
+                                setMegaOpen(false);
+                              }}
                               className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
                             >
                               {p.name}
@@ -226,7 +240,11 @@ export default function Header() {
                   <Link
                     key={p.id}
                     href={`/products/#${p.id}`}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      router.push(`/products/#${p.id}`);
+                      setMobileOpen(false);
+                    }}
                     className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f5f5f5]"
                   >
                     {p.name}
