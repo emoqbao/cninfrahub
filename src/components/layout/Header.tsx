@@ -17,6 +17,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
+  const megaPanelRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
   const { lang, setLang } = useLanguage();
 
@@ -28,7 +29,10 @@ export default function Header() {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (megaRef.current && !megaRef.current.contains(e.target as Node)) {
+      const clickedInsideMega =
+        (megaRef.current && megaRef.current.contains(e.target as Node)) ||
+        (megaPanelRef.current && megaPanelRef.current.contains(e.target as Node));
+      if (!clickedInsideMega) {
         setMegaOpen(false);
       }
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -168,10 +172,10 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mega menu — spanning logo to Contact */}
+        {/* Mega menu */}
         {megaOpen && (
           <div className="mx-auto max-w-7xl px-6 pb-4 lg:px-8">
-            <div className="rounded-xl border border-[#e5e5e5] bg-white shadow-lg px-8 py-6">
+            <div ref={megaPanelRef} className="rounded-xl border border-[#e5e5e5] bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-4 gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
