@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { mainNav } from "@/lib/navigation";
 import { products, productModules } from "@/lib/products";
 import Button from "@/components/ui/Button";
@@ -60,7 +60,7 @@ export default function Header() {
                     <ChevronDown className={`h-4 w-4 transition-transform ${megaOpen ? "rotate-180" : ""}`} />
                   </button>
                   {megaOpen && (
-                    <div className="absolute left-0 top-full mt-2 w-[720px] rounded-xl border border-[#e5e5e5] bg-white p-6 shadow-lg">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[720px] rounded-xl border border-[#e5e5e5] bg-white p-6 shadow-lg">
                       <div className="grid grid-cols-4 gap-6">
                         {productModules.map((mod) => (
                           <div key={mod}>
@@ -100,8 +100,14 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Right CTA */}
+        {/* Right actions */}
         <div className="hidden items-center gap-3 lg:flex">
+          <button
+            className="rounded-md p-2 text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" strokeWidth={1.5} />
+          </button>
           <Button href="/contact/" variant="primary" size="sm">
             Contact
           </Button>

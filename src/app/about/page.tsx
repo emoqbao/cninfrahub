@@ -1,44 +1,42 @@
 ﻿import { Metadata } from "next";
 import { Search, Link2, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
+
+const pillars = [
+  {
+    icon: Search,
+    title: "Source",
+    description: "We vet and aggregate China''s top-tier infrastructure providers.",
+  },
+  {
+    icon: Link2,
+    title: "Connect",
+    description: "We build dedicated cross-border and multi-cloud links with SLA-backed performance.",
+  },
+  {
+    icon: Wrench,
+    title: "Operate",
+    description: "Bilingual engineers on the ground, 24/7, so you never need to fly a team to China.",
+  },
+];
+
+const differentiators = [
+  "Single point of accountability",
+  "No vendor lock-in",
+  "Full compliance advisory",
+  "SLA-backed, enterprise-grade",
+  "Bilingual support (EN/CN)",
+  "Full lifecycle partnership",
+];
 
 export const metadata: Metadata = {
   title: "About",
   description: "CN-Infra Hub eliminates the information asymmetry that makes China''s infrastructure market opaque to global buyers.",
 };
 
-const pillars = [
-  {
-    icon: Search,
-    title: "Source",
-    description: "We vet and aggregate China''s top-tier infrastructure providers — giving you a single, trusted interface to a fragmented market.",
-  },
-  {
-    icon: Link2,
-    title: "Connect",
-    description: "We build dedicated cross-border and multi-cloud links that bridge your global architecture to China — with SLA-backed performance.",
-  },
-  {
-    icon: Wrench,
-    title: "Operate",
-    description: "We provide ongoing local support and Smart Hands — bilingual engineers on the ground, 24/7, so you never need to fly a team to China.",
-  },
-];
-
-const differentiators = [
-  "Single point of accountability — one partner, one contract, one SLA",
-  "No vendor lock-in — we work across multiple carriers and data center operators",
-  "Full compliance advisory for China market entry",
-  "SLA-backed, enterprise-grade infrastructure",
-  "Bilingual support — English and Mandarin, local timezone",
-  "From Day 1 to Day N — we stay with you for the full lifecycle",
-];
-
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
       <section className="border-b border-[#e5e5e5] py-16 lg:py-24">
         <Container>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">About</p>
@@ -48,18 +46,16 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Mission */}
       <section className="py-16 lg:py-24">
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
-              CN-Infra Hub exists to eliminate the information asymmetry that makes China''s infrastructure market opaque to global buyers. We aggregate, curate, and manage the best network, compute, and data center resources — so you don''t have to navigate the complexity alone.
+              CN-Infra Hub exists to eliminate the information asymmetry that makes China''s infrastructure market opaque to global buyers. We aggregate, curate, and manage the best network, compute, and data center resources.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Three Pillars */}
       <section className="border-t border-[#e5e5e5] bg-[#fafafa] py-16 lg:py-24">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">How we work</h2>
@@ -75,7 +71,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Why CN-Infra Hub */}
       <section className="py-16 lg:py-24">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Why CN-Infra Hub</h2>
@@ -92,16 +87,18 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* CTA */}
       <section className="bg-[#0d0d0d] py-20 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-white lg:text-3xl">
             Want to know more about our team and capabilities?
           </h2>
           <div className="mt-8">
-            <Button href="/contact/" variant="secondary" size="lg">
+            <a
+              href="/contact/"
+              className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#e5e5e5] transition-colors"
+            >
               Get in Touch
-            </Button>
+            </a>
           </div>
         </Container>
       </section>

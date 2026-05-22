@@ -8,12 +8,15 @@ export default function CTABanner() {
           Ready to bypass the complexity?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-[#a3a3a3]">
-          Talk to our infrastructure architects today. We''ll design a solution that fits your architecture — not the other way around.
+          Talk to our infrastructure architects today. We&apos;ll design a solution that fits your architecture &mdash; not the other way around.
         </p>
         <div className="mt-8">
-          <Button href="/contact/" variant="secondary" size="lg">
+          <a
+            href="/contact/"
+            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#e5e5e5] transition-colors"
+          >
             Start a Conversation
-          </Button>
+          </a>
         </div>
       </div>
     </section>
