@@ -1,7 +1,12 @@
-﻿import Button from "@/components/ui/Button";
-import { Network } from "lucide-react";
+﻿"use client";
+
+import Button from "@/components/ui/Button";
+import { useLanguage } from "@/lib/i18n/context";
+import { t } from "@/lib/i18n/translations";
 
 export default function Hero() {
+  const { lang } = useLanguage();
+
   return (
     <section className="flex min-h-[calc(100vh-73px)] items-center">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
@@ -13,16 +18,16 @@ export default function Hero() {
               Without Borders
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#525252] sm:text-xl">
-              One partner for China''s dedicated lines, data centers,
+              One partner for China&apos;s dedicated lines, data centers,
               multi-cloud interconnect, and AI infrastructure.
               Zero information asymmetry. Full compliance.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="/products/" variant="primary" size="lg">
-                Explore Products
+                {t("cta.explore", lang)}
               </Button>
               <Button href="/contact/" variant="secondary" size="lg">
-                Talk to Us
+                {t("cta.talk", lang)}
               </Button>
             </div>
           </div>
@@ -46,11 +51,6 @@ export default function Hero() {
                   <line x1="304" y1="108" x2="224" y2="188" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
                   <line x1="136" y1="292" x2="176" y2="212" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
                   <line x1="264" y1="292" x2="224" y2="212" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
-                  {/* Labels */}
-                  <text x="80" y="76" textAnchor="middle" className="fill-[#737373] text-[11px]" fontFamily="Inter, sans-serif">Compute</text>
-                  <text x="320" y="76" textAnchor="middle" className="fill-[#737373] text-[11px]" fontFamily="Inter, sans-serif">AI</text>
-                  <text x="120" y="332" textAnchor="middle" className="fill-[#737373] text-[11px]" fontFamily="Inter, sans-serif">Network</text>
-                  <text x="280" y="332" textAnchor="middle" className="fill-[#737373] text-[11px]" fontFamily="Inter, sans-serif">DC</text>
                 </svg>
               </div>
               <p className="absolute bottom-4 text-xs text-[#a3a3a3]">Your global infrastructure, one partner</p>

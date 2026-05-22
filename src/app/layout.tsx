@@ -3,6 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/ui/JsonLd";
+import { I18nProvider } from "@/lib/i18n/context";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,7 +32,7 @@ const organizationSchema = {
 
 export const metadata: Metadata = {
   title: {
-    default: "CN-Infra Hub \u2014 Infrastructure Without Borders",
+    default: "CN-Infra Hub — Infrastructure Without Borders",
     template: "%s | CN-Infra Hub",
   },
   description:
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cninfrahub.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "CN-Infra Hub \u2014 Infrastructure Without Borders",
+    title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
       "One partner for China''s dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
     url: "https://cninfrahub.com",
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CN-Infra Hub \u2014 Infrastructure Without Borders",
+    title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
       "One partner for China''s dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
   },
@@ -72,9 +73,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={organizationSchema} />
       </head>
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <I18nProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

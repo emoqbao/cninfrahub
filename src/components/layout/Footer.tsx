@@ -1,8 +1,14 @@
-﻿import Link from "next/link";
-import { products, productModules } from "@/lib/products";
+﻿"use client";
+
+import Link from "next/link";
+import { products } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
+import { useLanguage } from "@/lib/i18n/context";
+import { t } from "@/lib/i18n/translations";
 
 export default function Footer() {
+  const { lang } = useLanguage();
+
   return (
     <footer className="bg-[#0d0d0d] text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -14,14 +20,16 @@ export default function Footer() {
             </div>
             <span className="text-lg font-semibold tracking-tight">CN-INFRA HUB</span>
           </Link>
-          <p className="mt-3 text-sm text-[#a3a3a3]">Infrastructure Without Borders</p>
+          <p className="mt-3 text-sm text-[#a3a3a3]">{t("footer.tagline", lang)}</p>
         </div>
 
         {/* Link grid */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Products */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">Products</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
+              {t("footer.products", lang)}
+            </p>
             <ul className="space-y-2.5">
               {products.map((p) => (
                 <li key={p.id}>
@@ -38,7 +46,9 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">Solutions</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
+              {t("footer.solutions", lang)}
+            </p>
             <ul className="space-y-2.5">
               {solutions.map((s) => (
                 <li key={s.id}>
@@ -55,21 +65,23 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">Resources</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
+              {t("footer.resources", lang)}
+            </p>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  White Papers
+                  {t("footer.whitePapers", lang)}
                 </Link>
               </li>
               <li>
                 <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  Case Studies
+                  {t("footer.caseStudies", lang)}
                 </Link>
               </li>
               <li>
                 <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  Guides
+                  {t("footer.guides", lang)}
                 </Link>
               </li>
             </ul>
@@ -77,16 +89,18 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">Company</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
+              {t("footer.company", lang)}
+            </p>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/about/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  About
+                  {t("footer.about", lang)}
                 </Link>
               </li>
               <li>
                 <Link href="/contact/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  Contact
+                  {t("footer.contact", lang)}
                 </Link>
               </li>
             </ul>
@@ -97,7 +111,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[#262626]">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-[#737373] lg:flex-row lg:justify-between lg:px-8">
-          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. {t("footer.rights", lang)}</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">
             info@cninfrahub.com
           </a>
