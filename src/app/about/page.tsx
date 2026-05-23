@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { Search, Link2, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 
@@ -39,6 +39,7 @@ export default function AboutPage() {
     <>
       <section className="py-16 lg:py-24">
         <Container>
+          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">About</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             We don''t own the infrastructure. We own the relationships — and the responsibility.
@@ -46,7 +47,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
@@ -62,7 +63,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Why the aggregator model works</h2>
           <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
@@ -70,7 +71,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {pillars.map((p) => (
-              <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8">
+              <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <p.icon className="h-8 w-8 text-[#0d0d0d]" strokeWidth={1.5} />
                 <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-[#525252]">{p.description}</p>
@@ -80,12 +81,12 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">What sets us apart</h2>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {differentiators.map((d, i) => (
-              <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4">
+              <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4 transition-all duration-200 hover:-translate-y-0.5">
                 <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d] text-xs font-bold text-white">
                   &check;
                 </span>
@@ -96,7 +97,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-[#0a0f1a] py-20 text-center">
+      <section className="bg-[#0a0f1a] py-20 lg:py-28 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-white lg:text-3xl">
             You know your architecture. We know China''s infrastructure market.

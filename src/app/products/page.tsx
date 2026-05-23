@@ -1,31 +1,20 @@
-﻿"use client";
-
-import { useState, useEffect, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import { products, productModules } from "@/lib/products";
+import { products } from "@/lib/products";
 
-function ProductsContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const moduleParam = searchParams.get("module");
-  const isValidModule = moduleParam && productModules.includes(moduleParam as typeof productModules[number]);
-  const [activeModule, setActiveModule] = useState<string>(isValidModule ? moduleParam! : productModules[0]);
+export const metadata: Metadata = {
+  title: "Products",
+  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, compute, networking, and data center solutions.",
+};
 
-  useEffect(() => {
-    if (isValidModule) {
-      setActiveModule(moduleParam!);
-    }
-  }, [moduleParam, isValidModule]);
-
-  const filtered = products.filter((p) => p.module === activeModule);
-
+export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
       <section className="py-16 lg:py-24">
         <Container>
+          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Products</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             Purpose-built infrastructure services for China and beyond
@@ -33,36 +22,15 @@ function ProductsContent() {
         </Container>
       </section>
 
-      {/* Filters */}
-      <div className="">
-        <Container>
-          <div className="flex gap-1 overflow-x-auto py-4">
-            {productModules.map((mod) => (
-              <button
-                key={mod}
-                onClick={() => { setActiveModule(mod); router.replace(`/products/?module=${mod}`, { scroll: false }); }}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
-                  activeModule === mod
-                    ? "bg-[#0d0d0d] text-white"
-                    : "text-[#525252] hover:bg-[#f3f4f6]"
-                }`}
-              >
-                {mod}
-              </button>
-            ))}
-          </div>
-        </Container>
-      </div>
-
       {/* Product grid */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((product) => (
+            {products.map((product) => (
               <Link
                 key={product.id}
                 href={`/products/${product.id}`}
-                className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-shadow hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
               >
                 <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                   {product.module}
@@ -78,13 +46,5 @@ function ProductsContent() {
         </Container>
       </section>
     </>
-  );
-}
-
-export default function ProductsPage() {
-  return (
-    <Suspense fallback={null}>
-      <ProductsContent />
-    </Suspense>
   );
 }

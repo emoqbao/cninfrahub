@@ -1,4 +1,4 @@
-﻿import { Search, Link2, Wrench } from "lucide-react";
+import { Search, Link2, Wrench } from "lucide-react";
 
 const steps = [
   {
@@ -20,8 +20,9 @@ const steps = [
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
         <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">What We Do</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
           We don''t own the infrastructure. We own the relationships — and the responsibility.
@@ -31,7 +32,7 @@ export default function WhatWeDo() {
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.title} className="rounded-xl border border-[#e8eaed] p-8">
+            <div key={s.title} className="rounded-xl border border-[#e8eaed] p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
               <s.icon className="h-8 w-8 text-[#0d0d0d]" strokeWidth={1.5} />
               <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{s.title}</h3>
               <p className="mt-3 text-[#525252] leading-relaxed">{s.description}</p>

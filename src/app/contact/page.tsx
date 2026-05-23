@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -12,6 +12,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Contact</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             Start a conversation with our infrastructure architects
@@ -20,7 +21,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Info */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -29,7 +30,7 @@ export default function ContactPage() {
 
             {/* Contact info sidebar */}
             <div>
-              <div className="rounded-xl border border-[#e8eaed] p-6">
+              <div className="rounded-xl border border-[#e8eaed] bg-white p-6">
                 <h3 className="text-lg font-semibold text-[#0d0d0d]">Contact Info</h3>
                 <div className="mt-5 space-y-4">
                   <div>

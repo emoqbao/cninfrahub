@@ -1,8 +1,8 @@
-﻿import Button from "@/components/ui/Button";
+import Button from "@/components/ui/Button";
 
 export default function CTABanner() {
   return (
-    <section className="bg-[#0a0f1a] py-20 lg:py-24">
+    <section className="bg-[#0a0f1a] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <h2 className="text-3xl font-bold tracking-[-0.02em] text-white lg:text-4xl">
           You know your architecture. We know China''s infrastructure market.

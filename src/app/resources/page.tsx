@@ -1,7 +1,7 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { ArrowRight, Download, BookOpen, FileText, Mail } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -71,6 +71,7 @@ export default function ResourcesPage() {
       {/* Hero */}
       <section className="py-16 lg:py-24">
         <Container>
+          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             Practical guides for infrastructure decision-makers operating in China
@@ -82,12 +83,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Featured */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {featured.map((f) => (
-              <div key={f.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-8">
+              <div key={f.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <span className="inline-flex self-start items-center gap-1.5 rounded-md bg-[#f3f4f6] px-2.5 py-1 text-xs font-medium text-[#737373]">
                   <f.icon className="h-3.5 w-3.5" />
                   {f.type}
@@ -105,12 +106,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Guides grid */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides &amp; White Papers</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {guides.map((g) => (
-              <div key={g.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6">
+              <div key={g.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                 <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                   {g.type}
                 </span>
@@ -124,7 +125,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <Mail className="mx-auto h-10 w-10 text-[#0d0d0d]" strokeWidth={1.5} />

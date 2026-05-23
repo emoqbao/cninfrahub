@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Check, Zap, Users, Cog, Network } from "lucide-react";
@@ -37,7 +37,7 @@ function RelatedSolutions({ current }: { current: Solution }) {
   if (related.length === 0) return null;
 
   return (
-    <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+    <section className="py-20 lg:py-28 bg-[#faf9f7]">
       <Container>
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
           Related solutions
@@ -47,7 +47,7 @@ function RelatedSolutions({ current }: { current: Solution }) {
             <Link
               key={s.id}
               href={`/solutions/${s.id}`}
-              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
               <div className="flex flex-wrap gap-2">
                 {s.tags.map((t) => (
@@ -124,7 +124,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Zap className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -149,7 +149,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* Who it's for */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Users className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -166,7 +166,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* Our approach */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Cog className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -183,7 +183,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* Architecture */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Network className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -226,7 +226,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* Key products used */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
             Key products used
@@ -239,7 +239,7 @@ export default async function SolutionPage({ params }: Props) {
                 <Link
                   key={pid}
                   href={`/products/${product.id}`}
-                  className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
+                  className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                     {product.module}
@@ -258,7 +258,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">

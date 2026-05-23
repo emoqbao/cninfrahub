@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { Search, X, ArrowRight } from "lucide-react";
+import { Search, X, ArrowRight } from 'lucide-react'
+import { useRouter } from "next/navigation";
 import { search, type SearchResult } from "@/lib/search";
 import { t, type Language } from "@/lib/i18n/translations";
 
@@ -13,6 +14,7 @@ interface SearchModalProps {
 }
 
 export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -43,7 +45,7 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
       }
       if (e.key === "Enter" && results[selectedIndex]) {
         e.preventDefault();
-        window.location.href = results[selectedIndex].href;
+        router.push(results[selectedIndex].href);
         onClose();
       }
     }

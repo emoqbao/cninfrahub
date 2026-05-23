@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -72,7 +72,6 @@ export default function Header() {
     setLangOpen(false);
   }, [setLang]);
 
-  const isMac = typeof navigator !== "undefined" && navigator.platform.includes("Mac");
 
   return (
     <>

@@ -1,10 +1,10 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Check, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { products, getProductById, productModules, type Product } from "@/lib/products";
+import { products, getProductById, type Product } from "@/lib/products";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -38,7 +38,7 @@ function RelatedProducts({ current }: { current: Product }) {
   if (related.length === 0) return null;
 
   return (
-    <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+    <section className="py-20 lg:py-28 bg-[#faf9f7]">
       <Container>
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
           Related products
@@ -48,7 +48,7 @@ function RelatedProducts({ current }: { current: Product }) {
             <Link
               key={p.id}
               href={`/products/${p.id}`}
-              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-lg font-semibold text-[#0d0d0d]">{p.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">
@@ -108,7 +108,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* Overview */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="max-w-3xl">
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -122,7 +122,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
             Key features
@@ -144,7 +144,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Zap className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -169,7 +169,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* Use Cases */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Lightbulb className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
@@ -192,7 +192,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">

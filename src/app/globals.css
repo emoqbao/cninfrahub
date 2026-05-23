@@ -1,14 +1,8 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @theme inline {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-dm-sans);
-  --color-brand: oklch(0.35 0.12 275);
-  --color-accent: oklch(0.45 0.16 275);
-  --color-muted: oklch(0.55 0.01 255);
-  --color-border: oklch(0.91 0.01 260);
-  --color-surface: oklch(0.975 0.005 260);
-  --color-surface-alt: oklch(0.985 0.003 260);
 }
 
 * {
