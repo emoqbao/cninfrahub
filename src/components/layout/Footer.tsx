@@ -53,7 +53,7 @@ export default function Footer() {
               {solutions.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href={`/solutions/#${s.id}`}
+                    href={`/solutions/${s.id}`}
                     className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
                   >
                     {s.name}

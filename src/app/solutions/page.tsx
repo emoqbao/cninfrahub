@@ -1,13 +1,14 @@
-﻿﻿import { Metadata } from "next";
+﻿import { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Real-world infrastructure patterns for your China strategy �?hybrid cloud, AI inference, data compliance, and disaster recovery.",
+  description: "Real-world infrastructure patterns for your China strategy — hybrid cloud, AI inference, data compliance, and disaster recovery.",
 };
 
 export default function SolutionsPage() {
@@ -28,7 +29,11 @@ export default function SolutionsPage() {
         <Container>
           <div className="space-y-8">
             {solutions.map((s) => (
-              <div key={s.id} id={s.id} className="rounded-xl border border-[#e8eaed] p-8 lg:p-10">
+              <Link
+                key={s.id}
+                href={`/solutions/${s.id}`}
+                className="group flex flex-col rounded-xl border border-[#e8eaed] p-8 lg:p-10 transition-shadow hover:shadow-md"
+              >
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((t) => (
@@ -41,7 +46,7 @@ export default function SolutionsPage() {
                   ))}
                 </div>
 
-                <h2 className="mt-5 text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+                <h2 className="mt-5 text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d] group-hover:underline">
                   {s.name}
                 </h2>
                 <p className="mt-4 max-w-3xl leading-relaxed text-[#525252]">
@@ -55,25 +60,27 @@ export default function SolutionsPage() {
                     const product = getProductById(pid);
                     if (!product) return null;
                     return (
-                      <Link
+                      <span
                         key={pid}
-                        href={`/products/${product.id}`}
-                        className="rounded-md bg-[#f3f4f6] px-2.5 py-1 text-[#0d0d0d] hover:bg-[#e0e2e6] transition-colors"
+                        className="rounded-md bg-[#f3f4f6] px-2.5 py-1 text-[#0d0d0d]"
                       >
                         {product.name}
-                      </Link>
+                      </span>
                     );
                   })}
                 </div>
 
-
-              </div>
+                <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d]">
+                  Learn more
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
             ))}
           </div>
 
           {/* CTA */}
           <div className="mt-12 rounded-xl border border-[#e8eaed] bg-[#f8f9fb] p-8 text-center">
-            <h3 className="text-lg font-semibold text-[#0d0d0d]">Don''t see your use case?</h3>
+            <h3 className="text-lg font-semibold text-[#0d0d0d]">Don&apos;t see your use case?</h3>
             <p className="mt-2 text-[#737373]">We design custom architectures for unique requirements.</p>
             <div className="mt-5">
               <Button href="/contact/" variant="primary" size="md">

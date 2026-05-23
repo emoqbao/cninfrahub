@@ -29,7 +29,7 @@ export function buildSearchIndex(): SearchResult[] {
       id: s.id,
       title: s.name,
       description: s.description.slice(0, 120),
-      href: `/solutions/#${s.id}`,
+      href: `/solutions/${s.id}`,
       category: "Solutions",
     });
   }
