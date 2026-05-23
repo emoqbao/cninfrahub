@@ -191,7 +191,7 @@ export default function Header() {
                           <li key={p.id}>
                             <Link
                               href={`/products/${p.id}`}
-                              onClick={(e) => { e.preventDefault(); router.push(`/products/?module=${encodeURIComponent(p.module)}`); setMegaOpen(false); }}
+                              onClick={() => setMegaOpen(false)}
                               className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
                             >
                               {p.name}
@@ -228,7 +228,7 @@ export default function Header() {
                   <Link
                     key={p.id}
                     href={`/products/${p.id}`}
-                    onClick={(e) => { e.preventDefault(); router.push(`/products/?module=${encodeURIComponent(p.module)}`); setMobileOpen(false); }}
+                    onClick={() => setMobileOpen(false)}
                     className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f3f4f6]"
                   >
                     {p.name}
