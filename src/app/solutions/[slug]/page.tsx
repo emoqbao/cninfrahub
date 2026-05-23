@@ -84,7 +84,7 @@ export default async function SolutionPage({ params }: Props) {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key benefits</h2></div>
             <ul className="grid gap-4 sm:grid-cols-2">{solution.benefits.map((b, i) => (<li key={i} className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"><span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]"><CheckIcon /></span><span className="text-[#525252]">{b}</span></li>))}</ul>
@@ -100,7 +100,7 @@ export default async function SolutionPage({ params }: Props) {
         </section>
 
         {/* Our approach */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Cog className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Our approach</h2></div>
             <div className="max-w-3xl"><p className="text-lg leading-relaxed text-[#525252]">{solution.approach}</p></div>
@@ -119,7 +119,7 @@ export default async function SolutionPage({ params }: Props) {
         </section>
 
         {/* Key products used */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>

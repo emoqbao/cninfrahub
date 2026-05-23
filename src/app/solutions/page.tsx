@@ -26,7 +26,7 @@ export default function SolutionsPage() {
       </section>
 
       <PageFrame>
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="space-y-8">
               {solutions.map((s) => (

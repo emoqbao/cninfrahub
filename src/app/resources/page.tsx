@@ -37,7 +37,7 @@ export default function ResourcesPage() {
 
       <PageFrame>
         {/* Featured */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -71,7 +71,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Newsletter */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="mx-auto max-w-xl text-center">
               <Mail className="mx-auto h-10 w-10 text-[#a48e7a]" strokeWidth={1.5} />
