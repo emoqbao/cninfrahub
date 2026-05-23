@@ -1,16 +1,16 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Cpu, Network, Database, Brain } from "lucide-react";
 
 const modules = [
-  { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/" },
-  { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/" },
-  { name: "NETWORK", icon: Network, products: "Private Connect · Cloud Connect · IP Transit · Virtual Edge", href: "/products/", featured: true },
-  { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/" },
+  { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/?module=AI" },
+  { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/?module=COMPUTE" },
+  { name: "NETWORK", icon: Network, products: "Private Connect · Cloud Connect · IP Transit · Virtual Edge", href: "/products/?module=NETWORK", featured: true },
+  { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/?module=DATA%20CENTER" },
 ];
 
 export default function ProductOverview() {
   return (
-    <section className="py-24 lg:py-32 bg-[#fafafa] border-t border-[#e5e5e5]">
+    <section className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">

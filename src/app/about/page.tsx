@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import { Search, Link2, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-t border-[#e5e5e5] bg-[#fafafa] py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">How we work</h2>
           <div className="mt-10 grid gap-8 md:grid-cols-3">

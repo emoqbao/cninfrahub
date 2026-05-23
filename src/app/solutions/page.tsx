@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions } from "@/lib/solutions";
@@ -57,7 +57,7 @@ export default function SolutionsPage() {
                     return (
                       <Link
                         key={pid}
-                        href={`/products/#${pid}`}
+                        href={`/products/?module=${encodeURIComponent(product.module)}`}
                         className="rounded-md bg-[#f5f5f5] px-2.5 py-1 text-[#0d0d0d] hover:bg-[#e5e5e5] transition-colors"
                       >
                         {product.name}
