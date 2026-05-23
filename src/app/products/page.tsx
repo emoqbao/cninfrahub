@@ -28,7 +28,7 @@ function ProductsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-[#e5e5e5] py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <Container>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Products</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
@@ -38,7 +38,7 @@ function ProductsContent() {
       </section>
 
       {/* Filters */}
-      <div className="border-b border-[#e5e5e5]">
+      <div className="">
         <Container>
           <div className="flex gap-1 overflow-x-auto py-4">
             {productModules.map((mod) => (

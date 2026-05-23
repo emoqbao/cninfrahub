@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ArrowRight, Download, BookOpen, FileText } from "lucide-react";
@@ -69,7 +69,7 @@ export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-[#e5e5e5] py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <Container>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Guides grid */}
-      <section className="border-t border-[#e5e5e5] bg-[#fafafa] py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <Container>
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides & White Papers</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
