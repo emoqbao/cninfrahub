@@ -7,7 +7,7 @@ export default function TrustStats() {
   ];
 
   return (
-    <section className="bg-[#faf9f7]">
+    <section className="border-t border-b border-[#e8eaed]">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((s) => (

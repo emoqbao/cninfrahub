@@ -38,18 +38,44 @@ export default function AboutPage() {
       </section>
 
       <PageFrame>
+        
         <section className="py-20 lg:py-28">
           <Container>
-            <div className="mx-auto max-w-3xl">
-              <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
-                China''s infrastructure market is one of the world''s largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
-              </p>
-              <p className="mt-6 text-xl leading-relaxed text-[#525252] lg:text-2xl">
-                CN-Infra Hub is a managed service aggregator. We don''t own fiber, data centers, or server hardware. Instead, we bring deep relationships across China''s entire infrastructure ecosystem. We source the right resources from the right providers, negotiate pricing our clients can''t get on their own, and take full operational responsibility for everything we deliver.
-              </p>
-              <p className="mt-6 text-lg leading-relaxed text-[#737373]">
-                Think of us as your infrastructure architect and general contractor for China. You tell us what you need. We decide which providers to use, how to connect them, and how to manage the whole thing — so you get one partner, one SLA, one invoice.
-              </p>
+            <div className="rounded-2xl border border-[#e8eaed] overflow-hidden">
+              <div className="grid gap-8 lg:grid-cols-2">
+                <div className="p-8 lg:p-10">
+                  <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
+                    China''s infrastructure market is one of the world''s largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
+                  </p>
+                  <p className="mt-6 text-xl leading-relaxed text-[#525252] lg:text-2xl">
+                    CN-Infra Hub is a managed service aggregator. We don''t own fiber, data centers, or server hardware. Instead, we bring deep relationships across China''s entire infrastructure ecosystem.
+                  </p>
+                  <p className="mt-6 text-lg leading-relaxed text-[#737373]">
+                    Think of us as your infrastructure architect and general contractor for China. You tell us what you need. We decide which providers to use, how to connect them, and how to manage the whole thing — so you get one partner, one SLA, one invoice.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center bg-[#f8f9fb] p-8 lg:p-12">
+                  <div className="w-full max-w-xs aspect-square relative">
+                    <svg viewBox="0 0 300 300" className="w-full h-full" fill="none">
+                      <circle cx="150" cy="150" r="28" fill="#0d0d0d" />
+                      <circle cx="150" cy="150" r="20" fill="white" />
+                      <circle cx="150" cy="150" r="10" fill="#0d0d0d" />
+                      <circle cx="55" cy="75" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <circle cx="245" cy="75" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <circle cx="85" cy="225" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <circle cx="215" cy="225" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <circle cx="55" cy="175" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <circle cx="245" cy="175" r="14" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                      <line x1="69" y1="82" x2="130" y2="140" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                      <line x1="231" y1="82" x2="170" y2="140" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                      <line x1="99" y1="218" x2="130" y2="160" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                      <line x1="201" y1="218" x2="170" y2="160" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                      <line x1="69" y1="168" x2="130" y2="160" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                      <line x1="231" y1="168" x2="170" y2="160" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </section>

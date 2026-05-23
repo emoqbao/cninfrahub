@@ -34,7 +34,7 @@ function RelatedSolutions({ current }: { current: Solution }) {
   const related = solutions.filter((s) => s.id !== current.id);
   if (related.length === 0) return null;
   return (
-    <section className="py-20 lg:py-28 bg-[#faf9f7]">
+    <section className="py-20 lg:py-28">
       <Container>
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Related solutions</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
