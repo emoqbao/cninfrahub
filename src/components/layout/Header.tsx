@@ -95,20 +95,6 @@ export default function Header() {
     )) {
       return;
     }
-    if (panel) {
-      const r = panel.getBoundingClientRect();
-      if (e.clientX >= r.left - 2 && e.clientX <= r.right + 2 &&
-          e.clientY >= r.top - 4 && e.clientY <= r.bottom + 2) {
-        return;
-      }
-    }
-    if (btn) {
-      const r = btn.getBoundingClientRect();
-      if (e.clientX >= r.left && e.clientX <= r.right &&
-          e.clientY >= r.top && e.clientY <= r.bottom + 6) {
-        return;
-      }
-    }
     megaTimer.current = setTimeout(() => setMegaOpen(false), 150);
   };
 
