@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { products, getProductById, productModules, type Product } from "@/lib/products";
+import { products, getProductById, type Product } from "@/lib/products";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -71,7 +71,6 @@ export default async function ProductPage({ params }: Props) {
   const product = getProductById(slug);
   if (!product) notFound();
 
-  const moduleIndex = productModules.indexOf(product.module);
 
   return (
     <>
@@ -175,29 +174,6 @@ export default async function ProductPage({ params }: Props) {
       {/* Related */}
       <RelatedProducts current={product} />
 
-      {/* Module navigation */}
-      <section className="py-16 lg:py-24">
-        <Container>
-          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-            Explore other modules
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {productModules.map((mod) => (
-              <Link
-                key={mod}
-                href={`/products/?module=${encodeURIComponent(mod)}`}
-                className={`rounded-lg px-5 py-2.5 text-sm font-medium transition-colors ${
-                  mod === product.module
-                    ? "bg-[#0d0d0d] text-white"
-                    : "border border-[#e8eaed] text-[#525252] hover:bg-[#f3f4f6]"
-                }`}
-              >
-                {mod}
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
     </>
   );
 }
