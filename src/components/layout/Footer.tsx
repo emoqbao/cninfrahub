@@ -34,7 +34,7 @@ export default function Footer() {
               {products.map((p) => (
                 <li key={p.id}>
                   <Link
-                    href={`/products/?module=${encodeURIComponent(p.module)}`}
+                    href={`/products/${p.id}`}
                     className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
                   >
                     {p.name}
