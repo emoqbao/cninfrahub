@@ -137,7 +137,7 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Premium dedicated internet — China and overseas, carrier-grade, uncontended, at pricing enterprises can't get directly",
     description:
-      "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. Typically 2-3折 below standard enterprise rates through aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 100 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
+      "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 100 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
     features: [
       "Multi-carrier DIA sourcing: China Telecom, China Unicom, China Mobile, and regional ISPs",
       "Same aggressive pricing model available overseas through international carrier partnerships",
@@ -148,7 +148,7 @@ export const products: Product[] = [
     ],
     benefits: [
       "Guaranteed, uncontended bandwidth — consistent performance, no peak-hour degradation",
-      "2-3折 below standard enterprise DIA pricing through our carrier relationships — in China and overseas",
+      "Highly competitive pricing below standard enterprise DIA rates through our carrier relationships — in China and overseas",
       "Multi-carrier flexibility: we select the best-performing carrier for your location",
       "Simple, no-BGP dedicated internet — no routing complexity, just a premium pipe",
       "One support team for all carrier relationships — no calling different providers for outages",
@@ -197,8 +197,9 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Layer 2 P2P circuits at pricing enterprises can''t get on their own — cross-city and cross-border",
     description:
-      "We source dedicated Layer 2 point-to-point circuits across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure 2-3折 pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 1 Gbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
+      "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 1 Gbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
     features: [
+      "MPLS, IEPL, and Ethernet private line — the full range of Layer 2 connectivity options",
       "Multi-carrier sourcing: China Telecom, China Unicom, China Mobile, and regional alternative providers",
       "Cross-city routes via non-carrier alternatives — better pricing than traditional operator circuits",
       "1 Gbps to 100 Gbps bandwidth with flexible burst, committed, and usage-based rate options",
@@ -227,12 +228,12 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Direct China-to-cloud links — from 1 Gbps managed to 100 Gbps dedicated, including Megaport and Equinix",
     description:
-      "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
+      "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
     features: [
       "Managed virtual connections (50 Mbps - 1 Gbps) via Megaport and Equinix Fabric — cost-effective, fast to provision",
       "Dedicated physical cross-connects (1-100 Gbps) to AWS Direct Connect, Azure ExpressRoute, GCP Interconnect",
       "China-to-cloud connectivity that standard AWS/Azure/GCP partners cannot legally provide",
-      "Multi-carrier routing from major China hubs to APAC cloud regions with full BGP support",
+      "Multi-carrier routing from major China hubs to APAC, US, and European cloud regions with full BGP support",
       "Full compliance documentation package for China cross-border data regulations",
       "Carrier-diverse backup paths with automatic failover for production reliability",
     ],
@@ -244,12 +245,12 @@ export const products: Product[] = [
       "Production-proven — actively used by multiple enterprise customers today",
     ],
     useCases: [
-      "Hybrid cloud architectures with China-based compute and global cloud services",
+      "Hybrid cloud architectures with China-based compute and global cloud services (APAC, US, Europe)",
       "Moderate-bandwidth managed virtual links for development, staging, and cost-sensitive production",
-      "High-bandwidth dedicated links for data-heavy production workloads and DR replication",
-      "SaaS platforms needing dedicated, low-latency connectivity to China customer environments",
+      "High-bandwidth dedicated links for data-heavy production workloads and cross-continent DR replication",
+      "SaaS platforms needing dedicated, low-latency connectivity to China customer environments worldwide",
     ],
-    seoKeywords: ["AWS Direct Connect China", "Azure ExpressRoute China", "GCP Interconnect China", "China cloud connectivity", "Megaport China", "Equinix Fabric China"],
+    seoKeywords: ["AWS Direct Connect China", "Azure ExpressRoute China", "GCP Interconnect China", "China cloud connectivity", "Megaport China", "Equinix Fabric China", "China to US cloud", "China to Europe cloud"],
   },
   {
     id: "dark-fiber",
