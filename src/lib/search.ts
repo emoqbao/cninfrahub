@@ -18,7 +18,7 @@ export function buildSearchIndex(): SearchResult[] {
       id: p.id,
       title: p.name,
       description: p.tagline,
-      href: `/products/#${p.id}`,
+      href: `/products/${p.id}`,
       category: p.module,
     });
   }

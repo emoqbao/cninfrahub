@@ -57,7 +57,7 @@ export default function SolutionsPage() {
                     return (
                       <Link
                         key={pid}
-                        href={`/products/?module=${encodeURIComponent(product.module)}`}
+                        href={`/products/${product.id}`}
                         className="rounded-md bg-[#f3f4f6] px-2.5 py-1 text-[#0d0d0d] hover:bg-[#e0e2e6] transition-colors"
                       >
                         {product.name}
