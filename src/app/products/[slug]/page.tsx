@@ -48,13 +48,13 @@ function RelatedProducts({ current }: { current: Product }) {
             <Link
               key={p.id}
               href={`/products/${p.id}`}
-              className="group rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
             >
               <h3 className="text-lg font-semibold text-[#0d0d0d]">{p.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">
                 {p.tagline}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">
+              <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">
                 Learn more
                 <ArrowRight className="h-3.5 w-3.5" />
               </span>

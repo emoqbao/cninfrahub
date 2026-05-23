@@ -84,14 +84,14 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {featured.map((f) => (
-              <div key={f.title} className="rounded-xl border border-[#e8eaed] p-8">
+              <div key={f.title} className="flex flex-col rounded-xl border border-[#e8eaed] p-8">
                 <span className="inline-flex items-center gap-1.5 rounded-md bg-[#f3f4f6] px-2.5 py-1 text-xs font-medium text-[#737373]">
                   <f.icon className="h-3.5 w-3.5" />
                   {f.type}
                 </span>
                 <h3 className="mt-4 text-lg font-bold text-[#0d0d0d]">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[#737373]">{f.excerpt}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d]">
+                <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d]">
                   Coming soon
                   <ArrowRight className="h-4 w-4" />
                 </span>
@@ -107,13 +107,13 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides & White Papers</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {guides.map((g) => (
-              <div key={g.title} className="rounded-xl border border-[#e8eaed] bg-white p-6">
+              <div key={g.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6">
                 <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                   {g.type}
                 </span>
                 <h3 className="mt-3 text-base font-bold text-[#0d0d0d]">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[#737373]">{g.excerpt}</p>
-                <p className="mt-4 text-xs text-[#a3a3a3]">{g.date}</p>
+                <p className="mt-auto pt-4 text-xs text-[#a3a3a3]">{g.date}</p>
               </div>
             ))}
           </div>
