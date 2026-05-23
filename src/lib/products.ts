@@ -17,17 +17,19 @@ export const products: Product[] = [
     module: "AI",
     tagline: "Compliant API relay for DeepSeek, Claude, and China''s AI ecosystem",
     description:
-      "We aggregate API access to China''s leading AI models through partnerships with local infrastructure providers. Route inference traffic to DeepSeek, Qwen, Kimi, and other China-native LLMs — as well as Claude, GPT-4o, and Gemini through optimized proxy — all through a single managed endpoint. We handle provider selection, compliance, and performance optimization, so your team gets one API key and one support contact for every model.",
+      "We aggregate API access to China''s top AI models — ByteDance (Doubao), Alibaba (Tongyi/Qwen), Tencent (Hunyuan), Kimi (Moonshot), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT-4o, o1), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
     features: [
-      "Direct relay for DeepSeek, Qwen, Kimi, and other China-native LLMs through partner infrastructure",
-      "Claude, GPT-4o, and Gemini proxy with China-optimized routing across multiple carrier backbones",
+      "China-native LLMs: ByteDance Doubao, Alibaba Tongyi/Qwen, Tencent Hunyuan, Kimi, DeepSeek, Zhipu GLM, and more",
+      "Global models: OpenAI GPT-4o/o1, Anthropic Claude, Google Gemini — text and image generation",
+      "Model-specific discount structures through aggregated procurement across our partner network",
       "Centralized billing, rate limiting, token-level usage analytics, and cost allocation",
       "Automatic model failover across provider networks — if one degrades, traffic reroutes",
       "TLS 1.3 encryption end-to-end with SOC 2 compliant partner infrastructure",
       "Single support team for all models — no juggling multiple vendor relationships",
     ],
     benefits: [
-      "One partner, every model — we source and manage the underlying provider relationships",
+      "One partner, every model — China-native and global, text and image, all through one endpoint",
+      "Model-specific pricing advantages — different discount structures for different providers",
       "Lower latency than public API endpoints by routing through carrier-optimized paths",
       "Full compliance with China''s data regulations — we handle the legal complexity",
       "Pay-as-you-go with volume discounts from aggregated purchasing power",
@@ -36,10 +38,10 @@ export const products: Product[] = [
     useCases: [
       "Global SaaS companies serving Chinese users with localized AI features",
       "AI startups needing reliable access to China''s model ecosystem for R&D",
-      "Enterprise teams building multi-model pipelines across Western and Chinese LLMs",
+      "Enterprise teams building multi-model pipelines across Chinese and global LLMs for text and image generation",
       "Gaming companies integrating real-time AI translation and moderation for China markets",
     ],
-    seoKeywords: ["DeepSeek API access China", "Claude API relay China", "AI gateway China", "Qwen API proxy"],
+    seoKeywords: ["DeepSeek API access China", "Claude API relay China", "AI gateway China", "Qwen API proxy", "Doubao API China", "Kimi API access", "Zhipu GLM API"],
   },
   {
     id: "elastic-cloud-servers",
@@ -137,11 +139,11 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Premium dedicated internet — China and overseas, carrier-grade, uncontended, at pricing enterprises can't get directly",
     description:
-      "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 100 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
+      "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 10 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
     features: [
       "Multi-carrier DIA sourcing: China Telecom, China Unicom, China Mobile, and regional ISPs",
       "Same aggressive pricing model available overseas through international carrier partnerships",
-      "100 Mbps to 10 Gbps guaranteed, uncontended bandwidth — no oversubscription, no shared capacity",
+      "10 Mbps to 10 Gbps guaranteed, uncontended bandwidth — no oversubscription, no shared capacity",
       "Included DDoS mitigation through our carrier partnerships",
       "Static IP allocation with reverse DNS and RDAP/WHOIS management",
       "SLA-backed with guaranteed uptime, latency, and packet delivery commitments",
@@ -228,7 +230,7 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Direct China-to-cloud links — from 1 Gbps managed to 100 Gbps dedicated, including Megaport and Equinix",
     description:
-      "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
+      "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect (GCP). Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
     features: [
       "Managed virtual connections (50 Mbps - 1 Gbps) via Megaport and Equinix Fabric — cost-effective, fast to provision",
       "Dedicated physical cross-connects (1-100 Gbps) to AWS Direct Connect, Azure ExpressRoute, GCP Interconnect",
