@@ -224,7 +224,7 @@ export default function Header() {
                                 <Link
                                   href={`/solutions/${s.id}`}
                                   onClick={() => setSolutionsOpen(false)}
-                                  className="block px-4 py-2.5 text-[15px] font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
+                                  className="block px-4 py-2 text-sm font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                                 >
                                   {s.name}
                                 </Link>
@@ -235,7 +235,7 @@ export default function Header() {
                             <Link
                               href="/solutions/"
                               onClick={() => setSolutionsOpen(false)}
-                              className="block px-4 py-2.5 text-sm font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
+                              className="block px-4 py-2 text-xs font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                             >
                               View all solutions &rarr;
                             </Link>
