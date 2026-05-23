@@ -78,7 +78,7 @@ export default function Header() {
     setMegaOpen(true);
   };
   const handleMegaLeave = () => {
-    megaTimer.current = setTimeout(() => setMegaOpen(false), 150);
+    megaTimer.current = setTimeout(() => setMegaOpen(false), 250);
   };
 
   const handleSolutionsEnter = () => {
@@ -87,7 +87,7 @@ export default function Header() {
     setSolutionsOpen(true);
   };
   const handleSolutionsLeave = () => {
-    solutionsTimer.current = setTimeout(() => setSolutionsOpen(false), 150);
+    solutionsTimer.current = setTimeout(() => setSolutionsOpen(false), 250);
   };
 
   // Click toggles
@@ -144,7 +144,7 @@ export default function Header() {
                         className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                           megaOpen
                             ? "text-[#0d0d0d]"
-                            : "text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200"
                         }`}
                       >
                         {t("nav.products", lang)}
@@ -169,7 +169,7 @@ export default function Header() {
                         className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                           solutionsOpen
                             ? "text-[#0d0d0d]"
-                            : "text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200"
                         }`}
                       >
                         {t("nav.solutions", lang)}
@@ -189,7 +189,7 @@ export default function Header() {
                                 <Link
                                   href={`/solutions/${s.id}`}
                                   onClick={() => setSolutionsOpen(false)}
-                                  className="block px-4 py-2.5 text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors duration-200"
+                                  className="block px-4 py-2.5 text-[15px] font-medium text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
                                 >
                                   {s.name}
                                 </Link>
@@ -224,7 +224,7 @@ export default function Header() {
                     className={`rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                       isActive
                         ? "text-[#0d0d0d]"
-                        : "text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                        : "text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200"
                     }`}
                   >
                     {t(`nav.${item.label.toLowerCase()}`, lang)}
@@ -237,7 +237,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3 ml-auto flex-shrink-0">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="rounded-md p-2 text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />
@@ -246,7 +246,7 @@ export default function Header() {
               <div ref={langRef} className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="rounded-md p-2 text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200 flex items-center gap-1"
+                  className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200 flex items-center gap-1"
                 >
                   <Globe className="h-4 w-4" />
                   <span className="text-[13px] font-medium">{languageLabels[lang]}</span>
@@ -260,7 +260,7 @@ export default function Header() {
                         className={`block w-full text-left px-3 py-2 text-sm font-medium transition-colors ${
                           lang === l
                             ? "text-[#0d0d0d] font-medium"
-                            : "text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#737373] hover:text-[#0d0d0d] transition-colors duration-200"
                         }`}
                       >
                         {languageLabels[l]}
