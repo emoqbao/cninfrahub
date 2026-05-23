@@ -77,7 +77,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {differentiators.map((d, i) => (
               <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4">
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#4338ca] text-xs font-bold text-white">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d] text-xs font-bold text-white">
                   &check;
                 </span>
                 <span className="text-[#525252]">{d}</span>

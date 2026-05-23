@@ -74,7 +74,7 @@ export default function Header() {
           <div className="flex items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#4338ca] text-sm font-bold text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">
                 CIH
               </div>
               <span className="text-base font-semibold tracking-tight text-[#0d0d0d]">
@@ -251,7 +251,7 @@ export default function Header() {
                     onClick={() => { setLang(l); setMobileOpen(false); }}
                     className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                       lang === l
-                        ? "bg-[#4338ca] text-white"
+                        ? "bg-[#0d0d0d] text-white"
                         : "border border-[#e8eaed] text-[#525252] hover:bg-[#f3f4f6]"
                     }`}
                   >

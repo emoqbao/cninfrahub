@@ -139,7 +139,7 @@ export default function ResourcesPage() {
                 name="email"
                 placeholder="your@email.com"
                 required
-                className="flex-1 rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
+                className="flex-1 rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
               />
               <Button type="submit" variant="primary" size="md">
                 Subscribe

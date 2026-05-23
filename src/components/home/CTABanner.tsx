@@ -13,7 +13,7 @@ export default function CTABanner() {
         <div className="mt-8">
           <a
             href="/contact/"
-            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-[#4338ca] px-8 py-3 text-lg font-medium text-white hover:bg-[#3730a3] transition-colors"
+            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#e0e2e6] transition-colors"
           >
             Start a Conversation
           </a>
