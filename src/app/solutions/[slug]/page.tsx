@@ -191,17 +191,17 @@ export default async function SolutionPage({ params }: Props) {
               Architecture overview
             </h2>
           </div>
-          <div className="grid gap-8 lg:grid-cols-5">
-            {/* Left: diagram placeholder */}
-            <div className="lg:col-span-3 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] flex items-center justify-center min-h-[300px]">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {/* Left: diagram placeholder — upload SVG here */}
+            <div className="lg:col-span-2 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] p-8 flex items-center justify-center min-h-[360px]">
               <div className="text-center">
-                <Network className="h-10 w-10 text-[#d4d4d4] mx-auto" strokeWidth={1.5} />
-                <p className="mt-3 text-sm text-[#a3a3a3]">Architecture diagram</p>
-                <p className="text-xs text-[#d4d4d4]">Upload SVG to this area</p>
+                <Network className="h-12 w-12 text-[#d4d4d4] mx-auto" strokeWidth={1.5} />
+                <p className="mt-4 text-sm text-[#a3a3a3]">Architecture diagram</p>
+                <p className="text-xs text-[#d4d4d4]">Replace with your SVG image</p>
               </div>
             </div>
             {/* Right: solution description */}
-            <div className="lg:col-span-2 flex flex-col justify-center">
+            <div className="flex flex-col justify-center">
               <h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3>
               <p className="mt-4 text-[#525252] leading-relaxed">
                 {solution.approach}
