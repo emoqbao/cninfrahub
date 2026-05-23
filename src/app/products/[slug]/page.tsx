@@ -136,7 +136,7 @@ export default async function ProductPage({ params }: Props) {
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
                 >
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
-                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
+                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={1.75} />
                   </span>
                   <span className="text-[#525252]">{f}</span>
                 </li>
@@ -161,7 +161,7 @@ export default async function ProductPage({ params }: Props) {
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
                 >
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
-                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
+                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={1.75} />
                   </span>
                   <span className="text-[#525252]">{b}</span>
                 </li>
