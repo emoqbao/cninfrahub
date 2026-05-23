@@ -114,28 +114,6 @@ function ProductsContent() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
-                <Button
-                  href={`/contact/?product=${selectedProduct.id}`}
-                  variant="primary"
-                  size="md"
-                >
-                  Inquire about {selectedProduct.name}
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {/* CTA card */}
-          {!selectedProduct && (
-            <div className="mt-10 rounded-xl border border-[#e5e5e5] bg-[#fafafa] p-8 text-center">
-              <h3 className="text-lg font-semibold text-[#0d0d0d]">Not sure what you need?</h3>
-              <p className="mt-2 text-[#737373]">Our architects will help you identify the right mix.</p>
-              <div className="mt-5">
-                <Button href="/contact/" variant="primary" size="md">
-                  Talk to an Architect
-                </Button>
-              </div>
             </div>
           )}
         </Container>

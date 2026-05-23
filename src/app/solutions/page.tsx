@@ -66,11 +66,7 @@ export default function SolutionsPage() {
                   })}
                 </div>
 
-                <div className="mt-6">
-                  <Button href={`/contact/?solution=${s.id}`} variant="secondary" size="md">
-                    Discuss this Architecture
-                  </Button>
-                </div>
+
               </div>
             ))}
           </div>
