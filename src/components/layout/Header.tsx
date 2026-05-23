@@ -25,8 +25,6 @@ export default function Header() {
   const solutionsRef = useRef<HTMLDivElement>(null);
   const solutionsPanelRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
-  const megaTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const solutionsTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { lang, setLang } = useLanguage();
 
   useEffect(() => {
@@ -71,59 +69,6 @@ export default function Header() {
     setLangOpen(false);
   }, [setLang]);
 
-  // Hover handlers with delay to prevent flicker
-  const handleMegaEnter = () => {
-    if (solutionsTimer.current) clearTimeout(solutionsTimer.current);
-    if (megaTimer.current) clearTimeout(megaTimer.current);
-    setSolutionsOpen(false);
-    setMegaOpen(true);
-  };
-  const handleMegaLeave = (e: React.MouseEvent) => {
-    const panel = megaPanelRef.current;
-    const btn = megaRef.current;
-    const relatedTarget = e.relatedTarget as Node | null;
-    if (relatedTarget && (
-      (panel && panel.contains(relatedTarget)) ||
-      (btn && btn.contains(relatedTarget))
-    )) {
-      return;
-    }
-    const el = document.elementFromPoint(e.clientX, e.clientY);
-    if (el && (
-      (panel && panel.contains(el)) ||
-      (btn && btn.contains(el))
-    )) {
-      return;
-    }
-    megaTimer.current = setTimeout(() => setMegaOpen(false), 150);
-  };
-
-  const handleSolutionsEnter = () => {
-    if (megaTimer.current) clearTimeout(megaTimer.current);
-    if (solutionsTimer.current) clearTimeout(solutionsTimer.current);
-    setMegaOpen(false);
-    setSolutionsOpen(true);
-  };
-  const handleSolutionsLeave = (e: React.MouseEvent) => {
-    const panel = solutionsPanelRef.current;
-    const btn = solutionsRef.current;
-    const relatedTarget = e.relatedTarget as Node | null;
-    if (relatedTarget && (
-      (panel && panel.contains(relatedTarget)) ||
-      (btn && btn.contains(relatedTarget))
-    )) {
-      return;
-    }
-    const el = document.elementFromPoint(e.clientX, e.clientY);
-    if (el && (
-      (panel && panel.contains(el)) ||
-      (btn && btn.contains(el))
-    )) {
-      return;
-    }
-    solutionsTimer.current = setTimeout(() => setSolutionsOpen(false), 150);
-  };
-
   // Click toggles
   const toggleMega = () => {
     setMegaOpen(!megaOpen);
@@ -133,14 +78,6 @@ export default function Header() {
     setSolutionsOpen(!solutionsOpen);
     setMegaOpen(false);
   };
-
-  // Cleanup timers
-  useEffect(() => {
-    return () => {
-      if (megaTimer.current) clearTimeout(megaTimer.current);
-      if (solutionsTimer.current) clearTimeout(solutionsTimer.current);
-    };
-  }, []);
 
   return (
     <>
@@ -170,8 +107,6 @@ export default function Header() {
                       key={item.label}
                       ref={megaRef}
                       className="relative"
-                      onMouseEnter={handleMegaEnter}
-                      onMouseLeave={handleMegaLeave}
                     >
                       <button
                         onClick={toggleMega}
@@ -195,8 +130,6 @@ export default function Header() {
                       key={item.label}
                       ref={solutionsRef}
                       className="relative"
-                      onMouseEnter={handleSolutionsEnter}
-                      onMouseLeave={handleSolutionsLeave}
                     >
                       <button
                         onClick={toggleSolutions}
@@ -214,9 +147,7 @@ export default function Header() {
                       {solutionsOpen && (
                         <div
                           ref={solutionsPanelRef}
-                          onMouseEnter={handleSolutionsEnter}
-                          onMouseLeave={handleSolutionsLeave}
-                          className="absolute left-0 top-full mt-1 rounded-xl border border-[#e8eaed] bg-white shadow-lg py-2 w-64 z-50"
+                                                    className="absolute left-0 top-full mt-1 rounded-xl border border-[#e8eaed] bg-white shadow-lg py-2 w-64 z-50"
                         >
                           <ul>
                             {solutions.map((s) => (
@@ -326,9 +257,7 @@ export default function Header() {
         {/* Products mega menu */}
         <div
           ref={megaPanelRef}
-          onMouseEnter={handleMegaEnter}
-          onMouseLeave={handleMegaLeave}
-          className="mx-auto max-w-7xl px-6 pb-4 pt-2 -mt-1 lg:px-8"
+                    className="mx-auto max-w-7xl px-6 pb-4 lg:px-8"
         >
           {megaOpen && (
             <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
