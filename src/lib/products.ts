@@ -228,7 +228,7 @@ export const products: Product[] = [
     id: "cloud-connect",
     name: "Cloud Connect",
     module: "NETWORK",
-    tagline: "Direct China-to-cloud links — from 1 Gbps managed to 100 Gbps dedicated, including Megaport and Equinix",
+    tagline: "Direct China-to-cloud links — APAC, US, and Europe — from 50 Mbps managed to 100 Gbps dedicated",
     description:
       "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect (GCP). Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
     features: [
