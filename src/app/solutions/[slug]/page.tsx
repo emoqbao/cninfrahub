@@ -241,7 +241,7 @@ export default async function SolutionPage({ params }: Props) {
                   href={`/products/${product.id}`}
                   className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
                 >
-                  <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                  <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                     {product.module}
                   </span>
                   <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>

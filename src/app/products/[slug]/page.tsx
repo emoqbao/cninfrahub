@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
       <section className="py-16 lg:py-24">
         <Container>
           <div className="max-w-3xl">
-            <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+            <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
               {product.module}
             </span>
             <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">
