@@ -74,20 +74,68 @@ export default function Header() {
   // Hover handlers with delay to prevent flicker
   const handleMegaEnter = () => {
     if (solutionsTimer.current) clearTimeout(solutionsTimer.current);
+    if (megaTimer.current) clearTimeout(megaTimer.current);
     setSolutionsOpen(false);
     setMegaOpen(true);
   };
-  const handleMegaLeave = () => {
-    megaTimer.current = setTimeout(() => setMegaOpen(false), 250);
+  const handleMegaLeave = (e: React.MouseEvent) => {
+    const panel = megaPanelRef.current;
+    const btn = megaRef.current;
+    const relatedTarget = e.relatedTarget as Node | null;
+    if (relatedTarget && (
+      (panel && panel.contains(relatedTarget)) ||
+      (btn && btn.contains(relatedTarget))
+    )) {
+      return;
+    }
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    if (el && (
+      (panel && panel.contains(el)) ||
+      (btn && btn.contains(el))
+    )) {
+      return;
+    }
+    if (panel) {
+      const r = panel.getBoundingClientRect();
+      if (e.clientX >= r.left - 2 && e.clientX <= r.right + 2 &&
+          e.clientY >= r.top - 4 && e.clientY <= r.bottom + 2) {
+        return;
+      }
+    }
+    if (btn) {
+      const r = btn.getBoundingClientRect();
+      if (e.clientX >= r.left && e.clientX <= r.right &&
+          e.clientY >= r.top && e.clientY <= r.bottom + 6) {
+        return;
+      }
+    }
+    megaTimer.current = setTimeout(() => setMegaOpen(false), 150);
   };
 
   const handleSolutionsEnter = () => {
     if (megaTimer.current) clearTimeout(megaTimer.current);
+    if (solutionsTimer.current) clearTimeout(solutionsTimer.current);
     setMegaOpen(false);
     setSolutionsOpen(true);
   };
-  const handleSolutionsLeave = () => {
-    solutionsTimer.current = setTimeout(() => setSolutionsOpen(false), 250);
+  const handleSolutionsLeave = (e: React.MouseEvent) => {
+    const panel = solutionsPanelRef.current;
+    const btn = solutionsRef.current;
+    const relatedTarget = e.relatedTarget as Node | null;
+    if (relatedTarget && (
+      (panel && panel.contains(relatedTarget)) ||
+      (btn && btn.contains(relatedTarget))
+    )) {
+      return;
+    }
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    if (el && (
+      (panel && panel.contains(el)) ||
+      (btn && btn.contains(el))
+    )) {
+      return;
+    }
+    solutionsTimer.current = setTimeout(() => setSolutionsOpen(false), 150);
   };
 
   // Click toggles
@@ -144,7 +192,7 @@ export default function Header() {
                         className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                           megaOpen
                             ? "text-[#0d0d0d]"
-                            : "text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                         }`}
                       >
                         {t("nav.products", lang)}
@@ -169,7 +217,7 @@ export default function Header() {
                         className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                           solutionsOpen
                             ? "text-[#0d0d0d]"
-                            : "text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                         }`}
                       >
                         {t("nav.solutions", lang)}
@@ -181,7 +229,7 @@ export default function Header() {
                         <div
                           ref={solutionsPanelRef}
                           onMouseEnter={handleSolutionsEnter}
-                          className="absolute left-0 top-full mt-1 rounded-xl border border-[#e8eaed] bg-white shadow-lg py-2 w-64 z-50"
+                          onMouseLeave={handleSolutionsLeave}                          className="absolute left-0 top-full mt-1 rounded-xl border border-[#e8eaed] bg-white shadow-lg py-2 w-64 z-50"
                         >
                           <ul>
                             {solutions.map((s) => (
@@ -189,7 +237,7 @@ export default function Header() {
                                 <Link
                                   href={`/solutions/${s.id}`}
                                   onClick={() => setSolutionsOpen(false)}
-                                  className="block px-4 py-2.5 text-[15px] font-medium text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                                  className="block px-4 py-2.5 text-[15px] font-medium text-[#525252] hover:text-[#0d0d0d] transition-colors duration-150"
                                 >
                                   {s.name}
                                 </Link>
@@ -200,7 +248,7 @@ export default function Header() {
                             <Link
                               href="/solutions/"
                               onClick={() => setSolutionsOpen(false)}
-                              className="block px-4 py-2.5 text-sm font-medium text-[#525252] hover:text-[#0d0d0d] transition-colors duration-200"
+                              className="block px-4 py-2.5 text-sm font-medium text-[#525252] hover:text-[#0d0d0d] transition-colors duration-150"
                             >
                               View all solutions &rarr;
                             </Link>
@@ -224,7 +272,7 @@ export default function Header() {
                     className={`rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                       isActive
                         ? "text-[#0d0d0d]"
-                        : "text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200"
+                        : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                     }`}
                   >
                     {t(`nav.${item.label.toLowerCase()}`, lang)}
@@ -237,7 +285,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3 ml-auto flex-shrink-0">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="rounded-md p-2 text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200"
+                className="rounded-md p-2 text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />
@@ -246,7 +294,7 @@ export default function Header() {
               <div ref={langRef} className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="rounded-md p-2 text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200 flex items-center gap-1"
+                  className="rounded-md p-2 text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150 flex items-center gap-1"
                 >
                   <Globe className="h-4 w-4" />
                   <span className="text-[13px] font-medium">{languageLabels[lang]}</span>
@@ -260,7 +308,7 @@ export default function Header() {
                         className={`block w-full text-left px-3 py-2 text-sm font-medium transition-colors ${
                           lang === l
                             ? "text-[#0d0d0d] font-medium"
-                            : "text-[#8c8c8c] hover:text-[#0d0d0d] transition-colors duration-200"
+                            : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                         }`}
                       >
                         {languageLabels[l]}
@@ -289,13 +337,13 @@ export default function Header() {
         </div>
 
         {/* Products mega menu */}
-        {megaOpen && (
-          <div
-            ref={megaPanelRef}
-            onMouseEnter={handleMegaEnter}
-            onMouseLeave={handleMegaLeave}
-            className="mx-auto max-w-7xl px-6 pb-4 lg:px-8"
-          >
+        <div
+          ref={megaPanelRef}
+          onMouseEnter={handleMegaEnter}
+          onMouseLeave={handleMegaLeave}
+          className="mx-auto max-w-7xl px-6 pb-4 pt-2 -mt-1 lg:px-8"
+        >
+          {megaOpen && (
             <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
@@ -322,8 +370,8 @@ export default function Header() {
                 ))}
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Mobile menu */}
         {mobileOpen && (
