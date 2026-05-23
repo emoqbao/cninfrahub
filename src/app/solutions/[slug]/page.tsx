@@ -191,53 +191,36 @@ export default async function SolutionPage({ params }: Props) {
               Architecture overview
             </h2>
           </div>
-          <div className="rounded-xl border border-[#e8eaed] bg-white p-8 lg:p-10">
-            <div className="flex items-center justify-center">
-              <svg viewBox="0 0 800 200" className="w-full max-w-2xl" fill="none">
-                {/* China Provider Ecosystem */}
-                <rect x="20" y="20" width="200" height="160" rx="12" fill="#f8f9fb" stroke="#e8eaed" strokeWidth="1.5" />
-                <text x="120" y="55" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">China Provider</text>
-                <text x="120" y="72" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Ecosystem</text>
-                <line x1="40" y1="85" x2="200" y2="85" stroke="#e8eaed" strokeWidth="1" />
-                <text x="120" y="102" textAnchor="middle" fill="#525252" fontSize="11">Carriers &amp; ISPs</text>
-                <text x="120" y="120" textAnchor="middle" fill="#525252" fontSize="11">Data Centers</text>
-                <text x="120" y="138" textAnchor="middle" fill="#525252" fontSize="11">Hardware Partners</text>
-                <text x="120" y="156" textAnchor="middle" fill="#525252" fontSize="11">Cloud Providers</text>
-
-                {/* CN-Infra Hub */}
-                <circle cx="400" cy="100" r="36" fill="#0d0d0d" />
-                <circle cx="400" cy="100" r="24" fill="white" />
-                <text x="400" y="95" textAnchor="middle" fill="#0d0d0d" fontSize="10" fontWeight="600">CN-INFRA</text>
-                <text x="400" y="110" textAnchor="middle" fill="#0d0d0d" fontSize="9" fontWeight="600">HUB</text>
-                <text x="400" y="150" textAnchor="middle" fill="#525252" fontSize="10">Aggregate</text>
-                <text x="400" y="163" textAnchor="middle" fill="#525252" fontSize="10">&amp; Manage</text>
-
-                {/* Your Infrastructure */}
-                <rect x="580" y="20" width="200" height="160" rx="12" fill="#f8f9fb" stroke="#e8eaed" strokeWidth="1.5" />
-                <text x="680" y="55" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Your</text>
-                <text x="680" y="72" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Infrastructure</text>
-                <line x1="600" y1="85" x2="760" y2="85" stroke="#e8eaed" strokeWidth="1" />
-                <text x="680" y="102" textAnchor="middle" fill="#525252" fontSize="11">AWS / Azure / GCP</text>
-                <text x="680" y="120" textAnchor="middle" fill="#525252" fontSize="11">Your Data Centers</text>
-                <text x="680" y="138" textAnchor="middle" fill="#525252" fontSize="11">Your Applications</text>
-                <text x="680" y="156" textAnchor="middle" fill="#525252" fontSize="11">Your End Users</text>
-
-                {/* Connecting lines */}
-                <line x1="220" y1="100" x2="358" y2="100" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
-                <polygon points="363,95 363,105 371,100" fill="#d4d4d4" />
-                <line x1="442" y1="100" x2="580" y2="100" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
-                <polygon points="572,95 572,105 580,100" fill="#d4d4d4" />
-
-                {/* Labels */}
-                <text x="290" y="88" textAnchor="middle" fill="#a3a3a3" fontSize="10">We source</text>
-                <text x="290" y="112" textAnchor="middle" fill="#a3a3a3" fontSize="10">&amp; negotiate</text>
-                <text x="510" y="88" textAnchor="middle" fill="#a3a3a3" fontSize="10">One partner</text>
-                <text x="510" y="112" textAnchor="middle" fill="#a3a3a3" fontSize="10">One SLA</text>
-              </svg>
+          <div className="grid gap-8 lg:grid-cols-5">
+            {/* Left: diagram placeholder */}
+            <div className="lg:col-span-3 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] flex items-center justify-center min-h-[300px]">
+              <div className="text-center">
+                <Network className="h-10 w-10 text-[#d4d4d4] mx-auto" strokeWidth={1.5} />
+                <p className="mt-3 text-sm text-[#a3a3a3]">Architecture diagram</p>
+                <p className="text-xs text-[#d4d4d4]">Upload SVG to this area</p>
+              </div>
             </div>
-            <p className="mt-6 text-sm text-[#737373] text-center max-w-xl mx-auto">
-              We sit between your global infrastructure and China&apos;s provider ecosystem — sourcing, connecting, and managing everything through a single point of accountability.
-            </p>
+            {/* Right: solution description */}
+            <div className="lg:col-span-2 flex flex-col justify-center">
+              <h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3>
+              <p className="mt-4 text-[#525252] leading-relaxed">
+                {solution.approach}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {solution.products.map((pid) => {
+                  const product = getProductById(pid);
+                  if (!product) return null;
+                  return (
+                    <span
+                      key={pid}
+                      className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]"
+                    >
+                      {product.name}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -258,7 +241,7 @@ export default async function SolutionPage({ params }: Props) {
                   href={`/products/${product.id}`}
                   className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
                 >
-                  <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                  <span className="block w-fit rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                     {product.module}
                   </span>
                   <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
