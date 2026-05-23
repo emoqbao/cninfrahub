@@ -25,7 +25,7 @@ export default function ProductsPage() {
 
       {/* Product grid */}
       <PageFrame>
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {products.map((product) => (

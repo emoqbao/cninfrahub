@@ -48,7 +48,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <PageFrame>`n      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+      <PageFrame>`n      <section className="py-20 lg:py-28">
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
@@ -82,7 +82,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#faf9f7]">
+      <section className="py-20 lg:py-28">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">What sets us apart</h2>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">

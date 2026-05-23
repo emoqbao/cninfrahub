@@ -10,7 +10,7 @@ const modules = [
 
 export default function ProductOverview() {
   return (
-    <section className="bg-[#f8f9fb] py-20 lg:py-28">
+    <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
         <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>

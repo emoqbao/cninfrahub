@@ -39,7 +39,7 @@ function RelatedProducts({ current }: { current: Product }) {
   if (related.length === 0) return null;
 
   return (
-    <section className="py-20 lg:py-28 bg-[#faf9f7]">
+    <section className="py-20 lg:py-28">
       <Container>
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
           Related products
@@ -110,7 +110,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Overview */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="max-w-3xl">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -135,7 +135,7 @@ export default async function ProductPage({ params }: Props) {
                   key={i}
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
                 >
-                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
                     <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
                   </span>
                   <span className="text-[#525252]">{f}</span>
@@ -146,7 +146,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 lg:py-28 bg-[#faf9f7]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8">
               <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
@@ -160,7 +160,7 @@ export default async function ProductPage({ params }: Props) {
                   key={i}
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
                 >
-                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
                     <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
                   </span>
                   <span className="text-[#525252]">{b}</span>
@@ -194,7 +194,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+        <section className="py-20 lg:py-28">
           <Container>
             <div className="mx-auto max-w-xl text-center">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
