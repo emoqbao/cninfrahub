@@ -128,7 +128,7 @@ export default function ResourcesPage() {
       <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="mx-auto max-w-xl text-center">
-            <Mail className="mx-auto h-10 w-10 text-[#0d0d0d]" strokeWidth={1.5} />
+            <Mail className="mx-auto h-10 w-10 text-[#a48e7a]" strokeWidth={1.5} />
             <h2 className="mt-4 text-xl font-bold text-[#0d0d0d]">Stay informed on China infrastructure</h2>
             <p className="mt-2 text-[#737373]">
               Get our latest guides, white papers, and infrastructure insights delivered to your inbox. No spam, unsubscribe anytime.

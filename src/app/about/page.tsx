@@ -72,7 +72,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {pillars.map((p) => (
               <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                <p.icon className="h-8 w-8 text-[#0d0d0d]" strokeWidth={1.5} />
+                <p.icon className="h-8 w-8 text-[#a48e7a]" strokeWidth={1.5} />
                 <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-[#525252]">{p.description}</p>
               </div>

@@ -24,7 +24,7 @@ export default function ProductOverview() {
               href={m.href}
               className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <m.icon className="h-7 w-7 text-[#0d0d0d]" strokeWidth={1.5} />
+              <m.icon className="h-7 w-7 text-[#a48e7a]" strokeWidth={1.5} />
               <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
               <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">

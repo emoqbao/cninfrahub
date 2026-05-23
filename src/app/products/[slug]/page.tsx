@@ -133,7 +133,7 @@ export default async function ProductPage({ params }: Props) {
                 key={i}
                 className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
               >
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d]">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
                   <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
                 </span>
                 <span className="text-[#525252]">{f}</span>
@@ -147,7 +147,7 @@ export default async function ProductPage({ params }: Props) {
       <section className="py-20 lg:py-28 bg-[#faf9f7]">
         <Container>
           <div className="flex items-center gap-3 mb-8">
-            <Zap className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
               Why choose {product.name}
             </h2>
@@ -158,7 +158,7 @@ export default async function ProductPage({ params }: Props) {
                 key={i}
                 className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
               >
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d]">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
                   <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
                 </span>
                 <span className="text-[#525252]">{b}</span>
@@ -172,7 +172,7 @@ export default async function ProductPage({ params }: Props) {
       <section className="py-20 lg:py-28">
         <Container>
           <div className="flex items-center gap-3 mb-8">
-            <Lightbulb className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <Lightbulb className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
               Use cases
             </h2>
