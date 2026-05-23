@@ -111,7 +111,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Overview */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="max-w-3xl">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -147,7 +147,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="flex items-center gap-3 mb-8">
               <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
@@ -195,7 +195,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="mx-auto max-w-xl text-center">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">

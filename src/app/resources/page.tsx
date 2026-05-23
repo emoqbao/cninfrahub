@@ -6,21 +6,21 @@ import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Resources",
-  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China. Practical, technical, and vendor-neutral.",
+  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China.",
 };
 
 const featured = [
-  { type: "White Paper", icon: FileText, title: "China Cross-Border Network Architecture Guide", excerpt: "A comprehensive reference for SREs and network architects planning dedicated connectivity between China and global cloud regions. Covers latency benchmarks, carrier selection, compliance requirements, and reference architectures.", href: "#" },
-  { type: "Case Study", icon: BookOpen, title: "How a Global Fintech Cut Cross-Border Latency by 40%", excerpt: "A global financial services platform used Private Connect and Cloud Connect to reduce China-to-Singapore latency from 85ms to under 50ms, enabling real-time transaction processing across borders.", href: "#" },
+  { type: "White Paper", icon: FileText, title: "China Cross-Border Network Architecture Guide", excerpt: "A comprehensive reference for SREs and network architects planning dedicated connectivity between China and global cloud regions.", href: "#" },
+  { type: "Case Study", icon: BookOpen, title: "How a Global Fintech Cut Cross-Border Latency by 40%", excerpt: "A global financial services platform used Private Connect and Cloud Connect to reduce China-to-Singapore latency.", href: "#" },
 ];
 
 const guides = [
-  { type: "Guide", title: "The SRE''s Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness for China deployments.", date: "Coming soon" },
-  { type: "Guide", title: "AWS vs. Azure vs. GCP: Connecting to China", excerpt: "Side-by-side comparison of cloud interconnect options for China, with pricing models, latency benchmarks, and architecture diagrams for each provider.", date: "Coming soon" },
-  { type: "Guide", title: "Understanding China''s Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 — what they mean for your architecture, how to demonstrate compliance, and common pitfalls to avoid.", date: "Coming soon" },
-  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China — on-prem vs. colocated vs. cloud — with procurement advice, pricing benchmarks, and compliance considerations.", date: "Coming soon" },
-  { type: "Guide", title: "Building a Multi-Region DR Strategy with China Nodes", excerpt: "Architecture patterns for active-passive and active-active disaster recovery spanning China and APAC. Includes RPO/RTO planning, replication strategies, and failover automation.", date: "Coming soon" },
-  { type: "Guide", title: "Virtual Edge Playbook: FortiGate, VyOS, and RouterOS in China", excerpt: "Step-by-step deployment guide for running virtual network appliances on CN-Infra Hub infrastructure. Covers licensing, configuration, performance tuning, and monitoring.", date: "Coming soon" },
+  { type: "Guide", title: "The SRE''s Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness.", date: "Coming soon" },
+  { type: "Guide", title: "AWS vs. Azure vs. GCP: Connecting to China", excerpt: "Side-by-side comparison of cloud interconnect options for China, with pricing models, latency benchmarks, and architecture diagrams.", date: "Coming soon" },
+  { type: "Guide", title: "Understanding China''s Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 — what they mean for your architecture.", date: "Coming soon" },
+  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China — on-prem vs. colocated vs. cloud.", date: "Coming soon" },
+  { type: "Guide", title: "Building a Multi-Region DR Strategy with China Nodes", excerpt: "Architecture patterns for active-passive and active-active disaster recovery spanning China and APAC.", date: "Coming soon" },
+  { type: "Guide", title: "Virtual Edge Playbook: FortiGate, VyOS, and RouterOS in China", excerpt: "Step-by-step deployment guide for running virtual network appliances on CN-Infra Hub infrastructure.", date: "Coming soon" },
 ];
 
 export default function ResourcesPage() {
@@ -31,12 +31,13 @@ export default function ResourcesPage() {
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">Practical guides for infrastructure decision-makers operating in China</h1>
-          <p className="mt-4 max-w-2xl text-lg text-[#525252]">Technical, vendor-neutral resources to help you design, deploy, and operate infrastructure in China — from network architecture to compliance.</p>
+          <p className="mt-4 max-w-2xl text-lg text-[#525252]">Technical, vendor-neutral resources to help you design, deploy, and operate infrastructure in China.</p>
         </Container>
       </section>
 
       <PageFrame>
-        <section className="py-20 lg:py-28">
+        {/* Featured */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -52,6 +53,7 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
+        {/* Guides */}
         <section className="py-20 lg:py-28">
           <Container>
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides &amp; White Papers</h2>
@@ -68,12 +70,13 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28">
+        {/* Newsletter */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="mx-auto max-w-xl text-center">
               <Mail className="mx-auto h-10 w-10 text-[#a48e7a]" strokeWidth={1.5} />
               <h2 className="mt-4 text-xl font-bold text-[#0d0d0d]">Stay informed on China infrastructure</h2>
-              <p className="mt-2 text-[#737373]">Get our latest guides, white papers, and infrastructure insights delivered to your inbox. No spam, unsubscribe anytime.</p>
+              <p className="mt-2 text-[#737373]">Get our latest guides, white papers, and infrastructure insights delivered to your inbox.</p>
               <form action="https://formspree.io/f/PLACEHOLDER" method="POST" className="mt-6 flex gap-3">
                 <input type="email" name="email" placeholder="your@email.com" required className="flex-1 rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none" />
                 <Button type="submit" variant="primary" size="md">Subscribe</Button>

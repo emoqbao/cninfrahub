@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Zap, Users, Cog, Network } from "lucide-react";
 import Container from "@/components/ui/Container";
-import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
+import CheckIcon from "@/components/ui/CheckIcon";
 import PageFrame from "@/components/ui/PageFrame";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
@@ -72,6 +72,7 @@ export default async function SolutionPage({ params }: Props) {
       </div>
 
       <PageFrame>
+        {/* Hero */}
         <section className="py-16 lg:py-24">
           <Container>
             <div className="max-w-3xl">
@@ -82,13 +83,15 @@ export default async function SolutionPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28">
+        {/* Benefits */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key benefits</h2></div>
             <ul className="grid gap-4 sm:grid-cols-2">{solution.benefits.map((b, i) => (<li key={i} className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"><span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]"><CheckIcon /></span><span className="text-[#525252]">{b}</span></li>))}</ul>
           </Container>
         </section>
 
+        {/* Who it's for */}
         <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Users className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Who it&apos;s for</h2></div>
@@ -96,13 +99,15 @@ export default async function SolutionPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28">
+        {/* Our approach */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Cog className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Our approach</h2></div>
             <div className="max-w-3xl"><p className="text-lg leading-relaxed text-[#525252]">{solution.approach}</p></div>
           </Container>
         </section>
 
+        {/* Architecture overview */}
         <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
@@ -113,13 +118,15 @@ export default async function SolutionPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28">
+        {/* Key products used */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>
           </Container>
         </section>
 
+        {/* CTA */}
         <section className="py-20 lg:py-28">
           <Container>
             <div className="mx-auto max-w-xl text-center"><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Is this your use case?</h2><p className="mt-3 text-[#737373]">Talk to our architects about tailoring {solution.name} to your specific requirements.</p><div className="mt-8"><Button href="/contact/" variant="primary" size="lg">Start a Conversation</Button></div></div>

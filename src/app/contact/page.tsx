@@ -21,7 +21,7 @@ export default function ContactPage() {
       </section>
 
       <PageFrame>
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-3">
               <div className="lg:col-span-2">
