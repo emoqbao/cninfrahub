@@ -1,7 +1,7 @@
 ﻿import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Check, Zap, Users, Cog } from "lucide-react";
+import { ArrowRight, Check, Zap, Users, Cog, Network } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
@@ -177,6 +177,66 @@ export default async function SolutionPage({ params }: Props) {
           <div className="max-w-3xl">
             <p className="text-lg leading-relaxed text-[#525252]">
               {solution.approach}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Architecture */}
+      <section className="py-16 lg:py-24">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Network className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Architecture overview
+            </h2>
+          </div>
+          <div className="rounded-xl border border-[#e8eaed] bg-white p-8 lg:p-10">
+            <div className="flex items-center justify-center">
+              <svg viewBox="0 0 800 200" className="w-full max-w-2xl" fill="none">
+                {/* China Provider Ecosystem */}
+                <rect x="20" y="20" width="200" height="160" rx="12" fill="#f8f9fb" stroke="#e8eaed" strokeWidth="1.5" />
+                <text x="120" y="55" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">China Provider</text>
+                <text x="120" y="72" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Ecosystem</text>
+                <line x1="40" y1="85" x2="200" y2="85" stroke="#e8eaed" strokeWidth="1" />
+                <text x="120" y="102" textAnchor="middle" fill="#525252" fontSize="11">Carriers &amp; ISPs</text>
+                <text x="120" y="120" textAnchor="middle" fill="#525252" fontSize="11">Data Centers</text>
+                <text x="120" y="138" textAnchor="middle" fill="#525252" fontSize="11">Hardware Partners</text>
+                <text x="120" y="156" textAnchor="middle" fill="#525252" fontSize="11">Cloud Providers</text>
+
+                {/* CN-Infra Hub */}
+                <circle cx="400" cy="100" r="36" fill="#0d0d0d" />
+                <circle cx="400" cy="100" r="24" fill="white" />
+                <text x="400" y="95" textAnchor="middle" fill="#0d0d0d" fontSize="10" fontWeight="600">CN-INFRA</text>
+                <text x="400" y="110" textAnchor="middle" fill="#0d0d0d" fontSize="9" fontWeight="600">HUB</text>
+                <text x="400" y="150" textAnchor="middle" fill="#525252" fontSize="10">Aggregate</text>
+                <text x="400" y="163" textAnchor="middle" fill="#525252" fontSize="10">&amp; Manage</text>
+
+                {/* Your Infrastructure */}
+                <rect x="580" y="20" width="200" height="160" rx="12" fill="#f8f9fb" stroke="#e8eaed" strokeWidth="1.5" />
+                <text x="680" y="55" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Your</text>
+                <text x="680" y="72" textAnchor="middle" fill="#0d0d0d" fontSize="13" fontWeight="600">Infrastructure</text>
+                <line x1="600" y1="85" x2="760" y2="85" stroke="#e8eaed" strokeWidth="1" />
+                <text x="680" y="102" textAnchor="middle" fill="#525252" fontSize="11">AWS / Azure / GCP</text>
+                <text x="680" y="120" textAnchor="middle" fill="#525252" fontSize="11">Your Data Centers</text>
+                <text x="680" y="138" textAnchor="middle" fill="#525252" fontSize="11">Your Applications</text>
+                <text x="680" y="156" textAnchor="middle" fill="#525252" fontSize="11">Your End Users</text>
+
+                {/* Connecting lines */}
+                <line x1="220" y1="100" x2="358" y2="100" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                <polygon points="363,95 363,105 371,100" fill="#d4d4d4" />
+                <line x1="442" y1="100" x2="580" y2="100" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
+                <polygon points="572,95 572,105 580,100" fill="#d4d4d4" />
+
+                {/* Labels */}
+                <text x="290" y="88" textAnchor="middle" fill="#a3a3a3" fontSize="10">We source</text>
+                <text x="290" y="112" textAnchor="middle" fill="#a3a3a3" fontSize="10">&amp; negotiate</text>
+                <text x="510" y="88" textAnchor="middle" fill="#a3a3a3" fontSize="10">One partner</text>
+                <text x="510" y="112" textAnchor="middle" fill="#a3a3a3" fontSize="10">One SLA</text>
+              </svg>
+            </div>
+            <p className="mt-6 text-sm text-[#737373] text-center max-w-xl mx-auto">
+              We sit between your global infrastructure and China&apos;s provider ecosystem — sourcing, connecting, and managing everything through a single point of accountability.
             </p>
           </div>
         </Container>

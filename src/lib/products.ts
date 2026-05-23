@@ -17,10 +17,10 @@ export const products: Product[] = [
     module: "AI",
     tagline: "Compliant API relay for DeepSeek, Claude, and China''s AI ecosystem",
     description:
-      "We aggregate API access to China''s top AI models — ByteDance (Doubao), Alibaba (Tongyi/Qwen), Tencent (Hunyuan), Kimi (Moonshot), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT-4o, o1), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
+      "We aggregate API access to China''s top AI models — ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
     features: [
-      "China-native LLMs: ByteDance Doubao, Alibaba Tongyi/Qwen, Tencent Hunyuan, Kimi, DeepSeek, Zhipu GLM, and more",
-      "Global models: OpenAI GPT-4o/o1, Anthropic Claude, Google Gemini — text and image generation",
+      "China-native: ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more",
+      "Global: OpenAI (GPT), Anthropic (Claude), Google (Gemini) — text and image generation",
       "Model-specific discount structures through aggregated procurement across our partner network",
       "Centralized billing, rate limiting, token-level usage analytics, and cost allocation",
       "Automatic model failover across provider networks — if one degrades, traffic reroutes",
@@ -199,12 +199,12 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Layer 2 P2P circuits at pricing enterprises can''t get on their own — cross-city and cross-border",
     description:
-      "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 1 Gbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
+      "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 10 Mbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
     features: [
       "MPLS, IEPL, and Ethernet private line — the full range of Layer 2 connectivity options",
       "Multi-carrier sourcing: China Telecom, China Unicom, China Mobile, and regional alternative providers",
       "Cross-city routes via non-carrier alternatives — better pricing than traditional operator circuits",
-      "1 Gbps to 100 Gbps bandwidth with flexible burst, committed, and usage-based rate options",
+      "10 Mbps to 100 Gbps bandwidth with flexible burst, committed, and usage-based rate options",
       "Layer 2 transparency — run BGP, OSPF, or any routing protocol of your choice",
       "Available between all major China business hubs, APAC, and global interconnection points",
       "Self-service portal for monitoring, modifying, and managing your circuits",
