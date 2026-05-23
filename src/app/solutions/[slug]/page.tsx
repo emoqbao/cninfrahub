@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Check, Zap, Users, Cog, Network } from "lucide-react";
+import { ArrowRight, Zap, Users, Cog, Network } from "lucide-react";
 import Container from "@/components/ui/Container";
+import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
 import PageFrame from "@/components/ui/PageFrame";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
@@ -84,7 +85,7 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-20 lg:py-28">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key benefits</h2></div>
-            <ul className="grid gap-4 sm:grid-cols-2">{solution.benefits.map((b, i) => (<li key={i} className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"><span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]"><Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={1.75} /></span><span className="text-[#525252]">{b}</span></li>))}</ul>
+            <ul className="grid gap-4 sm:grid-cols-2">{solution.benefits.map((b, i) => (<li key={i} className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"><span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]"><CheckIcon /></span><span className="text-[#525252]">{b}</span></li>))}</ul>
           </Container>
         </section>
 

@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Check, Zap, Users, Lightbulb } from "lucide-react";
+import { ArrowRight, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
+import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
 import PageFrame from "@/components/ui/PageFrame";
 import { products, getProductById, type Product } from "@/lib/products";
@@ -136,7 +137,7 @@ export default async function ProductPage({ params }: Props) {
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
                 >
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
-                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={1.75} />
+                    <CheckIcon />
                   </span>
                   <span className="text-[#525252]">{f}</span>
                 </li>
@@ -161,7 +162,7 @@ export default async function ProductPage({ params }: Props) {
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
                 >
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
-                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={1.75} />
+                    <CheckIcon />
                   </span>
                   <span className="text-[#525252]">{b}</span>
                 </li>
