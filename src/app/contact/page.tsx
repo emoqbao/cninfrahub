@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import PageFrame from "@/components/ui/PageFrame";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
@@ -20,47 +20,39 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Form + Info */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <ContactForm />
-            </div>
-
-            {/* Contact info sidebar */}
-            <div>
-              <div className="rounded-xl border border-[#e8eaed] bg-white p-6">
-                <h3 className="text-lg font-semibold text-[#0d0d0d]">Contact Info</h3>
-                <div className="mt-5 space-y-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Email</p>
-                    <a
-                      href="mailto:info@cninfrahub.com"
-                      className="mt-1 block text-[#0d0d0d] hover:underline"
-                    >
-                      info@cninfrahub.com
-                    </a>
+      <PageFrame>
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-3">
+              <div className="lg:col-span-2">
+                <ContactForm />
+              </div>
+              <div>
+                <div className="rounded-xl border border-[#e8eaed] bg-white p-6">
+                  <h3 className="text-lg font-semibold text-[#0d0d0d]">Contact Info</h3>
+                  <div className="mt-5 space-y-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Email</p>
+                      <a href="mailto:info@cninfrahub.com" className="mt-1 block text-[#0d0d0d] hover:underline">info@cninfrahub.com</a>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Response time</p>
+                      <p className="mt-1 text-[#525252]">Within 24 hours</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Response time</p>
-                    <p className="mt-1 text-[#525252]">Within 24 hours</p>
-                  </div>
+                  <hr className="my-6 border-[#e8eaed]" />
+                  <h3 className="text-lg font-semibold text-[#0d0d0d]">Offices</h3>
+                  <ul className="mt-3 space-y-2 text-[#525252]">
+                    <li>Shanghai, China</li>
+                    <li>Beijing, China</li>
+                    <li>Singapore</li>
+                  </ul>
                 </div>
-
-                <hr className="my-6 border-[#e8eaed]" />
-
-                <h3 className="text-lg font-semibold text-[#0d0d0d]">Offices</h3>
-                <ul className="mt-3 space-y-2 text-[#525252]">
-                  <li>Shanghai, China</li>
-                  <li>Beijing, China</li>
-                  <li>Singapore</li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </PageFrame>
     </>
   );
 }

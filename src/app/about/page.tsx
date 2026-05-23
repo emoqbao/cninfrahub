@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Search, Link2, Wrench } from "lucide-react";
+import PageFrame from "@/components/ui/PageFrame";
 import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+      <PageFrame>`n      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
@@ -97,7 +98,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-[#0a0f1a] py-20 lg:py-28 text-center">
+      </PageFrame>`n      <section className="bg-[#0a0f1a] py-20 lg:py-28 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-white lg:text-3xl">
             You know your architecture. We know China''s infrastructure market.

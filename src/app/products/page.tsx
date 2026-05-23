@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import PageFrame from "@/components/ui/PageFrame";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -23,28 +24,30 @@ export default function ProductsPage() {
       </section>
 
       {/* Product grid */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
-        <Container>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <Link
-                key={product.id}
-                href={`/products/${product.id}`}
-                className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
-                  {product.module}
-                </span>
-                <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#737373]">{product.tagline}</p>
-                <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
-                  Learn more &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <PageFrame>
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+          <Container>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => (
+                <Link
+                  key={product.id}
+                  href={`/products/${product.id}`}
+                  className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                    {product.module}
+                  </span>
+                  <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#737373]">{product.tagline}</p>
+                  <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
+                    Learn more &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+      </PageFrame>
     </>
   );
 }

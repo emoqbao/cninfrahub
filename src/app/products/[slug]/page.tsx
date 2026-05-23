@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import PageFrame from "@/components/ui/PageFrame";
 import { products, getProductById, type Product } from "@/lib/products";
 
 interface Props {
@@ -90,128 +91,128 @@ export default async function ProductPage({ params }: Props) {
         </Container>
       </div>
 
-      {/* Hero */}
-      <section className="py-16 lg:py-24">
-        <Container>
-          <div className="max-w-3xl">
-            <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
-              {product.module}
-            </span>
-            <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">
-              {product.name}
-            </h1>
-            <p className="mt-6 text-xl leading-relaxed text-[#525252]">
-              {product.tagline}
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageFrame>
+        {/* Hero */}
+        <section className="py-16 lg:py-24">
+          <Container>
+            <div className="max-w-3xl">
+              <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                {product.module}
+              </span>
+              <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">
+                {product.name}
+              </h1>
+              <p className="mt-6 text-xl leading-relaxed text-[#525252]">
+                {product.tagline}
+              </p>
+            </div>
+          </Container>
+        </section>
 
-      {/* Overview */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
-        <Container>
-          <div className="max-w-3xl">
+        {/* Overview */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+          <Container>
+            <div className="max-w-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+                Overview
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-[#525252]">
+                {product.description}
+              </p>
+            </div>
+          </Container>
+        </section>
+
+        {/* Key Features */}
+        <section className="py-20 lg:py-28">
+          <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-              Overview
+              Key features
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#525252]">
-              {product.description}
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* Key Features */}
-      <section className="py-20 lg:py-28">
-        <Container>
-          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-            Key features
-          </h2>
-          <div className="mt-8 rounded-2xl border border-[#e8eaed] bg-white p-6 lg:p-8">
-            <ul className="grid gap-4 sm:grid-cols-2">
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {product.features.map((f, i) => (
                 <li
                   key={i}
                   className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
                 >
-                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
-                    <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
+                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
                   </span>
                   <span className="text-[#525252]">{f}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* Benefits */}
-      <section className="py-20 lg:py-28 bg-[#f5f1ec]">
-        <Container>
-          <div className="flex items-center gap-3 mb-8">
-            <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
-            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-              Why choose {product.name}
-            </h2>
-          </div>
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {product.benefits.map((b, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
-              >
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
-                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
-                </span>
-                <span className="text-[#525252]">{b}</span>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-20 lg:py-28">
-        <Container>
-          <div className="flex items-center gap-3 mb-8">
-            <Lightbulb className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
-            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-              Use cases
-            </h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {product.useCases.map((uc, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-[#e8eaed] p-6"
-              >
-                <Users className="h-5 w-5 text-[#a48e7a] mb-3" strokeWidth={1.5} />
-                <p className="text-[#525252] leading-relaxed">{uc}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fb]">
-        <Container>
-          <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
-              Interested in {product.name}?
-            </h2>
-            <p className="mt-3 text-[#737373]">
-              Talk to our infrastructure architects about how {product.name} fits
-              into your architecture.
-            </p>
-            <div className="mt-8">
-              <Button href="/contact/" variant="primary" size="lg">
-                Start a Conversation
-              </Button>
+        {/* Benefits */}
+        <section className="py-20 lg:py-28 bg-[#faf9f7]">
+          <Container>
+            <div className="flex items-center gap-3 mb-8">
+              <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
+              <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+                Why choose {product.name}
+              </h2>
             </div>
-          </div>
-        </Container>
-      </section>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {product.benefits.map((b, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
+                    <Check className="h-3.5 w-3.5 text-[#7c5ce7]" strokeWidth={3} />
+                  </span>
+                  <span className="text-[#525252]">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+
+        {/* Use Cases */}
+        <section className="py-20 lg:py-28">
+          <Container>
+            <div className="flex items-center gap-3 mb-8">
+              <Lightbulb className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
+              <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+                Use cases
+              </h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {product.useCases.map((uc, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-[#e8eaed] p-6"
+                >
+                  <Users className="h-5 w-5 text-[#a48e7a] mb-3" strokeWidth={1.5} />
+                  <p className="text-[#525252] leading-relaxed">{uc}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 lg:py-28 bg-[#f8f9fb]">
+          <Container>
+            <div className="mx-auto max-w-xl text-center">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+                Interested in {product.name}?
+              </h2>
+              <p className="mt-3 text-[#737373]">
+                Talk to our infrastructure architects about how {product.name} fits
+                into your architecture.
+              </p>
+              <div className="mt-8">
+                <Button href="/contact/" variant="primary" size="lg">
+                  Start a Conversation
+                </Button>
+              </div>
+            </div>
+          </Container>
+        </section>
+      </PageFrame>
 
       {/* Related */}
       <RelatedProducts current={product} />
