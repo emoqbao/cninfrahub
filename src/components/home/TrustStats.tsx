@@ -1,9 +1,9 @@
 ﻿export default function TrustStats() {
   const stats = [
-    { value: "50+", label: "PoPs in China" },
-    { value: "99.99%", label: "Uptime SLA" },
-    { value: "<10ms", label: "Cross-border Latency" },
-    { value: "24/7", label: "Smart Hands Support" },
+    { value: "Multiple", label: "Carrier partners across China" },
+    { value: "Tier III+", label: "Data center facilities in our network" },
+    { value: "Aggregated", label: "Pricing below direct enterprise rates" },
+    { value: "24/7", label: "Bilingual support and operations" },
   ];
 
   return (

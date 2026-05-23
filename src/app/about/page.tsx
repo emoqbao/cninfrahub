@@ -1,44 +1,37 @@
 ﻿import { Metadata } from "next";
-import { Search, Link2, Wrench, Shield, Globe, Clock } from "lucide-react";
+import { Search, Link2, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "CN-Infra Hub eliminates the information asymmetry that makes China''s infrastructure market opaque to global buyers. One partner for network, compute, and data center — full lifecycle.",
+  description: "CN-Infra Hub is a managed service aggregator for China''s infrastructure market. We source, integrate, and manage network, compute, and data center resources from the best providers.",
 };
 
 const pillars = [
   {
     icon: Search,
     title: "Source",
-    description: "We vet, benchmark, and aggregate China''s top-tier infrastructure providers across network, compute, and data center — so you don''t navigate a fragmented market alone.",
+    description: "We tap into our network of carriers, data centers, and hardware partners — finding the right resources at pricing individual buyers can''t access through direct negotiation.",
   },
   {
     icon: Link2,
-    title: "Connect",
-    description: "We design and build dedicated cross-border and multi-cloud links with SLA-backed performance, connecting your global architecture to China seamlessly.",
+    title: "Integrate",
+    description: "We design and connect the pieces into a unified architecture — dedicated circuits, cross-border links, compute, and colocation — all working together.",
   },
   {
     icon: Wrench,
-    title: "Operate",
-    description: "Bilingual engineers on the ground, 24/7, providing Smart Hands, monitoring, and incident response — so you never need to fly a team to China.",
+    title: "Manage",
+    description: "We take full operational responsibility: 24/7 bilingual support, compliance monitoring, provider management, and Smart Hands across every facility.",
   },
 ];
 
 const differentiators = [
-  "Single point of accountability — one partner, one SLA, one invoice",
-  "No vendor lock-in — carrier-neutral, cloud-agnostic, hardware-flexible",
-  "Full compliance advisory — CSL, DSL, PIPL, MLPS 2.0 guidance included",
-  "SLA-backed, enterprise-grade — 99.99% uptime across all core services",
-  "Bilingual support (EN/CN) — engineering and business communication",
-  "Full lifecycle partnership — from architecture design to ongoing operations",
-];
-
-const stats = [
-  { value: "50+", label: "Points of Presence in China" },
-  { value: "10,000+", label: "Peering relationships across carriers" },
-  { value: "99.99%", label: "Uptime SLA on core services" },
-  { value: "<10ms", label: "Intra-city latency on Private Connect" },
+  "Single point of accountability — we own the outcome, not just the referral",
+  "Provider-agnostic — we recommend the best option, not the one we''re locked into",
+  "Aggregated pricing — our combined client volume secures rates below direct enterprise pricing",
+  "Full compliance advisory — CSL, DSL, PIPL, MLPS 2.0 guidance built into every engagement",
+  "Bilingual operations — engineering and business communication in English and Mandarin",
+  "Full lifecycle — from architecture design through ongoing management and optimization",
 ];
 
 export default function AboutPage() {
@@ -48,7 +41,7 @@ export default function AboutPage() {
         <Container>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">About</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
-            Closing the gap between global demand and China&apos;s infrastructure supply
+            We don''t own the infrastructure. We own the relationships — and the responsibility.
           </h1>
         </Container>
       </section>
@@ -57,32 +50,24 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="text-xl leading-relaxed text-[#525252] lg:text-2xl">
-              China&apos;s infrastructure market is one of the world&apos;s largest — and one of its most opaque. Dozens of providers, inconsistent service standards, language barriers, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
+              China''s infrastructure market is one of the world''s largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
             </p>
             <p className="mt-6 text-xl leading-relaxed text-[#525252] lg:text-2xl">
-              CN-Infra Hub exists to eliminate that information asymmetry. We aggregate, curate, and manage the best network, compute, and data center resources across China — delivering them through a single partner, with a single SLA, in your language and your timezone.
+              CN-Infra Hub is a managed service aggregator. We don''t own fiber, data centers, or server hardware. Instead, we bring deep relationships across China''s entire infrastructure ecosystem. We source the right resources from the right providers, negotiate pricing our clients can''t get on their own, and take full operational responsibility for everything we deliver.
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-[#737373]">
+              Think of us as your infrastructure architect and general contractor for China. You tell us what you need. We decide which providers to use, how to connect them, and how to manage the whole thing — so you get one partner, one SLA, one invoice.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Stats */}
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">{s.value}</p>
-                <p className="mt-1 text-sm text-[#737373]">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 lg:py-24">
-        <Container>
-          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">How we work</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Why the aggregator model works</h2>
+          <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
+            Individual enterprises negotiating directly with Chinese carriers and data centers face three problems: they lack the relationships to get competitive pricing, they lack the local knowledge to evaluate providers, and they lack the operational presence to manage what they buy. We solve all three.
+          </p>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {pillars.map((p) => (
               <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8">
@@ -97,10 +82,7 @@ export default function AboutPage() {
 
       <section className="py-16 lg:py-24 bg-[#f8f9fb]">
         <Container>
-          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Why CN-Infra Hub</h2>
-          <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
-            We&apos;re not a reseller. We&apos;re a managed service aggregator — we take full operational responsibility for the infrastructure we deliver.
-          </p>
+          <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">What sets us apart</h2>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {differentiators.map((d, i) => (
               <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4">
@@ -117,10 +99,10 @@ export default function AboutPage() {
       <section className="bg-[#0a0f1a] py-20 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-white lg:text-3xl">
-            Want to know more about our team and capabilities?
+            You know your architecture. We know China''s infrastructure market.
           </h2>
           <p className="mt-4 text-[#a3a3a3] max-w-xl mx-auto">
-            We&apos;re infrastructure engineers who happen to speak your language — literally and technically.
+            Let''s talk about what you need — and how we can source it better than anyone else.
           </p>
           <div className="mt-8">
             <a
