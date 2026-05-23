@@ -346,7 +346,7 @@ export default function Header() {
                             <Link
                               href={`/products/${p.id}`}
                               onClick={() => setMegaOpen(false)}
-                              className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
+                              className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"
                             >
                               {p.name}
                             </Link>
