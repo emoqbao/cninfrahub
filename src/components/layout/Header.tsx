@@ -246,34 +246,33 @@ export default function Header() {
           </div>
         )}
 
-        {/* Solutions mega menu */}
+        {/* Solutions dropdown */}
         {solutionsOpen && (
-          <div className="mx-auto max-w-7xl px-6 pb-4 lg:px-8">
-            <div ref={solutionsPanelRef} className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#8c8c8c]">
-                Infrastructure patterns
-              </p>
-              <ul className="space-y-2.5">
-                {solutions.map((s) => (
-                  <li key={s.id}>
-                    <Link
-                      href={`/solutions/${s.id}`}
-                      onClick={() => setSolutionsOpen(false)}
-                      className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
-                    >
-                      {s.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 pt-4 border-t border-[#e8eaed]">
-                <Link
-                  href="/solutions/"
-                  onClick={() => setSolutionsOpen(false)}
-                  className="text-sm font-medium text-[#0d0d0d] hover:underline"
-                >
-                  View all solutions &rarr;
-                </Link>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="flex justify-center">
+              <div ref={solutionsPanelRef} className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-6 py-4 w-72">
+                <ul className="space-y-1">
+                  {solutions.map((s) => (
+                    <li key={s.id}>
+                      <Link
+                        href={`/solutions/${s.id}`}
+                        onClick={() => setSolutionsOpen(false)}
+                        className="block rounded-md px-3 py-2 text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors"
+                      >
+                        {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-2 pt-2 border-t border-[#e8eaed]">
+                  <Link
+                    href="/solutions/"
+                    onClick={() => setSolutionsOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors"
+                  >
+                    View all solutions &rarr;
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -3,11 +3,23 @@
 import Link from "next/link";
 import { products } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/i18n/context";
 import { t } from "@/lib/i18n/translations";
 
+
+
+
 export default function Footer() {
   const { lang } = useLanguage();
+  const pathname = usePathname();
+
+  function scrollIfActive(e: React.MouseEvent, href: string) {
+    if (pathname === href || (href !== "/" && pathname.startsWith(href))) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
 
   return (
     <footer className="bg-[#0a0f1a] text-white">
@@ -35,6 +47,7 @@ export default function Footer() {
                 <li key={p.id}>
                   <Link
                     href={`/products/${p.id}`}
+                    onClick={(e) => scrollIfActive(e, `/products/${p.id}`)}
                     className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
                   >
                     {p.name}
@@ -54,6 +67,7 @@ export default function Footer() {
                 <li key={s.id}>
                   <Link
                     href={`/solutions/${s.id}`}
+                    onClick={(e) => scrollIfActive(e, `/solutions/${s.id}`)}
                     className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
                   >
                     {s.name}
@@ -70,17 +84,17 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
                   {t("footer.whitePapers", lang)}
                 </Link>
               </li>
               <li>
-                <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
                   {t("footer.caseStudies", lang)}
                 </Link>
               </li>
               <li>
-                <Link href="/resources/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
                   {t("footer.guides", lang)}
                 </Link>
               </li>
@@ -94,12 +108,12 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/about/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
+                <Link href="/about/" onClick={(e) => scrollIfActive(e, "/about/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
                   {t("footer.about", lang)}
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
+                <Link href="/contact/" onClick={(e) => scrollIfActive(e, "/contact/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
                   {t("footer.contact", lang)}
                 </Link>
               </li>
