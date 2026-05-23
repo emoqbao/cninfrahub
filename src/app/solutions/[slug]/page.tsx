@@ -1,7 +1,7 @@
 ﻿import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Zap, Users, Cog } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
@@ -123,8 +123,67 @@ export default async function SolutionPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* Key products */}
+      {/* Benefits */}
       <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Zap className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Key benefits
+            </h2>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {solution.benefits.map((b, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
+              >
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d]">
+                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                </span>
+                <span className="text-[#525252]">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Who it's for */}
+      <section className="py-16 lg:py-24">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Users className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Who it&apos;s for
+            </h2>
+          </div>
+          <div className="max-w-3xl">
+            <p className="text-lg leading-relaxed text-[#525252]">
+              {solution.whoItsFor}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Our approach */}
+      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Cog className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Our approach
+            </h2>
+          </div>
+          <div className="max-w-3xl">
+            <p className="text-lg leading-relaxed text-[#525252]">
+              {solution.approach}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Key products used */}
+      <section className="py-16 lg:py-24">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
             Key products used
@@ -156,7 +215,7 @@ export default async function SolutionPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">

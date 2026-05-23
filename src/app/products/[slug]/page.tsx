@@ -1,10 +1,10 @@
 ﻿import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { products, getProductById, type Product } from "@/lib/products";
+import { products, getProductById, productModules, type Product } from "@/lib/products";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -71,7 +71,6 @@ export default async function ProductPage({ params }: Props) {
   const product = getProductById(slug);
   if (!product) notFound();
 
-
   return (
     <>
       {/* Breadcrumb */}
@@ -84,13 +83,6 @@ export default async function ProductPage({ params }: Props) {
             <span>/</span>
             <Link href="/products/" className="hover:text-[#0d0d0d] transition-colors">
               Products
-            </Link>
-            <span>/</span>
-            <Link
-              href={`/products/?module=${encodeURIComponent(product.module)}`}
-              className="hover:text-[#0d0d0d] transition-colors"
-            >
-              {product.module}
             </Link>
             <span>/</span>
             <span className="text-[#0d0d0d] font-medium">{product.name}</span>
@@ -115,7 +107,7 @@ export default async function ProductPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* Description */}
+      {/* Overview */}
       <section className="py-16 lg:py-24 bg-[#f8f9fb]">
         <Container>
           <div className="max-w-3xl">
@@ -129,7 +121,7 @@ export default async function ProductPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* Features */}
+      {/* Key Features */}
       <section className="py-16 lg:py-24">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -148,6 +140,54 @@ export default async function ProductPage({ params }: Props) {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-16 lg:py-24 bg-[#f8f9fb]">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Zap className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Why choose {product.name}
+            </h2>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {product.benefits.map((b, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-xl border border-[#e8eaed] bg-white p-5"
+              >
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d]">
+                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                </span>
+                <span className="text-[#525252]">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-16 lg:py-24">
+        <Container>
+          <div className="flex items-center gap-3 mb-8">
+            <Lightbulb className="h-6 w-6 text-[#0d0d0d]" strokeWidth={1.5} />
+            <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
+              Use cases
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {product.useCases.map((uc, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-[#e8eaed] p-6"
+              >
+                <Users className="h-5 w-5 text-[#0d0d0d] mb-3" strokeWidth={1.5} />
+                <p className="text-[#525252] leading-relaxed">{uc}</p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -173,7 +213,6 @@ export default async function ProductPage({ params }: Props) {
 
       {/* Related */}
       <RelatedProducts current={product} />
-
     </>
   );
 }
