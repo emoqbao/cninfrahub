@@ -190,8 +190,8 @@ export default function Header() {
                         .map((p) => (
                           <li key={p.id}>
                             <Link
-                              href={`/products/#${p.id}`}
-                              onClick={(e) => { e.preventDefault(); router.push(`/products/#${p.id}`); setMegaOpen(false); }}
+                              href={`/products/?module=${p.module}`}
+                              onClick={(e) => { e.preventDefault(); router.push(`/products/?module=${p.module}`); setMegaOpen(false); }}
                               className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#404040] transition-colors"
                             >
                               {p.name}
@@ -227,8 +227,8 @@ export default function Header() {
                 {products.map((p) => (
                   <Link
                     key={p.id}
-                    href={`/products/#${p.id}`}
-                    onClick={(e) => { e.preventDefault(); router.push(`/products/#${p.id}`); setMobileOpen(false); }}
+                    href={`/products/?module=${p.module}`}
+                    onClick={(e) => { e.preventDefault(); router.push(`/products/?module=${p.module}`); setMobileOpen(false); }}
                     className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f5f5f5]"
                   >
                     {p.name}

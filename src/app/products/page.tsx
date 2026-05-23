@@ -1,13 +1,18 @@
-﻿"use client";
+"use client";
 
-import { useState } from "react";
+
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { X } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { products, productModules, type Product } from "@/lib/products";
 
-export default function ProductsPage() {
-  const [activeModule, setActiveModule] = useState<string>("All");
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const moduleParam = searchParams.get("module");
+  const isValidModule = moduleParam && productModules.includes(moduleParam as typeof productModules[number]);
+  const [activeModule, setActiveModule] = useState<string>(isValidModule ? moduleParam! : "All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filtered = activeModule === "All" ? products : products.filter((p) => p.module === activeModule);
@@ -128,5 +133,13 @@ export default function ProductsPage() {
         </Container>
       </section>
     </>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductsContent />
+    </Suspense>
   );
 }
