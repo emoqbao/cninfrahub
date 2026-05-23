@@ -22,9 +22,9 @@ export default function Button({
   const base = "inline-flex items-center justify-center font-medium transition-colors rounded-lg";
   const sizes = { sm: "px-4 py-2 text-sm", md: "px-6 py-2.5 text-base", lg: "px-8 py-3 text-lg" };
   const variants = {
-    primary: "bg-[#0d0d0d] text-white hover:bg-[#1a1a1a] disabled:opacity-50",
-    secondary: "border border-[#e5e5e5] text-[#0d0d0d] hover:bg-[#f5f5f5]",
-    ghost: "text-[#0d0d0d] hover:bg-[#f5f5f5]",
+    primary: "bg-[#4338ca] text-white hover:bg-[#3730a3] disabled:opacity-50",
+    secondary: "border border-[#e8eaed] text-[#0d0d0d] hover:bg-[#f3f4f6]",
+    ghost: "text-[#0d0d0d] hover:bg-[#f3f4f6]",
   };
 
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;

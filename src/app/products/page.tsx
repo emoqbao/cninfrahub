@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 
 import { useState, useEffect, Suspense } from "react";
@@ -47,8 +47,8 @@ function ProductsContent() {
                 onClick={() => { setActiveModule(mod); setSelectedProduct(null); router.replace(`/products/?module=${mod}`, { scroll: false }); }}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
                   activeModule === mod
-                    ? "bg-[#0d0d0d] text-white"
-                    : "text-[#525252] hover:bg-[#f5f5f5]"
+                    ? "bg-[#4338ca] text-white"
+                    : "text-[#525252] hover:bg-[#f3f4f6]"
                 }`}
               >
                 {mod}
@@ -69,11 +69,11 @@ function ProductsContent() {
                 onClick={() => setSelectedProduct(selectedProduct?.id === product.id ? null : product)}
                 className={`group rounded-xl border p-6 text-left transition-all ${
                   selectedProduct?.id === product.id
-                    ? "border-[#0d0d0d] shadow-md"
-                    : "border-[#e5e5e5] hover:border-[#d4d4d4]"
+                    ? "border-[#4338ca] shadow-md"
+                    : "border-[#e8eaed] hover:border-[#c4c6ca]"
                 }`}
               >
-                <span className="inline-block rounded-md bg-[#f5f5f5] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                   {product.module}
                 </span>
                 <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
@@ -87,17 +87,17 @@ function ProductsContent() {
 
           {/* Detail panel */}
           {selectedProduct && (
-            <div className="mt-12 rounded-xl border border-[#0d0d0d] bg-white p-8 lg:p-10">
+            <div className="mt-12 rounded-xl border border-[#4338ca] bg-white p-8 lg:p-10">
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="inline-block rounded-md bg-[#f5f5f5] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+                  <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                     {selectedProduct.module}
                   </span>
                   <h2 className="mt-2 text-2xl font-bold text-[#0d0d0d]">{selectedProduct.name}</h2>
                 </div>
                 <button
                   onClick={() => setSelectedProduct(null)}
-                  className="rounded-md p-2 text-[#737373] hover:bg-[#f5f5f5] hover:text-[#0d0d0d]"
+                  className="rounded-md p-2 text-[#737373] hover:bg-[#f3f4f6] hover:text-[#0d0d0d]"
                   aria-label="Close detail"
                 >
                   <X className="h-5 w-5" />
@@ -109,7 +109,7 @@ function ProductsContent() {
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {selectedProduct.features.map((f, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[#404040]">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0d0d0d]" />
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#4338ca]" />
                     {f}
                   </li>
                 ))}

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Cpu, Network, Database, Brain } from "lucide-react";
 
 const modules = [
@@ -10,7 +10,7 @@ const modules = [
 
 export default function ProductOverview() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="bg-[#f8f9fb] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
@@ -21,12 +21,12 @@ export default function ProductOverview() {
             <Link
               key={m.name}
               href={m.href}
-              className="group rounded-xl border border-[#e5e5e5] bg-white p-6 transition-shadow hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-shadow hover:shadow-md"
             >
               <m.icon className="h-7 w-7 text-[#0d0d0d]" strokeWidth={1.5} />
               <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
-              <span className="mt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
+              <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
                 Explore &rarr;
               </span>
             </Link>

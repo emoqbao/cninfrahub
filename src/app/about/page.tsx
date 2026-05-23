@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { Search, Link2, Wrench } from "lucide-react";
 import Container from "@/components/ui/Container";
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">How we work</h2>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {pillars.map((p) => (
-              <div key={p.title} className="rounded-xl border border-[#e5e5e5] bg-white p-8">
+              <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8">
                 <p.icon className="h-8 w-8 text-[#0d0d0d]" strokeWidth={1.5} />
                 <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-[#525252]">{p.description}</p>
@@ -76,8 +76,8 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Why CN-Infra Hub</h2>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {differentiators.map((d, i) => (
-              <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e5e5e5] p-4">
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0d0d0d] text-xs font-bold text-white">
+              <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#4338ca] text-xs font-bold text-white">
                   &check;
                 </span>
                 <span className="text-[#525252]">{d}</span>
@@ -87,7 +87,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-[#0d0d0d] py-20 text-center">
+      <section className="bg-[#0a0f1a] py-20 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-white lg:text-3xl">
             Want to know more about our team and capabilities?
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <div className="mt-8">
             <a
               href="/contact/"
-              className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#e5e5e5] transition-colors"
+              className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#e0e2e6] transition-colors"
             >
               Get in Touch
             </a>

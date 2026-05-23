@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -67,14 +67,14 @@ export default function Header() {
     <>
       <header
         className={`sticky top-0 z-50 bg-white transition-shadow ${
-          scrolled ? "shadow-[0_1px_0_0_#e5e5e5]" : ""
+          scrolled ? "shadow-[0_1px_0_0_#e8eaed]" : ""
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#4338ca] text-sm font-bold text-white">
                 CIH
               </div>
               <span className="text-base font-semibold tracking-tight text-[#0d0d0d]">
@@ -92,8 +92,8 @@ export default function Header() {
                         onClick={() => { setMegaOpen(!megaOpen); setMobileOpen(false); }}
                         className={`flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors ${
                           megaOpen
-                            ? "text-[#0d0d0d] bg-[#f5f5f5]"
-                            : "text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                            ? "text-[#0d0d0d] bg-[#f3f4f6]"
+                            : "text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f3f4f6]"
                         }`}
                       >
                         {t("nav.products", lang)}
@@ -108,7 +108,7 @@ export default function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="rounded-md px-4 py-2 text-[15px] font-semibold text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                    className="rounded-md px-4 py-2 text-[15px] font-semibold text-[#404040] hover:text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors"
                   >
                     {t(`nav.${item.label.toLowerCase()}`, lang)}
                   </Link>
@@ -120,11 +120,11 @@ export default function Header() {
             <div className="hidden items-center gap-1 lg:flex flex-shrink-0">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" strokeWidth={1.5} />
-                <span className="hidden xl:inline text-[10px] text-[#a3a3a3] border border-[#e5e5e5] rounded px-1.5 py-0.5 leading-none font-mono">
+                <span className="hidden xl:inline text-[10px] text-[#a3a3a3] border border-[#e8eaed] rounded px-1.5 py-0.5 leading-none font-mono">
                   {isMac ? "\u2318" : "Ctrl"}K
                 </span>
               </button>
@@ -132,21 +132,21 @@ export default function Header() {
               <div ref={langRef} className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f5f5f5] transition-colors"
+                  className="rounded-md p-2 text-[#737373] hover:text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors"
                   aria-label="Switch language"
                 >
                   <Globe className="h-4 w-4" strokeWidth={1.5} />
                 </button>
                 {langOpen && (
-                  <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e5e5e5] bg-white py-1 shadow-lg">
+                  <div className="absolute right-0 top-full mt-1 w-32 rounded-lg border border-[#e8eaed] bg-white py-1 shadow-lg">
                     {(Object.keys(languageLabels) as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => handleLangChange(l)}
                         className={`w-full text-left px-3 py-1.5 text-sm transition-colors ${
                           lang === l
-                            ? "text-[#0d0d0d] font-medium bg-[#f5f5f5]"
-                            : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                            ? "text-[#0d0d0d] font-medium bg-[#f3f4f6]"
+                            : "text-[#525252] hover:text-[#0d0d0d] hover:bg-[#f3f4f6]"
                         }`}
                       >
                         {languageLabels[l]}
@@ -156,7 +156,7 @@ export default function Header() {
                 )}
               </div>
 
-              <div className="w-px h-5 bg-[#e5e5e5] mx-1.5" />
+              <div className="w-px h-5 bg-[#e8eaed] mx-1.5" />
 
               <Button href="/contact/" variant="primary" size="sm">
                 {t("nav.contact", lang)}
@@ -165,7 +165,7 @@ export default function Header() {
 
             {/* Mobile toggle */}
             <button
-              className="lg:hidden rounded-md p-2 text-[#0d0d0d] hover:bg-[#f5f5f5] ml-auto"
+              className="lg:hidden rounded-md p-2 text-[#0d0d0d] hover:bg-[#f3f4f6] ml-auto"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -177,7 +177,7 @@ export default function Header() {
         {/* Mega menu */}
         {megaOpen && (
           <div className="mx-auto max-w-7xl px-6 pb-4 lg:px-8">
-            <div ref={megaPanelRef} className="rounded-xl border border-[#e5e5e5] bg-white shadow-lg px-8 py-6">
+            <div ref={megaPanelRef} className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-4 gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
@@ -208,19 +208,19 @@ export default function Header() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="border-t border-[#e5e5e5] bg-white px-6 pb-6 pt-4 lg:hidden">
+          <div className="border-t border-[#e8eaed] bg-white px-6 pb-6 pt-4 lg:hidden">
             <nav className="flex flex-col gap-1">
               {mainNav.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-md px-3 py-2.5 text-base font-semibold text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                  className="rounded-md px-3 py-2.5 text-base font-semibold text-[#0d0d0d] hover:bg-[#f3f4f6]"
                 >
                   {t(`nav.${item.label.toLowerCase()}`, lang)}
                 </Link>
               ))}
-              <div className="mt-3 border-t border-[#e5e5e5] pt-4">
+              <div className="mt-3 border-t border-[#e8eaed] pt-4">
                 <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">
                   {t("nav.products", lang)}
                 </p>
@@ -229,16 +229,16 @@ export default function Header() {
                     key={p.id}
                     href={`/products/?module=${encodeURIComponent(p.module)}`}
                     onClick={(e) => { e.preventDefault(); router.push(`/products/?module=${encodeURIComponent(p.module)}`); setMobileOpen(false); }}
-                    className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f5f5f5]"
+                    className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f3f4f6]"
                   >
                     {p.name}
                   </Link>
                 ))}
               </div>
-              <div className="mt-3 border-t border-[#e5e5e5] pt-4">
+              <div className="mt-3 border-t border-[#e8eaed] pt-4">
                 <button
                   onClick={() => { setMobileOpen(false); setSearchOpen(true); }}
-                  className="w-full flex items-center justify-center gap-2 rounded-md border border-[#e5e5e5] px-3 py-2.5 text-sm font-medium text-[#0d0d0d] hover:bg-[#f5f5f5]"
+                  className="w-full flex items-center justify-center gap-2 rounded-md border border-[#e8eaed] px-3 py-2.5 text-sm font-medium text-[#0d0d0d] hover:bg-[#f3f4f6]"
                 >
                   <Search className="h-4 w-4" strokeWidth={1.5} />
                   {t("search.placeholder", lang)}
@@ -251,8 +251,8 @@ export default function Header() {
                     onClick={() => { setLang(l); setMobileOpen(false); }}
                     className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                       lang === l
-                        ? "bg-[#0d0d0d] text-white"
-                        : "border border-[#e5e5e5] text-[#525252] hover:bg-[#f5f5f5]"
+                        ? "bg-[#4338ca] text-white"
+                        : "border border-[#e8eaed] text-[#525252] hover:bg-[#f3f4f6]"
                     }`}
                   >
                     {languageLabels[l]}

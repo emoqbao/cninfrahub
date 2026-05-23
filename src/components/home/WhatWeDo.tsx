@@ -1,10 +1,10 @@
-﻿import { Search, Link2, Wrench } from "lucide-react";
+﻿﻿import { Search, Link2, Wrench } from "lucide-react";
 
 const steps = [
   {
     icon: Search,
     title: "Source",
-    description: "We vet and curate China''s top-tier infrastructure providers — so you don''t have to navigate the complexity alone.",
+    description: "We vet and curate China''s top-tier infrastructure providers �� so you don''t have to navigate the complexity alone.",
   },
   {
     icon: Link2,
@@ -14,7 +14,7 @@ const steps = [
   {
     icon: Wrench,
     title: "Operate",
-    description: "We provide ongoing local support and Smart Hands — your eyes and hands on the ground, 24/7.",
+    description: "We provide ongoing local support and Smart Hands �� your eyes and hands on the ground, 24/7.",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function WhatWeDo() {
         </h2>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.title} className="rounded-xl border border-[#e5e5e5] p-8">
+            <div key={s.title} className="rounded-xl border border-[#e8eaed] p-8">
               <s.icon className="h-8 w-8 text-[#0d0d0d]" strokeWidth={1.5} />
               <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{s.title}</h3>
               <p className="mt-3 text-[#525252] leading-relaxed">{s.description}</p>

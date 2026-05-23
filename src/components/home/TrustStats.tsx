@@ -1,4 +1,4 @@
-export default function TrustStats() {
+﻿export default function TrustStats() {
   const stats = [
     { value: "50+", label: "PoPs in China" },
     { value: "99.99%", label: "Uptime SLA" },
@@ -7,7 +7,7 @@ export default function TrustStats() {
   ];
 
   return (
-    <section className="">
+    <section className="bg-[#f8f9fb]">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((s) => (

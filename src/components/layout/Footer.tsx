@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { products } from "@/lib/products";
@@ -10,7 +10,7 @@ export default function Footer() {
   const { lang } = useLanguage();
 
   return (
-    <footer className="bg-[#0d0d0d] text-white">
+    <footer className="bg-[#0a0f1a] text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         {/* Brand row */}
         <div className="mb-12">
@@ -109,7 +109,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#262626]">
+      <div className="border-t border-[#1e2532]">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-[#737373] lg:flex-row lg:justify-between lg:px-8">
           <p>&copy; {new Date().getFullYear()} CN-Infra Hub. {t("footer.rights", lang)}</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">

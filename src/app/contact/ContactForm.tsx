@@ -48,7 +48,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl border border-[#e5e5e5] bg-[#fafafa] p-10 text-center">
+      <div className="rounded-xl border border-[#e8eaed] bg-[#f8f9fb] p-10 text-center">
         <h2 className="text-2xl font-bold text-[#0d0d0d]">Thanks!</h2>
         <p className="mt-3 text-[#525252]">We&apos;ll be in touch within 24 hours.</p>
         <p className="mt-6 text-sm text-[#8c8c8c]">
@@ -62,7 +62,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-[#e5e5e5] p-6 lg:p-8">
+    <form onSubmit={handleSubmit} className="rounded-xl border border-[#e8eaed] p-6 lg:p-8">
       <h2 className="text-xl font-semibold text-[#0d0d0d]">Send us a message</h2>
 
       {/* Honeypot */}
@@ -84,7 +84,7 @@ export default function ContactForm() {
             id="first-name"
             name="first-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
             placeholder="John"
           />
         </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
             id="last-name"
             name="last-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
             placeholder="Smith"
           />
         </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
           placeholder="john@company.com"
         />
       </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
           id="company"
           name="company"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
           placeholder="Acme Corp"
         />
       </div>
@@ -145,7 +145,7 @@ export default function ContactForm() {
                 type="checkbox"
                 name="interests"
                 value={p.name}
-                className="h-4 w-4 rounded border-[#d4d4d4] text-[#0d0d0d] focus:ring-[#0d0d0d]"
+                className="h-4 w-4 rounded border-[#d1d3d6] text-[#4338ca] focus:ring-[#4338ca]"
               />
               {p.name}
             </label>
@@ -155,7 +155,7 @@ export default function ContactForm() {
               type="checkbox"
               name="interests"
               value="Other / Not sure"
-              className="h-4 w-4 rounded border-[#d4d4d4] text-[#0d0d0d] focus:ring-[#0d0d0d]"
+              className="h-4 w-4 rounded border-[#d1d3d6] text-[#4338ca] focus:ring-[#4338ca]"
             />
             Other / Not sure
           </label>
@@ -171,7 +171,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className="mt-1.5 block w-full rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
           placeholder="Tell us about your project..."
         />
       </div>

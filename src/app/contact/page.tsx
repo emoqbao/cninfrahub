@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
             {/* Contact info sidebar */}
             <div>
-              <div className="rounded-xl border border-[#e5e5e5] p-6">
+              <div className="rounded-xl border border-[#e8eaed] p-6">
                 <h3 className="text-lg font-semibold text-[#0d0d0d]">Contact Info</h3>
                 <div className="mt-5 space-y-4">
                   <div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <hr className="my-6 border-[#e5e5e5]" />
+                <hr className="my-6 border-[#e8eaed]" />
 
                 <h3 className="text-lg font-semibold text-[#0d0d0d]">Offices</h3>
                 <ul className="mt-3 space-y-2 text-[#525252]">

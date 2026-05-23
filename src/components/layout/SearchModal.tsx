@@ -67,9 +67,9 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
 
       {/* Modal */}
       <div className="fixed inset-x-0 top-[15%] mx-auto max-w-lg">
-        <div className="mx-4 rounded-xl border border-[#e5e5e5] bg-white shadow-2xl overflow-hidden">
+        <div className="mx-4 rounded-xl border border-[#e8eaed] bg-white shadow-2xl overflow-hidden">
           {/* Input */}
-          <div className="flex items-center gap-3 px-4 py-3 border-b border-[#e5e5e5]">
+          <div className="flex items-center gap-3 px-4 py-3 border-b border-[#e8eaed]">
             <Search className="h-4 w-4 text-[#a3a3a3] flex-shrink-0" strokeWidth={1.5} />
             <input
               ref={inputRef}
@@ -79,7 +79,7 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
               placeholder={t("search.placeholder", lang)}
               className="flex-1 text-sm bg-transparent outline-none text-[#0d0d0d] placeholder:text-[#a3a3a3]"
             />
-            <kbd className="hidden sm:inline-flex items-center rounded border border-[#e5e5e5] bg-[#fafafa] px-1.5 py-0.5 text-[10px] text-[#a3a3a3]">
+            <kbd className="hidden sm:inline-flex items-center rounded border border-[#e8eaed] bg-[#f8f9fb] px-1.5 py-0.5 text-[10px] text-[#a3a3a3]">
               esc
             </kbd>
             <button onClick={onClose} className="text-[#a3a3a3] hover:text-[#0d0d0d] transition-colors">
@@ -101,13 +101,13 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
                       href={result.href}
                       onClick={onClose}
                       className={`flex items-start gap-3 px-4 py-3 transition-colors ${
-                        i === selectedIndex ? "bg-[#f5f5f5]" : "hover:bg-[#fafafa]"
+                        i === selectedIndex ? "bg-[#f3f4f6]" : "hover:bg-[#f8f9fb]"
                       }`}
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-medium text-[#0d0d0d]">{result.title}</span>
-                          <span className="text-[10px] uppercase tracking-wider text-[#a3a3a3] bg-[#f5f5f5] rounded px-1.5 py-0.5 flex-shrink-0">
+                          <span className="text-[10px] uppercase tracking-wider text-[#a3a3a3] bg-[#f3f4f6] rounded px-1.5 py-0.5 flex-shrink-0">
                             {result.category}
                           </span>
                         </div>

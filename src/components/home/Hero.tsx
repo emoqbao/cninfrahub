@@ -34,18 +34,18 @@ export default function Hero() {
 
           {/* Hero illustration placeholder */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-lg aspect-square rounded-2xl border border-[#e5e5e5] bg-[#fafafa] flex flex-col items-center justify-center">
+            <div className="relative w-full max-w-lg aspect-square rounded-2xl border border-[#e8eaed] bg-[#f8f9fb] flex flex-col items-center justify-center">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4">
                 <svg viewBox="0 0 400 400" className="w-full h-full" fill="none">
                   {/* Hub node */}
-                  <circle cx="200" cy="200" r="32" fill="#0d0d0d" />
+                  <circle cx="200" cy="200" r="32" fill="#4338ca" />
                   <circle cx="200" cy="200" r="24" fill="white" />
-                  <circle cx="200" cy="200" r="12" fill="#0d0d0d" />
+                  <circle cx="200" cy="200" r="12" fill="#4338ca" />
                   {/* Connecting nodes */}
-                  <circle cx="80" cy="100" r="16" fill="none" stroke="#0d0d0d" strokeWidth="2" />
-                  <circle cx="320" cy="100" r="16" fill="none" stroke="#0d0d0d" strokeWidth="2" />
-                  <circle cx="120" cy="300" r="16" fill="none" stroke="#0d0d0d" strokeWidth="2" />
-                  <circle cx="280" cy="300" r="16" fill="none" stroke="#0d0d0d" strokeWidth="2" />
+                  <circle cx="80" cy="100" r="16" fill="none" stroke="#4338ca" strokeWidth="2" />
+                  <circle cx="320" cy="100" r="16" fill="none" stroke="#4338ca" strokeWidth="2" />
+                  <circle cx="120" cy="300" r="16" fill="none" stroke="#4338ca" strokeWidth="2" />
+                  <circle cx="280" cy="300" r="16" fill="none" stroke="#4338ca" strokeWidth="2" />
                   {/* Lines */}
                   <line x1="96" y1="108" x2="176" y2="188" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />
                   <line x1="304" y1="108" x2="224" y2="188" stroke="#d4d4d4" strokeWidth="1.5" strokeDasharray="6 4" />

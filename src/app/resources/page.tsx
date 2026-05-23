@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿﻿import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ArrowRight, Download, BookOpen, FileText } from "lucide-react";
@@ -48,7 +48,7 @@ const guides = [
   {
     type: "Guide",
     title: "GPU Infrastructure in China: Options and Trade-offs",
-    excerpt: "Survey of GPU hosting options in China — on-prem vs. colocated vs. cloud — with procurement advice.",
+    excerpt: "Survey of GPU hosting options in China �?on-prem vs. colocated vs. cloud �?with procurement advice.",
     date: "Coming soon",
   },
   {
@@ -84,8 +84,8 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {featured.map((f) => (
-              <div key={f.title} className="rounded-xl border border-[#e5e5e5] p-8">
-                <span className="inline-flex items-center gap-1.5 rounded-md bg-[#f5f5f5] px-2.5 py-1 text-xs font-medium text-[#737373]">
+              <div key={f.title} className="rounded-xl border border-[#e8eaed] p-8">
+                <span className="inline-flex items-center gap-1.5 rounded-md bg-[#f3f4f6] px-2.5 py-1 text-xs font-medium text-[#737373]">
                   <f.icon className="h-3.5 w-3.5" />
                   {f.type}
                 </span>
@@ -107,8 +107,8 @@ export default function ResourcesPage() {
           <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides & White Papers</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {guides.map((g) => (
-              <div key={g.title} className="rounded-xl border border-[#e5e5e5] bg-white p-6">
-                <span className="inline-block rounded-md bg-[#f5f5f5] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+              <div key={g.title} className="rounded-xl border border-[#e8eaed] bg-white p-6">
+                <span className="inline-block rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
                   {g.type}
                 </span>
                 <h3 className="mt-3 text-base font-bold text-[#0d0d0d]">{g.title}</h3>
@@ -139,7 +139,7 @@ export default function ResourcesPage() {
                 name="email"
                 placeholder="your@email.com"
                 required
-                className="flex-1 rounded-lg border border-[#e5e5e5] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+                className="flex-1 rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#4338ca] focus:outline-none"
               />
               <Button type="submit" variant="primary" size="md">
                 Subscribe

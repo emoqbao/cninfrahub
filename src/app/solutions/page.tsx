@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿﻿import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions } from "@/lib/solutions";
@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Real-world infrastructure patterns for your China strategy — hybrid cloud, AI inference, data compliance, and disaster recovery.",
+  description: "Real-world infrastructure patterns for your China strategy �?hybrid cloud, AI inference, data compliance, and disaster recovery.",
 };
 
 export default function SolutionsPage() {
@@ -28,13 +28,13 @@ export default function SolutionsPage() {
         <Container>
           <div className="space-y-8">
             {solutions.map((s) => (
-              <div key={s.id} id={s.id} className="rounded-xl border border-[#e5e5e5] p-8 lg:p-10">
+              <div key={s.id} id={s.id} className="rounded-xl border border-[#e8eaed] p-8 lg:p-10">
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-[#e5e5e5] px-3 py-1 text-xs font-medium text-[#737373]"
+                      className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]"
                     >
                       {t}
                     </span>
@@ -58,7 +58,7 @@ export default function SolutionsPage() {
                       <Link
                         key={pid}
                         href={`/products/?module=${encodeURIComponent(product.module)}`}
-                        className="rounded-md bg-[#f5f5f5] px-2.5 py-1 text-[#0d0d0d] hover:bg-[#e5e5e5] transition-colors"
+                        className="rounded-md bg-[#f3f4f6] px-2.5 py-1 text-[#0d0d0d] hover:bg-[#e0e2e6] transition-colors"
                       >
                         {product.name}
                       </Link>
@@ -72,7 +72,7 @@ export default function SolutionsPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 rounded-xl border border-[#e5e5e5] bg-[#fafafa] p-8 text-center">
+          <div className="mt-12 rounded-xl border border-[#e8eaed] bg-[#f8f9fb] p-8 text-center">
             <h3 className="text-lg font-semibold text-[#0d0d0d]">Don''t see your use case?</h3>
             <p className="mt-2 text-[#737373]">We design custom architectures for unique requirements.</p>
             <div className="mt-5">
