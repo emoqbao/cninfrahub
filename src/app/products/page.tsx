@@ -1,19 +1,27 @@
 "use client";
 
 
-import { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { products, productModules, type Product } from "@/lib/products";
 
 function ProductsContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const moduleParam = searchParams.get("module");
   const isValidModule = moduleParam && productModules.includes(moduleParam as typeof productModules[number]);
   const [activeModule, setActiveModule] = useState<string>(isValidModule ? moduleParam! : productModules[0]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    if (isValidModule) {
+      setActiveModule(moduleParam!);
+      setSelectedProduct(null);
+    }
+  }, [moduleParam, isValidModule]);
 
   const filtered = products.filter((p) => p.module === activeModule);
 
@@ -36,7 +44,7 @@ function ProductsContent() {
             {productModules.map((mod) => (
               <button
                 key={mod}
-                onClick={() => { setActiveModule(mod); setSelectedProduct(null); }}
+                onClick={() => { setActiveModule(mod); setSelectedProduct(null); router.replace(`/products/?module=${mod}`, { scroll: false }); }}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
                   activeModule === mod
                     ? "bg-[#0d0d0d] text-white"
