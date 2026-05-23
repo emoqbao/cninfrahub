@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, Search, Globe } from "lucide-react";
 import { mainNav } from "@/lib/navigation";
 import { products, productModules } from "@/lib/products";
@@ -13,7 +13,6 @@ import { useLanguage } from "@/lib/i18n/context";
 import { t, languageLabels, type Language } from "@/lib/i18n/translations";
 
 export default function Header() {
-  const router = useRouter();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);

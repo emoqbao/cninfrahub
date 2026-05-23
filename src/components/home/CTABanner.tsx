@@ -5,10 +5,11 @@ export default function CTABanner() {
     <section className="bg-[#0a0f1a] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <h2 className="text-3xl font-bold tracking-[-0.02em] text-white lg:text-4xl">
-          You know your architecture. We know China''s infrastructure market.
+          Ready to bypass the complexity?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-[#a3a3a3]">
-          Tell us what you need. We''ll find the right providers, negotiate the best pricing, and manage the entire operation — so you get one partner who takes full accountability.
+          Talk to our infrastructure architects today. We&apos;ll design a solution
+          that fits your architecture — not the other way around.
         </p>
         <div className="mt-8">
           <a
