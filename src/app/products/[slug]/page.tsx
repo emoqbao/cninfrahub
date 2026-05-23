@@ -127,24 +127,26 @@ export default async function ProductPage({ params }: Props) {
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
             Key features
           </h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {product.features.map((f, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
-              >
-                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
-                  <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
-                </span>
-                <span className="text-[#525252]">{f}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-8 rounded-2xl border border-[#e8eaed] bg-white p-6 lg:p-8">
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {product.features.map((f, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl border border-[#e8eaed] p-5"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#a48e7a]">
+                    <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
+                  </span>
+                  <span className="text-[#525252]">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 
       {/* Benefits */}
-      <section className="py-20 lg:py-28 bg-[#faf9f7]">
+      <section className="py-20 lg:py-28 bg-[#f5f1ec]">
         <Container>
           <div className="flex items-center gap-3 mb-8">
             <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
@@ -183,7 +185,7 @@ export default async function ProductPage({ params }: Props) {
                 key={i}
                 className="rounded-xl border border-[#e8eaed] p-6"
               >
-                <Users className="h-5 w-5 text-[#0d0d0d] mb-3" strokeWidth={1.5} />
+                <Users className="h-5 w-5 text-[#a48e7a] mb-3" strokeWidth={1.5} />
                 <p className="text-[#525252] leading-relaxed">{uc}</p>
               </div>
             ))}

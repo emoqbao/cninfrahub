@@ -30,14 +30,16 @@ export default function WhatWeDo() {
         <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
           As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.
         </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {steps.map((s) => (
-            <div key={s.title} className="rounded-xl border border-[#e8eaed] p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-              <s.icon className="h-8 w-8 text-[#a48e7a]" strokeWidth={1.5} />
-              <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{s.title}</h3>
-              <p className="mt-3 text-[#525252] leading-relaxed">{s.description}</p>
-            </div>
-          ))}
+        <div className="mt-12 rounded-2xl border border-[#e8eaed] bg-white p-8 lg:p-10">
+          <div className="grid gap-8 md:grid-cols-3">
+            {steps.map((s) => (
+              <div key={s.title} className="rounded-xl border border-[#e8eaed] p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                <s.icon className="h-8 w-8 text-[#a48e7a]" strokeWidth={1.5} />
+                <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{s.title}</h3>
+                <p className="mt-3 text-[#525252] leading-relaxed">{s.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
