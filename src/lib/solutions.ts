@@ -1,4 +1,4 @@
-﻿export interface Solution {
+export interface Solution {
   id: string;
   name: string;
   tags: string[];
@@ -19,7 +19,7 @@ export const solutions: Solution[] = [
       "Connect your China infrastructure directly to AWS, Azure, and GCP across APAC, US, and Europe — at the bandwidth and price point that fits your workload. We offer the full spectrum: managed 50 Mbps-1 Gbps virtual connections through Megaport and Equinix Fabric for cost-sensitive or moderate-traffic environments, and dedicated 1-100 Gbps physical cross-connects for data-heavy production workloads. Standard cloud provider partners cannot legally establish these China-to-overseas links. We can — with full compliance documentation and multiple active enterprise customers running production today.",
     benefits: [
       "Right-size your connectivity: managed 50 Mbps-1 Gbps (Megaport/Equinix) or dedicated 1-100 Gbps — you decide",
-      "Access China-to-cloud links that your cloud provider''s own partners cannot deliver",
+      "Access China-to-cloud links that your cloud provider's own partners cannot deliver",
       "Full compliance documentation included — cross-border data regulations handled as standard",
       "Single partner for all three clouds — consistent pricing, consistent SLA, consistent support",
       "Production-proven with multiple enterprise customers running live workloads today",
@@ -34,7 +34,7 @@ export const solutions: Solution[] = [
     name: "High-Bandwidth Data Center Interconnect",
     tags: ["Dark Fiber", "100Gbps+", "DCI"],
     description:
-      "When you need to move massive amounts of data between data centers at the lowest possible cost-per-bit, traditional leased lines stop making financial sense. We design high-bandwidth interconnect solutions using dark fiber — a product the big three Chinese carriers won''t sell — combined with Private Connect circuits for path diversity. For the highest bandwidth demands (100 Gbps+), dark fiber provides superior economics: you lease glass, not a service, and scale by upgrading optics on your schedule.",
+      "When you need to move massive amounts of data between data centers at the lowest possible cost-per-bit, traditional leased lines stop making financial sense. We design high-bandwidth interconnect solutions using dark fiber — a product the big three Chinese carriers won't sell — combined with Private Connect circuits for path diversity. For the highest bandwidth demands (100 Gbps+), dark fiber provides superior economics: you lease glass, not a service, and scale by upgrading optics on your schedule.",
     benefits: [
       "Dark fiber at 100 Gbps+ costs less than equivalent P2P leased line bandwidth — fundamentally different economics",
       "Complete optical-layer control — your transceivers, your DWDM, your protocol, no carrier restrictions",
@@ -60,7 +60,7 @@ export const solutions: Solution[] = [
       "Ongoing regulatory monitoring — quarterly briefings on CSL, DSL, PIPL, and MLPS 2.0 changes",
       "Bilingual operations team provides audit-ready documentation in both English and Mandarin",
     ],
-    whoItsFor: "Organizations in regulated industries — banking, insurance, healthcare, automotive, and critical infrastructure — that must demonstrate compliance with China''s data protection and cybersecurity laws. Multinational corporations undergoing compliance audits for their China operations.",
+    whoItsFor: "Organizations in regulated industries — banking, insurance, healthcare, automotive, and critical infrastructure — that must demonstrate compliance with China's data protection and cybersecurity laws. Multinational corporations undergoing compliance audits for their China operations.",
     approach: "We start with a comprehensive data flow audit to classify regulated vs. non-regulated data, then design a segmented architecture. Regulated data stays in dedicated colocation and bare metal environments with physical isolation. Cross-border data transfers flow exclusively through Private Connect and Cloud Connect with documented compliance paths. We establish a compliance monitoring program with quarterly reviews.",
     products: ["colocation", "bare-metal", "private-connect", "cloud-connect", "smart-hands"],
     seoKeywords: ["China data compliance", "cross-border data China", "PIPL compliance China", "China financial infrastructure", "China healthcare hosting"],
@@ -78,7 +78,7 @@ export const solutions: Solution[] = [
       "Multi-carrier underlay: DIA for internet, Private Connect for private backhaul — best carrier for each",
       "Complete visibility retained — administrative access, monitoring dashboards, and regular reporting",
     ],
-    whoItsFor: "Enterprises that need a fully operational China network but don''t want to build or manage it themselves. Companies extending global SD-WAN into China, deploying Zero Trust access, or replacing legacy MPLS with managed virtual infrastructure.",
+    whoItsFor: "Enterprises that need a fully operational China network but don't want to build or manage it themselves. Companies extending global SD-WAN into China, deploying Zero Trust access, or replacing legacy MPLS with managed virtual infrastructure.",
     approach: "We design your China network topology based on traffic patterns and security requirements, then deploy Virtual Edge appliances at strategic locations connected via DIA (for internet-facing workloads) and Private Connect (for private backhaul). Initial configuration is handled by our engineering team. Ongoing management includes policy updates, OS patching, performance monitoring, and 24/7 incident response.",
     products: ["virtual-edge", "dia", "private-connect"],
     seoKeywords: ["China NaaS", "network as a service China", "managed SD-WAN China", "China virtual network", "managed firewall China", "Zscaler China"],

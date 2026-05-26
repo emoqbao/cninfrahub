@@ -1,4 +1,4 @@
-﻿﻿import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -26,7 +26,7 @@ const organizationSchema = {
   url: "https://cninfrahub.com",
   email: "info@cninfrahub.com",
   description:
-    "Managed Service Aggregator for China''s network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
+    "Managed Service Aggregator for China's network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
   sameAs: [],
 };
 
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | CN-Infra Hub",
   },
   description:
-    "Managed Service Aggregator for China''s network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
+    "Managed Service Aggregator for China's network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
   keywords: [
     "China infrastructure",
     "China dedicated server",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
-      "One partner for China''s dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
     url: "https://cninfrahub.com",
     siteName: "CN-Infra Hub",
     locale: "en_US",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
-      "One partner for China''s dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
   },
   robots: { index: true, follow: true },
 };

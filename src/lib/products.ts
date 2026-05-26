@@ -1,4 +1,4 @@
-﻿export interface Product {
+export interface Product {
   id: string;
   name: string;
   module: "AI" | "COMPUTE" | "NETWORK" | "DATA CENTER";
@@ -15,9 +15,9 @@ export const products: Product[] = [
     id: "ai-gateway",
     name: "AI Gateway",
     module: "AI",
-    tagline: "Compliant API relay for DeepSeek, Claude, and China''s AI ecosystem",
+    tagline: "Compliant API relay for DeepSeek, Claude, and China's AI ecosystem",
     description:
-      "We aggregate API access to China''s top AI models — ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
+      "We aggregate API access to China's top AI models — ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
     features: [
       "China-native: ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more",
       "Global: OpenAI (GPT), Anthropic (Claude), Google (Gemini) — text and image generation",
@@ -31,13 +31,13 @@ export const products: Product[] = [
       "One partner, every model — China-native and global, text and image, all through one endpoint",
       "Model-specific pricing advantages — different discount structures for different providers",
       "Lower latency than public API endpoints by routing through carrier-optimized paths",
-      "Full compliance with China''s data regulations — we handle the legal complexity",
+      "Full compliance with China's data regulations — we handle the legal complexity",
       "Pay-as-you-go with volume discounts from aggregated purchasing power",
       "Deploy in days with pre-configured relays — no infrastructure to build",
     ],
     useCases: [
       "Global SaaS companies serving Chinese users with localized AI features",
-      "AI startups needing reliable access to China''s model ecosystem for R&D",
+      "AI startups needing reliable access to China's model ecosystem for R&D",
       "Enterprise teams building multi-model pipelines across Chinese and global LLMs for text and image generation",
       "Gaming companies integrating real-time AI translation and moderation for China markets",
     ],
@@ -109,7 +109,7 @@ export const products: Product[] = [
     module: "COMPUTE",
     tagline: "NVIDIA GPU compute in China — aggregated capacity from multiple partners",
     description:
-      "We aggregate GPU compute across our partner network to provide NVIDIA H100, H200, A100, and L40S capacity for AI training, fine-tuning, and inference. Whether you need a single GPU or a multi-node cluster with high-speed interconnects, we find the provider with available capacity at the best rate. Pre-configured ML environments (CUDA, PyTorch, TensorFlow, vLLM) come standard. All deployments comply with China''s data residency requirements.",
+      "We aggregate GPU compute across our partner network to provide NVIDIA H100, H200, A100, and L40S capacity for AI training, fine-tuning, and inference. Whether you need a single GPU or a multi-node cluster with high-speed interconnects, we find the provider with available capacity at the best rate. Pre-configured ML environments (CUDA, PyTorch, TensorFlow, vLLM) come standard. All deployments comply with China's data residency requirements.",
     features: [
       "NVIDIA H100, H200, A100, and L40S GPUs sourced across multiple provider partners",
       "Multi-node configurations with high-speed interconnects for distributed training",
@@ -122,7 +122,7 @@ export const products: Product[] = [
       "Aggregated capacity: we find available GPUs when individual providers are sold out",
       "Better pricing through volume relationships across multiple hardware partners",
       "Dedicated allocation — no shared GPU virtualization overhead",
-      "Provider switching: if one partner''s pricing or availability changes, we migrate you",
+      "Provider switching: if one partner's pricing or availability changes, we migrate you",
       "Rapid sourcing: typical deployment within 24-48 hours across our partner network",
     ],
     useCases: [
@@ -167,7 +167,7 @@ export const products: Product[] = [
     id: "ip-transit",
     name: "IP Transit",
     module: "NETWORK",
-    tagline: "Multi-homed BGP IP transit — blend China''s Tier 1 carriers with global peers at wholesale pricing",
+    tagline: "Multi-homed BGP IP transit — blend China's Tier 1 carriers with global peers at wholesale pricing",
     description:
       "Full-table BGP IP transit through our global carrier and Internet Exchange (IX) partnerships. In China, direct BGP peering with the big three carriers is not available to third parties — but through our international network, we deliver multi-homed BGP transit with competitive pricing across key global markets and major IX points. Community-based traffic engineering, prefix filtering, and included DDoS mitigation. Bandwidth from 10 Gbps to 100 Gbps. Built for ISPs, CDNs, cloud providers, and content platforms that need carrier-diverse, wholesale-level IP transit.",
     features: [
@@ -197,7 +197,7 @@ export const products: Product[] = [
     id: "private-connect",
     name: "Private Connect",
     module: "NETWORK",
-    tagline: "Layer 2 P2P circuits at pricing enterprises can''t get on their own — cross-city and cross-border",
+    tagline: "Layer 2 P2P circuits at pricing enterprises can't get on their own — cross-city and cross-border",
     description:
       "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 10 Mbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
     features: [
@@ -241,7 +241,7 @@ export const products: Product[] = [
     ],
     benefits: [
       "Right-sized connectivity: 50 Mbps-1 Gbps managed through Megaport/Equinix, or 1 Gbps+ dedicated — you choose",
-      "Access connectivity your cloud provider''s own partners can''t deliver for China routes",
+      "Access connectivity your cloud provider's own partners can't deliver for China routes",
       "Managed option eliminates hardware cross-connect complexity — simpler, faster to provision",
       "Compliance built in: cross-border data regulation documentation as standard, not an add-on",
       "Production-proven — actively used by multiple enterprise customers today",
@@ -258,9 +258,9 @@ export const products: Product[] = [
     id: "dark-fiber",
     name: "Dark Fiber",
     module: "NETWORK",
-    tagline: "Dark fiber in China — the product the big three carriers won''t sell you",
+    tagline: "Dark fiber in China — the product the big three carriers won't sell you",
     description:
-      "China Telecom, China Unicom, and China Mobile don''t lease dark fiber. Full stop. But we work with specialized regional fiber operators who do — and for high-bandwidth scenarios, dark fiber beats P2P leased lines on both cost and control. You get dedicated fiber pairs with complete optical-layer freedom: your transceivers, your DWDM equipment, your protocol. We handle the partner sourcing, contract negotiation, and ongoing management. Cheaper than traditional circuits at scale, with none of the carrier restrictions.",
+      "China Telecom, China Unicom, and China Mobile don't lease dark fiber. Full stop. But we work with specialized regional fiber operators who do — and for high-bandwidth scenarios, dark fiber beats P2P leased lines on both cost and control. You get dedicated fiber pairs with complete optical-layer freedom: your transceivers, your DWDM equipment, your protocol. We handle the partner sourcing, contract negotiation, and ongoing management. Cheaper than traditional circuits at scale, with none of the carrier restrictions.",
     features: [
       "Dark fiber pairs from specialist operators — a product category unavailable through direct carrier negotiation",
       "Complete optical-layer control: your transceivers, your DWDM, your choice of protocol",
@@ -270,11 +270,11 @@ export const products: Product[] = [
       "Full lifecycle management: operator sourcing, contract negotiation, SLA enforcement, fault resolution",
     ],
     benefits: [
-      "Access a product the big three carriers don''t offer — our operator relationships make this possible",
-      "Significantly lower TCO than P2P leased lines at high bandwidth (100 Gbps+) — you''re leasing glass, not a service",
+      "Access a product the big three carriers don't offer — our operator relationships make this possible",
+      "Significantly lower TCO than P2P leased lines at high bandwidth (100 Gbps+) — you're leasing glass, not a service",
       "Complete protocol freedom — no carrier-imposed restrictions on what runs over the fiber",
       "Physical-layer security — dedicated fiber, no shared infrastructure, no carrier equipment inline",
-      "Scale bandwidth independently: upgrade optics when you need more, don''t wait for carrier approval",
+      "Scale bandwidth independently: upgrade optics when you need more, don't wait for carrier approval",
     ],
     useCases: [
       "Data center interconnects at 100 Gbps+ where leased line costs become prohibitive",
@@ -290,10 +290,10 @@ export const products: Product[] = [
     module: "NETWORK",
     tagline: "Your virtual appliance, our managed infrastructure — we deploy, configure, and support",
     description:
-      "We''re not just hosting your virtual router or firewall — we actively manage and configure it. Deploy FortiGate VM, VyOS, MikroTik RouterOS (ROS), or Zscaler Virtual Security Edge (VSE) on infrastructure we source and manage. We handle the initial configuration, ongoing policy management, OS updates, and the underlying physical connectivity across whichever carriers best serve your topology. Bring your own license or lease from us. Think of it as NaaS — Network as a Service — with you retaining full visibility and control.",
+      "We're not just hosting your virtual router or firewall — we actively manage and configure it. Deploy FortiGate VM, VyOS, MikroTik RouterOS (ROS), or Zscaler Virtual Security Edge (VSE) on infrastructure we source and manage. We handle the initial configuration, ongoing policy management, OS updates, and the underlying physical connectivity across whichever carriers best serve your topology. Bring your own license or lease from us. Think of it as NaaS — Network as a Service — with you retaining full visibility and control.",
     features: [
       "Managed deployment and configuration for FortiGate VM, VyOS, MikroTik RouterOS, Zscaler VSE",
-      "Custom image support: bring any compatible virtual appliance image, we''ll deploy it",
+      "Custom image support: bring any compatible virtual appliance image, we'll deploy it",
       "Ongoing management: policy updates, OS patching, performance tuning — handled by our team",
       "Full visibility retained — you get administrative access and monitoring dashboards",
       "Underlying connectivity sourced across our multi-carrier partner network",
@@ -350,7 +350,7 @@ export const products: Product[] = [
     module: "DATA CENTER",
     tagline: "Remote operations across any facility — your eyes and hands on the ground, 24/7",
     description:
-      "On-demand remote hands services covering every facility in our partner network. Server racking, cabling, hardware diagnostics, RMAs, visual inspections — executed by trained local engineers and reported in English within your business hours. We don''t just dispatch a technician; we manage the entire task lifecycle from ticket to resolution. Pay per task or subscribe to monthly blocks. Standard response within 30 minutes.",
+      "On-demand remote hands services covering every facility in our partner network. Server racking, cabling, hardware diagnostics, RMAs, visual inspections — executed by trained local engineers and reported in English within your business hours. We don't just dispatch a technician; we manage the entire task lifecycle from ticket to resolution. Pay per task or subscribe to monthly blocks. Standard response within 30 minutes.",
     features: [
       "Server and network equipment racking, stacking, and structured cabling (copper and fiber)",
       "Hardware replacement, RMAs, and spare part management with vendor coordination",

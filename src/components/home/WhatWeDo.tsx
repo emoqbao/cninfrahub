@@ -4,7 +4,7 @@ const steps = [
   {
     icon: Search,
     title: "Source",
-    description: "We tap into our network of carriers, data centers, and hardware partners across China — finding the right resources at pricing individual buyers can''t access.",
+    description: "We tap into our network of carriers, data centers, and hardware partners across China — finding the right resources at pricing individual buyers can't access.",
   },
   {
     icon: Link2,
@@ -25,7 +25,7 @@ export default function WhatWeDo() {
         <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
         <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">What We Do</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
-          We don''t own the infrastructure. We own the relationships — and the responsibility.
+          We don't own the infrastructure. We own the relationships — and the responsibility.
         </h2>
         <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
           As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.

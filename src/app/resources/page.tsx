@@ -15,9 +15,9 @@ const featured = [
 ];
 
 const guides = [
-  { type: "Guide", title: "The SRE''s Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness.", date: "Coming soon" },
+  { type: "Guide", title: "The SRE's Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness.", date: "Coming soon" },
   { type: "Guide", title: "AWS vs. Azure vs. GCP: Connecting to China", excerpt: "Side-by-side comparison of cloud interconnect options for China, with pricing models, latency benchmarks, and architecture diagrams.", date: "Coming soon" },
-  { type: "Guide", title: "Understanding China''s Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 — what they mean for your architecture.", date: "Coming soon" },
+  { type: "Guide", title: "Understanding China's Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 — what they mean for your architecture.", date: "Coming soon" },
   { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China — on-prem vs. colocated vs. cloud.", date: "Coming soon" },
   { type: "Guide", title: "Building a Multi-Region DR Strategy with China Nodes", excerpt: "Architecture patterns for active-passive and active-active disaster recovery spanning China and APAC.", date: "Coming soon" },
   { type: "Guide", title: "Virtual Edge Playbook: FortiGate, VyOS, and RouterOS in China", excerpt: "Step-by-step deployment guide for running virtual network appliances on CN-Infra Hub infrastructure.", date: "Coming soon" },
