@@ -10,30 +10,34 @@ const modules = [
 
 export default function ProductOverview() {
   return (
-    <section className="py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
-        <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
-          Purpose-built infrastructure for China and beyond
-        </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {modules.map((m) => (
-            <Link
-              key={m.name}
-              href={m.href}
-              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-[#faf9f7] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <m.icon className="h-7 w-7 text-[#a48e7a]" strokeWidth={1.5} />
-              <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
-              <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
-              <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
-                Explore &rarr;
-              </span>
-            </Link>
-          ))}
-        </div>
+    <div>
+      {/* Overview area */}
+      <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+      <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>
+      <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
+        Purpose-built infrastructure for China and beyond
+      </h2>
+
+      {/* Solid horizontal divider */}
+      <div className="mt-10 border-t border-[#d4d4d4]" />
+
+      {/* Four category cards in grid */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+        {modules.map((m) => (
+          <Link
+            key={m.name}
+            href={m.href}
+            className="group flex flex-col rounded-xl border border-[#e8eaed] bg-[#faf9f7] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <m.icon className="h-7 w-7 text-[#a48e7a]" strokeWidth={1.5} />
+            <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
+            <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
+            <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
+              Explore &rarr;
+            </span>
+          </Link>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

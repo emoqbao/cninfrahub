@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -72,12 +72,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <JsonLd data={organizationSchema} />
       </head>
-      <body className="min-h-full flex flex-col">
-        <I18nProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </I18nProvider>
+      <body className="min-h-full flex flex-col relative">
+
+        {/* Vertical dashed tracks — fixed, full height, pointer-events-none */}
+        <div className="fixed inset-0 pointer-events-none z-0">
+          <div className="mx-auto max-w-7xl h-full border-x border-dashed border-[#d4d4d4]" />
+        </div>
+
+        <div className="relative z-10 flex flex-col min-h-full">
+          <I18nProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </I18nProvider>
+        </div>
       </body>
     </html>
   );
