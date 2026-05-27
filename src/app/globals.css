@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Nav: sparse dashed bottom line matching bento vertical pattern */
+/* Nav: sparse dashed bottom line */
 .nav-dashed-bottom {
   background-image: repeating-linear-gradient(
     to right,
@@ -34,32 +34,4 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 100% 0.5px;
   background-position: bottom;
   background-repeat: no-repeat;
-}
-
-/* Bento Grid: sparse dashed vertical lines behind content rows */
-.bento-vert-lines {
-  position: relative;
-}
-.bento-vert-lines::before,
-.bento-vert-lines::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 0.5px;
-  z-index: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    #f0f0f0 0px,
-    #f0f0f0 20px,
-    transparent 20px,
-    transparent 40px
-  );
-}
-.bento-vert-lines::before {
-  left: 0;
-}
-.bento-vert-lines::after {
-  right: 0;
 }

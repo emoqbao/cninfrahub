@@ -6,9 +6,21 @@ const GRID_COLS: Record<number, string> = {
   4: "grid-cols-4",
 };
 
+const DASH_GRADIENT = "repeating-linear-gradient(to bottom, #f0f0f0 0px, #f0f0f0 20px, transparent 20px, transparent 40px)";
+
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="bento-vert-lines mx-auto max-w-7xl border-b-[0.5px] border-solid border-[#f0f0f0]">
+    <div className="mx-auto max-w-7xl relative border-b-[0.5px] border-solid border-[#f0f0f0]">
+      {/* Left dashed vertical line */}
+      <div
+        className="absolute left-0 top-0 bottom-0 z-0 pointer-events-none"
+        style={{ width: "0.5px", background: DASH_GRADIENT }}
+      />
+      {/* Right dashed vertical line */}
+      <div
+        className="absolute right-0 top-0 bottom-0 z-0 pointer-events-none"
+        style={{ width: "0.5px", background: DASH_GRADIENT }}
+      />
       {children}
     </div>
   );
@@ -47,7 +59,7 @@ export function BentoCell({
   className?: string;
 }) {
   return (
-    <div className={`border-r-[0.5px] border-solid border-[#f0f0f0] last:border-r-0 ${className}`}>
+    <div className={`relative z-[2] border-r-[0.5px] border-solid border-[#f0f0f0] last:border-r-0 ${className}`}>
       {children}
     </div>
   );

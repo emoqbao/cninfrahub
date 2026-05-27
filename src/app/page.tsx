@@ -1,4 +1,4 @@
-import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
@@ -17,15 +17,15 @@ export default function Home() {
   return (
     <>
       <BentoGrid>
-        {/* 鈹€鈹€ HERO 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 HERO 閳光偓閳光偓 */}
         <BentoRow first>
           <Hero />
         </BentoRow>
 
-        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 鈹€鈹€ STATS (4 columns with vertical dividers) 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 STATS (4 columns with vertical dividers) 閳光偓閳光偓 */}
         <BentoRow cols={4}>
           {trustStats.map((s) => (
             <BentoCell key={s.label}>
@@ -34,15 +34,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 鈹€鈹€ WHAT WE DO title 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 WHAT WE DO title 閳光偓閳光偓 */}
         <BentoRow>
           <WhatWeDoTitle />
         </BentoRow>
 
-        {/* 鈹€鈹€ WHAT WE DO steps (3 columns, dashed dividers) 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 WHAT WE DO steps (3 columns, dashed dividers) 閳光偓閳光偓 */}
         <BentoRow variant="dashed" cols={3}>
           {whatWeDoSteps.map((step) => (
             <BentoCell key={step.title}>
@@ -51,15 +51,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 鈹€鈹€ OUR PRODUCTS title 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 OUR PRODUCTS title 閳光偓閳光偓 */}
         <BentoRow>
           <ProductOverviewTitle />
         </BentoRow>
 
-        {/* 鈹€鈹€ OUR PRODUCTS cards (4 columns) 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 OUR PRODUCTS cards (4 columns) 閳光偓閳光偓 */}
         <BentoRow cols={4}>
           {productModules.map((m) => (
             <BentoCell key={m.name}>
@@ -68,13 +68,13 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
+        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
         <BentoSpacer height="h-16 lg:h-24" />
       </BentoGrid>
 
-      {/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */}
-      {/* CTA + FOOTER 鈥?outside the grid, no borders              */}
-      {/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */}
+      {/* 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 */}
+      {/* CTA + FOOTER 閳?outside the grid, no borders              */}
+      {/* 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 */}
       <section className="bg-[#0a0f1a]">
         <CTABanner />
       </section>
