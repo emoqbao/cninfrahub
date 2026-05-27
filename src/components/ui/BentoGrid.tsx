@@ -8,7 +8,7 @@ const GRID_COLS: Record<number, string> = {
 
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="bento-vert-lines mx-auto max-w-7xl border-b-[0.5px] border-solid border-[#f0f0f0] [&>:first-child]:!border-t-0">
+    <div className="bento-vert-lines mx-auto max-w-7xl border-b-[0.5px] border-solid border-[#f0f0f0]">
       {children}
     </div>
   );
@@ -18,18 +18,21 @@ export function BentoRow({
   children,
   variant = "solid",
   cols,
+  first = false,
   className = "",
 }: {
   children: ReactNode;
   variant?: "solid" | "dashed";
   cols?: 2 | 3 | 4;
+  first?: boolean;
   className?: string;
 }) {
   const borderClass = variant === "dashed" ? "border-dashed" : "border-solid";
+  const topBorder = first ? "" : "border-t-[0.5px] ";
 
   return (
     <div
-      className={`border-t-[0.5px] border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
+      className={`relative z-[1] ${topBorder}border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
     >
       {children}
     </div>

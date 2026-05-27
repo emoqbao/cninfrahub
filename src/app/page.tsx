@@ -17,15 +17,15 @@ export default function Home() {
   return (
     <>
       <BentoGrid>
-        {/* ── HERO ── */}
-        <BentoRow>
+        {/* 鈹€鈹€ HERO 鈹€鈹€ */}
+        <BentoRow first>
           <Hero />
         </BentoRow>
 
-        {/* ── Breathing space ── */}
+        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* ── STATS (4 columns with vertical dividers) ── */}
+        {/* 鈹€鈹€ STATS (4 columns with vertical dividers) 鈹€鈹€ */}
         <BentoRow cols={4}>
           {trustStats.map((s) => (
             <BentoCell key={s.label}>
@@ -34,15 +34,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* ── Breathing space ── */}
+        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* ── WHAT WE DO title ── */}
+        {/* 鈹€鈹€ WHAT WE DO title 鈹€鈹€ */}
         <BentoRow>
           <WhatWeDoTitle />
         </BentoRow>
 
-        {/* ── WHAT WE DO steps (3 columns, dashed dividers) ── */}
+        {/* 鈹€鈹€ WHAT WE DO steps (3 columns, dashed dividers) 鈹€鈹€ */}
         <BentoRow variant="dashed" cols={3}>
           {whatWeDoSteps.map((step) => (
             <BentoCell key={step.title}>
@@ -51,15 +51,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* ── Breathing space ── */}
+        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* ── OUR PRODUCTS title ── */}
+        {/* 鈹€鈹€ OUR PRODUCTS title 鈹€鈹€ */}
         <BentoRow>
           <ProductOverviewTitle />
         </BentoRow>
 
-        {/* ── OUR PRODUCTS cards (4 columns) ── */}
+        {/* 鈹€鈹€ OUR PRODUCTS cards (4 columns) 鈹€鈹€ */}
         <BentoRow cols={4}>
           {productModules.map((m) => (
             <BentoCell key={m.name}>
@@ -68,13 +68,13 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* ── Breathing space ── */}
+        {/* 鈹€鈹€ Breathing space 鈹€鈹€ */}
         <BentoSpacer height="h-16 lg:h-24" />
       </BentoGrid>
 
-      {/* ════════════════════════════════════════════════════════ */}
-      {/* CTA + FOOTER — outside the grid, no borders              */}
-      {/* ════════════════════════════════════════════════════════ */}
+      {/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */}
+      {/* CTA + FOOTER 鈥?outside the grid, no borders              */}
+      {/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */}
       <section className="bg-[#0a0f1a]">
         <CTABanner />
       </section>

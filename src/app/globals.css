@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 
-/* Bento Grid: sparse dashed vertical lines (0.5 px dash, ~0.5 cm gap) */
+/* Bento Grid: sparse dashed vertical lines behind content rows */
 .bento-vert-lines {
   position: relative;
 }
@@ -47,6 +47,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   bottom: 0;
   width: 0.5px;
+  z-index: 0;
+  pointer-events: none;
   background: repeating-linear-gradient(
     to bottom,
     #f0f0f0 0px,
