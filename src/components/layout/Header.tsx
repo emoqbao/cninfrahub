@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -14,7 +14,6 @@ import { t, languageLabels, type Language } from "@/lib/i18n/translations";
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,12 +25,6 @@ export default function Header() {
   const solutionsPanelRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
   const { lang, setLang } = useLanguage();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Click outside to close
   useEffect(() => {
@@ -52,7 +45,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 鈱楰 / Ctrl+K
+  // 闁宠鲸銈?/ Ctrl+K
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -82,7 +75,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 bg-white transition-shadow border-b border-dashed border-[#f0f0f0] ${scrolled ? "shadow-[0_1px_0_0_#e8eaed]" : ""}`}
+        className={`z-50 bg-white nav-dashed-bottom`}
       >
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">

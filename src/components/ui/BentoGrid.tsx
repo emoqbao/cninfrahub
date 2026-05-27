@@ -8,7 +8,7 @@ const GRID_COLS: Record<number, string> = {
 
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="bento-vert-lines mx-auto max-w-7xl border-b border-solid border-[#f0f0f0] [&>:first-child]:!border-t-0">
+    <div className="bento-vert-lines mx-auto max-w-7xl border-b-[0.5px] border-solid border-[#f0f0f0] [&>:first-child]:!border-t-0">
       {children}
     </div>
   );
@@ -29,7 +29,7 @@ export function BentoRow({
 
   return (
     <div
-      className={`border-t border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
+      className={`border-t-[0.5px] border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
     >
       {children}
     </div>
@@ -44,7 +44,7 @@ export function BentoCell({
   className?: string;
 }) {
   return (
-    <div className={`border-r border-[#f0f0f0] last:border-r-0 ${className}`}>
+    <div className={`border-r-[0.5px] border-solid border-[#f0f0f0] last:border-r-0 ${className}`}>
       {children}
     </div>
   );
@@ -53,7 +53,7 @@ export function BentoCell({
 export function BentoSpacer({ height = "h-20" }: { height?: string }) {
   return (
     <div
-      className={`border-t border-[#f0f0f0] border-solid ${height}`}
+      className={`border-t-[0.5px] border-[#f0f0f0] border-solid ${height}`}
       aria-hidden="true"
     />
   );
