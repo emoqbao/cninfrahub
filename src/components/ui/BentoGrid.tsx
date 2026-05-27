@@ -8,8 +8,8 @@ const GRID_COLS: Record<number, string> = {
 
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-7xl relative border-[0.5px] border-solid border-[#f0f0f0]">
-      {/* SVG dashed vertical guide lines at z-0, behind content */}
+    <div className="mx-auto max-w-7xl relative border-b-[0.5px] border-solid border-[#f0f0f0]">
+      {/* SVG dashed vertical edge lines at z-0 */}
       <svg
         className="absolute inset-0 pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
