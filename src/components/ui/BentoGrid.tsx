@@ -8,7 +8,7 @@ const GRID_COLS: Record<number, string> = {
 
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-7xl border-x border-dashed border-b border-solid border-[#f0f0f0] [&>:first-child]:!border-t-0">
+    <div className="bento-vert-lines mx-auto max-w-7xl border-b border-solid border-[#f0f0f0] [&>:first-child]:!border-t-0">
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
@@ -52,7 +52,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ⌘K / Ctrl+K
+  // 鈱楰 / Ctrl+K
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -82,9 +82,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 bg-white transition-shadow ${
-          scrolled ? "shadow-[0_1px_0_0_#e8eaed]" : ""
-        }`}
+        className={`sticky top-0 z-50 bg-white transition-shadow border-b border-dashed border-[#f0f0f0] ${scrolled ? "shadow-[0_1px_0_0_#e8eaed]" : ""}`}
       >
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">

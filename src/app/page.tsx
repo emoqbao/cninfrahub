@@ -1,5 +1,4 @@
 import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
-import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
@@ -18,11 +17,6 @@ export default function Home() {
   return (
     <>
       <BentoGrid>
-        {/* ── NAV ── */}
-        <BentoRow>
-          <Header />
-        </BentoRow>
-
         {/* ── HERO ── */}
         <BentoRow>
           <Hero />

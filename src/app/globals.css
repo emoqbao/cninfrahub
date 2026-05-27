@@ -21,3 +21,29 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }
+
+/* Bento Grid: sparse dashed vertical lines (~0.5 cm dash, ~0.5 cm gap) */
+.bento-vert-lines {
+  position: relative;
+}
+.bento-vert-lines::before,
+.bento-vert-lines::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #f0f0f0 0px,
+    #f0f0f0 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+.bento-vert-lines::before {
+  left: 0;
+}
+.bento-vert-lines::after {
+  right: 0;
+}
