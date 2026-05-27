@@ -9,7 +9,7 @@ const GRID_COLS: Record<number, string> = {
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto max-w-7xl relative border-b border-solid border-[#f0f0f0]">
-      {/* Cloudflare-style dashed vertical lines: div + linear-gradient bg */}
+      {/* Cloudflare practice: div + linear-gradient, w-px (1px), z-0 behind content */}
       <div
         className="absolute top-0 left-0 bottom-0 w-px z-0 pointer-events-none"
         style={{
