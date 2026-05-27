@@ -1,46 +1,44 @@
-﻿import { type ReactNode } from "react";
+import { type ReactNode } from "react";
 
-/* ------------------------------------------------------------------ */
-/*  BentoGrid – full‑width outer border (1px #f0f0f0)                 */
-/* ------------------------------------------------------------------ */
+const GRID_COLS: Record<number, string> = {
+  2: "grid-cols-2",
+  3: "grid-cols-3",
+  4: "grid-cols-4",
+};
+
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="bento-grid w-full border border-[#f0f0f0]">
+    <div className="w-full border border-[#f0f0f0]">
       {children}
     </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  BentoRow – horizontal divider                                      */
-/*  variant: "solid" (1px solid) or "dashed" (1px dashed)              */
-/* ------------------------------------------------------------------ */
 export function BentoRow({
   children,
   variant = "solid",
   cols,
+  first = false,
   className = "",
 }: {
   children: ReactNode;
   variant?: "solid" | "dashed";
-  cols?: number;
+  cols?: 2 | 3 | 4;
+  first?: boolean;
   className?: string;
 }) {
   const borderClass = variant === "dashed" ? "border-dashed" : "border-solid";
-  const gridClass = cols ? `grid grid-cols-${cols}` : "";
+  const topBorder = first ? "" : "border-t ";
 
   return (
     <div
-      className={`bento-row border-t border-[#f0f0f0] ${borderClass} ${gridClass} ${className}`}
+      className={`${topBorder}border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
     >
       {children}
     </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  BentoCell – vertical divider (right border, last child none)       */
-/* ------------------------------------------------------------------ */
 export function BentoCell({
   children,
   className = "",
@@ -49,19 +47,16 @@ export function BentoCell({
   className?: string;
 }) {
   return (
-    <div className={`bento-cell border-r border-[#f0f0f0] last:border-r-0 ${className}`}>
+    <div className={`border-r border-[#f0f0f0] last:border-r-0 ${className}`}>
       {children}
     </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  BentoSpacer – breathing area with visible grid lines               */
-/* ------------------------------------------------------------------ */
 export function BentoSpacer({ height = "h-20" }: { height?: string }) {
   return (
     <div
-      className={`bento-row border-t border-[#f0f0f0] border-solid ${height}`}
+      className={`border-t border-[#f0f0f0] border-solid ${height}`}
       aria-hidden="true"
     />
   );

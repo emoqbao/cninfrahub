@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
-import Header from "@/components/layout/Header";
+import ConditionalHeader from "@/components/layout/ConditionalHeader";
 import ConditionalFooter from "@/components/layout/ConditionalFooter";
 import JsonLd from "@/components/ui/JsonLd";
 import { I18nProvider } from "@/lib/i18n/context";
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-full flex flex-col">
         <I18nProvider>
-          <Header />
+          <ConditionalHeader />
           <main className="flex-1">{children}</main>
           <ConditionalFooter />
         </I18nProvider>

@@ -1,4 +1,5 @@
-﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
@@ -16,6 +17,11 @@ import {
 export default function Home() {
   return (
     <BentoGrid>
+      {/* ── NAV (no top border to avoid double line) ── */}
+      <BentoRow first>
+        <Header />
+      </BentoRow>
+
       {/* ── HERO ── */}
       <BentoRow>
         <Hero />
