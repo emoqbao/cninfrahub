@@ -9,14 +9,15 @@ const GRID_COLS: Record<number, string> = {
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto max-w-7xl relative border-b-[0.5px] border-solid border-[#f0f0f0]">
-      {/* SVG dashed vertical edge lines at z-0 */}
+      {/* SVG dashed vertical edge lines at z-0. viewBox 0 0 100 100 + preserveAspectRatio="none" = full stretch */}
       <svg
         className="absolute inset-0 pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
-        <line x1="0" y1="0" x2="0" y2="100%" stroke="#f0f0f0" strokeWidth="0.5" strokeDasharray="20 20" />
-        <line x1="100%" y1="0" x2="100%" y2="100%" stroke="#f0f0f0" strokeWidth="0.5" strokeDasharray="20 20" />
+        <line x1="0" y1="0" x2="0" y2="100" stroke="#f0f0f0" strokeWidth="0.5" strokeDasharray="20 20" />
+        <line x1="100" y1="0" x2="100" y2="100" stroke="#f0f0f0" strokeWidth="0.5" strokeDasharray="20 20" />
       </svg>
       {children}
     </div>
