@@ -45,7 +45,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 闁宠鲸銈?/ Ctrl+K
+  // 闂傚倸鍊风粈渚€鎮块崶銊ｄ粓闁归棿绀佸洿?/ Ctrl+K
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`z-50 bg-white nav-dashed-bottom`}
+        className="relative z-50 bg-white nav-dashed-bottom"
       >
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">
@@ -248,7 +248,7 @@ export default function Header() {
         {/* Products mega menu */}
         <div
           ref={megaPanelRef}
-                    className="mx-auto max-w-7xl px-6 pb-4 lg:px-8"
+          className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8"
         >
           {megaOpen && (
             <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
