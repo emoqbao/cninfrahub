@@ -1,49 +1,97 @@
+﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
 import Hero from "@/components/home/Hero";
-import TrustStats from "@/components/home/TrustStats";
-import WhatWeDo from "@/components/home/WhatWeDo";
-import ProductOverview from "@/components/home/ProductOverview";
+import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
+import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
+import { ProductOverviewTitle, ProductCard, productModules } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
+import {
+  FooterBrand,
+  FooterProductsColumn,
+  FooterSolutionsColumn,
+  FooterResourcesColumn,
+  FooterCompanyColumn,
+  FooterCopyright,
+} from "@/components/home/HomeFooterContent";
 
 export default function Home() {
   return (
-    <>
-      {/* Buffer slot: whitespace */}
-      <div className="h-12 lg:h-16" />
-
-      {/* Hero */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <BentoGrid>
+      {/* ── HERO ── */}
+      <BentoRow>
         <Hero />
-      </div>
+      </BentoRow>
 
-      {/* Buffer slot: whitespace */}
-      <div className="h-12 lg:h-16" />
+      {/* ── Breathing space ── */}
+      <BentoSpacer height="h-16 lg:h-24" />
 
-      {/* TrustStats */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <TrustStats />
-      </div>
+      {/* ── STATS (4 columns with vertical dividers) ── */}
+      <BentoRow cols={4}>
+        {trustStats.map((s) => (
+          <BentoCell key={s.label}>
+            <TrustStatItem stat={s} />
+          </BentoCell>
+        ))}
+      </BentoRow>
 
-      {/* Buffer slot: whitespace */}
-      <div className="h-12 lg:h-16" />
+      {/* ── Breathing space ── */}
+      <BentoSpacer height="h-16 lg:h-24" />
 
-      {/* What We Do */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <WhatWeDo />
-      </div>
+      {/* ── WHAT WE DO title ── */}
+      <BentoRow>
+        <WhatWeDoTitle />
+      </BentoRow>
 
-      {/* Buffer slot: whitespace */}
-      <div className="h-12 lg:h-16" />
+      {/* ── WHAT WE DO steps (3 columns, dashed dividers) ── */}
+      <BentoRow variant="dashed" cols={3}>
+        {whatWeDoSteps.map((step) => (
+          <BentoCell key={step.title}>
+            <WhatWeDoCard step={step} />
+          </BentoCell>
+        ))}
+      </BentoRow>
 
-      {/* Our Products */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <ProductOverview />
-      </div>
+      {/* ── Breathing space ── */}
+      <BentoSpacer height="h-16 lg:h-24" />
 
-      {/* Buffer slot: whitespace */}
-      <div className="h-16 lg:h-20" />
+      {/* ── OUR PRODUCTS title ── */}
+      <BentoRow>
+        <ProductOverviewTitle />
+      </BentoRow>
 
-      {/* CTA — full width, crosses the dashed tracks */}
-      <CTABanner />
-    </>
+      {/* ── OUR PRODUCTS cards (4 columns) ── */}
+      <BentoRow cols={4}>
+        {productModules.map((m) => (
+          <BentoCell key={m.name}>
+            <ProductCard module={m} />
+          </BentoCell>
+        ))}
+      </BentoRow>
+
+      {/* ── Breathing space ── */}
+      <BentoSpacer height="h-16 lg:h-24" />
+
+      {/* ── CTA (dark bg) ── */}
+      <BentoRow className="bg-[#0a0f1a]">
+        <CTABanner />
+      </BentoRow>
+
+      {/* ── FOOTER brand ── */}
+      <BentoRow className="bg-[#0a0f1a] text-white">
+        <FooterBrand />
+      </BentoRow>
+
+      {/* ── FOOTER link columns (4 columns, dark bg) ── */}
+      <BentoRow cols={4} className="bg-[#0a0f1a] text-white">
+        <BentoCell><FooterProductsColumn /></BentoCell>
+        <BentoCell><FooterSolutionsColumn /></BentoCell>
+        <BentoCell><FooterResourcesColumn /></BentoCell>
+        <BentoCell><FooterCompanyColumn /></BentoCell>
+      </BentoRow>
+
+      {/* ── FOOTER copyright (dark bg) ── */}
+      <BentoRow className="bg-[#0a0f1a]">
+        <FooterCopyright />
+      </BentoRow>
+    </BentoGrid>
   );
 }
