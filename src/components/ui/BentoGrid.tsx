@@ -8,9 +8,10 @@ const GRID_COLS: Record<number, string> = {
 
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-7xl relative border-b-[0.5px] border-solid border-[#f0f0f0]">
+    <div className="mx-auto max-w-7xl relative border-[0.5px] border-solid border-[#f0f0f0]">
+      {/* SVG dashed vertical guide lines at z-0, behind content */}
       <svg
-        className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
       >
@@ -24,23 +25,20 @@ export function BentoGrid({ children }: { children: ReactNode }) {
 
 export function BentoRow({
   children,
-  variant = "solid",
   cols,
   first = false,
   className = "",
 }: {
   children: ReactNode;
-  variant?: "solid" | "dashed";
   cols?: 2 | 3 | 4;
   first?: boolean;
   className?: string;
 }) {
-  const borderClass = variant === "dashed" ? "border-dashed" : "border-solid";
   const topBorder = first ? "" : "border-t-[0.5px] ";
 
   return (
     <div
-      className={`relative z-[1] ${topBorder}border-[#f0f0f0] ${borderClass} ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
+      className={`relative z-[1] ${topBorder}border-solid border-[#f0f0f0] ${cols ? `grid ${GRID_COLS[cols]}` : ""} ${className}`}
     >
       {children}
     </div>
@@ -55,7 +53,7 @@ export function BentoCell({
   className?: string;
 }) {
   return (
-    <div className={`relative z-[2] -ml-[0.5px] first:ml-0 border-[0.5px] border-solid border-[#f0f0f0] ${className}`}>
+    <div className={`relative z-[2] border-r-[0.5px] border-solid border-[#f0f0f0] first:border-l-[0.5px] ${className}`}>
       {children}
     </div>
   );
@@ -64,7 +62,7 @@ export function BentoCell({
 export function BentoSpacer({ height = "h-20" }: { height?: string }) {
   return (
     <div
-      className={`border-t-[0.5px] border-[#f0f0f0] border-solid ${height}`}
+      className={`relative z-[1] border-t-[0.5px] border-solid border-[#f0f0f0] ${height}`}
       aria-hidden="true"
     />
   );

@@ -43,7 +43,7 @@ export default function Home() {
         </BentoRow>
 
         {/* 閳光偓閳光偓 WHAT WE DO steps (3 columns, dashed dividers) 閳光偓閳光偓 */}
-        <BentoRow variant="dashed" cols={3}>
+        <BentoRow cols={3}>
           {whatWeDoSteps.map((step) => (
             <BentoCell key={step.title}>
               <WhatWeDoCard step={step} />
