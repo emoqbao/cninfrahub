@@ -40,7 +40,7 @@ function RelatedSolutions({ current }: { current: Solution }) {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((s) => (
             <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-              <div className="flex flex-wrap gap-2">{s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-2 py-0.5 text-xs font-medium text-[#a48e7a]">{t}</span>))}</div>
+              <div className="flex flex-wrap gap-2">{s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e0d5ca] bg-[#f8f3ee] px-2 py-0.5 text-xs font-medium text-[#a48e7a]">{t}</span>))}</div>
               <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{s.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{s.description}</p>
               <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
@@ -76,7 +76,7 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-16 lg:py-24 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
-              <div className="flex flex-wrap gap-2">{solution.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#a48e7a]">{t}</span>))}</div>
+              <div className="flex flex-wrap gap-2">{solution.tags.map((t) => (<span key={t} className="rounded-full border border-[#e0d5ca] bg-[#f8f3ee] px-3 py-1 text-xs font-medium text-[#a48e7a]">{t}</span>))}</div>
               <h1 className="mt-5 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">{solution.name}</h1>
               <p className="mt-6 text-xl leading-relaxed text-[#525252]">{solution.description}</p>
             </div>
@@ -113,7 +113,7 @@ export default async function SolutionPage({ params }: Props) {
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] p-8 flex items-center justify-center min-h-[360px]"><div className="text-center"><Network className="h-12 w-12 text-[#d4d4d4] mx-auto" strokeWidth={1.5} /><p className="mt-4 text-sm text-[#a3a3a3]">Architecture diagram</p><p className="text-xs text-[#d4d4d4]">Replace with your SVG image</p></div></div>
-              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#a48e7a]">{product.name}</span>); })}</div></div>
+              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e0d5ca] bg-[#f8f3ee] px-3 py-1 text-xs font-medium text-[#a48e7a]">{product.name}</span>); })}</div></div>
             </div>
           </Container>
         </section>
