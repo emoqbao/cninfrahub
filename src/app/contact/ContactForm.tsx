@@ -145,7 +145,7 @@ export default function ContactForm() {
                 type="checkbox"
                 name="interests"
                 value={p.name}
-                className="h-4 w-4 rounded border-[#d1d3d6] text-[#a48e7a] focus:ring-[#a48e7a]"
+                className="h-4 w-4 rounded border-[#e0d5ca] accent-[#a48e7a] focus:ring-[#a48e7a]"
               />
               {p.name}
             </label>
@@ -155,7 +155,7 @@ export default function ContactForm() {
               type="checkbox"
               name="interests"
               value="Other / Not sure"
-              className="h-4 w-4 rounded border-[#d1d3d6] text-[#a48e7a] focus:ring-[#a48e7a]"
+              className="h-4 w-4 rounded border-[#e0d5ca] accent-[#a48e7a] focus:ring-[#a48e7a]"
             />
             Other / Not sure
           </label>
