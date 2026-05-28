@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     openGraph: {
-      title: `${product.name} 闂?CN-Infra Hub`,
+      title: `${product.name} — CN-Infra Hub`,
       description: product.tagline,
     },
   };
@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
 
       <BentoFrame>
         {/* Hero */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
               <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
@@ -111,7 +111,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Overview */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -125,7 +125,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Key Features */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
               Key features
@@ -147,7 +147,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="flex items-center gap-3 mb-8">
               <Zap className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
@@ -172,7 +172,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* Use Cases */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="flex items-center gap-3 mb-8">
               <Lightbulb className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} />
@@ -195,7 +195,7 @@ export default async function ProductPage({ params }: Props) {
         </section>
 
         {/* CTA */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="mx-auto max-w-xl text-center">
               <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">
@@ -213,7 +213,7 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </Container>
         </section>
-        {/* Related */}
+        {/* Related — last section, no dashed bottom */}
         <RelatedProducts current={product} />
       </BentoFrame>
     </>
