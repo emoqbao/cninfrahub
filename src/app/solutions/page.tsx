@@ -17,7 +17,7 @@ export default function SolutionsPage() {
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
-          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Solutions</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             Real-world infrastructure patterns for your China strategy
@@ -30,7 +30,7 @@ export default function SolutionsPage() {
           <Container>
             <div className="space-y-8">
               {solutions.map((s) => (
-                <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-8 lg:p-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-8 lg:p-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <div className="flex flex-wrap gap-2">
                     {s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{t}</span>))}
                   </div>
@@ -40,7 +40,7 @@ export default function SolutionsPage() {
                     <span className="text-[#8c8c8c]">Products used:</span>
                     {s.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-md bg-[#f3f4f6] px-2.5 py-1 text-[#0d0d0d]">{product.name}</span>); })}
                   </div>
-                  <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d]">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
+                  <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a]">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
                 </Link>
               ))}
             </div>

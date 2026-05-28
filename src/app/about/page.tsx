@@ -29,7 +29,7 @@ export default function AboutPage() {
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
-          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">About</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             We don't own the infrastructure. We own the relationships — and the responsibility.
@@ -62,7 +62,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-10 grid gap-8 md:grid-cols-3">
               {pillars.map((p) => (
-                <div key={p.title} className="rounded-xl border border-[#e8eaed] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                <div key={p.title} className="rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <p.icon className="h-8 w-8 text-[#a48e7a]" strokeWidth={1.5} />
                   <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{p.title}</h3>
                   <p className="mt-3 leading-relaxed text-[#525252]">{p.description}</p>
@@ -77,7 +77,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">What sets us apart</h2>
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
               {differentiators.map((d, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] p-4 transition-all duration-200 hover:-translate-y-0.5">
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-[#e8eaed] hover:border-[#a48e7a] p-4 transition-all duration-200 hover:-translate-y-0.5">
                   <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#f5f0ff]">
                     <CheckIcon />
                   </span>

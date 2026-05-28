@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Button from "@/components/ui/Button";
 import { useLanguage } from "@/lib/i18n/context";
@@ -11,7 +11,7 @@ export default function Hero() {
     <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">
             Managed Service Aggregator
           </p>

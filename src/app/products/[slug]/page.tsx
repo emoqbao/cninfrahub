@@ -50,13 +50,13 @@ function RelatedProducts({ current }: { current: Product }) {
             <Link
               key={p.id}
               href={`/products/${p.id}`}
-              className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-lg font-semibold text-[#0d0d0d]">{p.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">
                 {p.tagline}
               </p>
-              <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">
+              <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">
                 Learn more
                 <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: Props) {
         <section className="py-16 lg:py-24 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
-              <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
+              <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#a48e7a]">
                 {product.module}
               </span>
               <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">

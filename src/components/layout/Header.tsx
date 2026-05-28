@@ -327,7 +327,7 @@ export default function Header() {
               <div className="mt-3 border-t border-[#e8eaed] pt-4">
                 <button
                   onClick={() => { setMobileOpen(false); setSearchOpen(true); }}
-                  className="w-full flex items-center justify-center gap-2 rounded-md border border-[#e8eaed] px-3 py-2.5 text-sm font-medium text-[#0d0d0d] hover:bg-[#f3f4f6]"
+                  className="w-full flex items-center justify-center gap-2 rounded-md border border-[#e8eaed] hover:border-[#a48e7a] px-3 py-2.5 text-sm font-medium text-[#0d0d0d] hover:bg-[#f3f4f6]"
                 >
                   <Search className="h-4 w-4" strokeWidth={1.5} />
                   {t("search.placeholder", lang)}
@@ -341,7 +341,7 @@ export default function Header() {
                     className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                       lang === l
                         ? "bg-[#0d0d0d] text-white"
-                        : "border border-[#e8eaed] text-[#525252] hover:bg-[#f3f4f6]"
+                        : "border border-[#e8eaed] hover:border-[#a48e7a] text-[#525252] hover:bg-[#f3f4f6]"
                     }`}
                   >
                     {languageLabels[l]}

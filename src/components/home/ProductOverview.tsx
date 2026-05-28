@@ -11,7 +11,7 @@ export const productModules = [
 export function ProductOverviewTitle() {
   return (
     <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-8">
-      <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+      <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
       <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Our Products</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
         Purpose-built infrastructure for China and beyond
@@ -29,7 +29,7 @@ export function ProductCard({ module: m }: { module: typeof productModules[numbe
       <m.icon className="h-7 w-7 text-[#a48e7a]" strokeWidth={1.5} />
       <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
       <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
-      <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
+      <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#a48e7a] group-hover:underline">
         Explore &rarr;
       </span>
     </Link>

@@ -39,11 +39,11 @@ function RelatedSolutions({ current }: { current: Solution }) {
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Related solutions</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((s) => (
-            <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+            <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
               <div className="flex flex-wrap gap-2">{s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-2 py-0.5 text-xs font-medium text-[#737373]">{t}</span>))}</div>
               <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{s.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{s.description}</p>
-              <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
+              <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
             </Link>
           ))}
         </div>
@@ -122,7 +122,7 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#0d0d0d] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#a48e7a]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#a48e7a]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>
           </Container>
         </section>
 

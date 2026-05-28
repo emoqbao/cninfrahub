@@ -28,7 +28,7 @@ export default function ResourcesPage() {
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
-          <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
+          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">Practical guides for infrastructure decision-makers operating in China</h1>
           <p className="mt-4 max-w-2xl text-lg text-[#525252]">Technical, vendor-neutral resources to help you design, deploy, and operate infrastructure in China.</p>
@@ -41,7 +41,7 @@ export default function ResourcesPage() {
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               {featured.map((f) => (
-                <div key={f.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                <div key={f.title} className="flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <span className="inline-flex self-start items-center gap-1.5 rounded-md bg-[#f3f4f6] px-2.5 py-1 text-xs font-medium text-[#737373]"><f.icon className="h-3.5 w-3.5" />{f.type}</span>
                   <h3 className="mt-4 text-lg font-bold text-[#0d0d0d]">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#737373]">{f.excerpt}</p>
@@ -57,7 +57,7 @@ export default function ResourcesPage() {
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides &amp; White Papers</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {guides.map((g) => (
-                <div key={g.title} className="flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                <div key={g.title} className="flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">{g.type}</span>
                   <h3 className="mt-3 text-base font-bold text-[#0d0d0d]">{g.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#737373]">{g.excerpt}</p>
