@@ -1,11 +1,11 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Cpu, Network, Database, Brain } from "lucide-react";
 
 export const productModules = [
-  { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/" },
-  { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/" },
-  { name: "NETWORK", icon: Network, products: "DIA · IP Transit · Private Connect · Cloud Connect · Dark Fiber · Virtual Edge", href: "/products/" },
-  { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/" },
+  { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/#ai" },
+  { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/#compute" },
+  { name: "NETWORK", icon: Network, products: "DIA · IP Transit · Private Connect · Cloud Connect · Dark Fiber · Virtual Edge", href: "/products/#network" },
+  { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/#data-center" },
 ];
 
 export function ProductOverviewTitle() {

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import PageFrame from "@/components/ui/PageFrame";
+import { BentoFrame } from "@/components/ui/BentoFrame";
 import { products, productModules } from "@/lib/products";
 
 export const metadata: Metadata = {
@@ -9,10 +9,16 @@ export const metadata: Metadata = {
   description: "Purpose-built infrastructure services for China and beyond — AI Gateway, compute, networking, and data center solutions."
 };
 
+const MODULE_IDS: Record<string, string> = {
+  AI: "ai",
+  COMPUTE: "compute",
+  NETWORK: "network",
+  "DATA CENTER": "data-center",
+};
+
 export default function ProductsPage() {
   return (
     <>
-      {/* Hero */}
       <section className="py-16 lg:py-24">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
@@ -23,16 +29,16 @@ export default function ProductsPage() {
         </Container>
       </section>
 
-      {/* Products grouped by module */}
-      <PageFrame>
+      <BentoFrame>
         <section className="py-20 lg:py-28">
           <Container>
-            <div className="space-y-20">
+            <div className="space-y-24">
               {productModules.map((mod) => {
                 const modProducts = products.filter((p) => p.module === mod);
                 if (modProducts.length === 0) return null;
+                const anchorId = MODULE_IDS[mod] || mod.toLowerCase();
                 return (
-                  <div key={mod}>
+                  <div key={mod} id={anchorId} className="scroll-mt-20">
                     <div className="mb-8">
                       <div className="mb-3 h-px w-6 bg-[#b8b0a8]" />
                       <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">{mod}</h2>
@@ -58,7 +64,7 @@ export default function ProductsPage() {
             </div>
           </Container>
         </section>
-      </PageFrame>
+      </BentoFrame>
     </>
   );
 }
