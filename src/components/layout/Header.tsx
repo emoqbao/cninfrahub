@@ -14,6 +14,7 @@ import { t, languageLabels, type Language } from "@/lib/i18n/translations";
 
 export default function Header() {
   const pathname = usePathname();
+  const showNavDashed = pathname === "/" || pathname.startsWith("/about") || pathname.startsWith("/resources");
   const [megaOpen, setMegaOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 闂傚倸鍊风粈渚€鎮块崶銊ｄ粓闁归棿绀佸洿?/ Ctrl+K
+  // 闂傚倸鍊搁崐椋庣矆娓氣偓閹潡宕堕妸锝勭矒闂佸綊妫跨粈浣告纯?/ Ctrl+K
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -75,7 +76,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="relative z-50 bg-white nav-dashed-bottom"
+        className={`relative z-50 bg-white ${showNavDashed ? "nav-dashed-bottom" : ""}`}
       >
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">

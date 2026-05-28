@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     openGraph: {
-      title: `${product.name} 闁?CN-Infra Hub`,
+      title: `${product.name} 闂?CN-Infra Hub`,
       description: product.tagline,
     },
   };
@@ -76,7 +76,7 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       {/* Breadcrumb */}
-      <div className="border-b border-[#e8eaed]">
+      <div className="border-b border-dashed border-[#f0f0f0]">
         <Container>
           <nav className="flex items-center gap-2 py-3 text-sm text-[#737373]">
             <Link href="/" className="hover:text-[#0d0d0d] transition-colors">

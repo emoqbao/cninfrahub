@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: solution.description.slice(0, 160),
     keywords: solution.seoKeywords,
     alternates: { canonical: `/solutions/${solution.id}` },
-    openGraph: { title: `${solution.name} 闁?CN-Infra Hub`, description: solution.description.slice(0, 160) },
+    openGraph: { title: `${solution.name} 闂?CN-Infra Hub`, description: solution.description.slice(0, 160) },
   };
 }
 
@@ -59,7 +59,7 @@ export default async function SolutionPage({ params }: Props) {
 
   return (
     <>
-      <div className="border-b border-[#e8eaed]">
+      <div className="border-b border-dashed border-[#f0f0f0]">
         <Container>
           <nav className="flex items-center gap-2 py-3 text-sm text-[#737373]">
             <Link href="/" className="hover:text-[#0d0d0d] transition-colors">Home</Link>
@@ -113,7 +113,7 @@ export default async function SolutionPage({ params }: Props) {
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] p-8 flex items-center justify-center min-h-[360px]"><div className="text-center"><Network className="h-12 w-12 text-[#d4d4d4] mx-auto" strokeWidth={1.5} /><p className="mt-4 text-sm text-[#a3a3a3]">Architecture diagram</p><p className="text-xs text-[#d4d4d4]">Replace with your SVG image</p></div></div>
-              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution 闁?with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{product.name}</span>); })}</div></div>
+              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution 闂?with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{product.name}</span>); })}</div></div>
             </div>
           </Container>
         </section>
