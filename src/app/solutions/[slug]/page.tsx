@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Users, Cog, Network } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import CheckIcon from "@/components/ui/CheckIcon";
-import SolutionArchitecture from "@/components/illustrations/SolutionArchitecture";
+import ImageSlot from "@/components/ui/ImageSlot";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
@@ -108,15 +108,15 @@ export default async function SolutionPage({ params }: Props) {
           </Container>
         </section>
 
-                {/* Architecture overview */}
+                        {/* Architecture overview */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
-            <SolutionArchitecture solutionId={solution.id} />
+            <ImageSlot src={`/images/solutions/${solution.id}.svg`} alt={solution.name} aspectRatio="aspect-[4/3]" className="max-w-full" />
           </Container>
         </section>
 
-        {/* Key products used */}{/* Key products used */}
+        {/* Key products used */}{/* Key products used */}{/* Key products used */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>

@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
-import ProductHeroIcon from "@/components/products/ProductHeroIcon";
+import ImageSlot from "@/components/ui/ImageSlot";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { products, getProductById, type Product } from "@/lib/products";
 
@@ -109,14 +109,14 @@ export default async function ProductPage({ params }: Props) {
                   {product.tagline}
                 </p>
               </div>
-              <div className="hidden lg:flex items-center justify-center">
-                <ProductHeroIcon productId={product.id} />
+                            <div className="hidden lg:flex items-center justify-center">
+                <ImageSlot src={`/images/products/${product.id}.svg`} alt={product.name} />
               </div>
-            </div>
+          </div>
           </Container>
         </section>
 
-        {/* Overview */}{/* Overview */}
+        {/* Overview */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
