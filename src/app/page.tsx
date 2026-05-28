@@ -1,4 +1,4 @@
-﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
@@ -70,14 +70,12 @@ export default function Home() {
 
         {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
         <BentoSpacer height="h-16 lg:h-24" />
+      
+        {/* CTA */}
+        <BentoRow className="bg-[#0a0f1a]">
+          <CTABanner />
+        </BentoRow>
       </BentoGrid>
-
-      {/* 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 */}
-      {/* CTA + FOOTER 閳?outside the grid, no borders              */}
-      {/* 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 */}
-      <section className="bg-[#0a0f1a]">
-        <CTABanner />
-      </section>
 
       <footer className="bg-[#0a0f1a] text-white">
         <FooterBrand />
