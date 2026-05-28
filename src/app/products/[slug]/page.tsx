@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
-import PageFrame from "@/components/ui/PageFrame";
+import { BentoFrame } from "@/components/ui/BentoFrame";
 import { products, getProductById, type Product } from "@/lib/products";
 
 interface Props {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     openGraph: {
-      title: `${product.name} — CN-Infra Hub`,
+      title: `${product.name} 鈥?CN-Infra Hub`,
       description: product.tagline,
     },
   };
@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: Props) {
         </Container>
       </div>
 
-      <PageFrame>
+      <BentoFrame>
         {/* Hero */}
         <section className="py-16 lg:py-24">
           <Container>
@@ -213,7 +213,7 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </Container>
         </section>
-      </PageFrame>
+      </BentoFrame>
 
       {/* Related */}
       <RelatedProducts current={product} />
