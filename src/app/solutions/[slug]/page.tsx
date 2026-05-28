@@ -5,6 +5,7 @@ import { ArrowRight, Zap, Users, Cog, Network } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import CheckIcon from "@/components/ui/CheckIcon";
+import SolutionArchitecture from "@/components/illustrations/SolutionArchitecture";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
@@ -107,18 +108,15 @@ export default async function SolutionPage({ params }: Props) {
           </Container>
         </section>
 
-        {/* Architecture overview */}
+                {/* Architecture overview */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
-            <div className="grid gap-8 lg:grid-cols-3">
-              <div className="lg:col-span-2 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] p-8 flex items-center justify-center min-h-[360px]"><div className="text-center"><Network className="h-12 w-12 text-[#d4d4d4] mx-auto" strokeWidth={1.5} /><p className="mt-4 text-sm text-[#a3a3a3]">Architecture diagram</p><p className="text-xs text-[#d4d4d4]">Replace with your SVG image</p></div></div>
-              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e0d5ca] bg-[#f8f3ee] px-3 py-1 text-xs font-medium text-[#a48e7a]">{product.name}</span>); })}</div></div>
-            </div>
+            <SolutionArchitecture solutionId={solution.id} />
           </Container>
         </section>
 
-        {/* Key products used */}
+        {/* Key products used */}{/* Key products used */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>
