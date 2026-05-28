@@ -89,7 +89,7 @@ export default function AboutPage() {
         </section>
       </BentoFrame>
 
-      <section className=" py-20 lg:py-28 text-center">
+      <section className="bg-[#faf9f7] py-20 lg:py-28 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-3xl">
             You know your architecture. We know China's infrastructure market.
@@ -98,7 +98,7 @@ export default function AboutPage() {
             Let's talk about what you need — and how we can source it better than anyone else.
           </p>
           <div className="mt-8">
-            <a href="/contact/" className="inline-flex items-center justify-center rounded-lg border border-[#e8eaed] bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
+            <a href="/contact/" className="inline-flex items-center justify-center rounded-lg border border-[#e8eaed] bg-white px-8 py-3 text-lg font-medium text-[#0d0d0d] hover:border-[#a48e7a] hover:bg-[#f3f4f6] transition-colors">
               Get in Touch
             </a>
           </div>
