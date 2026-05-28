@@ -94,24 +94,29 @@ export default async function ProductPage({ params }: Props) {
       </div>
 
       <BentoFrame>
-        {/* Hero */}
+                {/* Hero */}
         <section className="py-16 lg:py-24 nav-dashed-bottom">
           <Container>
-            <div className="max-w-3xl">
-              <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#a48e7a]">
-                {product.module}
-              </span>
-              <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">
-                {product.name}
-              </h1>
-              <p className="mt-6 text-xl leading-relaxed text-[#525252]">
-                {product.tagline}
-              </p>
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#a48e7a]">
+                  {product.module}
+                </span>
+                <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">
+                  {product.name}
+                </h1>
+                <p className="mt-6 text-xl leading-relaxed text-[#525252]">
+                  {product.tagline}
+                </p>
+              </div>
+              <div className="hidden lg:flex items-center justify-center">
+                <ProductHeroIcon productId={product.id} />
+              </div>
             </div>
           </Container>
         </section>
 
-        {/* Overview */}
+        {/* Overview */}{/* Overview */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">

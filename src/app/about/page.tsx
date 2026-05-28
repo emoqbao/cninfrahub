@@ -27,13 +27,37 @@ const differentiators = [
 export default function AboutPage() {
   return (
     <>
-      <section className="py-16 lg:py-24 nav-dashed-bottom">
+            <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
-          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">About</p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
-            We don't own the infrastructure. We own the relationships — and the responsibility.
-          </h1>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
+              <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">About</p>
+              <h1 className="mt-3 text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
+                We don't own the infrastructure. We own the relationships — and the responsibility.
+              </h1>
+            </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-[#e8eaed] bg-[#f8f9fb] flex items-center justify-center">
+                <svg viewBox="0 0 200 200" className="w-3/4 h-3/4" fill="none">
+                  <rect x="60" y="15" width="80" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
+                  <rect x="75" y="22" width="50" height="6" rx="2" fill="#0d0d0d" opacity="0.3" />
+                  <rect x="75" y="32" width="35" height="4" rx="1" fill="#0d0d0d" opacity="0.15" />
+                  <rect x="20" y="145" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
+                  <rect x="66" y="155" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
+                  <rect x="132" y="145" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
+                  <circle cx="100" cy="90" r="22" fill="#a48e7a" opacity="0.12" />
+                  <circle cx="100" cy="90" r="22" stroke="#a48e7a" strokeWidth="1.5" fill="none" />
+                  <circle cx="100" cy="90" r="8" fill="#a48e7a" />
+                  <line x1="88" y1="43" x2="95" y2="68" stroke="#d4d4d4" strokeWidth="1.5" />
+                  <line x1="112" y1="43" x2="105" y2="68" stroke="#d4d4d4" strokeWidth="1.5" />
+                  <line x1="80" y1="108" x2="44" y2="150" stroke="#d4d4d4" strokeWidth="1.5" />
+                  <line x1="100" y1="112" x2="90" y2="155" stroke="#d4d4d4" strokeWidth="1.5" />
+                  <line x1="115" y1="106" x2="156" y2="150" stroke="#d4d4d4" strokeWidth="1.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
