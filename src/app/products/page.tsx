@@ -19,7 +19,7 @@ const MODULE_IDS: Record<string, string> = {
 export default function ProductsPage() {
   return (
     <>
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Products</p>
@@ -32,13 +32,18 @@ export default function ProductsPage() {
       <BentoFrame>
         <section className="py-20 lg:py-28">
           <Container>
-            <div className="space-y-24">
-              {productModules.map((mod) => {
+            <div className="space-y-0">
+              {productModules.map((mod, idx) => {
                 const modProducts = products.filter((p) => p.module === mod);
                 if (modProducts.length === 0) return null;
                 const anchorId = MODULE_IDS[mod] || mod.toLowerCase();
+                const isLast = idx === productModules.length - 1;
                 return (
-                  <div key={mod} id={anchorId} className="scroll-mt-20">
+                  <div
+                    key={mod}
+                    id={anchorId}
+                    className={`scroll-mt-20 pt-16 first:pt-0 ${isLast ? "" : "nav-dashed-bottom pb-16"}`}
+                  >
                     <div className="mb-8">
                       <div className="mb-3 h-px w-6 bg-[#b8b0a8]" />
                       <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">{mod}</h2>

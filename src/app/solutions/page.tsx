@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import PageFrame from "@/components/ui/PageFrame";
+import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions } from "@/lib/solutions";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <>
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Solutions</p>
@@ -25,7 +25,7 @@ export default function SolutionsPage() {
         </Container>
       </section>
 
-      <PageFrame>
+      <BentoFrame>
         <section className="py-20 lg:py-28">
           <Container>
             <div className="space-y-8">
@@ -51,7 +51,7 @@ export default function SolutionsPage() {
             </div>
           </Container>
         </section>
-      </PageFrame>
+      </BentoFrame>
     </>
   );
 }

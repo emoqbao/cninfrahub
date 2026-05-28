@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import PageFrame from "@/components/ui/PageFrame";
+import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Resources",
-  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China.",
+  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China."
 };
 
 const featured = [
@@ -17,8 +17,8 @@ const featured = [
 const guides = [
   { type: "Guide", title: "The SRE's Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness.", date: "Coming soon" },
   { type: "Guide", title: "AWS vs. Azure vs. GCP: Connecting to China", excerpt: "Side-by-side comparison of cloud interconnect options for China, with pricing models, latency benchmarks, and architecture diagrams.", date: "Coming soon" },
-  { type: "Guide", title: "Understanding China's Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 闂?what they mean for your architecture.", date: "Coming soon" },
-  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China 闂?on-prem vs. colocated vs. cloud.", date: "Coming soon" },
+  { type: "Guide", title: "Understanding China's Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 — what they mean for your architecture.", date: "Coming soon" },
+  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China — on-prem vs. colocated vs. cloud.", date: "Coming soon" },
   { type: "Guide", title: "Building a Multi-Region DR Strategy with China Nodes", excerpt: "Architecture patterns for active-passive and active-active disaster recovery spanning China and APAC.", date: "Coming soon" },
   { type: "Guide", title: "Virtual Edge Playbook: FortiGate, VyOS, and RouterOS in China", excerpt: "Step-by-step deployment guide for running virtual network appliances on CN-Infra Hub infrastructure.", date: "Coming soon" },
 ];
@@ -35,9 +35,8 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
-      <PageFrame>
-        {/* Featured */}
-        <section className="py-20 lg:py-28">
+      <BentoFrame>
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Featured</h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -53,8 +52,7 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
-        {/* Guides */}
-        <section className="py-20 lg:py-28">
+        <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-xl font-semibold text-[#0d0d0d]">Guides &amp; White Papers</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -70,7 +68,6 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
-        {/* Newsletter */}
         <section className="py-20 lg:py-28">
           <Container>
             <div className="mx-auto max-w-xl text-center">
@@ -84,7 +81,7 @@ export default function ResourcesPage() {
             </div>
           </Container>
         </section>
-      </PageFrame>
+      </BentoFrame>
     </>
   );
 }
