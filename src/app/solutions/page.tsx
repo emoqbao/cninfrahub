@@ -18,7 +18,7 @@ export default function SolutionsPage() {
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Solutions</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">Solutions</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
             Real-world infrastructure patterns for your China strategy
           </h1>

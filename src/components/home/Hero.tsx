@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">
             Managed Service Aggregator
           </p>
           <h1 className="mt-4 text-5xl font-bold leading-[1.1] tracking-[-0.03em] text-[#0d0d0d] sm:text-6xl lg:text-7xl">

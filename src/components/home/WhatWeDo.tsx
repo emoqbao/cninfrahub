@@ -22,7 +22,7 @@ export function WhatWeDoTitle() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
       <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-      <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">What We Do</p>
+      <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">What We Do</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
         We don't own the infrastructure. We own the relationships — and the responsibility.
       </h2>

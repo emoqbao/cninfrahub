@@ -29,7 +29,7 @@ export default function ResourcesPage() {
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">Practical guides for infrastructure decision-makers operating in China</h1>
           <p className="mt-4 max-w-2xl text-lg text-[#525252]">Technical, vendor-neutral resources to help you design, deploy, and operate infrastructure in China.</p>
         </Container>
