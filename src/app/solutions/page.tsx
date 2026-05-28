@@ -32,7 +32,7 @@ export default function SolutionsPage() {
               {solutions.map((s) => (
                 <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-8 lg:p-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <div className="flex flex-wrap gap-2">
-                    {s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{t}</span>))}
+                    {s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#a48e7a]">{t}</span>))}
                   </div>
                   <h2 className="mt-5 text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d] group-hover:underline">{s.name}</h2>
                   <p className="mt-4 max-w-3xl leading-relaxed text-[#525252]">{s.description}</p>
@@ -46,7 +46,7 @@ export default function SolutionsPage() {
             </div>
             <div className="mt-12 rounded-xl border border-[#e8eaed] bg-[#faf9f7] p-8 text-center">
               <h3 className="text-lg font-semibold text-[#0d0d0d]">Don&apos;t see your use case?</h3>
-              <p className="mt-2 text-[#737373]">We design custom architectures for unique requirements.</p>
+              <p className="mt-2 text-[#a48e7a]">We design custom architectures for unique requirements.</p>
               <div className="mt-5"><Button href="/contact/" variant="primary" size="md">Contact Us</Button></div>
             </div>
           </Container>

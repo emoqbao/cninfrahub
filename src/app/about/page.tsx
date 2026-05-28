@@ -87,9 +87,7 @@ export default function AboutPage() {
             </div>
           </Container>
         </section>
-      </BentoFrame>
-
-      <section className="bg-[#faf9f7] py-20 lg:py-28 text-center">
+              <section className="bg-[#faf9f7] py-20 lg:py-28 text-center">
         <Container>
           <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-3xl">
             You know your architecture. We know China's infrastructure market.
@@ -104,6 +102,9 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+      </BentoFrame>
+
+      
     </>
   );
 }
