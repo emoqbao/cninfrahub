@@ -78,16 +78,16 @@ export default async function ProductPage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="nav-dashed-bottom">
         <Container>
-          <nav className="flex items-center gap-2 py-3 text-sm text-[#8c8c8c]">
-            <Link href="/" className="hover:text-[#a48e7a] transition-colors">
+          <nav className="flex items-center gap-2 py-3 text-sm text-[#737373]">
+            <Link href="/" className="hover:text-[#0d0d0d] transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/products/" className="hover:text-[#a48e7a] transition-colors">
+            <Link href="/products/" className="hover:text-[#0d0d0d] transition-colors">
               Products
             </Link>
             <span>/</span>
-            <span className="text-[#525252] font-medium">{product.name}</span>
+            <span className="text-[#0d0d0d] font-medium">{product.name}</span>
           </nav>
         </Container>
       </div>

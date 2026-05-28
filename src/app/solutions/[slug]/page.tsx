@@ -40,7 +40,7 @@ function RelatedSolutions({ current }: { current: Solution }) {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((s) => (
             <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-              <div className="flex flex-wrap gap-2">{s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-2 py-0.5 text-xs font-medium text-[#8c8c8c]">{t}</span>))}</div>
+              <div className="flex flex-wrap gap-2">{s.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-2 py-0.5 text-xs font-medium text-[#737373]">{t}</span>))}</div>
               <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{s.name}</h3>
               <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{s.description}</p>
               <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">Learn more<ArrowRight className="h-3.5 w-3.5" /></span>
@@ -61,12 +61,12 @@ export default async function SolutionPage({ params }: Props) {
     <>
       <div className="nav-dashed-bottom">
         <Container>
-          <nav className="flex items-center gap-2 py-3 text-sm text-[#8c8c8c]">
-            <Link href="/" className="hover:text-[#a48e7a] transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 py-3 text-sm text-[#737373]">
+            <Link href="/" className="hover:text-[#0d0d0d] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/solutions/" className="hover:text-[#a48e7a] transition-colors">Solutions</Link>
+            <Link href="/solutions/" className="hover:text-[#0d0d0d] transition-colors">Solutions</Link>
             <span>/</span>
-            <span className="text-[#525252] font-medium">{solution.name}</span>
+            <span className="text-[#0d0d0d] font-medium">{solution.name}</span>
           </nav>
         </Container>
       </div>
@@ -76,7 +76,7 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-16 lg:py-24 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">
-              <div className="flex flex-wrap gap-2">{solution.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#8c8c8c]">{t}</span>))}</div>
+              <div className="flex flex-wrap gap-2">{solution.tags.map((t) => (<span key={t} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{t}</span>))}</div>
               <h1 className="mt-5 text-4xl font-bold tracking-[-0.03em] text-[#0d0d0d] lg:text-5xl">{solution.name}</h1>
               <p className="mt-6 text-xl leading-relaxed text-[#525252]">{solution.description}</p>
             </div>
@@ -113,7 +113,7 @@ export default async function SolutionPage({ params }: Props) {
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-[#a48e7a]" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Architecture overview</h2></div>
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2 rounded-xl border border-[#e8eaed] border-dashed bg-[#f8f9fb] p-8 flex items-center justify-center min-h-[360px]"><div className="text-center"><Network className="h-12 w-12 text-[#d4d4d4] mx-auto" strokeWidth={1.5} /><p className="mt-4 text-sm text-[#a3a3a3]">Architecture diagram</p><p className="text-xs text-[#d4d4d4]">Replace with your SVG image</p></div></div>
-              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#8c8c8c]">{product.name}</span>); })}</div></div>
+              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-[#0d0d0d]">How it works</h3><p className="mt-4 text-[#525252] leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-[#e8eaed] px-3 py-1 text-xs font-medium text-[#737373]">{product.name}</span>); })}</div></div>
             </div>
           </Container>
         </section>
@@ -122,14 +122,14 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Key products used</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#a48e7a]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#a48e7a]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<Link key={pid} href={`/products/${product.id}`} className="group flex flex-col rounded-xl border border-[#e8eaed] hover:border-[#a48e7a] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"><span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">{product.module}</span><h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3><p className="mt-2 text-sm text-[#737373] leading-relaxed">{product.tagline}</p><span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[#a48e7a] group-hover:underline">View product<ArrowRight className="h-3.5 w-3.5" /></span></Link>); })}</div>
           </Container>
         </section>
 
         {/* CTA */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
-            <div className="mx-auto max-w-xl text-center"><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Is this your use case?</h2><p className="mt-3 text-[#8c8c8c]">Talk to our architects about tailoring {solution.name} to your specific requirements.</p><div className="mt-8"><Button href="/contact/" variant="primary" size="lg">Start a Conversation</Button></div></div>
+            <div className="mx-auto max-w-xl text-center"><h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">Is this your use case?</h2><p className="mt-3 text-[#737373]">Talk to our architects about tailoring {solution.name} to your specific requirements.</p><div className="mt-8"><Button href="/contact/" variant="primary" size="lg">Start a Conversation</Button></div></div>
           </Container>
         </section>
         <RelatedSolutions current={solution} />

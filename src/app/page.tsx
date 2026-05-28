@@ -72,7 +72,7 @@ export default function Home() {
         <BentoSpacer height="h-16 lg:h-24" />
       
         {/* CTA */}
-        <BentoRow className="bg-[#faf9f7] border-[#a48e7a]">
+        <BentoRow>
           <CTABanner />
         </BentoRow>
       </BentoGrid>
