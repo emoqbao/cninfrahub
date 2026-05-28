@@ -59,7 +59,7 @@ export default async function SolutionPage({ params }: Props) {
 
   return (
     <>
-      <div className="border-b border-dashed border-[#f0f0f0]">
+      <div className="nav-dashed-bottom">
         <Container>
           <nav className="flex items-center gap-2 py-3 text-sm text-[#737373]">
             <Link href="/" className="hover:text-[#0d0d0d] transition-colors">Home</Link>

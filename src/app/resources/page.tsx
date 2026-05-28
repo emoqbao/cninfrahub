@@ -17,8 +17,8 @@ const featured = [
 const guides = [
   { type: "Guide", title: "The SRE's Checklist for China Infrastructure", excerpt: "A practical, step-by-step checklist covering compute selection, network design, compliance requirements, and operational readiness.", date: "Coming soon" },
   { type: "Guide", title: "AWS vs. Azure vs. GCP: Connecting to China", excerpt: "Side-by-side comparison of cloud interconnect options for China, with pricing models, latency benchmarks, and architecture diagrams.", date: "Coming soon" },
-  { type: "Guide", title: "Understanding China's Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 鈥?what they mean for your architecture.", date: "Coming soon" },
-  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China 鈥?on-prem vs. colocated vs. cloud.", date: "Coming soon" },
+  { type: "Guide", title: "Understanding China's Data Residency Requirements", excerpt: "A plain-English guide to CSL, DSL, PIPL, and MLPS 2.0 閳?what they mean for your architecture.", date: "Coming soon" },
+  { type: "Guide", title: "GPU Infrastructure in China: Options and Trade-offs", excerpt: "Comprehensive survey of GPU hosting options in China 閳?on-prem vs. colocated vs. cloud.", date: "Coming soon" },
   { type: "Guide", title: "Building a Multi-Region DR Strategy with China Nodes", excerpt: "Architecture patterns for active-passive and active-active disaster recovery spanning China and APAC.", date: "Coming soon" },
   { type: "Guide", title: "Virtual Edge Playbook: FortiGate, VyOS, and RouterOS in China", excerpt: "Step-by-step deployment guide for running virtual network appliances on CN-Infra Hub infrastructure.", date: "Coming soon" },
 ];
@@ -26,7 +26,7 @@ const guides = [
 export default function ResourcesPage() {
   return (
     <>
-      <section className="py-16 lg:py-24 border-b border-dashed border-[#f0f0f0]">
+      <section className="py-16 lg:py-24 nav-dashed-bottom">
         <Container>
           <div className="mb-3 h-px w-8 bg-[#b8b0a8]" />
           <p className="text-sm font-semibold uppercase tracking-wider text-[#8c8c8c]">Resources</p>
