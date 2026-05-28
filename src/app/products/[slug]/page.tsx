@@ -5,6 +5,7 @@ import { ArrowRight, Zap, Users, Lightbulb } from "lucide-react";
 import Container from "@/components/ui/Container";
 import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
+import ProductHeroIcon from "@/components/products/ProductHeroIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { products, getProductById, type Product } from "@/lib/products";
 
