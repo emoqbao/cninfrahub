@@ -4,14 +4,6 @@ import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
 import { ProductOverviewTitle, ProductCard, productModules } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
-import {
-  FooterBrand,
-  FooterProductsColumn,
-  FooterSolutionsColumn,
-  FooterResourcesColumn,
-  FooterCompanyColumn,
-  FooterCopyright,
-} from "@/components/home/HomeFooterContent";
 
 export default function Home() {
   return (
@@ -72,27 +64,11 @@ export default function Home() {
         <BentoSpacer height="h-16 lg:h-24" />
       
         {/* CTA */}
-        <BentoRow className="bg-[#faf9f7]">
+        <BentoRow>
           <CTABanner />
         </BentoRow>
       </BentoGrid>
 
-      <footer className="bg-[#0a0f1a] text-white">
-        <FooterBrand />
-
-        <div className="mx-auto max-w-7xl px-6 pb-12 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <FooterProductsColumn />
-            <FooterSolutionsColumn />
-            <FooterResourcesColumn />
-            <FooterCompanyColumn />
-          </div>
-        </div>
-
-        <div className="border-t border-[#1e2532]">
-          <FooterCopyright />
-        </div>
-      </footer>
     </>
   );
 }

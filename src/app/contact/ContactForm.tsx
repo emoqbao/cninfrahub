@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/Button";
@@ -84,7 +84,7 @@ export default function ContactForm() {
             id="first-name"
             name="first-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
             placeholder="John"
           />
         </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
             id="last-name"
             name="last-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
             placeholder="Smith"
           />
         </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
           placeholder="john@company.com"
         />
       </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
           id="company"
           name="company"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
           placeholder="Acme Corp"
         />
       </div>
@@ -145,7 +145,7 @@ export default function ContactForm() {
                 type="checkbox"
                 name="interests"
                 value={p.name}
-                className="h-4 w-4 rounded border-[#d1d3d6] text-[#0d0d0d] focus:ring-[#0d0d0d]"
+                className="h-4 w-4 rounded border-[#d1d3d6] text-[#a48e7a] focus:ring-[#a48e7a]"
               />
               {p.name}
             </label>
@@ -155,7 +155,7 @@ export default function ContactForm() {
               type="checkbox"
               name="interests"
               value="Other / Not sure"
-              className="h-4 w-4 rounded border-[#d1d3d6] text-[#0d0d0d] focus:ring-[#0d0d0d]"
+              className="h-4 w-4 rounded border-[#d1d3d6] text-[#a48e7a] focus:ring-[#a48e7a]"
             />
             Other / Not sure
           </label>
@@ -171,7 +171,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#0d0d0d] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
           placeholder="Tell us about your project..."
         />
       </div>
