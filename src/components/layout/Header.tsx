@@ -45,7 +45,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 闂傚倸鍊搁崐鎼佸磹妞嬪海鐭嗗〒姘ｅ亾闁诡喖娼″畷鍫曞Ω閿濆嫮鐭掗梻浣哥秺濡法绮堟担鍛婄函?/ Ctrl+K
+  // ⌘K / Ctrl+K
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
