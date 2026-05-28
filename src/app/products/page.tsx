@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import PageFrame from "@/components/ui/PageFrame";
-import { products } from "@/lib/products";
+import { products, productModules } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, compute, networking, and data center solutions.",
+  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, compute, networking, and data center solutions."
 };
 
 export default function ProductsPage() {
@@ -23,27 +23,38 @@ export default function ProductsPage() {
         </Container>
       </section>
 
-      {/* Product grid */}
+      {/* Products grouped by module */}
       <PageFrame>
         <section className="py-20 lg:py-28">
           <Container>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
-                <Link
-                  key={product.id}
-                  href={`/products/${product.id}`}
-                  className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <span className="inline-block self-start rounded-md bg-[#f3f4f6] px-2.5 py-0.5 text-xs font-medium text-[#737373]">
-                    {product.module}
-                  </span>
-                  <h3 className="mt-3 text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#737373]">{product.tagline}</p>
-                  <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
-                    Learn more &rarr;
-                  </span>
-                </Link>
-              ))}
+            <div className="space-y-20">
+              {productModules.map((mod) => {
+                const modProducts = products.filter((p) => p.module === mod);
+                if (modProducts.length === 0) return null;
+                return (
+                  <div key={mod}>
+                    <div className="mb-8">
+                      <div className="mb-3 h-px w-6 bg-[#b8b0a8]" />
+                      <h2 className="text-2xl font-bold tracking-[-0.02em] text-[#0d0d0d]">{mod}</h2>
+                    </div>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {modProducts.map((product) => (
+                        <Link
+                          key={product.id}
+                          href={`/products/${product.id}`}
+                          className="group flex flex-col rounded-xl border border-[#e8eaed] bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                        >
+                          <h3 className="text-lg font-semibold text-[#0d0d0d]">{product.name}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-[#737373]">{product.tagline}</p>
+                          <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#0d0d0d] group-hover:underline">
+                            Learn more &rarr;
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Container>
         </section>

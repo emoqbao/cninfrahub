@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     openGraph: {
-      title: `${product.name} 鈥?CN-Infra Hub`,
+      title: `${product.name} 閳?CN-Infra Hub`,
       description: product.tagline,
     },
   };
@@ -213,10 +213,7 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </Container>
         </section>
-      </BentoFrame>
-
-      {/* Related */}
-      <RelatedProducts current={product} />
+        {/* Related */}\n      <RelatedProducts current={product} />\n    </BentoFrame>
     </>
   );
 }
