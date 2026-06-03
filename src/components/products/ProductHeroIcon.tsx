@@ -11,7 +11,7 @@ export default function ProductHeroIcon({ productId }: { productId: string }) {
 function getIcon(id: string) {
   switch (id) {
     case "ai-gateway":
-      return <AI网关 />;
+      return <AIGatewayIcon />;
     case "elastic-cloud-servers":
       return <ElasticCloud />;
     case "bare-metal":
@@ -52,7 +52,7 @@ function DefaultIcon() {
   );
 }
 
-function AI网关() {
+function AIGatewayIcon() {
   return (
     <>
       {/* Neural network nodes */}

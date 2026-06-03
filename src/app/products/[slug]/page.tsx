@@ -116,7 +116,7 @@ export default async function ProductPage({ params }: Props) {
           </Container>
         </section>
 
-        {/* Overview */}{/* Overview */}
+        {/* Overview */}
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="max-w-3xl">

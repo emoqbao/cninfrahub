@@ -15,7 +15,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   function scrollIfActive(e: React.MouseEvent, href: string) {
-    if (pathname === href || (href !== "/" && pathname.startsWith(href))) {
+    if (pathname === href) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
