@@ -93,7 +93,7 @@ export default function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={"rounded-md px-4 py-2 text-[15px] font-semibold text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150 " + (pathname === item.href ? "underline underline-offset-4" : "")}
+                    className={"rounded-md px-4 py-2 text-[15px] font-semibold text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"}
                   >
                     {t("nav." + item.label.toLowerCase())}
                   </Link>
@@ -149,7 +149,7 @@ export default function Header() {
                     <ul className="space-y-2.5">
                       {products.filter((p) => p.module === mod).map((p) => (
                         <li key={p.id}>
-                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="text-[15px] font-medium text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150">
+                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] rounded-md px-3 py-1.5 transition-colors">
                             {p.name}
                           </Link>
                         </li>
