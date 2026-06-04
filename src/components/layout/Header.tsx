@@ -135,11 +135,16 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
+                <div className="mt-3 pt-3 border-t border-[#e8eaed]">
+                  <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
+                    View all solutions &rarr;
+                  </Link>
+                </div>
             </div>
           </div>
         )}
 
-        <div ref={megaPanelRef} className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
+        <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
           {megaOpen && (
             <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
@@ -149,7 +154,7 @@ export default function Header() {
                     <ul className="space-y-2.5">
                       {products.filter((p) => p.module === mod).map((p) => (
                         <li key={p.id}>
-                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] rounded-md px-3 py-1.5 transition-colors">
+                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
                             {p.name}
                           </Link>
                         </li>
