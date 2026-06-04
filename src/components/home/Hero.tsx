@@ -1,11 +1,10 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import { useLanguage } from "@/lib/i18n/context";
+
 import { t } from "@/lib/i18n/translations";
 
 export default function Hero() {
-  const { lang } = useLanguage();
 
   return (
     <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
@@ -27,10 +26,10 @@ export default function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/products/" variant="primary" size="lg">
-              {t("cta.explore", lang)}
+              {t("cta.explore")}
             </Button>
             <Button href="/contact/" variant="secondary" size="lg">
-              {t("cta.talk", lang)}
+              {t("cta.talk")}
             </Button>
           </div>
         </div>

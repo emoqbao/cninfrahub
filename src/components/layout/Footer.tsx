@@ -4,14 +4,13 @@ import Link from "next/link";
 import { products } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
 import { usePathname } from "next/navigation";
-import { useLanguage } from "@/lib/i18n/context";
+
 import { t } from "@/lib/i18n/translations";
 
 
 
 
 export default function Footer() {
-  const { lang } = useLanguage();
   const pathname = usePathname();
 
   function scrollIfActive(e: React.MouseEvent, href: string) {
@@ -32,7 +31,7 @@ export default function Footer() {
             </div>
             <span className="text-lg font-semibold tracking-tight">CN-INFRA HUB</span>
           </Link>
-          <p className="mt-3 text-sm text-[#a3a3a3]">{t("footer.tagline", lang)}</p>
+          <p className="mt-3 text-sm text-[#a3a3a3]">{t("footer.tagline")}</p>
         </div>
 
         {/* Link grid */}
@@ -40,7 +39,7 @@ export default function Footer() {
           {/* Products */}
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.products", lang)}
+              {t("footer.products")}
             </p>
             <ul className="space-y-2.5">
               {products.map((p) => (
@@ -60,7 +59,7 @@ export default function Footer() {
           {/* Solutions */}
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.solutions", lang)}
+              {t("footer.solutions")}
             </p>
             <ul className="space-y-2.5">
               {solutions.map((s) => (
@@ -80,22 +79,22 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.resources", lang)}
+              {t("footer.resources")}
             </p>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.whitePapers", lang)}
+                  {t("footer.whitePapers")}
                 </Link>
               </li>
               <li>
                 <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.caseStudies", lang)}
+                  {t("footer.caseStudies")}
                 </Link>
               </li>
               <li>
                 <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.guides", lang)}
+                  {t("footer.guides")}
                 </Link>
               </li>
             </ul>
@@ -104,17 +103,17 @@ export default function Footer() {
           {/* Company */}
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.company", lang)}
+              {t("footer.company")}
             </p>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/about/" onClick={(e) => scrollIfActive(e, "/about/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.about", lang)}
+                  {t("footer.about")}
                 </Link>
               </li>
               <li>
                 <Link href="/contact/" onClick={(e) => scrollIfActive(e, "/contact/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.contact", lang)}
+                  {t("footer.contact")}
                 </Link>
               </li>
             </ul>
@@ -125,7 +124,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[#1e2532]">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-[#737373] lg:flex-row lg:justify-between lg:px-8">
-          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. {t("footer.rights", lang)}</p>
+          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. {t("footer.rights")}</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">
             info@cninfrahub.com
           </a>

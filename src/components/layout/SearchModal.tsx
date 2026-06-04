@@ -5,15 +5,14 @@ import Link from "next/link";
 import { Search, X, ArrowRight } from 'lucide-react'
 import { useRouter } from "next/navigation";
 import { search, type SearchResult } from "@/lib/search";
-import { t, type Language } from "@/lib/i18n/translations";
+import { t } from "@/lib/i18n/translations";
 
 interface SearchModalProps {
   open: boolean;
   onClose: () => void;
-  lang: Language;
 }
 
-export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
+export default function SearchModal({ open, onClose }: SearchModalProps) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -78,7 +77,7 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
               type="text"
               value={query}
               onChange={(e) => handleQuery(e.target.value)}
-              placeholder={t("search.placeholder", lang)}
+              placeholder={t("search.placeholder")}
               className="flex-1 text-sm bg-transparent outline-none text-[#0d0d0d] placeholder:text-[#a3a3a3]"
             />
             <kbd className="hidden sm:inline-flex items-center rounded border border-[#e8eaed] bg-[#f8f9fb] px-1.5 py-0.5 text-[10px] text-[#a3a3a3]">
@@ -94,7 +93,7 @@ export default function SearchModal({ open, onClose, lang }: SearchModalProps) {
             <ul ref={listRef} className="max-h-72 overflow-y-auto py-2">
               {results.length === 0 ? (
                 <li className="px-4 py-6 text-center text-sm text-[#a3a3a3]">
-                  {t("search.noResults", lang)}
+                  {t("search.noResults")}
                 </li>
               ) : (
                 results.map((result, i) => (
