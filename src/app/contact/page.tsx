@@ -12,9 +12,9 @@ export default function ContactPage() {
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">Contact</p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
+          <div className="mb-3 h-px w-8 bg-brand" />
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand">Contact</p>
+          <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
             Start a conversation with our infrastructure architects
           </h1>
         </div>
@@ -28,21 +28,21 @@ export default function ContactPage() {
                 <ContactForm />
               </div>
               <div>
-                <div className="rounded-xl border border-[#e8eaed] bg-white p-6">
-                  <h3 className="text-lg font-semibold text-[#0d0d0d]">Contact Info</h3>
+                <div className="rounded-xl border border-border bg-white p-6">
+                  <h3 className="text-lg font-semibold text-ink">Contact Info</h3>
                   <div className="mt-5 space-y-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Email</p>
-                      <a href="mailto:info@cninfrahub.com" className="mt-1 block text-[#0d0d0d] hover:underline">info@cninfrahub.com</a>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-faded">Email</p>
+                      <a href="mailto:info@cninfrahub.com" className="mt-1 block text-ink hover:underline">info@cninfrahub.com</a>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Response time</p>
-                      <p className="mt-1 text-[#525252]">Within 24 hours</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-faded">Response time</p>
+                      <p className="mt-1 text-subtle">Within 24 hours</p>
                     </div>
                   </div>
-                  <hr className="my-6 border-[#e8eaed]" />
-                  <h3 className="text-lg font-semibold text-[#0d0d0d]">Offices</h3>
-                  <ul className="mt-3 space-y-2 text-[#525252]">
+                  <hr className="my-6 border-border" />
+                  <h3 className="text-lg font-semibold text-ink">Offices</h3>
+                  <ul className="mt-3 space-y-2 text-subtle">
                     <li>Shanghai, China</li>
                     <li>Beijing, China</li>
                     <li>Singapore</li>

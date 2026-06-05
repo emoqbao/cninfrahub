@@ -11,9 +11,9 @@ export const productModules = [
 export function ProductOverviewTitle() {
   return (
     <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 lg:px-8">
-      <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-      <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">Our Products</p>
-      <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
+      <div className="mb-3 h-px w-8 bg-brand" />
+      <p className="text-sm font-semibold uppercase tracking-wider text-brand">Our Products</p>
+      <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
         Purpose-built infrastructure for China and beyond
       </h2>
     </div>
@@ -24,12 +24,12 @@ export function ProductCard({ module: m }: { module: typeof productModules[numbe
   return (
     <Link
       href={m.href}
-      className="group flex h-full flex-col p-6 transition-all duration-200 hover:bg-[#faf9f7]"
+      className="group flex h-full flex-col p-6 transition-all duration-200 hover:bg-surface-warm"
     >
-      <m.icon className="h-7 w-7 text-[#a48e7a]" strokeWidth={1.5} />
-      <h3 className="mt-4 text-lg font-semibold text-[#0d0d0d]">{m.name}</h3>
-      <p className="mt-2 text-sm text-[#737373] leading-relaxed line-clamp-2">{m.products}</p>
-      <span className="mt-auto pt-4 inline-block text-sm font-medium text-[#a48e7a] group-hover:underline">
+      <m.icon className="h-7 w-7 text-brand" strokeWidth={1.5} />
+      <h3 className="mt-4 text-lg font-semibold text-ink">{m.name}</h3>
+      <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{m.products}</p>
+      <span className="mt-auto pt-4 inline-block text-sm font-medium text-brand group-hover:underline">
         Explore &rarr;
       </span>
     </Link>

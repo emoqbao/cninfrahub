@@ -3,7 +3,6 @@ import { Inter, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/ui/JsonLd";
-import { I18nProvider } from "@/lib/i18n/context";
 import "./globals.css";
 
 const inter = Inter({
@@ -73,11 +72,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={organizationSchema} />
       </head>
       <body className="min-h-full flex flex-col">
-        <I18nProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </I18nProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

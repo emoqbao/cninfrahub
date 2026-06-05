@@ -1,6 +1,6 @@
 export default function ProductHeroIcon({ productId }: { productId: string }) {
   return (
-    <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-[#e8eaed] bg-[#f8f9fb] flex items-center justify-center">
+    <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border bg-surface-alt flex items-center justify-center">
       <svg viewBox="0 0 200 200" className="w-3/4 h-3/4" fill="none">
         {getIcon(productId)}
       </svg>
@@ -39,7 +39,7 @@ function getIcon(id: string) {
   }
 }
 
-const accent = "#a48e7a";
+const accent = "#8a6d5c";
 const dark = "#0d0d0d";
 const light = "#d4d4d4";
 
@@ -55,7 +55,6 @@ function DefaultIcon() {
 function AIGatewayIcon() {
   return (
     <>
-      {/* Neural network nodes */}
       <circle cx="100" cy="100" r="12" fill={accent} />
       <circle cx="50" cy="50" r="6" fill={dark} />
       <circle cx="150" cy="50" r="6" fill={dark} />
@@ -64,7 +63,6 @@ function AIGatewayIcon() {
       <circle cx="100" cy="30" r="5" fill={dark} />
       <circle cx="170" cy="100" r="5" fill={dark} />
       <circle cx="30" cy="100" r="5" fill={dark} />
-      {/* Connections */}
       <line x1="100" y1="88" x2="56" y2="54" stroke={light} strokeWidth="1" />
       <line x1="100" y1="88" x2="144" y2="54" stroke={light} strokeWidth="1" />
       <line x1="100" y1="112" x2="56" y2="146" stroke={light} strokeWidth="1" />
@@ -180,7 +178,6 @@ function DarkFiber() {
       <circle cx="100" cy="100" r="8" fill={accent} />
       <circle cx="60" cy="140" r="4" fill={dark} />
       <circle cx="140" cy="60" r="4" fill={dark} />
-      {/* Signal dots */}
       <circle cx="75" cy="120" r="2" fill={accent} opacity="0.6" />
       <circle cx="90" cy="108" r="2" fill={accent} opacity="0.8" />
       <circle cx="115" cy="88" r="2" fill={accent} opacity="0.6" />
@@ -209,7 +206,6 @@ function Colocation() {
       <rect x="50" y="30" width="100" height="140" rx="3" stroke={dark} strokeWidth="1.5" fill="none" />
       <line x1="50" y1="80" x2="150" y2="80" stroke={light} strokeWidth="1" />
       <line x1="50" y1="120" x2="150" y2="120" stroke={light} strokeWidth="1" />
-      {/* Racks */}
       <rect x="65" y="45" width="15" height="25" rx="2" fill={accent} opacity="0.2" stroke={accent} strokeWidth="0.5" />
       <rect x="90" y="45" width="15" height="25" rx="2" fill={accent} opacity="0.2" stroke={accent} strokeWidth="0.5" />
       <rect x="115" y="45" width="15" height="25" rx="2" fill={accent} opacity="0.2" stroke={accent} strokeWidth="0.5" />
@@ -226,13 +222,11 @@ function SmartHands() {
   return (
     <>
       <rect x="60" y="50" width="80" height="100" rx="4" stroke={dark} strokeWidth="1.5" fill="none" />
-      {/* Hand/tool icon */}
       <circle cx="100" cy="80" r="12" stroke={accent} strokeWidth="1.5" fill="none" />
       <line x1="100" y1="92" x2="100" y2="110" stroke={accent} strokeWidth="2" />
       <line x1="85" y1="105" x2="115" y2="100" stroke={accent} strokeWidth="1.5" />
       <line x1="100" y1="110" x2="85" y2="125" stroke={accent} strokeWidth="1.5" />
       <line x1="100" y1="110" x2="115" y2="125" stroke={accent} strokeWidth="1.5" />
-      {/* Server indicator lights */}
       <circle cx="75" cy="60" r="2" fill="#0f0" opacity="0.6" />
       <circle cx="82" cy="60" r="2" fill={accent} opacity="0.6" />
       <circle cx="89" cy="60" r="2" fill={light} />

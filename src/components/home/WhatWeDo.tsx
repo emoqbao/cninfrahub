@@ -21,12 +21,12 @@ export const whatWeDoSteps = [
 export function WhatWeDoTitle() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-      <div className="mb-3 h-px w-8 bg-[#a48e7a]" />
-      <p className="text-sm font-semibold uppercase tracking-wider text-[#a48e7a]">What We Do</p>
-      <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-[#0d0d0d] lg:text-4xl">
+      <div className="mb-3 h-px w-8 bg-brand" />
+      <p className="text-sm font-semibold uppercase tracking-wider text-brand">What We Do</p>
+      <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
         We don't own the infrastructure. We own the relationships — and the responsibility.
       </h2>
-      <p className="mt-4 max-w-2xl text-[#525252] leading-relaxed">
+      <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
         As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.
       </p>
     </div>
@@ -36,9 +36,9 @@ export function WhatWeDoTitle() {
 export function WhatWeDoCard({ step }: { step: typeof whatWeDoSteps[number] }) {
   return (
     <div className="p-8">
-      <step.icon className="h-8 w-8 text-[#a48e7a]" strokeWidth={1.5} />
-      <h3 className="mt-5 text-xl font-semibold text-[#0d0d0d]">{step.title}</h3>
-      <p className="mt-3 text-[#525252] leading-relaxed">{step.description}</p>
+      <step.icon className="h-8 w-8 text-brand" strokeWidth={1.5} />
+      <h3 className="mt-5 text-xl font-semibold text-ink">{step.title}</h3>
+      <p className="mt-3 text-subtle leading-relaxed">{step.description}</p>
     </div>
   );
 }

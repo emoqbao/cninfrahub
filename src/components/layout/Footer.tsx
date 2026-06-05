@@ -5,11 +5,6 @@ import { products } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
 import { usePathname } from "next/navigation";
 
-import { t } from "@/lib/i18n/translations";
-
-
-
-
 export default function Footer() {
   const pathname = usePathname();
 
@@ -21,25 +16,25 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#0a0f1a] text-white">
+    <footer className="bg-footer-bg text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         {/* Brand row */}
         <div className="mb-12">
           <Link href="/" className="inline-flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-sm font-bold text-[#0d0d0d]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-sm font-bold text-ink">
               CIH
             </div>
             <span className="text-lg font-semibold tracking-tight">CN-INFRA HUB</span>
           </Link>
-          <p className="mt-3 text-sm text-[#a3a3a3]">{t("footer.tagline")}</p>
+          <p className="mt-3 text-sm text-ghost">Infrastructure Without Borders</p>
         </div>
 
         {/* Link grid */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Products */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.products")}
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+              Products
             </p>
             <ul className="space-y-2.5">
               {products.map((p) => (
@@ -47,7 +42,7 @@ export default function Footer() {
                   <Link
                     href={`/products/${p.id}`}
                     onClick={(e) => scrollIfActive(e, `/products/${p.id}`)}
-                    className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
+                    className="text-sm text-light hover:text-white transition-colors"
                   >
                     {p.name}
                   </Link>
@@ -58,8 +53,8 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.solutions")}
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+              Solutions
             </p>
             <ul className="space-y-2.5">
               {solutions.map((s) => (
@@ -67,7 +62,7 @@ export default function Footer() {
                   <Link
                     href={`/solutions/${s.id}`}
                     onClick={(e) => scrollIfActive(e, `/solutions/${s.id}`)}
-                    className="text-sm text-[#d4d4d4] hover:text-white transition-colors"
+                    className="text-sm text-light hover:text-white transition-colors"
                   >
                     {s.name}
                   </Link>
@@ -78,23 +73,23 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.resources")}
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+              Resources
             </p>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.whitePapers")}
+                <Link href="/resources/#white-papers" className="text-sm text-light hover:text-white transition-colors">
+                  White Papers
                 </Link>
               </li>
               <li>
-                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.caseStudies")}
+                <Link href="/resources/#case-studies" className="text-sm text-light hover:text-white transition-colors">
+                  Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.guides")}
+                <Link href="/resources/#guides" className="text-sm text-light hover:text-white transition-colors">
+                  Guides
                 </Link>
               </li>
             </ul>
@@ -102,18 +97,18 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-[#737373]">
-              {t("footer.company")}
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+              Company
             </p>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/about/" onClick={(e) => scrollIfActive(e, "/about/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.about")}
+                <Link href="/about/" onClick={(e) => scrollIfActive(e, "/about/")} className="text-sm text-light hover:text-white transition-colors">
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" onClick={(e) => scrollIfActive(e, "/contact/")} className="text-sm text-[#d4d4d4] hover:text-white transition-colors">
-                  {t("footer.contact")}
+                <Link href="/contact/" onClick={(e) => scrollIfActive(e, "/contact/")} className="text-sm text-light hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -122,9 +117,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#1e2532]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-[#737373] lg:flex-row lg:justify-between lg:px-8">
-          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. {t("footer.rights")}</p>
+      <div className="border-t border-footer-border">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-muted lg:flex-row lg:justify-between lg:px-8">
+          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. All rights reserved.</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">
             info@cninfrahub.com
           </a>

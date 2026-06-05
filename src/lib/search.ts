@@ -1,4 +1,4 @@
-﻿import { products } from "./products";
+import { products } from "./products";
 import { solutions } from "./solutions";
 
 export interface SearchResult {
@@ -9,7 +9,11 @@ export interface SearchResult {
   category: string;
 }
 
+let _cachedIndex: SearchResult[] | null = null;
+
 export function buildSearchIndex(): SearchResult[] {
+  if (_cachedIndex) return _cachedIndex;
+
   const results: SearchResult[] = [];
 
   // Products
@@ -41,6 +45,7 @@ export function buildSearchIndex(): SearchResult[] {
     { id: "resources", title: "Resources", description: "White papers, case studies & guides", href: "/resources/", category: "Page" },
   );
 
+  _cachedIndex = results;
   return results;
 }
 

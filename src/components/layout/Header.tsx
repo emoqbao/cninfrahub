@@ -9,7 +9,6 @@ import { products, productModules } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
 import Button from "@/components/ui/Button";
 import SearchModal from "@/components/layout/SearchModal";
-import { t } from "@/lib/i18n/translations";
 
 export default function Header() {
   const pathname = usePathname();
@@ -57,8 +56,8 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-6 py-3.5 lg:px-8">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d0d0d] text-sm font-bold text-white">CIH</div>
-              <span className="text-base font-semibold tracking-tight text-[#0d0d0d]">CN-INFRA HUB</span>
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-sm font-bold text-white">CIH</div>
+              <span className="text-base font-semibold tracking-tight text-ink">CN-INFRA HUB</span>
             </Link>
 
             <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
@@ -68,9 +67,10 @@ export default function Header() {
                     <div key={item.label} ref={megaRef} className="relative">
                       <button
                         onClick={toggleMega}
-                        className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (megaOpen ? "text-[#0d0d0d]" : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150")}
+                        aria-expanded={megaOpen}
+                        className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (megaOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
-                        {t("nav.products")}
+                        {item.label}
                         <ChevronDown className={"h-4 w-4 transition-transform " + (megaOpen ? "rotate-180" : "")} />
                       </button>
                     </div>
@@ -81,9 +81,10 @@ export default function Header() {
                     <div key={item.label} ref={solutionsRef} className="relative">
                       <button
                         onClick={toggleSolutions}
-                        className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (solutionsOpen ? "text-[#0d0d0d]" : "text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150")}
+                        aria-expanded={solutionsOpen}
+                        className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (solutionsOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
-                        {t("nav.solutions")}
+                        {item.label}
                         <ChevronDown className={"h-4 w-4 transition-transform " + (solutionsOpen ? "rotate-180" : "")} />
                       </button>
                     </div>
@@ -93,9 +94,9 @@ export default function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={"rounded-md px-4 py-2 text-[15px] font-semibold text-[#0d0d0d] hover:text-[#8c8c8c] transition-colors duration-150"}
+                    className="rounded-md px-4 py-2 text-[15px] font-semibold text-ink hover:text-faded transition-colors duration-150"
                   >
-                    {t("nav." + item.label.toLowerCase())}
+                    {item.label}
                   </Link>
                 );
               })}
@@ -104,19 +105,19 @@ export default function Header() {
             <div className="ml-auto flex items-center gap-2">
               <button
                 onClick={() => setSearchOpen(true)}
-                className="hidden lg:flex items-center gap-1.5 rounded-md border border-[#e8eaed] hover:border-[#a48e7a] px-3 py-1.5 text-sm text-[#737373] hover:bg-[#f3f4f6] transition-colors"
+                className="hidden lg:flex items-center gap-1.5 rounded-md border border-border hover:border-brand px-3 py-1.5 text-sm text-muted hover:bg-surface transition-colors"
               >
                 <Search className="h-3.5 w-3.5" strokeWidth={1.5} />
-                <span>{t("search.placeholder")}</span>
-                <kbd className="ml-2 hidden sm:inline-flex items-center rounded border border-[#e8eaed] bg-[#f8f9fb] px-1.5 py-0.5 text-[10px] text-[#a3a3a3]">Ctrl+K</kbd>
+                <span>Search products, solutions...</span>
+                <kbd className="ml-2 hidden sm:inline-flex items-center rounded border border-border bg-surface-alt px-1.5 py-0.5 text-[10px] text-ghost">Ctrl+K</kbd>
               </button>
               <div className="hidden lg:block">
-                <Button href="/contact/" variant="primary" size="md">{t("nav.contact")}</Button>
+                <Button href="/contact/" variant="primary" size="md">Contact</Button>
               </div>
-              <button onClick={() => setSearchOpen(true)} className="lg:hidden p-2 rounded-md text-[#737373] hover:bg-[#f3f4f6]">
+              <button onClick={() => setSearchOpen(true)} className="lg:hidden p-2 rounded-md text-muted hover:bg-surface" aria-label="Open search">
                 <Search className="h-5 w-5" strokeWidth={1.5} />
               </button>
-              <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 rounded-md text-[#0d0d0d] hover:bg-[#f3f4f6]">
+              <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 rounded-md text-ink hover:bg-surface">
                 {mobileOpen ? <X className="h-5 w-5" strokeWidth={1.5} /> : <Menu className="h-5 w-5" strokeWidth={1.5} />}
               </button>
             </div>
@@ -125,18 +126,18 @@ export default function Header() {
 
         {solutionsOpen && (
           <div ref={solutionsPanelRef} className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
-            <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6 max-w-md mx-auto">
+            <div className="rounded-xl border border-border bg-white shadow-lg px-8 py-6 max-w-md mx-auto">
               <ul className="space-y-2">
                 {solutions.map((s) => (
                   <li key={s.id}>
-                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
+                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                       {s.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-                <div className="mt-3 pt-3 border-t border-[#e8eaed]">
-                  <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
+                <div className="mt-3 pt-3 border-t border-border">
+                  <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                     View all solutions &rarr;
                   </Link>
                 </div>
@@ -146,15 +147,15 @@ export default function Header() {
 
         <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
           {megaOpen && (
-            <div className="rounded-xl border border-[#e8eaed] bg-white shadow-lg px-8 py-6">
+            <div className="rounded-xl border border-border bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#8c8c8c]">{mod}</p>
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-faded">{mod}</p>
                     <ul className="space-y-2.5">
                       {products.filter((p) => p.module === mod).map((p) => (
                         <li key={p.id}>
-                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block text-[15px] font-medium text-[#0d0d0d] hover:bg-[#f3f4f6] transition-colors">
+                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                             {p.name}
                           </Link>
                         </li>
@@ -168,37 +169,37 @@ export default function Header() {
         </div>
 
         {mobileOpen && (
-          <div className="border-t border-[#e8eaed] bg-white px-6 pb-6 pt-4 lg:hidden max-h-[calc(100vh-64px)] overflow-y-auto">
+          <div className="border-t border-border bg-white px-6 pb-6 pt-4 lg:hidden max-h-[calc(100vh-64px)] overflow-y-auto">
             <nav className="flex flex-col gap-1">
               {mainNav.map((item) => (
-                <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} className="rounded-md px-3 py-2.5 text-base font-semibold text-[#0d0d0d] hover:bg-[#f3f4f6]">
-                  {t("nav." + item.label.toLowerCase())}
+                <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} className="rounded-md px-3 py-2.5 text-base font-semibold text-ink hover:bg-surface">
+                  {item.label}
                 </Link>
               ))}
-              <div className="mt-3 border-t border-[#e8eaed] pt-4">
-                <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">{t("nav.products")}</p>
+              <div className="mt-3 border-t border-border pt-4">
+                <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-faded">Products</p>
                 {products.map((p) => (
-                  <Link key={p.id} href={"/products/" + p.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f3f4f6]">
+                  <Link key={p.id} href={"/products/" + p.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-subtle-dark hover:bg-surface">
                     {p.name}
                   </Link>
                 ))}
               </div>
-              <div className="mt-3 border-t border-[#e8eaed] pt-4">
-                <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-[#8c8c8c]">Solutions</p>
+              <div className="mt-3 border-t border-border pt-4">
+                <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-faded">Solutions</p>
                 {solutions.map((s) => (
-                  <Link key={s.id} href={"/solutions/" + s.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-[#404040] hover:bg-[#f3f4f6]">
+                  <Link key={s.id} href={"/solutions/" + s.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-subtle-dark hover:bg-surface">
                     {s.name}
                   </Link>
                 ))}
               </div>
-              <div className="mt-3 border-t border-[#e8eaed] pt-4">
-                <button onClick={() => { setMobileOpen(false); setSearchOpen(true); }} className="w-full flex items-center justify-center gap-2 rounded-md border border-[#e8eaed] hover:border-[#a48e7a] px-3 py-2.5 text-sm font-medium text-[#0d0d0d] hover:bg-[#f3f4f6]">
+              <div className="mt-3 border-t border-border pt-4">
+                <button onClick={() => { setMobileOpen(false); setSearchOpen(true); }} className="w-full flex items-center justify-center gap-2 rounded-md border border-border hover:border-brand px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface">
                   <Search className="h-4 w-4" strokeWidth={1.5} />
-                  {t("search.placeholder")}
+                  Search products, solutions...
                 </button>
               </div>
               <div className="mt-4">
-                <Button href="/contact/" variant="primary" size="md" className="w-full">{t("nav.contact")}</Button>
+                <Button href="/contact/" variant="primary" size="md" className="w-full">Contact</Button>
               </div>
             </nav>
           </div>

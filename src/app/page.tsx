@@ -9,15 +9,15 @@ export default function Home() {
   return (
     <>
       <BentoGrid>
-        {/* 閳光偓閳光偓 HERO 閳光偓閳光偓 */}
+        {/* HERO */}
         <BentoRow first>
           <Hero />
         </BentoRow>
 
-        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
+        {/* Breathing space */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 閳光偓閳光偓 STATS (4 columns with vertical dividers) 閳光偓閳光偓 */}
+        {/* STATS (4 columns with vertical dividers) */}
         <BentoRow cols={4}>
           {trustStats.map((s) => (
             <BentoCell key={s.label}>
@@ -26,15 +26,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
+        {/* Breathing space */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 閳光偓閳光偓 WHAT WE DO title 閳光偓閳光偓 */}
+        {/* WHAT WE DO title */}
         <BentoRow>
           <WhatWeDoTitle />
         </BentoRow>
 
-        {/* 閳光偓閳光偓 WHAT WE DO steps (3 columns, dashed dividers) 閳光偓閳光偓 */}
+        {/* WHAT WE DO steps (3 columns, dashed dividers) */}
         <BentoRow cols={3}>
           {whatWeDoSteps.map((step) => (
             <BentoCell key={step.title}>
@@ -43,15 +43,15 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
+        {/* Breathing space */}
         <BentoSpacer height="h-16 lg:h-24" />
 
-        {/* 閳光偓閳光偓 OUR PRODUCTS title 閳光偓閳光偓 */}
+        {/* OUR PRODUCTS title */}
         <BentoRow>
           <ProductOverviewTitle />
         </BentoRow>
 
-        {/* 閳光偓閳光偓 OUR PRODUCTS cards (4 columns) 閳光偓閳光偓 */}
+        {/* OUR PRODUCTS cards (4 columns) */}
         <BentoRow cols={4}>
           {productModules.map((m) => (
             <BentoCell key={m.name}>
@@ -60,15 +60,14 @@ export default function Home() {
           ))}
         </BentoRow>
 
-        {/* 閳光偓閳光偓 Breathing space 閳光偓閳光偓 */}
+        {/* Breathing space */}
         <BentoSpacer height="h-16 lg:h-24" />
-      
+
         {/* CTA */}
         <BentoRow>
           <CTABanner />
         </BentoRow>
       </BentoGrid>
-
     </>
   );
 }

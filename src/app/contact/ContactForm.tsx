@@ -48,12 +48,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl border border-[#e8eaed] bg-[#f8f9fb] p-10 text-center">
-        <h2 className="text-2xl font-bold text-[#0d0d0d]">Thanks!</h2>
-        <p className="mt-3 text-[#525252]">We&apos;ll be in touch within 24 hours.</p>
-        <p className="mt-6 text-sm text-[#8c8c8c]">
+      <div className="rounded-xl border border-border bg-surface-alt p-10 text-center">
+        <h2 className="text-2xl font-bold text-ink">Thanks!</h2>
+        <p className="mt-3 text-subtle">We&apos;ll be in touch within 24 hours.</p>
+        <p className="mt-6 text-sm text-faded">
           You can also reach us directly at{" "}
-          <a href="mailto:info@cninfrahub.com" className="text-[#0d0d0d] underline">
+          <a href="mailto:info@cninfrahub.com" className="text-ink underline">
             info@cninfrahub.com
           </a>
         </p>
@@ -62,8 +62,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-[#e8eaed] p-6 lg:p-8">
-      <h2 className="text-xl font-semibold text-[#0d0d0d]">Send us a message</h2>
+    <form onSubmit={handleSubmit} className="rounded-xl border border-border p-6 lg:p-8">
+      <h2 className="text-xl font-semibold text-ink">Send us a message</h2>
 
       {/* Honeypot */}
       <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
@@ -76,7 +76,7 @@ export default function ContactForm() {
       {/* Name row */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="first-name" className="block text-sm font-medium text-[#0d0d0d]">
+          <label htmlFor="first-name" className="block text-sm font-medium text-ink">
             First Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -84,12 +84,12 @@ export default function ContactForm() {
             id="first-name"
             name="first-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
             placeholder="John"
           />
         </div>
         <div>
-          <label htmlFor="last-name" className="block text-sm font-medium text-[#0d0d0d]">
+          <label htmlFor="last-name" className="block text-sm font-medium text-ink">
             Last Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -97,7 +97,7 @@ export default function ContactForm() {
             id="last-name"
             name="last-name"
             required
-            className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
+            className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
             placeholder="Smith"
           />
         </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
 
       {/* Email */}
       <div className="mt-4">
-        <label htmlFor="email" className="block text-sm font-medium text-[#0d0d0d]">
+        <label htmlFor="email" className="block text-sm font-medium text-ink">
           Work Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -113,14 +113,14 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
           placeholder="john@company.com"
         />
       </div>
 
       {/* Company */}
       <div className="mt-4">
-        <label htmlFor="company" className="block text-sm font-medium text-[#0d0d0d]">
+        <label htmlFor="company" className="block text-sm font-medium text-ink">
           Company <span className="text-red-500">*</span>
         </label>
         <input
@@ -128,34 +128,34 @@ export default function ContactForm() {
           id="company"
           name="company"
           required
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
           placeholder="Acme Corp"
         />
       </div>
 
       {/* Interests */}
       <fieldset className="mt-6">
-        <legend className="block text-sm font-medium text-[#0d0d0d]">
+        <legend className="block text-sm font-medium text-ink">
           I&apos;m interested in
         </legend>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {products.map((p) => (
-            <label key={p.id} className="flex items-center gap-2.5 text-sm text-[#525252]">
+            <label key={p.id} className="flex items-center gap-2.5 text-sm text-subtle">
               <input
                 type="checkbox"
                 name="interests"
                 value={p.name}
-                className="h-4 w-4 rounded border-[#e0d5ca] accent-[#a48e7a] focus:ring-[#a48e7a]"
+                className="h-4 w-4 rounded border-brand-light accent-brand focus:ring-brand"
               />
               {p.name}
             </label>
           ))}
-          <label className="flex items-center gap-2.5 text-sm text-[#525252]">
+          <label className="flex items-center gap-2.5 text-sm text-subtle">
             <input
               type="checkbox"
               name="interests"
               value="Other / Not sure"
-              className="h-4 w-4 rounded border-[#e0d5ca] accent-[#a48e7a] focus:ring-[#a48e7a]"
+              className="h-4 w-4 rounded border-brand-light accent-brand focus:ring-brand"
             />
             Other / Not sure
           </label>
@@ -164,14 +164,14 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="mt-4">
-        <label htmlFor="message" className="block text-sm font-medium text-[#0d0d0d]">
-          Message <span className="text-[#8c8c8c]">(optional)</span>
+        <label htmlFor="message" className="block text-sm font-medium text-ink">
+          Message <span className="text-faded">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
-          className="mt-1.5 block w-full rounded-lg border border-[#e8eaed] px-4 py-2.5 text-[#0d0d0d] placeholder:text-[#a3a3a3] focus:border-[#a48e7a] focus:outline-none"
+          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
           placeholder="Tell us about your project..."
         />
       </div>
