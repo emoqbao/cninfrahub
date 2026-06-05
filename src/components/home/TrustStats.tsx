@@ -1,29 +1,17 @@
 export const trustStats = [
-  {
-    title: "One Invoice",
-    description: "Every provider, every service — unified billing and a single SLA.",
-  },
-  {
-    title: "Below-Market Pricing",
-    description: "Aggregated purchasing power secures rates enterprises can't negotiate on their own.",
-  },
-  {
-    title: "No Carrier Lock-in",
-    description: "Provider-neutral by design. We always recommend what's best for your workload.",
-  },
-  {
-    title: "Compliance Built-in",
-    description: "We absorb China's regulatory complexity — CSL, PIPL, MLPS 2.0 — so you don't have to.",
-  },
+  { value: "Multiple", label: "Carrier partners across China" },
+  { value: "Tier III+", label: "Data center facilities in our network" },
+  { value: "Aggregated", label: "Pricing below direct enterprise rates" },
+  { value: "24/7", label: "Bilingual support and operations" },
 ];
 
 export function TrustStatItem({ stat }: { stat: typeof trustStats[number] }) {
   return (
-    <div className="flex flex-col p-8">
-      <p className="text-base font-semibold text-ink">
-        {stat.title}
+    <div className="flex flex-col items-center justify-center p-8">
+      <p className="text-3xl font-bold tracking-[-0.02em] text-brand lg:text-4xl">
+        {stat.value}
       </p>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{stat.description}</p>
+      <p className="mt-1 text-sm text-muted">{stat.label}</p>
     </div>
   );
 }

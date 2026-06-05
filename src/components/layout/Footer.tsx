@@ -78,17 +78,17 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/resources/#white-papers" className="text-sm text-light hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
                   White Papers
                 </Link>
               </li>
               <li>
-                <Link href="/resources/#case-studies" className="text-sm text-light hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/resources/#guides" className="text-sm text-light hover:text-white transition-colors">
+                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
                   Guides
                 </Link>
               </li>
