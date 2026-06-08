@@ -125,19 +125,19 @@ export default function Header() {
         </div>
 
         {solutionsOpen && (
-          <div ref={solutionsPanelRef} className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 pt-1">
-            <div className="rounded-xl border border-border bg-white px-6 py-4 w-72 shadow-lg">
-              <ul className="space-y-1">
+          <div ref={solutionsPanelRef} className="absolute left-0 top-full z-50 pt-1">
+            <div className="rounded-xl border border-border bg-white px-5 py-3">
+              <ul className="space-y-0.5">
                 {solutions.map((s) => (
                   <li key={s.id}>
-                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
+                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block whitespace-nowrap rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                       {s.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <div className="mt-2 pt-2 border-t border-border">
-                <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
+              <div className="mt-1.5 pt-1.5 border-t border-border">
+                <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block whitespace-nowrap rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                   View all solutions &rarr;
                 </Link>
               </div>
