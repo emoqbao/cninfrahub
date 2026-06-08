@@ -126,18 +126,18 @@ export default function Header() {
 
         {solutionsOpen && (
           <div ref={solutionsPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white shadow-lg px-8 py-6">
+            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
               <div className="max-w-md"><ul className="space-y-2">
                 {solutions.map((s) => (
                   <li key={s.id}>
-                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
+                    <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                       {s.name}
                     </Link>
                   </li>
                 ))}
               </ul></div>
                 <div className="max-w-md mt-3 pt-3 border-t border-border">
-                  <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
+                  <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                     View all solutions &rarr;
                   </Link>
                 </div>
@@ -147,7 +147,7 @@ export default function Header() {
 
         <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
           {megaOpen && (
-            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white shadow-lg px-8 py-6">
+            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
@@ -155,7 +155,7 @@ export default function Header() {
                     <ul className="space-y-2.5">
                       {products.filter((p) => p.module === mod).map((p) => (
                         <li key={p.id}>
-                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block text-[15px] font-medium text-ink hover:bg-surface transition-colors">
+                          <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block rounded-md px-3 py-1.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                             {p.name}
                           </Link>
                         </li>
