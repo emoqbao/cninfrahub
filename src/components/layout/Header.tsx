@@ -125,7 +125,7 @@ export default function Header() {
         </div>
 
         {solutionsOpen && (
-          <div ref={solutionsPanelRef} className="absolute left-1/2 transform -translate-x-1/2 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
+          <div ref={solutionsPanelRef} className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
             <div className="rounded-xl border border-border bg-white shadow-lg px-8 py-6 max-w-md mx-auto">
               <ul className="space-y-2">
                 {solutions.map((s) => (
