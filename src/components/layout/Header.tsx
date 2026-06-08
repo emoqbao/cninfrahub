@@ -125,9 +125,9 @@ export default function Header() {
         </div>
 
         {solutionsOpen && (
-          <div ref={solutionsPanelRef} className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
-            <div className="rounded-xl border border-border bg-white shadow-lg px-8 py-6 max-w-md mx-auto">
-              <ul className="space-y-2">
+          <div ref={solutionsPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
+            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white shadow-lg px-8 py-6">
+              <div className="max-w-md"><ul className="space-y-2">
                 {solutions.map((s) => (
                   <li key={s.id}>
                     <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
@@ -135,8 +135,8 @@ export default function Header() {
                     </Link>
                   </li>
                 ))}
-              </ul>
-                <div className="mt-3 pt-3 border-t border-border">
+              </ul></div>
+                <div className="max-w-md mt-3 pt-3 border-t border-border">
                   <Link href="/solutions/" onClick={() => setSolutionsOpen(false)} className="block rounded-md px-4 py-2.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                     View all solutions &rarr;
                   </Link>
@@ -145,9 +145,9 @@ export default function Header() {
           </div>
         )}
 
-        <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 mx-auto max-w-7xl px-6 pb-4 lg:px-8">
+        <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
           {megaOpen && (
-            <div className="rounded-xl border border-border bg-white shadow-lg px-8 py-6">
+            <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white shadow-lg px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
