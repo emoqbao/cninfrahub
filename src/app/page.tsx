@@ -1,4 +1,4 @@
-import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
@@ -20,7 +20,7 @@ export default function Home() {
         {/* STATS (4 columns with vertical dividers) */}
         <BentoRow cols={4}>
           {trustStats.map((s) => (
-            <BentoCell key={s.label}>
+            <BentoCell key={s.title}>
               <TrustStatItem stat={s} />
             </BentoCell>
           ))}
