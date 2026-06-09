@@ -1,5 +1,5 @@
 export const trustStats = [
-  { title: "One Invoice", desc: "All providers, all services ¡ª unified billing and SLA" },
+  { title: "One Invoice", desc: "All providers, all services â€” unified billing and SLA" },
   { title: "Below-Market Pricing", desc: "Aggregated procurement beats direct enterprise rates" },
   { title: "Neutral & Independent", desc: "Carrier-agnostic; we always pick the best fit for you" },
   { title: "Compliance by Default", desc: "Regulatory complexity stays on our side, not yours" },
