@@ -111,13 +111,32 @@ export default async function ProductPage({ params }: Props) {
               </div>
               <div className="hidden lg:flex items-center justify-center">
                 {product.heroImage ? (
-                  <img
-                    src={product.heroImage}
-                    alt={product.name}
-                    width={460}
-                    height={340}
-                    className="w-full max-w-sm h-auto rounded-2xl border border-border"
-                  />
+                  <div className="relative w-full max-w-sm">
+                    <img
+                      src={product.heroImage}
+                      alt={product.name}
+                      width={460}
+                      height={340}
+                      className="w-full h-auto rounded-2xl border border-border"
+                    />
+                    {product.id === "gpu-instances" && (
+                      <svg
+                        viewBox="0 0 96 64"
+                        className="absolute bottom-3 right-3 h-16 w-auto"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="90" height="58" rx="8" fill="#ffffff" fillOpacity="0.96" stroke="#0d0d0d" strokeWidth="1.5" />
+                        <rect x="12" y="14" width="20" height="16" rx="3" fill="#8a6d5c" />
+                        <rect x="38" y="14" width="20" height="16" rx="3" fill="#8a6d5c" fillOpacity="0.85" />
+                        <rect x="64" y="14" width="20" height="16" rx="3" fill="#d4d4d4" />
+                        <rect x="12" y="38" width="20" height="6" rx="2" fill="#d4d4d4" />
+                        <rect x="38" y="38" width="20" height="6" rx="2" fill="#d4d4d4" />
+                        <rect x="64" y="38" width="20" height="6" rx="2" fill="#d4d4d4" />
+                        <path d="M22 50 v8 M18 54 h8" stroke="#8a6d5c" strokeWidth="1.5" />
+                      </svg>
+                    )}
+                  </div>
                 ) : (
                   <ProductHeroIcon productId={product.id} />
                 )}
