@@ -111,7 +111,6 @@ export const products: Product[] = [
     name: "GPU Instances",
     module: "COMPUTE",
     tagline: "NVIDIA GPU compute in China — aggregated capacity from multiple partners",
-    heroImage: "/images/products/bare-metal-hero.png",
     description:
       "We aggregate GPU compute across our partner network to provide NVIDIA H100, H200, A100, and L40S capacity for AI training, fine-tuning, and inference. Whether you need a single GPU or a multi-node cluster with high-speed interconnects, we find the provider with available capacity at the best rate. Pre-configured ML environments (CUDA, PyTorch, TensorFlow, vLLM) come standard. All deployments comply with China's data residency requirements.",
     features: [
