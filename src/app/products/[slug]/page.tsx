@@ -110,7 +110,17 @@ export default async function ProductPage({ params }: Props) {
                 </p>
               </div>
               <div className="hidden lg:flex items-center justify-center">
-                <ProductHeroIcon productId={product.id} />
+                {product.heroImage ? (
+                  <img
+                    src={product.heroImage}
+                    alt={product.name}
+                    width={460}
+                    height={340}
+                    className="w-full max-w-sm h-auto rounded-2xl border border-border"
+                  />
+                ) : (
+                  <ProductHeroIcon productId={product.id} />
+                )}
               </div>
             </div>
           </Container>

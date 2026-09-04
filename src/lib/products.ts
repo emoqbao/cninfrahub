@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   module: "AI" | "COMPUTE" | "NETWORK" | "DATA CENTER";
   tagline: string;
+  heroImage?: string;
   description: string;
   features: string[];
   benefits: string[];
@@ -48,6 +49,7 @@ export const products: Product[] = [
     name: "Elastic Cloud Servers",
     module: "COMPUTE",
     tagline: "On-demand VMs across China — we source the best provider for your workload",
+    heroImage: "/images/products/elastic-cloud-servers-hero.png",
     description:
       "We aggregate virtual machine capacity from multiple Tier III+ data center operators across China. You tell us your requirements — vCPU, RAM, storage, region — and we select the optimal provider from our partner network based on price, performance, and availability. Full root access, flexible configurations (1-96 vCPUs, 1-384 GB RAM), and integrated networking. We manage the provider relationship; you manage your servers.",
     features: [
@@ -78,6 +80,7 @@ export const products: Product[] = [
     name: "Bare Metal",
     module: "COMPUTE",
     tagline: "Dedicated physical servers — we find the right hardware at the right price",
+    heroImage: "/images/products/bare-metal-hero.png",
     description:
       "We source single-tenant physical servers from our network of data center and hardware partners. Latest-generation Intel Xeon and AMD EPYC processors, custom RAID configurations, NVMe SSD storage, and GPU expansion — we match your exact specs to the provider that gives you the best combination of price, location, and support. Zero hypervisor overhead, full OS control, and 24/7 Smart Hands included.",
     features: [
