@@ -32,37 +32,40 @@ export default function ProductsPage() {
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border bg-surface-alt flex items-center justify-center">
                 <svg viewBox="0 0 200 200" className="w-3/4 h-3/4" fill="none">
-                  <rect x="10" y="10" width="85" height="85" rx="6" fill="none" stroke="#e8eaed" strokeWidth="1" />
-                  <circle cx="52" cy="42" r="12" fill="#8a6d5c" opacity="0.15" stroke="#8a6d5c" strokeWidth="1.5" />
-                  <circle cx="52" cy="42" r="5" fill="#8a6d5c" />
-                  <circle cx="35" cy="60" r="3" fill="#0d0d0d" />
-                  <circle cx="52" cy="68" r="3" fill="#0d0d0d" />
-                  <circle cx="69" cy="60" r="3" fill="#0d0d0d" />
-                  <line x1="47" y1="48" x2="37" y2="58" stroke="#d4d4d4" strokeWidth="0.8" />
-                  <line x1="54" y1="54" x2="54" y2="65" stroke="#d4d4d4" strokeWidth="0.8" />
-                  <line x1="58" y1="48" x2="67" y2="58" stroke="#d4d4d4" strokeWidth="0.8" />
-                  <rect x="105" y="10" width="85" height="85" rx="6" fill="none" stroke="#e8eaed" strokeWidth="1" />
-                  <rect x="120" y="30" width="55" height="50" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <rect x="130" y="38" width="35" height="8" rx="2" fill="#8a6d5c" opacity="0.3" />
-                  <rect x="130" y="50" width="25" height="5" rx="1" fill="#d4d4d4" />
-                  <rect x="130" y="58" width="30" height="5" rx="1" fill="#d4d4d4" />
-                  <circle cx="147" cy="72" r="4" fill="#0f0" opacity="0.5" />
-                  <rect x="10" y="105" width="85" height="85" rx="6" fill="none" stroke="#e8eaed" strokeWidth="1" />
-                  <circle cx="52" cy="147" r="30" stroke="#d4d4d4" strokeWidth="1" fill="none" />
-                  <circle cx="52" cy="147" r="12" fill="#8a6d5c" opacity="0.15" stroke="#8a6d5c" strokeWidth="1.5" />
-                  <circle cx="52" cy="147" r="4" fill="#8a6d5c" />
-                  <circle cx="30" cy="135" r="3" fill="#0d0d0d" />
-                  <circle cx="74" cy="135" r="3" fill="#0d0d0d" />
-                  <circle cx="30" cy="159" r="3" fill="#0d0d0d" />
-                  <circle cx="74" cy="159" r="3" fill="#0d0d0d" />
-                  <rect x="105" y="105" width="85" height="85" rx="6" fill="none" stroke="#e8eaed" strokeWidth="1" />
-                  <rect x="120" y="125" width="55" height="50" rx="3" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <line x1="120" y1="150" x2="175" y2="150" stroke="#e8eaed" strokeWidth="1" />
-                  <rect x="130" y="135" width="10" height="10" rx="2" fill="#8a6d5c" opacity="0.3" />
-                  <rect x="145" y="135" width="10" height="10" rx="2" fill="#8a6d5c" opacity="0.3" />
-                  <rect x="160" y="135" width="10" height="10" rx="2" fill="#8a6d5c" opacity="0.3" />
-                  <rect x="130" y="158" width="10" height="10" rx="2" fill="#d4d4d4" />
-                  <rect x="145" y="158" width="10" height="10" rx="2" fill="#d4d4d4" />
+                  {/* AI — top left */}
+                  <rect x="10" y="10" width="85" height="85" rx="6" stroke="#e8eaed" strokeWidth="1" />
+                  <rect x="34" y="38" width="36" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" />
+                  <rect x="41" y="45" width="22" height="14" rx="2" fill="#8a6d5c" opacity="0.18" />
+                  <rect x="47" y="50" width="5" height="5" rx="1" fill="#8a6d5c" />
+                  <rect x="55" y="50" width="5" height="5" rx="1" fill="#8a6d5c" />
+                  <path d="M44 38 L44 32 M52 38 L52 32 M60 38 L60 32 M44 66 L44 72 M52 66 L52 72 M60 66 L60 72" stroke="#0d0d0d" strokeWidth="1" />
+
+                  {/* COMPUTE — top right */}
+                  <rect x="105" y="10" width="85" height="85" rx="6" stroke="#e8eaed" strokeWidth="1" />
+                  <rect x="122" y="34" width="51" height="38" rx="4" stroke="#0d0d0d" strokeWidth="1.5" />
+                  <rect x="129" y="41" width="37" height="6" rx="1.5" fill="#8a6d5c" />
+                  <rect x="129" y="51" width="28" height="5" rx="1.25" fill="#d4d4d4" />
+                  <rect x="129" y="60" width="34" height="5" rx="1.25" fill="#d4d4d4" />
+                  <circle cx="166" cy="67" r="2" fill="#0f0" opacity="0.5" />
+
+                  {/* NETWORK — bottom left */}
+                  <rect x="10" y="105" width="85" height="85" rx="6" stroke="#e8eaed" strokeWidth="1" />
+                  <line x1="52" y1="138" x2="38" y2="132" stroke="#8a6d5c" strokeWidth="1.5" />
+                  <line x1="52" y1="138" x2="66" y2="132" stroke="#8a6d5c" strokeWidth="1.5" />
+                  <line x1="52" y1="150" x2="52" y2="158" stroke="#8a6d5c" strokeWidth="1.5" />
+                  <circle cx="52" cy="144" r="7" fill="#0d0d0d" />
+                  <circle cx="34" cy="128" r="5" fill="#f8f9fb" stroke="#8a6d5c" strokeWidth="1.5" />
+                  <circle cx="70" cy="128" r="5" fill="#f8f9fb" stroke="#8a6d5c" strokeWidth="1.5" />
+                  <circle cx="52" cy="164" r="5" fill="#f8f9fb" stroke="#8a6d5c" strokeWidth="1.5" />
+
+                  {/* DATA CENTER — bottom right */}
+                  <rect x="105" y="105" width="85" height="85" rx="6" stroke="#e8eaed" strokeWidth="1" />
+                  <rect x="124" y="120" width="48" height="55" rx="4" stroke="#0d0d0d" strokeWidth="1.5" />
+                  <line x1="124" y1="138" x2="172" y2="138" stroke="#d4d4d4" strokeWidth="1" />
+                  <line x1="124" y1="154" x2="172" y2="154" stroke="#d4d4d4" strokeWidth="1" />
+                  <rect x="130" y="127" width="9" height="9" rx="1.5" fill="#8a6d5c" opacity="0.25" stroke="#8a6d5c" strokeWidth="0.5" />
+                  <rect x="143" y="127" width="9" height="9" rx="1.5" fill="#8a6d5c" opacity="0.25" stroke="#8a6d5c" strokeWidth="0.5" />
+                  <rect x="156" y="127" width="9" height="9" rx="1.5" fill="#8a6d5c" opacity="0.25" stroke="#8a6d5c" strokeWidth="0.5" />
                 </svg>
               </div>
             </div>
