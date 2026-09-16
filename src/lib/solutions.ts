@@ -94,6 +94,7 @@ export const solutions: Solution[] = [
       "Cutover is one CNAME record and rollback is a single record update — no TXT verification, no nameserver migration, no code freeze, no migration window, no change to your application",
       "Delivered as a combination of Edge Acceleration and Cloud Connect, with one provider owning the edge, the certificates, and the cross-border path",
       "Chinese-user traffic is reported against the metrics that matter there — load time, cache hit ratio, and origin fetch latency — rather than a global average",
+      "WAF, DDoS mitigation, bot control, and rate limiting enforced at the edge, before traffic reaches your origin — your real IP stays unexposed",
     ],
     whoItsFor: "Global SaaS platforms, e-commerce sites, and application teams with a material mainland Chinese user base whose origin is hosted overseas. Companies that are not ready to build mainland infrastructure but need China traffic to perform properly.",
     approach: "We map your application's traffic profile, separate cacheable from dynamic paths, and design the edge configuration around it. An alias domain is provisioned for your service so end users stay on your brand. Cutover happens by DNS, which means rollback is a single record change. We tune caching, WAF, and routing against live traffic and report on load time, cache hit ratio, and origin fetch latency throughout.",
