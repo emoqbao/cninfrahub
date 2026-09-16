@@ -50,7 +50,7 @@ export const products: Product[] = [
     module: "EDGE",
     tagline: "No ICP filing required — one CNAME record, and mainland China users reach your overseas origin over near-shore edge nodes",
     description:
-      "China acceleration usually stalls on paperwork. ICP filing means a mainland entity, a mainland-hosted service, and a review measured in weeks before a single request is served. Your domain does not need it here — traffic terminates on near-shore edge nodes in Hong Kong rather than inside the mainland, so Chinese users get a short, stable cross-border path instead of a direct one that jitters, drops packets, and times out. Onboarding is one DNS change: a single CNAME record at your existing provider, with no TXT record, no nameserver migration, and no code. Your origin, IP addressing, hosting provider, and deployment pipeline all stay exactly where they are. Every tenant is isolated — its own gateway domain, routing policy, cache rules, certificate, and firewall configuration — and response headers are normalized so the layer in between is never advertised.",
+      "China acceleration usually stalls on paperwork. ICP filing means a mainland entity, a mainland-hosted service, and a review measured in weeks before a single request is served. Your domain does not need it here — traffic terminates on near-shore edge nodes in Hong Kong rather than inside the mainland, so Chinese users get a short, stable cross-border path instead of a direct one that jitters, drops packets, and times out. Onboarding is one DNS change: a single CNAME record at your existing provider, with no TXT record, no nameserver migration, and no code. Your origin, IP addressing, hosting provider, and deployment pipeline all stay exactly where they are. Every deployment is isolated — its own gateway domain, routing policy, cache rules, certificate, and firewall configuration — and response headers are normalized so the layer in between is never advertised.",
     features: [
       "No ICP filing required — the acceleration region sits outside mainland China, so the domain needs no MIIT filing, no mainland entity, and no mainland-hosted service",
       "Zero-touch onboarding: one CNAME record at your existing DNS provider — no TXT verification record, no nameserver migration, no agent to install, no application change",
@@ -59,7 +59,8 @@ export const products: Product[] = [
       "Near-shore edge nodes in Hong Kong serving static and dynamic content, with cache-hit optimization that keeps most requests off the cross-border path",
       "TLS terminated at the edge on your own hostname, with certificates issued and renewed automatically on a 90-day cycle, plus HTTP/2 and HTTP/3",
       "WAF, DDoS mitigation, bot control, and rate limiting enforced before traffic reaches origin, with response headers normalized to strip proxy fingerprints",
-      "Per-tenant isolation and real-time analytics: request volume, cache hit ratio, origin fetch latency, and error rates by region",
+      "Your own gateway domain, routing policy, cache rules, and firewall settings — configured for your service alone",
+      "Real-time analytics: request volume, cache hit ratio, origin fetch latency, and error rates by region",
     ],
     benefits: [
       "Skip ICP filing entirely — no mainland entity, no mainland-hosted service, and no review period between you and your Chinese users",
