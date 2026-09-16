@@ -1,7 +1,7 @@
 export interface Product {
   id: string;
   name: string;
-  module: "AI" | "EDGE" | "COMPUTE" | "NETWORK" | "DATA CENTER";
+  module: ProductModule;
   tagline: string;
   heroImage?: string;
   description: string;
@@ -421,3 +421,14 @@ export function getProductsByModule(module: Product["module"]): Product[] {
 }
 
 export const productModules = ["AI", "EDGE", "COMPUTE", "NETWORK", "DATA CENTER"] as const;
+
+export type ProductModule = (typeof productModules)[number];
+
+/** Anchor ids used by the /products sections, and by every link that points at them. */
+export const moduleAnchors: Record<ProductModule, string> = {
+  AI: "ai",
+  EDGE: "edge",
+  COMPUTE: "compute",
+  NETWORK: "network",
+  "DATA CENTER": "data-center",
+};

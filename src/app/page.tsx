@@ -2,7 +2,7 @@
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
-import { ProductOverviewTitle, ProductCard, productModules } from "@/components/home/ProductOverview";
+import { ProductOverviewTitle, ProductCard, moduleCards } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
 
 export default function Home() {
@@ -53,10 +53,10 @@ export default function Home() {
 
         {/* OUR PRODUCTS cards (5 columns) */}
         <BentoRow cols={5}>
-          {productModules.map((m, i) => (
+          {moduleCards.map((m, i) => (
             <BentoCell
               key={m.name}
-              className={i === productModules.length - 1 ? "col-span-2 lg:col-span-1" : ""}
+              className={i === moduleCards.length - 1 ? "col-span-2 lg:col-span-1" : ""}
             >
               <ProductCard module={m} />
             </BentoCell>

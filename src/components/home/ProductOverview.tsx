@@ -1,13 +1,22 @@
 import Link from "next/link";
-import { Cpu, Network, Database, Brain, Zap } from "lucide-react";
+import { Cpu, Network, Database, Brain, Zap, type LucideIcon } from "lucide-react";
+import { moduleAnchors, productModules, type ProductModule } from "@/lib/products";
 
-export const productModules = [
-  { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/#ai" },
-  { name: "EDGE", icon: Zap, products: "Edge Acceleration", href: "/products/#edge" },
-  { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/#compute" },
-  { name: "NETWORK", icon: Network, products: "DIA · IP Transit · Private Connect · Cloud Connect · Dark Fiber · Virtual Edge", href: "/products/#network" },
-  { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/#data-center" },
-];
+/** Card copy per module. Exhaustive over ProductModule, so a new module fails the build until it is filled in. */
+const moduleCopy: Record<ProductModule, { icon: LucideIcon; products: string }> = {
+  AI: { icon: Brain, products: "AI Gateway" },
+  EDGE: { icon: Zap, products: "Edge Acceleration" },
+  COMPUTE: { icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances" },
+  NETWORK: { icon: Network, products: "DIA · IP Transit · Private Connect · Cloud Connect · Dark Fiber · Virtual Edge" },
+  "DATA CENTER": { icon: Database, products: "Colocation · Smart Hands" },
+};
+
+export const moduleCards = productModules.map((name) => ({
+  name,
+  icon: moduleCopy[name].icon,
+  products: moduleCopy[name].products,
+  href: `/products/#${moduleAnchors[name]}`,
+}));
 
 export function ProductOverviewTitle() {
   return (
@@ -21,7 +30,7 @@ export function ProductOverviewTitle() {
   );
 }
 
-export function ProductCard({ module: m }: { module: typeof productModules[number] }) {
+export function ProductCard({ module: m }: { module: (typeof moduleCards)[number] }) {
   return (
     <Link
       href={m.href}

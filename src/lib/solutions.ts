@@ -90,11 +90,10 @@ export const solutions: Solution[] = [
     description:
       "Your application is hosted outside China and your Chinese users feel it — slow loads, timeouts, and unstable connections across the international border. We put a managed edge layer between your origin and those users: mainland delivery nodes that cache, terminate TLS, and carry traffic back to origin over optimized cross-border paths. Your infrastructure does not move, your data stays where it already lives, and your team keeps one origin and one deployment pipeline. For customers who later establish mainland infrastructure, the same edge layer becomes the front door to it rather than something to replace.",
     benefits: [
-      "Faster, more consistent load times for users in mainland China without a mainland build-out",
-      "Origin stays put — same hosting provider, same IP plan, same deployment pipeline",
-      "Smaller attack surface: origin IP isolated, WAF and rate limiting enforced at the edge",
-      "One edge configuration for every market — no separate China code path to maintain",
-      "Clear upgrade path: the same edge layer fronts mainland infrastructure later, with no migration",
+      "Cutover is a DNS change and rollback is a single record update — no code freeze, no migration window, no change to your application",
+      "Moving further into China later is an upgrade, not a rebuild: the same edge layer becomes the front door to mainland infrastructure",
+      "Delivered as a combination of Edge Acceleration and Cloud Connect, with one provider owning the edge, the certificates, and the cross-border path",
+      "Chinese-user traffic is reported against the metrics that matter there — load time, cache hit ratio, and origin fetch latency — rather than a global average",
     ],
     whoItsFor: "Global SaaS platforms, e-commerce sites, and application teams with a material mainland Chinese user base whose origin is hosted overseas. Companies that are not ready to build mainland infrastructure but need China traffic to perform properly.",
     approach: "We map your application's traffic profile, separate cacheable from dynamic paths, and design the edge configuration around it. An alias domain is provisioned for your service so end users stay on your brand. Cutover happens by DNS, which means rollback is a single record change. We tune caching, WAF, and routing against live traffic and report on load time, cache hit ratio, and origin fetch latency throughout.",
