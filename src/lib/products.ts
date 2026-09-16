@@ -55,7 +55,7 @@ export const products: Product[] = [
       "No ICP filing required — the acceleration region sits outside mainland China, so the domain needs no MIIT filing, no mainland entity, and no mainland-hosted service",
       "Zero-touch onboarding: one CNAME record at your existing DNS provider — no TXT verification record, no nameserver migration, no agent to install, no application change",
       "Mainland China network optimization — overseas sites are served to users in mainland China over an optimized cross-border path, not the default public-internet route",
-      "Path and protocol optimization into near-shore nodes in Hong Kong — solving the latency, jitter, and packet loss that make mainland access to an overseas origin slow and unreliable",
+      "Low-latency, stable access from the mainland — path and protocol optimization into near-shore nodes in Hong Kong that removes the latency, jitter, and packet loss of a direct connection to an overseas origin",
       "Reverse proxy delivery layer — your origin server, IP addresses, and hosting provider stay exactly as they are",
       "TLS terminated at the edge on your own hostname — bring your own certificate, or use a free certificate issued and auto-renewed on a 90-day cycle, plus HTTP/2 and HTTP/3",
       "WAF, DDoS mitigation, bot control, and rate limiting enforced before traffic reaches origin, with response headers normalized to strip proxy fingerprints",
