@@ -147,7 +147,7 @@ export default function Header() {
         <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
           {megaOpen && (
             <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-6">
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-6 lg:gap-x-8 gap-y-6">
                 {productModules.map((mod) => (
                   <div key={mod}>
                     <p className="mb-4 px-3 text-xs font-semibold uppercase tracking-widest text-faded">{mod}</p>

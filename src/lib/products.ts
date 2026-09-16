@@ -1,7 +1,7 @@
 export interface Product {
   id: string;
   name: string;
-  module: "AI" | "COMPUTE" | "NETWORK" | "DATA CENTER";
+  module: "AI" | "EDGE" | "COMPUTE" | "NETWORK" | "DATA CENTER";
   tagline: string;
   heroImage?: string;
   description: string;
@@ -43,6 +43,38 @@ export const products: Product[] = [
       "Gaming companies integrating real-time AI translation and moderation for China markets",
     ],
     seoKeywords: ["DeepSeek API access China", "Claude API relay China", "AI gateway China", "Qwen API proxy", "Doubao API China", "Kimi API access", "Zhipu GLM API"],
+  },
+  {
+    id: "edge-acceleration",
+    name: "Edge Acceleration",
+    module: "EDGE",
+    tagline: "Accelerate overseas origins for users in mainland China — routed, cached, and secured at the edge",
+    description:
+      "Your origin stays where it is. We place a managed edge layer in front of it — mainland China delivery nodes that terminate TLS, cache static assets, and carry every request back to your origin over an optimized international path. Chinese users get a site that loads like a local one, without anything moving into the country. Every tenant runs isolated: its own routing policy, cache rules, WAF configuration, and branded alias domain, so end users never see our infrastructure in the URL.",
+    features: [
+      "Reverse proxy delivery layer — your origin server, IP addresses, and hosting provider stay exactly as they are",
+      "Mainland China delivery nodes serving static and dynamic content, with cache-hit optimization",
+      "Optimized international backhaul from the China edge to overseas origins — a shorter, more stable cross-border path",
+      "TLS termination at the edge with your own certificate, plus HTTP/2 and HTTP/3",
+      "WAF, DDoS mitigation, bot control, and rate limiting enforced before traffic reaches origin",
+      "Per-tenant isolation: dedicated alias domain, routing policy, cache rules, and firewall configuration",
+      "Real-time analytics: request volume, cache hit ratio, origin fetch latency, and error rates by region",
+    ],
+    benefits: [
+      "Cut load times for Chinese users without a mainland build-out or a second deployment pipeline",
+      "Your data and infrastructure stay exactly where they are today",
+      "Origin shielded — your real IP is never exposed and attack traffic is filtered at the edge",
+      "One configuration surface for routing, caching, security, and TLS across every market",
+      "A branded alias domain keeps your own domain in the end user's address bar",
+      "We operate the edge platform, the certificates, and the routing rules — you keep the relationship with your users",
+    ],
+    useCases: [
+      "SaaS and web applications with a growing Chinese user base that are slow or unstable to reach from the mainland",
+      "Global marketing and e-commerce sites that need consistent China performance without mainland hosting",
+      "API platforms that need stable, optimized cross-border connectivity back to origin",
+      "Teams that want WAF, DDoS, and bot controls applied in front of a China-facing service",
+    ],
+    seoKeywords: ["China acceleration", "accelerate website in China", "China edge delivery", "China reverse proxy", "improve site speed China", "overseas origin China acceleration"],
   },
   {
     id: "elastic-cloud-servers",
@@ -388,4 +420,4 @@ export function getProductsByModule(module: Product["module"]): Product[] {
   return products.filter((p) => p.module === module);
 }
 
-export const productModules = ["AI", "COMPUTE", "NETWORK", "DATA CENTER"] as const;
+export const productModules = ["AI", "EDGE", "COMPUTE", "NETWORK", "DATA CENTER"] as const;

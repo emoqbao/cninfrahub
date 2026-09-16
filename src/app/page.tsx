@@ -51,10 +51,13 @@ export default function Home() {
           <ProductOverviewTitle />
         </BentoRow>
 
-        {/* OUR PRODUCTS cards (4 columns) */}
-        <BentoRow cols={4}>
-          {productModules.map((m) => (
-            <BentoCell key={m.name}>
+        {/* OUR PRODUCTS cards (5 columns) */}
+        <BentoRow cols={5}>
+          {productModules.map((m, i) => (
+            <BentoCell
+              key={m.name}
+              className={i === productModules.length - 1 ? "col-span-2 lg:col-span-1" : ""}
+            >
               <ProductCard module={m} />
             </BentoCell>
           ))}

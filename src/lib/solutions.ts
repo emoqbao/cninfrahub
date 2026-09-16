@@ -83,6 +83,24 @@ export const solutions: Solution[] = [
     products: ["virtual-edge", "dia", "private-connect"],
     seoKeywords: ["China NaaS", "network as a service China", "managed SD-WAN China", "China virtual network", "managed firewall China", "Zscaler China"],
   },
+  {
+    id: "china-application-reachability",
+    name: "China Application Reachability",
+    tags: ["Edge", "Acceleration", "WAF", "Overseas Origin"],
+    description:
+      "Your application is hosted outside China and your Chinese users feel it — slow loads, timeouts, and unstable connections across the international border. We put a managed edge layer between your origin and those users: mainland delivery nodes that cache, terminate TLS, and carry traffic back to origin over optimized cross-border paths. Your infrastructure does not move, your data stays where it already lives, and your team keeps one origin and one deployment pipeline. For customers who later establish mainland infrastructure, the same edge layer becomes the front door to it rather than something to replace.",
+    benefits: [
+      "Faster, more consistent load times for users in mainland China without a mainland build-out",
+      "Origin stays put — same hosting provider, same IP plan, same deployment pipeline",
+      "Smaller attack surface: origin IP isolated, WAF and rate limiting enforced at the edge",
+      "One edge configuration for every market — no separate China code path to maintain",
+      "Clear upgrade path: the same edge layer fronts mainland infrastructure later, with no migration",
+    ],
+    whoItsFor: "Global SaaS platforms, e-commerce sites, and application teams with a material mainland Chinese user base whose origin is hosted overseas. Companies that are not ready to build mainland infrastructure but need China traffic to perform properly.",
+    approach: "We map your application's traffic profile, separate cacheable from dynamic paths, and design the edge configuration around it. An alias domain is provisioned for your service so end users stay on your brand. Cutover happens by DNS, which means rollback is a single record change. We tune caching, WAF, and routing against live traffic and report on load time, cache hit ratio, and origin fetch latency throughout.",
+    products: ["edge-acceleration", "cloud-connect"],
+    seoKeywords: ["China website reachability", "accelerate site for China users", "China edge acceleration", "overseas origin China performance", "China application delivery"],
+  },
 ];
 
 export function getSolutionById(id: string): Solution | undefined {

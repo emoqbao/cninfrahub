@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Cpu, Network, Database, Brain } from "lucide-react";
+import { Cpu, Network, Database, Brain, Zap } from "lucide-react";
 
 export const productModules = [
   { name: "AI", icon: Brain, products: "AI Gateway", href: "/products/#ai" },
+  { name: "EDGE", icon: Zap, products: "Edge Acceleration", href: "/products/#edge" },
   { name: "COMPUTE", icon: Cpu, products: "Elastic Cloud · Bare Metal · GPU Instances", href: "/products/#compute" },
   { name: "NETWORK", icon: Network, products: "DIA · IP Transit · Private Connect · Cloud Connect · Dark Fiber · Virtual Edge", href: "/products/#network" },
   { name: "DATA CENTER", icon: Database, products: "Colocation · Smart Hands", href: "/products/#data-center" },
@@ -28,7 +29,7 @@ export function ProductCard({ module: m }: { module: typeof productModules[numbe
     >
       <m.icon className="h-7 w-7 text-brand" strokeWidth={1.5} />
       <h3 className="mt-4 text-lg font-semibold text-ink">{m.name}</h3>
-      <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{m.products}</p>
+      <p className="mt-2 text-sm text-muted leading-relaxed">{m.products}</p>
       <span className="mt-auto pt-4 inline-block text-sm font-medium text-brand group-hover:underline">
         Explore &rarr;
       </span>

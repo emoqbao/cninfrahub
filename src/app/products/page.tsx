@@ -6,11 +6,12 @@ import { products, productModules } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, compute, networking, and data center solutions."
+  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions."
 };
 
 const MODULE_IDS: Record<string, string> = {
   AI: "ai",
+  EDGE: "edge",
   COMPUTE: "compute",
   NETWORK: "network",
   "DATA CENTER": "data-center",

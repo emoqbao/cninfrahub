@@ -37,6 +37,7 @@ const GRID_COLS: Record<number, string> = {
   2: "grid-cols-2",
   3: "grid-cols-3",
   4: "grid-cols-4",
+  5: "grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
 };
 
 export function BentoGrid({ children }: { children: ReactNode }) {
@@ -55,7 +56,7 @@ export function BentoRow({
   className = "",
 }: {
   children: ReactNode;
-  cols?: 2 | 3 | 4;
+  cols?: 2 | 3 | 4 | 5;
   first?: boolean;
   className?: string;
 }) {

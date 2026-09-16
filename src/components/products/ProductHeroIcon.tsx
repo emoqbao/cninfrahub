@@ -12,6 +12,8 @@ function getIcon(id: string) {
   switch (id) {
     case "ai-gateway":
       return <AIGatewayIcon />;
+    case "edge-acceleration":
+      return <EdgeAcceleration />;
     case "elastic-cloud-servers":
       return <ElasticCloud />;
     case "bare-metal":
@@ -74,6 +76,24 @@ function AIGatewayIcon() {
   );
 }
 
+function EdgeAcceleration() {
+  return (
+    <>
+      <rect x="26" y="86" width="44" height="28" rx="4" stroke={dark} strokeWidth="1.5" fill="none" />
+      <rect x="34" y="94" width="28" height="5" rx="1.5" fill={light} />
+      <rect x="34" y="103" width="18" height="4" rx="1.25" fill={light} />
+      <line x1="70" y1="100" x2="84" y2="100" stroke={light} strokeWidth="1" />
+      <circle cx="110" cy="100" r="26" stroke={accent} strokeWidth="1.5" fill="none" />
+      <circle cx="110" cy="100" r="9" fill={accent} />
+      <line x1="136" y1="100" x2="162" y2="62" stroke={light} strokeWidth="1" />
+      <line x1="136" y1="100" x2="162" y2="100" stroke={light} strokeWidth="1" />
+      <line x1="136" y1="100" x2="162" y2="138" stroke={light} strokeWidth="1" />
+      <circle cx="168" cy="60" r="5" fill={dark} />
+      <circle cx="168" cy="100" r="5" fill={dark} />
+      <circle cx="168" cy="138" r="5" fill={dark} />
+    </>
+  );
+}
 function ElasticCloud() {
   return (
     <>
