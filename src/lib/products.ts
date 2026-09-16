@@ -67,7 +67,7 @@ export const products: Product[] = [
       "Cut cross-border latency and packet loss for Chinese users without building anything inside the mainland",
       "We manage the certificates, routing rules, cache policy, and WAF configuration — you keep one origin and one deployment pipeline",
       "Origin shielded — your real IP is never exposed, and attack traffic is filtered at the edge",
-      "We are explicit about the trade-off: near-shore nodes are not mainland nodes. File later and the same hostname moves onto mainland infrastructure instead of being rebuilt",
+      "Purpose-built for mainland China users reaching an overseas-hosted site — the core cross-border case, not a domestic CDN adapted to it",
     ],
     useCases: [
       "Overseas SaaS platforms whose customers bind custom domains and then find them slow or unreachable from the mainland",
