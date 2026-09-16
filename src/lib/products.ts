@@ -55,12 +55,12 @@ export const products: Product[] = [
       "No ICP filing required — the acceleration region sits outside mainland China, so the domain needs no MIIT filing, no mainland entity, and no mainland-hosted service",
       "Zero-touch onboarding: one CNAME record at your existing DNS provider — no TXT verification record, no nameserver migration, no agent to install, no application change",
       "Your domain stays yours — end users keep your hostname in the address bar, and no third-party CNAME ever appears in your DNS chain",
+      "Mainland China network optimization — overseas sites are served to users in mainland China over an optimized cross-border path, not the default public-internet route",
+      "Low-latency, stable access from the mainland — near-shore edge nodes in Hong Kong with cache-hit optimization that keeps most requests off the cross-border hop",
       "Reverse proxy delivery layer — your origin server, IP addresses, and hosting provider stay exactly as they are",
-      "Near-shore edge nodes in Hong Kong serving static and dynamic content, with cache-hit optimization that keeps most requests off the cross-border path",
       "TLS terminated at the edge on your own hostname, with certificates issued and renewed automatically on a 90-day cycle, plus HTTP/2 and HTTP/3",
       "WAF, DDoS mitigation, bot control, and rate limiting enforced before traffic reaches origin, with response headers normalized to strip proxy fingerprints",
       "Your own gateway domain, routing policy, cache rules, and firewall settings — configured for your service alone",
-      "Real-time analytics: request volume, cache hit ratio, origin fetch latency, and error rates by region",
     ],
     benefits: [
       "Skip ICP filing entirely — no mainland entity, no mainland-hosted service, and no review period between you and your Chinese users",
@@ -76,7 +76,7 @@ export const products: Product[] = [
       "APIs and applications whose origin must stay overseas for compliance or operational reasons, with a Chinese user base that feels every slow response",
       "Teams that need WAF, DDoS, and bot protection in front of a China-facing service without deploying into the mainland",
     ],
-    seoKeywords: ["China acceleration without ICP filing", "no ICP filing CDN", "one CNAME China acceleration", "custom domain China acceleration", "accelerate website in China", "China edge delivery", "China reverse proxy", "Cloudflare slow in China", "overseas origin China acceleration"],
+    seoKeywords: ["China acceleration without ICP filing", "mainland China network optimization", "no ICP filing CDN", "one CNAME China acceleration", "custom domain China acceleration", "accelerate website in China", "China edge delivery", "China reverse proxy", "Cloudflare slow in China", "overseas origin China acceleration"],
   },
   {
     id: "elastic-cloud-servers",
