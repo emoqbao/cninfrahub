@@ -88,11 +88,10 @@ export const solutions: Solution[] = [
     name: "China Application Reachability",
     tags: ["Edge", "Acceleration", "WAF", "Overseas Origin"],
     description:
-      "Your application is hosted outside China and your Chinese users feel it — slow loads, timeouts, and unstable connections across the international border. We put a managed edge layer between your origin and those users: near-shore edge nodes that cache, terminate TLS, and carry traffic back to origin over optimized cross-border paths. Your domain needs no ICP filing and no mainland entity, and onboarding is a single CNAME record — no TXT verification, no nameserver migration. Your infrastructure does not move, your data stays where it already lives, and your team keeps one origin and one deployment pipeline. For customers who later establish mainland infrastructure, the same edge layer becomes the front door to it rather than something to replace.",
+      "Your application is hosted outside China and your Chinese users feel it — slow loads, timeouts, and unstable connections across the international border. We put a managed edge layer between your origin and those users: near-shore edge nodes that cache, terminate TLS, and carry traffic back to origin over optimized cross-border paths. Your domain needs no ICP filing and no mainland entity, and onboarding is a single CNAME record — no TXT verification, no nameserver migration. Your infrastructure does not move, your data stays where it already lives, and your team keeps one origin and one deployment pipeline.",
     benefits: [
       "Your domain needs no ICP filing, because traffic terminates on near-shore nodes outside the mainland — no mainland entity required",
       "Cutover is one CNAME record and rollback is a single record update — no TXT verification, no nameserver migration, no code freeze, no migration window, no change to your application",
-      "Moving further into China later is an upgrade, not a rebuild: the same edge layer becomes the front door to mainland infrastructure",
       "Delivered as a combination of Edge Acceleration and Cloud Connect, with one provider owning the edge, the certificates, and the cross-border path",
       "Chinese-user traffic is reported against the metrics that matter there — load time, cache hit ratio, and origin fetch latency — rather than a global average",
     ],
