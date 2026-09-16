@@ -152,8 +152,8 @@ export default function Header() {
           </div>
         </div>
 
-        <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
-          {megaOpen && (
+        {megaOpen && (
+          <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
             <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-6 gap-y-6">
                 {productModules.map((mod) => (
@@ -172,8 +172,8 @@ export default function Header() {
                 ))}
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {mobileOpen && (
           <div className="border-t border-border bg-white px-6 pb-6 pt-4 lg:hidden max-h-[calc(100vh-64px)] overflow-y-auto">
