@@ -8,6 +8,7 @@ import Button from "@/components/ui/Button";
 import ProductHeroIcon from "@/components/products/ProductHeroIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { products, getProductById, type Product } from "@/lib/products";
+import { metaDescription, ogImages, twitterImages } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -24,12 +25,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: product.name,
-    description: product.tagline,
+    description: metaDescription(product.tagline),
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     openGraph: {
       title: `${product.name} — CN-Infra Hub`,
-      description: product.tagline,
+      description: metaDescription(product.tagline),
+      images: ogImages,
+    },
+    twitter: {
+      title: `${product.name} — CN-Infra Hub`,
+      description: metaDescription(product.tagline),
+      images: twitterImages,
     },
   };
 }

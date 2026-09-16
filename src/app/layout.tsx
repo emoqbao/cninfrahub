@@ -3,6 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/ui/JsonLd";
+import { ogImages, twitterImages } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -46,7 +47,6 @@ export const metadata: Metadata = {
     "GPU hosting China",
   ],
   metadataBase: new URL("https://cninfrahub.com"),
-  alternates: { canonical: "/" },
   openGraph: {
     title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
@@ -55,12 +55,14 @@ export const metadata: Metadata = {
     siteName: "CN-Infra Hub",
     locale: "en_US",
     type: "website",
+    images: ogImages,
   },
   twitter: {
     card: "summary_large_image",
     title: "CN-Infra Hub — Infrastructure Without Borders",
     description:
       "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+    images: twitterImages,
   },
   robots: { index: true, follow: true },
 };

@@ -1,9 +1,14 @@
-﻿import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
+import type { Metadata } from "next";
+import { BentoGrid, BentoRow, BentoCell, BentoSpacer } from "@/components/ui/BentoGrid";
 import Hero from "@/components/home/Hero";
 import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
 import { ProductOverviewTitle, ProductCard, moduleCards } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

@@ -6,7 +6,8 @@ import { moduleAnchors, products, productModules } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions."
+  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions.",
+  alternates: { canonical: "/products" }
 };
 
 export default function ProductsPage() {

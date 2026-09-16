@@ -6,7 +6,8 @@ import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market."
+  description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market.",
+  alternates: { canonical: "/about" }
 };
 
 const pillars = [
@@ -34,7 +35,7 @@ export default function AboutPage() {
               <div className="mb-3 h-px w-8 bg-brand" />
               <p className="text-sm font-semibold uppercase tracking-wider text-brand">About</p>
               <h1 className="mt-3 text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-                We don't own the infrastructure. We own the relationships — and the responsibility.
+                We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
               </h1>
             </div>
             <div className="hidden lg:flex items-center justify-center">
@@ -66,10 +67,10 @@ export default function AboutPage() {
           <Container>
             <div className="rounded-2xl border border-border p-8 lg:p-10">
               <p className="text-xl leading-relaxed text-subtle lg:text-2xl">
-                China's infrastructure market is one of the world's largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
+                China&apos;s infrastructure market is one of the world&apos;s largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
               </p>
               <p className="mt-6 text-xl leading-relaxed text-subtle lg:text-2xl">
-                CN-Infra Hub is a managed service aggregator. We don't own fiber, data centers, or server hardware. Instead, we bring deep relationships across China's entire infrastructure ecosystem. We source the right resources from the right providers, negotiate pricing our clients can't get on their own, and take full operational responsibility for everything we deliver.
+                CN-Infra Hub is a managed service aggregator. We don&apos;t own fiber, data centers, or server hardware. Instead, we bring deep relationships across China&apos;s entire infrastructure ecosystem. We source the right resources from the right providers, negotiate pricing our clients can&apos;t get on their own, and take full operational responsibility for everything we deliver.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-muted">
                 Think of us as your infrastructure architect and general contractor for China. You tell us what you need. We decide which providers to use, how to connect them, and how to manage the whole thing — so you get one partner, one SLA, one invoice.
@@ -114,10 +115,10 @@ export default function AboutPage() {
         <section className="py-20 lg:py-28 text-center">
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-ink lg:text-3xl">
-              You know your architecture. We know China's infrastructure market.
+              You know your architecture. We know China&apos;s infrastructure market.
             </h2>
             <p className="mt-4 text-subtle max-w-xl mx-auto">
-              Let's talk about what you need — and how we can source it better than anyone else.
+              Let&apos;s talk about what you need — and how we can source it better than anyone else.
             </p>
             <div className="mt-8">
               <a href="/contact/" className="inline-flex items-center justify-center rounded-lg border border-border bg-white px-8 py-3 text-lg font-medium text-ink hover:border-brand hover:bg-surface transition-colors">

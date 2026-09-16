@@ -8,6 +8,7 @@ import CheckIcon from "@/components/ui/CheckIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
+import { metaDescription, ogImages, twitterImages } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,10 +24,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!solution) return { title: "Not Found" };
   return {
     title: solution.name,
-    description: solution.description.slice(0, 160),
+    description: metaDescription(solution.description),
     keywords: solution.seoKeywords,
     alternates: { canonical: `/solutions/${solution.id}` },
-    openGraph: { title: `${solution.name} — CN-Infra Hub`, description: solution.description.slice(0, 160) },
+    openGraph: {
+      title: `${solution.name} — CN-Infra Hub`,
+      description: metaDescription(solution.description),
+      images: ogImages,
+    },
+    twitter: {
+      title: `${solution.name} — CN-Infra Hub`,
+      description: metaDescription(solution.description),
+      images: twitterImages,
+    },
   };
 }
 

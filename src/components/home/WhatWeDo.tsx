@@ -24,7 +24,7 @@ export function WhatWeDoTitle() {
       <div className="mb-3 h-px w-8 bg-brand" />
       <p className="text-sm font-semibold uppercase tracking-wider text-brand">What We Do</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-        We don't own the infrastructure. We own the relationships — and the responsibility.
+        We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
         As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.

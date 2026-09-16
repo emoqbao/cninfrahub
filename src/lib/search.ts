@@ -1,5 +1,6 @@
 import { products } from "./products";
 import { solutions } from "./solutions";
+import { metaDescription } from "./seo";
 
 export interface SearchResult {
   id: string;
@@ -7,6 +8,7 @@ export interface SearchResult {
   description: string;
   href: string;
   category: string;
+  keywords: string;
 }
 
 let _cachedIndex: SearchResult[] | null = null;
@@ -22,6 +24,7 @@ export function buildSearchIndex(): SearchResult[] {
       id: p.id,
       title: p.name,
       description: p.tagline,
+      keywords: p.seoKeywords.join(" "),
       href: `/products/${p.id}`,
       category: p.module,
     });
@@ -32,7 +35,8 @@ export function buildSearchIndex(): SearchResult[] {
     results.push({
       id: s.id,
       title: s.name,
-      description: s.description.slice(0, 120),
+      description: metaDescription(s.description, 120),
+      keywords: s.seoKeywords.join(" "),
       href: `/solutions/${s.id}`,
       category: "Solutions",
     });
@@ -40,9 +44,11 @@ export function buildSearchIndex(): SearchResult[] {
 
   // Pages
   results.push(
-    { id: "about", title: "About", description: "Learn about CN-Infra Hub", href: "/about/", category: "Page" },
-    { id: "contact", title: "Contact", description: "Get in touch with our team", href: "/contact/", category: "Page" },
-    { id: "resources", title: "Resources", description: "White papers, case studies & guides", href: "/resources/", category: "Page" },
+    { id: "products", title: "Products", description: "Purpose-built infrastructure services for China and beyond", keywords: "all products catalog overview list", href: "/products/", category: "Page" },
+    { id: "solutions", title: "Solutions", description: "Real-world infrastructure patterns for your China strategy", keywords: "solution patterns use cases by industry", href: "/solutions/", category: "Page" },
+    { id: "about", title: "About", description: "Managed service aggregator for China's infrastructure market", keywords: "company who we are aggregator model", href: "/about/", category: "Page" },
+    { id: "contact", title: "Contact", description: "Start a conversation with our infrastructure architects", keywords: "talk to sales inquiry email", href: "/contact/", category: "Page" },
+    { id: "resources", title: "Resources", description: "White papers, architecture guides, and case studies", keywords: "guides whitepapers case studies downloads", href: "/resources/", category: "Page" },
   );
 
   _cachedIndex = results;
@@ -59,7 +65,8 @@ export function search(query: string): SearchResult[] {
       return (
         item.title.toLowerCase().includes(q) ||
         item.description.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q)
+        item.category.toLowerCase().includes(q) ||
+        item.keywords.toLowerCase().includes(q)
       );
     })
     .slice(0, 8);

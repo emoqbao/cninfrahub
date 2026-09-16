@@ -7,32 +7,53 @@ import { useRouter } from "next/navigation";
 import { search, type SearchResult } from "@/lib/search";
 
 interface SearchModalProps {
-  open: boolean;
   onClose: () => void;
 }
 
-export default function SearchModal({ open, onClose }: SearchModalProps) {
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+export default function SearchModal({ onClose }: SearchModalProps) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Focus input and reset on open
+  // Focus the input on open, and hand focus back to the trigger on close.
   useEffect(() => {
-    if (open) {
-      setQuery("");
-      setResults([]);
-      setSelectedIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    }
-  }, [open]);
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    inputRef.current?.focus();
+    return () => {
+      previouslyFocused?.focus();
+    };
+  }, []);
 
-  // Keyboard navigation
+  // Close on Escape, keep Tab inside the dialog, and drive the result list.
   useEffect(() => {
-    if (!open) return;
     function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key === "Tab") {
+        const nodes = dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+        if (!nodes || nodes.length === 0) return;
+        const first = nodes[0];
+        const last = nodes[nodes.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        return;
+      }
+      if (results.length === 0) return;
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setSelectedIndex((prev) => Math.min(prev + 1, results.length - 1));
@@ -49,7 +70,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [open, results, selectedIndex, onClose]);
+  }, [results, selectedIndex, onClose, router]);
 
   // Search as you type
   const handleQuery = useCallback((value: string) => {
@@ -58,15 +79,19 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
     setSelectedIndex(0);
   }, []);
 
-  if (!open) return null;
-
   return (
     <div className="fixed inset-0 z-[100]">
       {/* Backdrop */}
       <div className="fixed inset-0 bg-[#0d0d0d]/40 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
-      <div className="fixed inset-x-0 top-[15%] mx-auto max-w-lg">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site search"
+        className="fixed inset-x-0 top-[15%] mx-auto max-w-lg"
+      >
         <div className="mx-4 rounded-xl border border-[#e8eaed] bg-white shadow-2xl overflow-hidden">
           {/* Input */}
           <div className="flex items-center gap-3 px-4 py-3 border-b border-[#e8eaed]">
@@ -75,6 +100,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               value={query}
+              aria-label="Search products and solutions"
               onChange={(e) => handleQuery(e.target.value)}
               placeholder="Search products, solutions..."
               className="flex-1 text-sm bg-transparent outline-none text-[#0d0d0d] placeholder:text-[#a3a3a3]"
@@ -82,7 +108,11 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
             <kbd className="hidden sm:inline-flex items-center rounded border border-[#e8eaed] bg-[#f8f9fb] px-1.5 py-0.5 text-[10px] text-[#a3a3a3]">
               esc
             </kbd>
-            <button onClick={onClose} className="text-[#a3a3a3] hover:text-[#0d0d0d] transition-colors">
+            <button
+              onClick={onClose}
+              aria-label="Close search"
+              className="text-[#a3a3a3] hover:text-[#0d0d0d] transition-colors"
+            >
               <X className="h-4 w-4" strokeWidth={1.5} />
             </button>
           </div>
@@ -91,7 +121,7 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
           {query.length >= 2 && (
             <ul ref={listRef} className="max-h-72 overflow-y-auto py-2">
               {results.length === 0 ? (
-                <li className="px-4 py-6 text-center text-sm text-[#a3a3a3]">
+                <li role="status" className="px-4 py-6 text-center text-sm text-[#a3a3a3]">
                   No results found
                 </li>
               ) : (

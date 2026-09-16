@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { mainNav } from "@/lib/navigation";
 import { products, productModules } from "@/lib/products";
@@ -11,7 +10,6 @@ import Button from "@/components/ui/Button";
 import SearchModal from "@/components/layout/SearchModal";
 
 export default function Header() {
-  const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,6 +36,11 @@ export default function Header() {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setMegaOpen(false);
+        setSolutionsOpen(false);
+        setMobileOpen(false);
+      }
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setSearchOpen(true);
@@ -137,7 +140,12 @@ export default function Header() {
               <button onClick={() => setSearchOpen(true)} className="lg:hidden p-2 rounded-md text-muted hover:bg-surface" aria-label="Open search">
                 <Search className="h-5 w-5" strokeWidth={1.5} />
               </button>
-              <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 rounded-md text-ink hover:bg-surface">
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+                className="lg:hidden p-2 rounded-md text-ink hover:bg-surface"
+              >
                 {mobileOpen ? <X className="h-5 w-5" strokeWidth={1.5} /> : <Menu className="h-5 w-5" strokeWidth={1.5} />}
               </button>
             </div>
@@ -204,7 +212,7 @@ export default function Header() {
           </div>
         )}
       </header>
-      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
+      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
     </>
   );
 }

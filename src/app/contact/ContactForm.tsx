@@ -62,7 +62,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-border p-6 lg:p-8">
+    <form onSubmit={handleSubmit} className="relative rounded-xl border border-border p-6 lg:p-8">
       <h2 className="text-xl font-semibold text-ink">Send us a message</h2>
 
       {/* Honeypot */}

@@ -6,7 +6,8 @@ import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Resources",
-  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China."
+  description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China.",
+  alternates: { canonical: "/resources" }
 };
 
 const featured = [

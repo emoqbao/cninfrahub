@@ -9,7 +9,8 @@ import { getProductById } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Real-world infrastructure patterns for your China strategy — hybrid cloud, AI inference, data compliance, and disaster recovery.",
+  description: "Real-world infrastructure patterns for your China strategy — cross-border cloud connectivity, high-bandwidth interconnect, regulated-industry infrastructure, China network-as-a-service, and China application reachability.",
+  alternates: { canonical: "/solutions" }
 };
 
 export default function SolutionsPage() {
