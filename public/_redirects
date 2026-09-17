@@ -1,0 +1,6 @@
+# Two solutions were replaced on 2026-09-17. Keep inbound links and any
+# indexed URLs pointing at something useful instead of a 404.
+/solutions/high-bandwidth-interconnect /solutions/china-enterprise-private-line/ 301
+/solutions/high-bandwidth-interconnect/ /solutions/china-enterprise-private-line/ 301
+/solutions/regulated-industry-infrastructure /solutions/china-ai-infrastructure/ 301
+/solutions/regulated-industry-infrastructure/ /solutions/china-ai-infrastructure/ 301
