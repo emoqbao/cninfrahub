@@ -2,8 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/Button";
-
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/PLACEHOLDER";
+import { FORMSPREE_ENDPOINT } from "@/lib/forms";
 
 export default function ContactForm({ productNames }: { productNames: string[] }) {
   const [submitted, setSubmitted] = useState(false);

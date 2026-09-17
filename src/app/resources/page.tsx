@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
 import { socialMetadata } from "@/lib/seo";
+import NewsletterForm from "./NewsletterForm";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -68,7 +68,7 @@ export default function ResourcesPage() {
                   <span className="inline-block self-start rounded-md bg-surface px-2.5 py-0.5 text-xs font-medium text-muted">{g.type}</span>
                   <h3 className="mt-3 text-base font-bold text-ink">{g.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{g.excerpt}</p>
-                  <p className="mt-auto pt-4 text-xs text-ghost">{g.date}</p>
+                  <p className="mt-auto pt-4 text-xs text-faded">{g.date}</p>
                 </div>
               ))}
             </div>
@@ -81,10 +81,7 @@ export default function ResourcesPage() {
               <Mail className="mx-auto h-10 w-10 text-brand" strokeWidth={1.5} />
               <h2 className="mt-4 text-xl font-bold text-ink">Stay informed on China infrastructure</h2>
               <p className="mt-2 text-muted">Get our latest guides, white papers, and infrastructure insights delivered to your inbox.</p>
-              <form action="https://formspree.io/f/PLACEHOLDER" method="POST" className="mt-6 flex gap-3">
-                <input type="email" name="email" placeholder="your@email.com" required className="flex-1 rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-ink focus:outline-none" />
-                <Button type="submit" variant="primary" size="md">Subscribe</Button>
-              </form>
+              <NewsletterForm />
             </div>
           </Container>
         </section>

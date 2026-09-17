@@ -73,7 +73,7 @@ export default function Hero() {
                 <circle cx="200" cy="200" r="14" fill="#8a6d5c" />
               </svg>
             </div>
-            <p className="absolute bottom-4 text-xs text-ghost">Multiple providers, one partner</p>
+            <p className="absolute bottom-4 text-xs text-muted">Multiple providers, one partner</p>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Products */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-ghost">
               Products
             </p>
             <ul className="space-y-2.5">
@@ -64,7 +64,7 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
 
           {/* Solutions */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-ghost">
               Solutions
             </p>
             <ul className="space-y-2.5">
@@ -84,7 +84,7 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
 
           {/* Resources */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-ghost">
               Resources
             </p>
             <ul className="space-y-2.5">
@@ -103,7 +103,7 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
 
           {/* Company */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-ghost">
               Company
             </p>
             <ul className="space-y-2.5">
@@ -124,7 +124,7 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
 
       {/* Bottom bar */}
       <div className="border-t border-footer-border">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-muted lg:flex-row lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-ghost lg:flex-row lg:justify-between lg:px-8">
           <p>&copy; {year} CN-Infra Hub. All rights reserved.</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">
             info@cninfrahub.com

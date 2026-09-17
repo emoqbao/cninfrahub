@@ -8,7 +8,7 @@ export const trustStats = [
 export function TrustStatItem({ stat }: { stat: (typeof trustStats)[number] }) {
   return (
     <div className="flex flex-col items-center justify-center p-8 text-center">
-      <p className="text-lg font-semibold tracking-[-0.01em] text-[#8a6d5c]">
+      <p className="text-lg font-semibold tracking-[-0.01em] text-brand">
         {stat.title}
       </p>
       <p className="mt-1 text-sm text-muted leading-relaxed">{stat.desc}</p>

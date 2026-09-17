@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
+
+// Next also emits this page at /_not-found/ with a 200 status, so keep it out
+// of the index rather than letting it register as a soft 404.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

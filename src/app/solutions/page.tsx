@@ -39,7 +39,7 @@ export default function SolutionsPage() {
               {solutions.map((s) => (
                 <Link key={s.id} href={`/solutions/${s.id}`} className="group flex flex-col rounded-xl border border-border hover:border-brand bg-white p-8 lg:p-10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
                   <div className="flex flex-wrap gap-2">
-                    {s.tags.map((t) => (<span key={t} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand">{t}</span>))}
+                    {s.tags.map((t) => (<span key={t} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{t}</span>))}
                   </div>
                   <h2 className="mt-5 text-2xl font-bold tracking-[-0.02em] text-ink group-hover:underline">{s.name}</h2>
                   <p className="mt-4 max-w-3xl leading-relaxed text-subtle">{s.description}</p>

@@ -24,22 +24,17 @@ function DashedGuides() {
   );
 }
 
-export function BentoFrame({ children }: { children: ReactNode }) {
-  return (
-    <div className="mx-auto max-w-7xl relative border-b border-solid border-border-light">
-      <DashedGuides />
-      {children}
-    </div>
-  );
-}
-
 const GRID_COLS: Record<number, string> = {
-  2: "grid-cols-2",
-  3: "grid-cols-3",
-  4: "grid-cols-4",
+  2: "grid-cols-1 sm:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-3",
+  4: "grid-cols-2 md:grid-cols-4",
   5: "grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
 };
 
+/**
+ * Framed section wrapper: a centred column plus the dashed vertical guides.
+ * `BentoFrame` in ./BentoFrame is an alias of this component.
+ */
 export function BentoGrid({ children }: { children: ReactNode }) {
   return (
     <div className="mx-auto max-w-7xl relative border-b border-solid border-border-light">
@@ -79,7 +74,7 @@ export function BentoCell({
   className?: string;
 }) {
   return (
-    <div className={`relative z-[2] border-r border-solid border-border-light first:border-l ${className}`}>
+    <div className={`relative z-[2] min-w-0 break-words border-r border-solid border-border-light first:border-l ${className}`}>
       {children}
     </div>
   );

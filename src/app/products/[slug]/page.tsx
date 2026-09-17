@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     ...socialMetadata({
-      title: `${product.name} — CN-Infra Hub`,
+      title: `${product.name} | CN-Infra Hub`,
       description,
       path: `/products/${product.id}`,
     }),

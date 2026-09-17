@@ -17,6 +17,12 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
+  // Drop empty modules before numbering the sections, so the dashed divider
+  // never lands on the wrong block.
+  const sections = productModules
+    .map((mod) => ({ mod, items: products.filter((p) => p.module === mod) }))
+    .filter((section) => section.items.length > 0);
+
   return (
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
@@ -87,15 +93,12 @@ export default function ProductsPage() {
         <section className="py-20 lg:py-28">
           <Container>
             <div className="space-y-0">
-              {productModules.map((mod, idx) => {
-                const modProducts = products.filter((p) => p.module === mod);
-                if (modProducts.length === 0) return null;
-                const anchorId = moduleAnchors[mod];
-                const isLast = idx === productModules.length - 1;
+              {sections.map(({ mod, items }, idx) => {
+                const isLast = idx === sections.length - 1;
                 return (
                   <div
                     key={mod}
-                    id={anchorId}
+                    id={moduleAnchors[mod]}
                     className={`pt-16 first:pt-0 ${isLast ? "" : "nav-dashed-bottom pb-16"}`}
                   >
                     <div className="mb-8">
@@ -103,7 +106,7 @@ export default function ProductsPage() {
                       <h2 className="text-2xl font-bold tracking-[-0.02em] text-ink">{mod}</h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {modProducts.map((product) => (
+                      {items.map((product) => (
                         <Link
                           key={product.id}
                           href={`/products/${product.id}`}

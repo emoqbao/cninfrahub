@@ -8,6 +8,12 @@ export interface Solution {
   approach: string;
   products: string[];
   seoKeywords: string[];
+  /**
+   * Optional architecture diagram for the solution page. Drop the file into
+   * public/images/solutions/ and point this at it; without one the page shows
+   * an empty diagram slot.
+   */
+  architectureImage?: string;
 }
 
 export const solutions: Solution[] = [
