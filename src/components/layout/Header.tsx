@@ -1,15 +1,25 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
-import { mainNav } from "@/lib/navigation";
-import { products, productModules } from "@/lib/products";
-import { solutions } from "@/lib/solutions";
+import { mainNav, type NavProduct, type NavSolution } from "@/lib/navigation";
 import Button from "@/components/ui/Button";
-import SearchModal from "@/components/layout/SearchModal";
 
-export default function Header() {
+// Search drags in the whole product/solution index, so keep it out of the
+// chunk that every page loads and fetch it when the dialog first opens.
+const SearchModal = dynamic(() => import("@/components/layout/SearchModal"), {
+  ssr: false,
+});
+
+interface HeaderProps {
+  navModules: readonly string[];
+  navProducts: NavProduct[];
+  navSolutions: NavSolution[];
+}
+
+export default function Header({ navModules, navProducts, navSolutions }: HeaderProps) {
   const [megaOpen, setMegaOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,6 +81,7 @@ export default function Header() {
                       <button
                         onClick={toggleMega}
                         aria-expanded={megaOpen}
+                        aria-haspopup="true"
                         className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (megaOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
                         {item.label}
@@ -85,6 +96,7 @@ export default function Header() {
                       <button
                         onClick={toggleSolutions}
                         aria-expanded={solutionsOpen}
+                        aria-haspopup="true"
                         className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (solutionsOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
                         {item.label}
@@ -94,7 +106,7 @@ export default function Header() {
                         <div ref={solutionsPanelRef} className="absolute left-0 top-full z-50 pt-1">
                           <div className="rounded-xl border border-border bg-white px-5 py-3">
                             <ul className="space-y-0.5">
-                              {solutions.map((s) => (
+                              {navSolutions.map((s) => (
                                 <li key={s.id}>
                                   <Link href={"/solutions/" + s.id} onClick={() => setSolutionsOpen(false)} className="block whitespace-nowrap rounded-md px-3 py-2 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                                     {s.name}
@@ -156,11 +168,11 @@ export default function Header() {
           <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
             <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-6 gap-y-6">
-                {productModules.map((mod) => (
+                {navModules.map((mod) => (
                   <div key={mod}>
                     <p className="mb-4 px-3 text-xs font-semibold uppercase tracking-widest text-faded">{mod}</p>
                     <ul className="space-y-2.5">
-                      {products.filter((p) => p.module === mod).map((p) => (
+                      {navProducts.filter((p) => p.module === mod).map((p) => (
                         <li key={p.id}>
                           <Link href={"/products/" + p.id} onClick={() => setMegaOpen(false)} className="block rounded-md px-3 py-1.5 text-[15px] font-medium text-ink hover:bg-surface transition-colors">
                             {p.name}
@@ -185,7 +197,7 @@ export default function Header() {
               ))}
               <div className="mt-3 border-t border-border pt-4">
                 <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-faded">Products</p>
-                {products.map((p) => (
+                {navProducts.map((p) => (
                   <Link key={p.id} href={"/products/" + p.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-subtle-dark hover:bg-surface">
                     {p.name}
                   </Link>
@@ -193,7 +205,7 @@ export default function Header() {
               </div>
               <div className="mt-3 border-t border-border pt-4">
                 <p className="mb-3 px-3 text-xs font-semibold uppercase tracking-wider text-faded">Solutions</p>
-                {solutions.map((s) => (
+                {navSolutions.map((s) => (
                   <Link key={s.id} href={"/solutions/" + s.id} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-subtle-dark hover:bg-surface">
                     {s.name}
                   </Link>

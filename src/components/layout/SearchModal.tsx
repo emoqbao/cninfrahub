@@ -11,7 +11,7 @@ interface SearchModalProps {
 }
 
 const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  'input:not([disabled]), button:not([disabled]), a[href]:not([tabindex="-1"])';
 
 export default function SearchModal({ onClose }: SearchModalProps) {
   const router = useRouter();
@@ -19,7 +19,6 @@ export default function SearchModal({ onClose }: SearchModalProps) {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
   // Focus the input on open, and hand focus back to the trigger on close.
@@ -100,7 +99,16 @@ export default function SearchModal({ onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               value={query}
+              role="combobox"
               aria-label="Search products and solutions"
+              aria-expanded={query.length >= 2}
+              aria-controls="search-results"
+              aria-autocomplete="list"
+              aria-activedescendant={
+                results[selectedIndex]
+                  ? `search-result-${results[selectedIndex].id}`
+                  : undefined
+              }
               onChange={(e) => handleQuery(e.target.value)}
               placeholder="Search products, solutions..."
               className="flex-1 text-sm bg-transparent outline-none text-[#0d0d0d] placeholder:text-[#a3a3a3]"
@@ -119,17 +127,28 @@ export default function SearchModal({ onClose }: SearchModalProps) {
 
           {/* Results */}
           {query.length >= 2 && (
-            <ul ref={listRef} className="max-h-72 overflow-y-auto py-2">
+            <ul
+              id="search-results"
+              role="listbox"
+              aria-label="Search results"
+              className="max-h-72 overflow-y-auto py-2"
+            >
               {results.length === 0 ? (
                 <li role="status" className="px-4 py-6 text-center text-sm text-[#a3a3a3]">
                   No results found
                 </li>
               ) : (
                 results.map((result, i) => (
-                  <li key={result.id}>
+                  <li
+                    key={result.id}
+                    id={`search-result-${result.id}`}
+                    role="option"
+                    aria-selected={i === selectedIndex}
+                  >
                     <Link
                       href={result.href}
                       onClick={onClose}
+                      tabIndex={-1}
                       className={`flex items-start gap-3 px-4 py-3 transition-colors ${
                         i === selectedIndex ? "bg-[#f3f4f6]" : "hover:bg-[#f8f9fb]"
                       }`}

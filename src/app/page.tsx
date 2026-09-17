@@ -5,9 +5,16 @@ import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
 import { ProductOverviewTitle, ProductCard, moduleCards } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  ...socialMetadata({
+    title: "CN-Infra Hub — Infrastructure Without Borders",
+    description:
+      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+    path: "/",
+  }),
 };
 
 export default function Home() {

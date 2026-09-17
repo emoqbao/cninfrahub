@@ -1,15 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { products } from "@/lib/products";
-import { solutions } from "@/lib/solutions";
 import { usePathname } from "next/navigation";
+import type { NavProduct, NavSolution } from "@/lib/navigation";
 
-export default function Footer() {
+interface FooterProps {
+  navProducts: NavProduct[];
+  navSolutions: NavSolution[];
+  /** Resolved on the server at build time so hydration can never disagree. */
+  year: number;
+}
+
+/** usePathname() keeps the trailing slash that the static export produces. */
+function normalizePath(path: string): string {
+  return path.length > 1 ? path.replace(/\/+$/, "") : path;
+}
+
+export default function Footer({ navProducts, navSolutions, year }: FooterProps) {
   const pathname = usePathname();
 
   function scrollIfActive(e: React.MouseEvent, href: string) {
-    if (pathname === href) {
+    if (normalizePath(pathname) === normalizePath(href)) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -37,7 +48,7 @@ export default function Footer() {
               Products
             </p>
             <ul className="space-y-2.5">
-              {products.map((p) => (
+              {navProducts.map((p) => (
                 <li key={p.id}>
                   <Link
                     href={`/products/${p.id}`}
@@ -57,7 +68,7 @@ export default function Footer() {
               Solutions
             </p>
             <ul className="space-y-2.5">
-              {solutions.map((s) => (
+              {navSolutions.map((s) => (
                 <li key={s.id}>
                   <Link
                     href={`/solutions/${s.id}`}
@@ -79,17 +90,12 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
-                  White Papers
+                  Resources
                 </Link>
               </li>
               <li>
-                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources/" onClick={(e) => scrollIfActive(e, "/resources/")} className="text-sm text-light hover:text-white transition-colors">
-                  Guides
+                <Link href="/resources/#guides" className="text-sm text-light hover:text-white transition-colors">
+                  Guides &amp; White Papers
                 </Link>
               </li>
             </ul>
@@ -119,7 +125,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-footer-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-muted lg:flex-row lg:justify-between lg:px-8">
-          <p>&copy; {new Date().getFullYear()} CN-Infra Hub. All rights reserved.</p>
+          <p>&copy; {year} CN-Infra Hub. All rights reserved.</p>
           <a href="mailto:info@cninfrahub.com" className="hover:text-white transition-colors">
             info@cninfrahub.com
           </a>

@@ -27,7 +27,7 @@ export const solutions: Solution[] = [
     whoItsFor: "Enterprises running hybrid cloud architectures that need to connect China-based infrastructure to AWS, Azure, or GCP. SaaS platforms, financial services, and any organization requiring compliant, production-grade cloud connectivity from China.",
     approach: "We assess your cloud architecture and bandwidth requirements, then recommend managed (Megaport/Equinix) or dedicated (physical cross-connect) based on your needs. Circuits are provisioned through our compliant partner network with full BGP configuration. Compliance documentation is prepared in parallel. Typical deployment: managed links in 5-7 business days, dedicated links in 10-15 business days.",
     products: ["cloud-connect", "private-connect"],
-    seoKeywords: ["AWS Direct Connect China", "Azure ExpressRoute China", "GCP Interconnect China", "Megaport China", "Equinix Fabric China", "China cloud connectivity"],
+    seoKeywords: ["cross-border cloud connectivity", "hybrid cloud architecture China", "multi-cloud strategy China", "China to AWS connectivity", "China to Azure connectivity", "China to GCP connectivity"],
   },
   {
     id: "high-bandwidth-interconnect",

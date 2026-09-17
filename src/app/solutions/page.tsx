@@ -6,11 +6,17 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { solutions } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Solutions",
   description: "Real-world infrastructure patterns for your China strategy — cross-border cloud connectivity, high-bandwidth interconnect, regulated-industry infrastructure, China network-as-a-service, and China application reachability.",
-  alternates: { canonical: "/solutions" }
+  alternates: { canonical: "/solutions" },
+  ...socialMetadata({
+    title: "Solutions — CN-Infra Hub",
+    description: "Real-world infrastructure patterns for your China strategy — cross-border cloud connectivity, high-bandwidth interconnect, regulated-industry infrastructure, China network-as-a-service, and China application reachability.",
+    path: "/solutions",
+  }),
 };
 
 export default function SolutionsPage() {

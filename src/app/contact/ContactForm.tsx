@@ -2,11 +2,10 @@
 
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/Button";
-import { products } from "@/lib/products";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/PLACEHOLDER";
 
-export default function ContactForm() {
+export default function ContactForm({ productNames }: { productNames: string[] }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -139,15 +138,15 @@ export default function ContactForm() {
           I&apos;m interested in
         </legend>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {products.map((p) => (
-            <label key={p.id} className="flex items-center gap-2.5 text-sm text-subtle">
+          {productNames.map((name) => (
+            <label key={name} className="flex items-center gap-2.5 text-sm text-subtle">
               <input
                 type="checkbox"
                 name="interests"
-                value={p.name}
+                value={name}
                 className="h-4 w-4 rounded border-brand-light accent-brand focus:ring-brand"
               />
-              {p.name}
+              {name}
             </label>
           ))}
           <label className="flex items-center gap-2.5 text-sm text-subtle">

@@ -1,14 +1,23 @@
 import { Metadata } from "next";
 import PageFrame from "@/components/ui/PageFrame";
 import ContactForm from "./ContactForm";
+import { socialMetadata } from "@/lib/seo";
+import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
-  alternates: { canonical: "/contact" }
+  alternates: { canonical: "/contact" },
+  ...socialMetadata({
+    title: "Contact CN-Infra Hub",
+    description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
+    path: "/contact",
+  }),
 };
 
 export default function ContactPage() {
+  const productNames = products.map((p) => p.name);
+
   return (
     <>
       <section className="py-16 lg:py-24 nav-dashed-bottom">
@@ -26,7 +35,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-3">
               <div className="lg:col-span-2">
-                <ContactForm />
+                <ContactForm productNames={productNames} />
               </div>
               <div>
                 <div className="rounded-xl border border-border bg-white p-6">

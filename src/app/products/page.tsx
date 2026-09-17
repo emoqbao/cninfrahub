@@ -3,11 +3,17 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import { moduleAnchors, products, productModules } from "@/lib/products";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Products",
   description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions.",
-  alternates: { canonical: "/products" }
+  alternates: { canonical: "/products" },
+  ...socialMetadata({
+    title: "Products — CN-Infra Hub",
+    description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions.",
+    path: "/products",
+  }),
 };
 
 export default function ProductsPage() {
@@ -90,7 +96,7 @@ export default function ProductsPage() {
                   <div
                     key={mod}
                     id={anchorId}
-                    className={`scroll-mt-20 pt-16 first:pt-0 ${isLast ? "" : "nav-dashed-bottom pb-16"}`}
+                    className={`pt-16 first:pt-0 ${isLast ? "" : "nav-dashed-bottom pb-16"}`}
                   >
                     <div className="mb-8">
                       <div className="mb-3 h-px w-6 bg-brand" />

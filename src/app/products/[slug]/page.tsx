@@ -7,8 +7,9 @@ import CheckIcon from "@/components/ui/CheckIcon";
 import Button from "@/components/ui/Button";
 import ProductHeroIcon from "@/components/products/ProductHeroIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
+import JsonLd from "@/components/ui/JsonLd";
 import { products, getProductById, type Product } from "@/lib/products";
-import { metaDescription, ogImages, twitterImages } from "@/lib/seo";
+import { breadcrumbSchema, metaDescription, serviceSchema, socialMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,35 +24,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProductById(slug);
   if (!product) return { title: "Not Found" };
 
+  const description = metaDescription(product.tagline);
   return {
     title: product.name,
-    description: metaDescription(product.tagline),
+    description,
     keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
-    openGraph: {
+    ...socialMetadata({
       title: `${product.name} — CN-Infra Hub`,
-      description: metaDescription(product.tagline),
-      images: ogImages,
-    },
-    twitter: {
-      title: `${product.name} — CN-Infra Hub`,
-      description: metaDescription(product.tagline),
-      images: twitterImages,
-    },
+      description,
+      path: `/products/${product.id}`,
+    }),
   };
 }
 
 function RelatedProducts({ current }: { current: Product }) {
-  const related = products.filter(
+  const sameModule = products.filter(
     (p) => p.module === current.module && p.id !== current.id
   );
+  // Single-product modules (EDGE today) have nothing to cross-link inside the
+  // module, so fall back to the rest of the catalog instead of ending the page
+  // on the CTA.
+  const related =
+    sameModule.length > 0
+      ? sameModule
+      : products.filter((p) => p.id !== current.id).slice(0, 3);
   if (related.length === 0) return null;
+
+  const heading = sameModule.length > 0 ? "Related products" : "Other products";
 
   return (
     <section className="py-20 lg:py-28">
       <Container>
         <h2 className="text-2xl font-bold tracking-[-0.02em] text-ink">
-          Related products
+          {heading}
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((p) => (
@@ -83,6 +89,21 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/products" },
+          { name: product.name, path: `/products/${product.id}` },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: product.name,
+          description: product.tagline,
+          serviceType: product.module,
+          path: `/products/${product.id}`,
+        })}
+      />
       {/* Breadcrumb */}
       <div className="nav-dashed-bottom">
         <Container>

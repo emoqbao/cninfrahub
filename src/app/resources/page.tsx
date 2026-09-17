@@ -3,11 +3,17 @@ import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ArrowRight, BookOpen, FileText, Mail } from "lucide-react";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Resources",
   description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China.",
-  alternates: { canonical: "/resources" }
+  alternates: { canonical: "/resources" },
+  ...socialMetadata({
+    title: "Resources — CN-Infra Hub",
+    description: "White papers, architecture guides, and case studies for infrastructure decision-makers operating in China.",
+    path: "/resources",
+  }),
 };
 
 const featured = [
@@ -37,7 +43,7 @@ export default function ResourcesPage() {
       </section>
 
       <BentoFrame>
-        <section className="py-20 lg:py-28 nav-dashed-bottom">
+        <section id="featured" className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-xl font-semibold text-ink">Featured</h2>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -53,7 +59,7 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28 nav-dashed-bottom">
+        <section id="guides" className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <h2 className="text-xl font-semibold text-ink">Guides &amp; White Papers</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

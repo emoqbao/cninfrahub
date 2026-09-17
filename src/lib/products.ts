@@ -289,7 +289,7 @@ export const products: Product[] = [
       "High-bandwidth dedicated links for data-heavy production workloads and cross-continent DR replication",
       "SaaS platforms needing dedicated, low-latency connectivity to China customer environments worldwide",
     ],
-    seoKeywords: ["AWS Direct Connect China", "Azure ExpressRoute China", "GCP Interconnect China", "China cloud connectivity", "Megaport China", "Equinix Fabric China", "China to US cloud", "China to Europe cloud"],
+    seoKeywords: ["AWS Direct Connect China", "Azure ExpressRoute China", "GCP Interconnect China", "China cloud connectivity", "Megaport China", "Equinix Fabric China", "China to US cloud", "China to Europe cloud", "dedicated cloud interconnect China", "cloud cross-connect China"],
   },
   {
     id: "dark-fiber",

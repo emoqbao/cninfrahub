@@ -5,7 +5,7 @@
   --font-heading: var(--font-dm-sans);
   --color-ink: #0d0d0d;
   --color-ink-hover: #1a1a1a;
-  --color-brand: #a48e7a;
+  --color-brand: #8a6d5c;
   --color-muted: #737373;
   --color-subtle: #525252;
   --color-faded: #8c8c8c;
@@ -19,7 +19,7 @@
   --color-subtle-dark: #404040;
   --color-brand-light: #d8c8b8;
   --color-brand-surface: #f5efe8;
-  --color-accent-surface: #f5f0ff;
+  --color-accent-surface: #f7f1ea;
   --color-footer-bg: #0d0d0d;
   --color-footer-border: #262626;
 }

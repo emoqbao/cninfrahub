@@ -6,9 +6,10 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import CheckIcon from "@/components/ui/CheckIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
+import JsonLd from "@/components/ui/JsonLd";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
-import { metaDescription, ogImages, twitterImages } from "@/lib/seo";
+import { breadcrumbSchema, metaDescription, serviceSchema, socialMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -22,21 +23,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const solution = getSolutionById(slug);
   if (!solution) return { title: "Not Found" };
+  const description = metaDescription(solution.description);
   return {
     title: solution.name,
-    description: metaDescription(solution.description),
+    description,
     keywords: solution.seoKeywords,
     alternates: { canonical: `/solutions/${solution.id}` },
-    openGraph: {
+    ...socialMetadata({
       title: `${solution.name} — CN-Infra Hub`,
-      description: metaDescription(solution.description),
-      images: ogImages,
-    },
-    twitter: {
-      title: `${solution.name} — CN-Infra Hub`,
-      description: metaDescription(solution.description),
-      images: twitterImages,
-    },
+      description,
+      path: `/solutions/${solution.id}`,
+    }),
   };
 }
 
@@ -69,6 +66,21 @@ export default async function SolutionPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+          { name: solution.name, path: `/solutions/${solution.id}` },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: solution.name,
+          description: solution.description,
+          serviceType: "China infrastructure solution",
+          path: `/solutions/${solution.id}`,
+        })}
+      />
       <div className="nav-dashed-bottom">
         <Container>
           <nav className="flex items-center gap-2 py-3 text-sm text-muted">

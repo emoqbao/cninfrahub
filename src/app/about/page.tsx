@@ -1,13 +1,20 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Search, Link2, Wrench } from "lucide-react";
 import CheckIcon from "@/components/ui/CheckIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
+import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market.",
-  alternates: { canonical: "/about" }
+  alternates: { canonical: "/about" },
+  ...socialMetadata({
+    title: "About CN-Infra Hub",
+    description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market.",
+    path: "/about",
+  }),
 };
 
 const pillars = [
@@ -121,9 +128,9 @@ export default function AboutPage() {
               Let&apos;s talk about what you need — and how we can source it better than anyone else.
             </p>
             <div className="mt-8">
-              <a href="/contact/" className="inline-flex items-center justify-center rounded-lg border border-border bg-white px-8 py-3 text-lg font-medium text-ink hover:border-brand hover:bg-surface transition-colors">
+              <Link href="/contact/" className="inline-flex items-center justify-center rounded-lg border border-border bg-white px-8 py-3 text-lg font-medium text-ink hover:border-brand hover:bg-surface transition-colors">
                 Get in Touch
-              </a>
+              </Link>
             </div>
           </Container>
         </section>
