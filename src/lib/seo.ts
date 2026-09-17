@@ -96,6 +96,35 @@ export function serviceSchema({
   };
 }
 
+/** Article metadata for the long-form guides under /resources. */
+export function articleSchema({
+  title,
+  description,
+  updated,
+  path,
+}: {
+  title: string;
+  description: string;
+  updated: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: updated,
+    dateModified: updated,
+    mainEntityOfPage: pageUrl(path),
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/apple-touch-icon.png` },
+    },
+  };
+}
+
 /**
  * Build a meta/social description from long-form copy, cutting on a word
  * boundary so previews never end mid-word.

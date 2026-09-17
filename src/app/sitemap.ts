@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 import { products } from "@/lib/products";
 import { solutions } from "@/lib/solutions";
+import { resources } from "@/lib/resources";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/about"), changeFrequency: "monthly", priority: 0.7 },
     { url: url("/contact"), changeFrequency: "monthly", priority: 0.8 },
     { url: url("/resources"), changeFrequency: "monthly", priority: 0.5 },
+    { url: url("/privacy"), changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const productPages: MetadataRoute.Sitemap = products.map((p) => ({
@@ -32,5 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...productPages, ...solutionPages];
+  const resourcePages: MetadataRoute.Sitemap = resources.map((r) => ({
+    url: url(`/resources/${r.slug}`),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...productPages, ...solutionPages, ...resourcePages];
 }

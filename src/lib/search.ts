@@ -1,5 +1,6 @@
 import { products } from "./products";
 import { solutions } from "./solutions";
+import { resources } from "./resources";
 import { metaDescription } from "./seo";
 
 export interface SearchResult {
@@ -99,6 +100,30 @@ export function buildSearchIndex(): SearchEntry[] {
         field(summary, WEIGHT_SUMMARY),
         field(
           [s.description, ...s.benefits, s.whoItsFor, s.approach].join(" "),
+          WEIGHT_BODY
+        ),
+      ],
+    });
+  }
+
+  // Resources: index the title, keywords, summary, and section headings. The
+  // body itself stays out so the lazily-loaded index does not grow by 30 KB.
+  for (const r of resources) {
+    entries.push({
+      result: {
+        id: r.slug,
+        title: r.title,
+        description: r.excerpt,
+        href: `/resources/${r.slug}`,
+        category: r.type,
+        keywords: r.seoKeywords.join(" "),
+      },
+      fields: [
+        field(r.title, WEIGHT_TITLE),
+        field(r.seoKeywords.join(" "), WEIGHT_KEYWORDS),
+        field(r.excerpt, WEIGHT_SUMMARY),
+        field(
+          [r.intro, ...r.takeaways, ...r.sections.map((s) => s.heading)].join(" "),
           WEIGHT_BODY
         ),
       ],

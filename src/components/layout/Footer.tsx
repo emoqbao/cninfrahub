@@ -117,6 +117,11 @@ export default function Footer({ navProducts, navSolutions, year }: FooterProps)
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy/" onClick={(e) => scrollIfActive(e, "/privacy/")} className="text-sm text-light hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
