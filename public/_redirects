@@ -1,6 +1,22 @@
-# Two solutions were replaced on 2026-09-17. Keep inbound links and any
-# indexed URLs pointing at something useful instead of a 404.
-/solutions/high-bandwidth-interconnect /solutions/china-enterprise-private-line/ 301
-/solutions/high-bandwidth-interconnect/ /solutions/china-enterprise-private-line/ 301
-/solutions/regulated-industry-infrastructure /solutions/china-ai-infrastructure/ 301
-/solutions/regulated-industry-infrastructure/ /solutions/china-ai-infrastructure/ 301
+# Solutions renamed or retired. Keep inbound links, and anything the search
+# engines already indexed, pointing at something useful instead of a 404.
+#
+# Retired 2026-09-17: High-Bandwidth Data Center Interconnect,
+#                     Regulated Industry Infrastructure
+# Retired 2026-09-18: China AI Infrastructure
+# Renamed 2026-09-18: the four remaining solutions
+
+/solutions/high-bandwidth-interconnect /solutions/china-private-line/ 301
+/solutions/high-bandwidth-interconnect/ /solutions/china-private-line/ 301
+/solutions/regulated-industry-infrastructure /solutions/ 301
+/solutions/regulated-industry-infrastructure/ /solutions/ 301
+/solutions/china-ai-infrastructure /solutions/ 301
+/solutions/china-ai-infrastructure/ /solutions/ 301
+/solutions/cross-border-cloud-connectivity /solutions/china-cloud-interconnect/ 301
+/solutions/cross-border-cloud-connectivity/ /solutions/china-cloud-interconnect/ 301
+/solutions/china-enterprise-private-line /solutions/china-private-line/ 301
+/solutions/china-enterprise-private-line/ /solutions/china-private-line/ 301
+/solutions/china-network-as-a-service /solutions/managed-china-network/ 301
+/solutions/china-network-as-a-service/ /solutions/managed-china-network/ 301
+/solutions/china-application-reachability /solutions/china-access-acceleration/ 301
+/solutions/china-application-reachability/ /solutions/china-access-acceleration/ 301
