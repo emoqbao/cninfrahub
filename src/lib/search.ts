@@ -64,7 +64,7 @@ export function buildSearchIndex(): SearchEntry[] {
   for (const p of products) {
     entries.push({
       result: {
-        id: p.id,
+        id: `product-${p.id}`,
         title: p.name,
         description: p.tagline,
         href: `/products/${p.id}`,
@@ -87,7 +87,7 @@ export function buildSearchIndex(): SearchEntry[] {
     const summary = metaDescription(s.description, 120);
     entries.push({
       result: {
-        id: s.id,
+        id: `solution-${s.id}`,
         title: s.name,
         description: summary,
         href: `/solutions/${s.id}`,
@@ -111,7 +111,7 @@ export function buildSearchIndex(): SearchEntry[] {
   for (const r of resources) {
     entries.push({
       result: {
-        id: r.slug,
+        id: `resource-${r.slug}`,
         title: r.title,
         description: r.excerpt,
         href: `/resources/${r.slug}`,

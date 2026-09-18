@@ -10,11 +10,11 @@ import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Four proven infrastructure patterns for your China strategy — China Cloud Interconnect, China Private Line, Managed China Network, and China Access Acceleration.",
+  description: "Four proven infrastructure patterns for China and cross-border connectivity — Cloud Connect, Private Line, Virtual Routing & Firewall, and China Access Optimization.",
   alternates: { canonical: "/solutions" },
   ...socialMetadata({
     title: "Solutions — CN-Infra Hub",
-    description: "Four proven infrastructure patterns for your China strategy — China Cloud Interconnect, China Private Line, Managed China Network, and China Access Acceleration.",
+    description: "Four proven infrastructure patterns for China and cross-border connectivity — Cloud Connect, Private Line, Virtual Routing & Firewall, and China Access Optimization.",
     path: "/solutions",
   }),
 };
