@@ -1,37 +1,47 @@
 # Solutions renamed or retired. Keep inbound links, and anything the search
 # engines already indexed, pointing at something useful instead of a 404.
 #
-# Retired 2026-09-17: High-Bandwidth Data Center Interconnect,
-#                     Regulated Industry Infrastructure
-# Retired 2026-09-18: China AI Infrastructure
-# Renamed 2026-09-17: four solutions
-# Renamed 2026-09-18: the survivors renamed again to Cloud Connect,
-#                     Private Line, Virtual Routing & Firewall, and
-#                     China Access Optimization
+# Retired 2026-09-17: high-bandwidth-interconnect, regulated-industry-infrastructure
+# Retired 2026-09-18: china-ai-infrastructure
+# Current solutions, named for the situation they solve rather than the
+# technology they are built from:
+#
+#   hybrid-cloud-connectivity          Hybrid Cloud Connectivity
+#   site-to-site-connectivity          Private Site-to-Site Connectivity
+#   managed-network-without-hardware   Managed Network Without Hardware
+#   china-access-for-overseas-sites    China Access for Overseas Sites
 #
 # Every line below names its final destination directly. A chain of two
 # redirects costs an extra round trip and a second chance to lose the referrer,
 # so nothing here points at a slug that is itself redirected.
 
-/solutions/high-bandwidth-interconnect /solutions/private-line/ 301
-/solutions/high-bandwidth-interconnect/ /solutions/private-line/ 301
+/solutions/high-bandwidth-interconnect /solutions/site-to-site-connectivity/ 301
+/solutions/high-bandwidth-interconnect/ /solutions/site-to-site-connectivity/ 301
 /solutions/regulated-industry-infrastructure /solutions/ 301
 /solutions/regulated-industry-infrastructure/ /solutions/ 301
 /solutions/china-ai-infrastructure /solutions/ 301
 /solutions/china-ai-infrastructure/ /solutions/ 301
-/solutions/cross-border-cloud-connectivity /solutions/cloud-connect/ 301
-/solutions/cross-border-cloud-connectivity/ /solutions/cloud-connect/ 301
-/solutions/china-cloud-interconnect /solutions/cloud-connect/ 301
-/solutions/china-cloud-interconnect/ /solutions/cloud-connect/ 301
-/solutions/china-enterprise-private-line /solutions/private-line/ 301
-/solutions/china-enterprise-private-line/ /solutions/private-line/ 301
-/solutions/china-private-line /solutions/private-line/ 301
-/solutions/china-private-line/ /solutions/private-line/ 301
-/solutions/china-network-as-a-service /solutions/virtual-routing/ 301
-/solutions/china-network-as-a-service/ /solutions/virtual-routing/ 301
-/solutions/managed-china-network /solutions/virtual-routing/ 301
-/solutions/managed-china-network/ /solutions/virtual-routing/ 301
-/solutions/china-application-reachability /solutions/china-access-optimization/ 301
-/solutions/china-application-reachability/ /solutions/china-access-optimization/ 301
-/solutions/china-access-acceleration /solutions/china-access-optimization/ 301
-/solutions/china-access-acceleration/ /solutions/china-access-optimization/ 301
+/solutions/cross-border-cloud-connectivity /solutions/hybrid-cloud-connectivity/ 301
+/solutions/cross-border-cloud-connectivity/ /solutions/hybrid-cloud-connectivity/ 301
+/solutions/china-cloud-interconnect /solutions/hybrid-cloud-connectivity/ 301
+/solutions/china-cloud-interconnect/ /solutions/hybrid-cloud-connectivity/ 301
+/solutions/cloud-connect /solutions/hybrid-cloud-connectivity/ 301
+/solutions/cloud-connect/ /solutions/hybrid-cloud-connectivity/ 301
+/solutions/china-enterprise-private-line /solutions/site-to-site-connectivity/ 301
+/solutions/china-enterprise-private-line/ /solutions/site-to-site-connectivity/ 301
+/solutions/china-private-line /solutions/site-to-site-connectivity/ 301
+/solutions/china-private-line/ /solutions/site-to-site-connectivity/ 301
+/solutions/private-line /solutions/site-to-site-connectivity/ 301
+/solutions/private-line/ /solutions/site-to-site-connectivity/ 301
+/solutions/china-network-as-a-service /solutions/managed-network-without-hardware/ 301
+/solutions/china-network-as-a-service/ /solutions/managed-network-without-hardware/ 301
+/solutions/managed-china-network /solutions/managed-network-without-hardware/ 301
+/solutions/managed-china-network/ /solutions/managed-network-without-hardware/ 301
+/solutions/virtual-routing /solutions/managed-network-without-hardware/ 301
+/solutions/virtual-routing/ /solutions/managed-network-without-hardware/ 301
+/solutions/china-application-reachability /solutions/china-access-for-overseas-sites/ 301
+/solutions/china-application-reachability/ /solutions/china-access-for-overseas-sites/ 301
+/solutions/china-access-acceleration /solutions/china-access-for-overseas-sites/ 301
+/solutions/china-access-acceleration/ /solutions/china-access-for-overseas-sites/ 301
+/solutions/china-access-optimization /solutions/china-access-for-overseas-sites/ 301
+/solutions/china-access-optimization/ /solutions/china-access-for-overseas-sites/ 301

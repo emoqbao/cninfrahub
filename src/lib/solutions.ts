@@ -18,8 +18,8 @@ export interface Solution {
 
 export const solutions: Solution[] = [
   {
-    id: "cloud-connect",
-    name: "Cloud Connect",
+    id: "hybrid-cloud-connectivity",
+    name: "Hybrid Cloud Connectivity",
     tags: ["Multi-Cloud", "AWS", "Azure", "GCP"],
     description:
       "Connect clouds to each other and to your own infrastructure — domestic cloud-to-cloud between Alibaba Cloud, Tencent Cloud, Huawei Cloud, and others inside China, and cross-border links from China out to AWS, Azure, and GCP across APAC, US, and Europe — at the bandwidth and price point that fits your workload. We offer the full spectrum: managed 50 Mbps-1 Gbps virtual connections through Megaport and Equinix Fabric for cost-sensitive or moderate-traffic environments, and dedicated 1-100 Gbps physical cross-connects for data-heavy production workloads. Standard cloud provider partners cannot legally establish these China-to-overseas links. We can — with full compliance documentation and multiple active enterprise customers running production today.",
@@ -36,8 +36,8 @@ export const solutions: Solution[] = [
     seoKeywords: ["cross-border cloud connectivity", "China cloud interconnect", "domestic cloud interconnect China", "hybrid cloud architecture China", "multi-cloud strategy China", "China to AWS connectivity", "China to Azure connectivity", "China to GCP connectivity"],
   },
   {
-    id: "private-line",
-    name: "Private Line",
+    id: "site-to-site-connectivity",
+    name: "Private Site-to-Site Connectivity",
     tags: ["DPLC", "IEPL", "MPLS", "Layer 2"],
     description:
       "End-to-end private connectivity between your China sites and the rest of the world, built from two circuit types that work together: DPLC for the domestic point-to-point legs between Chinese cities, and IEPL or MPLS for the cross-border leg. Both are Layer 2, so your own routing runs across the whole path, and both are uncontended, so latency, jitter, and packet loss stay stable through the evening peak instead of degrading with the public internet. We source from China Telecom, China Unicom, China Mobile, and alternative operators, then choose the combination that fits your route, bandwidth, and budget — and we hold the carrier relationships, so you sign one contract and escalate through one path. The same point-to-point capability covers routes that never touch China — two overseas sites, or a data centre and an office outside the mainland — on the same Layer 2, uncontended terms.",
@@ -57,8 +57,8 @@ export const solutions: Solution[] = [
     seoKeywords: ["China DPLC", "IEPL China", "cross-border MPLS", "China private line", "China to Hong Kong private line", "Layer 2 connectivity China"],
   },
   {
-    id: "virtual-routing",
-    name: "Virtual Routing & Firewall",
+    id: "managed-network-without-hardware",
+    name: "Managed Network Without Hardware",
     tags: ["RouterOS", "VyOS", "FortiGate", "Virtual Edge"],
     description:
       "Build your network out of virtual routers and firewalls rather than physical appliances. We deploy RouterOS, VyOS, FortiGate, or Zscaler VSE as virtual instances wherever your traffic needs them — inside a cloud region, in a colocation cage, at an office edge — then interconnect them into one routed, policy-controlled network over our multi-carrier DIA and Private Connect underlay. No hardware procurement, no customs, no local IT team. Configuration, policy, OS updates, and 24/7 monitoring are handled for you, and you keep administrative access and full visibility.",
@@ -76,8 +76,8 @@ export const solutions: Solution[] = [
     seoKeywords: ["virtual router China", "RouterOS China", "VyOS China", "FortiGate China", "managed firewall China", "virtual network appliances China", "China virtual network"],
   },
   {
-    id: "china-access-optimization",
-    name: "China Access Optimization",
+    id: "china-access-for-overseas-sites",
+    name: "China Access for Overseas Sites",
     tags: ["Overseas Origin", "Edge", "WAF", "China Access"],
     description:
       "Your application is hosted outside China and your Chinese users feel it — slow loads, timeouts, and unstable connections across the international border. We put a managed edge layer between your origin and those users: near-shore edge nodes that cache, terminate TLS, and carry traffic back to origin over optimized cross-border paths. Your domain needs no ICP filing and no mainland entity, and onboarding is a single CNAME record — no TXT verification, no nameserver migration. Your infrastructure does not move, your data stays where it already lives, and your team keeps one origin and one deployment pipeline.",
