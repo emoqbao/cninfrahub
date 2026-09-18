@@ -10,11 +10,11 @@ import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Four proven China and cross-border infrastructure patterns, from hybrid cloud connectivity to fast access for overseas-hosted sites.",
+  description: "Four proven China and cross-border infrastructure patterns, from hybrid and multi-cloud connectivity to fast access for overseas-hosted sites.",
   alternates: { canonical: "/solutions" },
   ...socialMetadata({
     title: "Solutions — CN-Infra Hub",
-    description: "Four proven China and cross-border infrastructure patterns, from hybrid cloud connectivity to fast access for overseas-hosted sites.",
+    description: "Four proven China and cross-border infrastructure patterns, from hybrid and multi-cloud connectivity to fast access for overseas-hosted sites.",
     path: "/solutions",
   }),
 };

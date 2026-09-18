@@ -18,8 +18,8 @@ export interface Solution {
 
 export const solutions: Solution[] = [
   {
-    id: "hybrid-cloud-connectivity",
-    name: "Hybrid Cloud Connectivity",
+    id: "hybrid-multi-cloud-connectivity",
+    name: "Hybrid & Multi-Cloud Connectivity",
     tags: ["Multi-Cloud", "AWS", "Azure", "GCP"],
     description:
       "Connect clouds to each other and to your own infrastructure — domestic cloud-to-cloud between Alibaba Cloud, Tencent Cloud, Huawei Cloud, and others inside China, and cross-border links from China out to AWS, Azure, and GCP across APAC, US, and Europe — at the bandwidth and price point that fits your workload. We offer the full spectrum: managed 50 Mbps-1 Gbps virtual connections through Megaport and Equinix Fabric for cost-sensitive or moderate-traffic environments, and dedicated 1-100 Gbps physical cross-connects for data-heavy production workloads. Standard cloud provider partners cannot legally establish these China-to-overseas links. We can — with full compliance documentation and multiple active enterprise customers running production today.",
@@ -57,8 +57,8 @@ export const solutions: Solution[] = [
     seoKeywords: ["China DPLC", "IEPL China", "cross-border MPLS", "China private line", "China to Hong Kong private line", "Layer 2 connectivity China"],
   },
   {
-    id: "managed-network-without-hardware",
-    name: "Managed Network Without Hardware",
+    id: "hardware-free-managed-network",
+    name: "Hardware-Free Managed Network",
     tags: ["RouterOS", "VyOS", "FortiGate", "Virtual Edge"],
     description:
       "Build your network out of virtual routers and firewalls rather than physical appliances. We deploy RouterOS, VyOS, FortiGate, or Zscaler VSE as virtual instances wherever your traffic needs them — inside a cloud region, in a colocation cage, at an office edge — then interconnect them into one routed, policy-controlled network over our multi-carrier DIA and Private Connect underlay. No hardware procurement, no customs, no local IT team. Configuration, policy, OS updates, and 24/7 monitoring are handled for you, and you keep administrative access and full visibility.",

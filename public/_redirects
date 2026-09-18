@@ -3,13 +3,14 @@
 #
 # Retired 2026-09-17: high-bandwidth-interconnect, regulated-industry-infrastructure
 # Retired 2026-09-18: china-ai-infrastructure
+#
 # Current solutions, named for the situation they solve rather than the
 # technology they are built from:
 #
-#   hybrid-cloud-connectivity          Hybrid Cloud Connectivity
-#   site-to-site-connectivity          Private Site-to-Site Connectivity
-#   managed-network-without-hardware   Managed Network Without Hardware
-#   china-access-for-overseas-sites    China Access for Overseas Sites
+#   hybrid-multi-cloud-connectivity   Hybrid & Multi-Cloud Connectivity
+#   site-to-site-connectivity         Private Site-to-Site Connectivity
+#   hardware-free-managed-network     Hardware-Free Managed Network
+#   china-access-for-overseas-sites   China Access for Overseas Sites
 #
 # Every line below names its final destination directly. A chain of two
 # redirects costs an extra round trip and a second chance to lose the referrer,
@@ -21,24 +22,28 @@
 /solutions/regulated-industry-infrastructure/ /solutions/ 301
 /solutions/china-ai-infrastructure /solutions/ 301
 /solutions/china-ai-infrastructure/ /solutions/ 301
-/solutions/cross-border-cloud-connectivity /solutions/hybrid-cloud-connectivity/ 301
-/solutions/cross-border-cloud-connectivity/ /solutions/hybrid-cloud-connectivity/ 301
-/solutions/china-cloud-interconnect /solutions/hybrid-cloud-connectivity/ 301
-/solutions/china-cloud-interconnect/ /solutions/hybrid-cloud-connectivity/ 301
-/solutions/cloud-connect /solutions/hybrid-cloud-connectivity/ 301
-/solutions/cloud-connect/ /solutions/hybrid-cloud-connectivity/ 301
+/solutions/cross-border-cloud-connectivity /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/cross-border-cloud-connectivity/ /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/china-cloud-interconnect /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/china-cloud-interconnect/ /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/cloud-connect /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/cloud-connect/ /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/hybrid-cloud-connectivity /solutions/hybrid-multi-cloud-connectivity/ 301
+/solutions/hybrid-cloud-connectivity/ /solutions/hybrid-multi-cloud-connectivity/ 301
 /solutions/china-enterprise-private-line /solutions/site-to-site-connectivity/ 301
 /solutions/china-enterprise-private-line/ /solutions/site-to-site-connectivity/ 301
 /solutions/china-private-line /solutions/site-to-site-connectivity/ 301
 /solutions/china-private-line/ /solutions/site-to-site-connectivity/ 301
 /solutions/private-line /solutions/site-to-site-connectivity/ 301
 /solutions/private-line/ /solutions/site-to-site-connectivity/ 301
-/solutions/china-network-as-a-service /solutions/managed-network-without-hardware/ 301
-/solutions/china-network-as-a-service/ /solutions/managed-network-without-hardware/ 301
-/solutions/managed-china-network /solutions/managed-network-without-hardware/ 301
-/solutions/managed-china-network/ /solutions/managed-network-without-hardware/ 301
-/solutions/virtual-routing /solutions/managed-network-without-hardware/ 301
-/solutions/virtual-routing/ /solutions/managed-network-without-hardware/ 301
+/solutions/china-network-as-a-service /solutions/hardware-free-managed-network/ 301
+/solutions/china-network-as-a-service/ /solutions/hardware-free-managed-network/ 301
+/solutions/managed-china-network /solutions/hardware-free-managed-network/ 301
+/solutions/managed-china-network/ /solutions/hardware-free-managed-network/ 301
+/solutions/virtual-routing /solutions/hardware-free-managed-network/ 301
+/solutions/virtual-routing/ /solutions/hardware-free-managed-network/ 301
+/solutions/managed-network-without-hardware /solutions/hardware-free-managed-network/ 301
+/solutions/managed-network-without-hardware/ /solutions/hardware-free-managed-network/ 301
 /solutions/china-application-reachability /solutions/china-access-for-overseas-sites/ 301
 /solutions/china-application-reachability/ /solutions/china-access-for-overseas-sites/ 301
 /solutions/china-access-acceleration /solutions/china-access-for-overseas-sites/ 301
