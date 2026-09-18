@@ -850,8 +850,167 @@ const crossBorderLatencyTriage: Resource = {
   ],
 };
 
+const chinaDarkFiber: Resource = {
+  slug: "china-dark-fiber",
+  type: "Guide",
+  title: "China Dark Fiber: When Leasing Glass Beats Leasing Bandwidth",
+  excerpt:
+    "Dark fiber is the one way to buy bandwidth that does not get more expensive as you use more of it. Where it applies in China, how it is priced, and where it stops making sense.",
+  updated: "2026-09-18",
+  readingTime: "10 min read",
+  seoKeywords: [
+    "China dark fiber",
+    "dark fiber China pricing",
+    "bare fiber China",
+    "dark fiber vs leased line",
+    "China DCI",
+    "dark fiber per kilometre",
+  ],
+  relatedProducts: ["dark-fiber", "private-connect", "colocation", "smart-hands"],
+  intro:
+    "Past a certain bandwidth the interesting question stops being which circuit to buy and becomes whether to buy a circuit at all. Dark fiber is the second option: you lease the glass between two of your own sites, light it yourself, and stop paying per megabit. Here is where that applies in China, how it is priced, and where it stops making sense.",
+  takeaways: [
+    "Why China's three carriers do not sell dark fiber, and why it is not a technical limit",
+    "How per-kilometre pricing changes the economics of high bandwidth",
+    "The route types where it works, and the ones where it does not",
+    "Why the cross-border leg is always a circuit, never bare fiber",
+    "What you need in-house before dark fiber is the cheaper option",
+  ],
+  sections: [
+    {
+      id: "why-carriers-dont-sell-it",
+      heading: "Why the big three do not sell it",
+      blocks: [
+        {
+          kind: "p",
+          text: "China Telecom, China Unicom, and China Mobile will sell you almost any circuit you can describe, but not bare glass. The reason is commercial rather than technical. A carrier's product is a circuit: priced by bandwidth, billed every month, and resellable at every step up the range. Leasing dark fiber hands over the physical layer itself, and with it capacity the carrier could otherwise sell many times over. There is no incentive to do that, so the product does not appear on their price lists.",
+        },
+        {
+          kind: "p",
+          text: "The supply comes from specialist fiber operators instead: regional resource holders, data centre operators, and organisations that own their own ducts and wayleave. What they sell is a fiber pair on a specific route, between two named addresses. They are not built around selling bandwidth as a service — they rent infrastructure.",
+        },
+        {
+          kind: "p",
+          text: "That is the gap we work in. We identify which operators hold fiber on the route you need, compare them, negotiate the terms, and hold the contract. You get a fiber pair, and one party to call when it breaks.",
+        },
+      ],
+    },
+    {
+      id: "how-it-is-priced",
+      heading: "How dark fiber is priced",
+      blocks: [
+        {
+          kind: "p",
+          text: "Circuits are priced by bandwidth. Dark fiber is priced by distance. A route is quoted either as a recurring cost per kilometre per month, or as a one-off IRU payment for a long term — commonly ten to twenty years — plus an annual maintenance fee. Both forms are normal; the choice usually comes down to how long you expect to be there.",
+        },
+        {
+          kind: "ul",
+          items: [
+            "Distance sets the cost, bandwidth does not. Going from 10G to 100G to 400G is a transceiver change at each end, not a new contract.",
+            "Metro routes are the easiest to justify, because the distance is short and the wayleave is usually already in place.",
+            "Inter-city long-haul works on the same principle: the distance goes up, so the price goes up, but it stays independent of how much you push through the fiber.",
+            "The quote is not the whole cost. Add transceivers, DWDM if you need more than one wavelength, ODF and patching at both ends, and the engineering time to run it.",
+            "Maintenance and fault response are separate line items. Fiber gets cut by construction work, and somebody has to find out where.",
+          ],
+        },
+        {
+          kind: "p",
+          text: "Put those numbers together and the economics are easy to read: a leased circuit has one price at 10G and a different price at 100G, while a fiber pair has a single price that does not care.",
+        },
+      ],
+    },
+    {
+      id: "where-it-wins",
+      heading: "Where it starts to win",
+      blocks: [
+        {
+          kind: "table",
+          head: ["Situation", "What usually makes sense"],
+          rows: [
+            [
+              "Two data centres of your own, 100 Gbps or more, a route that will not change",
+              "Dark fiber. This is the case it was built for.",
+            ],
+            [
+              "Two offices, or two buildings on one campus, needing guaranteed bandwidth",
+              "Dark fiber on a metro route, provided both ends can host your equipment.",
+            ],
+            [
+              "Inter-city between Chinese hubs at very high bandwidth",
+              "Dark fiber, after comparing it against the circuit price for the same distance.",
+            ],
+            [
+              "Under 10 Gbps, or bandwidth that swings a lot",
+              "A circuit. Paying for capacity you are not using is worse than paying per megabit.",
+            ],
+            [
+              "It has to be live in two weeks",
+              "A circuit. Fiber has to be surveyed, built, and spliced, which takes far longer.",
+            ],
+          ],
+        },
+        {
+          kind: "p",
+          text: "The practical test is not bandwidth alone. Dark fiber needs both ends to be places you control, a route you expect to keep, and somebody able to work at the optical layer. Miss any one of those and a circuit is the better answer, even at 100 Gbps.",
+        },
+      ],
+    },
+    {
+      id: "what-you-need",
+      heading: "What you need before it is worth doing",
+      blocks: [
+        {
+          kind: "ul",
+          items: [
+            "Optical capability. Your own transceivers, DWDM if you want more than one wavelength on the pair, and people who can work with ODF and splicing.",
+            "Access at both ends. Fiber terminates in two buildings. If neither is a facility you can enter and place equipment in, the fiber has nowhere to land.",
+            "A route with a lifespan. Dark fiber is a long-term asset, and an IRU you walk away from early is money spent for nothing.",
+            "Somebody to send when it breaks. Fiber faults need hands on site, which is where remote hands coverage matters.",
+          ],
+        },
+      ],
+    },
+    {
+      id: "cross-border-is-different",
+      heading: "Why the cross-border leg is never bare fiber",
+      blocks: [
+        {
+          kind: "p",
+          text: "Dark fiber in China is a domestic resource. It connects two of your own sites inside the country: two data centres, two offices, or a data centre and an office. It does not reach an overseas node.",
+        },
+        {
+          kind: "p",
+          text: "Cross-border capacity sits with a small number of operators who hold the international transmission licences and the cable capacity, and it is not retailed as fiber by the kilometre. In practice the cross-border leg is DPLC for the domestic run to the border or to Hong Kong, joined to IEPL for the international segment, and the combination is normally referred to simply as an IEPL line.",
+        },
+        {
+          kind: "p",
+          text: "So a complete path from China to an overseas node is two technologies end to end: whatever you run inside the country — dark fiber, DPLC, or a standard circuit — handed to an IEPL segment that carries it out. We source both halves, which is why the contract stays single and the escalation path stays single, including for faults that land exactly on the seam between the two.",
+        },
+      ],
+    },
+    {
+      id: "checklist",
+      heading: "Checklist",
+      blocks: [
+        {
+          kind: "ul",
+          items: [
+            "Are both ends facilities you control and can place equipment in?",
+            "Is the bandwidth genuinely at the 100 Gbps level, and will it stay there?",
+            "Will the route still make sense in three to five years?",
+            "Do you have optical capability in house, or does DWDM and operations need to be part of the package?",
+            "Is the cross-border leg already scoped as an IEPL line?",
+            "Have you priced both options properly — the circuit, and the fiber plus optics, DWDM, and maintenance?",
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 export const resources: Resource[] = [
   crossBorderNetworkArchitecture,
+  chinaDarkFiber,
   icpFilingExplained,
   nearShoreVsMainland,
   crossBorderLinkOptions,

@@ -48,10 +48,11 @@ export const solutions: Solution[] = [
       "Multi-carrier sourcing across China Telecom, China Unicom, China Mobile, and alternative operators — we compare the routes, you get the price",
       "Alternative non-carrier paths between Chinese cities where the incumbents are overpriced",
       "10 Mbps to 100 Gbps with committed, burst, and usage-based rate options",
+      "For genuinely large domestic bandwidth, the same route can be taken as dark fiber instead of a circuit — priced by distance, with upgrades down to a transceiver swap",
     ],
     whoItsFor: "Enterprises linking China offices, factories, or data centres to a regional headquarters, a cloud region, or to each other — and any team that has outgrown VPN or SD-WAN over the public internet but does not want to negotiate with three carriers across two countries.",
     approach: "We map your sites and traffic profile, then design the path: DPLC for the domestic legs, IEPL or MPLS for the cross-border leg, or a mix of carrier and alternative operators where that is cheaper. Because every segment is Layer 2, your existing addressing and routing plan carries over unchanged. We provision with every carrier involved, coordinate the hand-off points, and remain the single escalation path for faults — including the ones that sit exactly on the boundary between two carriers.",
-    products: ["private-connect", "dia", "colocation"],
+    products: ["private-connect", "dia", "colocation", "dark-fiber"],
     seoKeywords: ["China DPLC", "IEPL China", "cross-border MPLS", "China private line", "China to Hong Kong private line", "Layer 2 connectivity China"],
   },
   {
