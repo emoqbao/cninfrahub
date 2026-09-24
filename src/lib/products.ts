@@ -115,7 +115,7 @@ export const products: Product[] = [
     name: "Bare Metal",
     module: "COMPUTE",
     tagline: "Dedicated physical servers — we find the right hardware at the right price",
-    heroImage: "/images/products/bare-metal-hero.webp",
+    heroImage: "/images/products/bare-metal-hero-v4.webp",
     description:
       "We source single-tenant physical servers from our network of data center and hardware partners. Latest-generation Intel Xeon and AMD EPYC processors, custom RAID configurations, NVMe SSD storage, and GPU expansion — we match your exact specs to the provider that gives you the best combination of price, location, and support. Zero hypervisor overhead, full OS control, and 24/7 Smart Hands included.",
     features: [
