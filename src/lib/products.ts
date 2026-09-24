@@ -176,7 +176,7 @@ export const products: Product[] = [
     id: "dia",
     name: "Dedicated Internet Access",
     module: "NETWORK",
-    heroImage: "/images/products/dia-hero.webp",
+    heroImage: "/images/products/dia-hero-v2-labeled.webp",
     tagline: "Premium dedicated internet — China and overseas, carrier-grade, uncontended, at pricing enterprises can't get directly",
     description:
       "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 10 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
