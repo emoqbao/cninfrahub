@@ -238,7 +238,7 @@ export const products: Product[] = [
     id: "private-connect",
     name: "Private Connect",
     module: "NETWORK",
-    heroImage: "/images/products/private-connect-hero.webp",
+    heroImage: "/images/products/private-connect-hero-v3.webp",
     tagline: "Layer 2 P2P circuits at pricing enterprises can't get on their own — cross-city and cross-border",
     description:
       "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 10 Mbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
