@@ -16,7 +16,7 @@ export const products: Product[] = [
     id: "ai-gateway",
     name: "AI Gateway",
     module: "AI",
-    heroImage: "/images/products/ai-gateway-hero.webp",
+    heroImage: "/images/products/ai-gateway-hero-v2.svg",
     tagline: "Compliant API relay for DeepSeek, Claude, and China's AI ecosystem",
     description:
       "We aggregate API access to China's top AI models — ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
