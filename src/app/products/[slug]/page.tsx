@@ -137,23 +137,21 @@ export default async function ProductPage({ params }: Props) {
                   {product.tagline}
                 </p>
               </div>
-              {product.heroImage ? (
-                <div className="flex w-full items-center justify-center lg:justify-end">
-                  <div className="relative aspect-[3/2] w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-surface-warm sm:max-w-md lg:max-w-[576px]">
-                    {/* Static export uses pre-compressed WebP assets without an image optimizer. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={product.heroImage}
-                      alt={product.name}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="hidden items-center justify-center lg:flex">
+              <div className="hidden lg:flex items-center justify-center">
+                {product.heroImage ? (
+                  // Static export uses pre-compressed WebP assets without an image optimizer.
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={product.heroImage}
+                    alt={product.name}
+                    width={560}
+                    height={420}
+                    className="w-full max-w-lg h-auto rounded-2xl border border-border"
+                  />
+                ) : (
                   <ProductHeroIcon productId={product.id} />
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </Container>
         </section>
