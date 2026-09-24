@@ -335,7 +335,7 @@ export const products: Product[] = [
     id: "virtual-edge",
     name: "Virtual Edge",
     module: "NETWORK",
-    heroImage: "/images/products/virtual-edge-hero.webp",
+    heroImage: "/images/products/virtual-edge-hero-v2.webp",
     tagline: "Your virtual appliance, our managed infrastructure — we deploy, configure, and support",
     description:
       "We're not just hosting your virtual router or firewall — we actively manage and configure it. Deploy FortiGate VM, VyOS, MikroTik RouterOS (ROS), or Zscaler Virtual Security Edge (VSE) on infrastructure we source and manage. We handle the initial configuration, ongoing policy management, OS updates, and the underlying physical connectivity across whichever carriers best serve your topology. Bring your own license or lease from us. Think of it as NaaS — Network as a Service — with you retaining full visibility and control.",
