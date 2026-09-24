@@ -207,7 +207,7 @@ export const products: Product[] = [
     id: "ip-transit",
     name: "IP Transit",
     module: "NETWORK",
-    heroImage: "/images/products/ip-transit-hero.webp",
+    heroImage: "/images/products/ip-transit-hero-v2.webp",
     tagline: "Multi-homed BGP IP transit — blend China's Tier 1 carriers with global peers at wholesale pricing",
     description:
       "Full-table BGP IP transit through our global carrier and Internet Exchange (IX) partnerships. In China, direct BGP peering with the big three carriers is not available to third parties — but through our international network, we deliver multi-homed BGP transit with competitive pricing across key global markets and major IX points. Community-based traffic engineering, prefix filtering, and included DDoS mitigation. Bandwidth from 10 Gbps to 100 Gbps. Built for ISPs, CDNs, cloud providers, and content platforms that need carrier-diverse, wholesale-level IP transit.",
