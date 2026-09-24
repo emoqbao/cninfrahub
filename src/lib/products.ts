@@ -366,7 +366,7 @@ export const products: Product[] = [
     id: "colocation",
     name: "Colocation",
     module: "DATA CENTER",
-    heroImage: "/images/products/colocation-hero.webp",
+    heroImage: "/images/products/colocation-hero-v2.webp",
     tagline: "Tier III+ rack space across China — we find the facility that fits your needs",
     description:
       "We aggregate colocation capacity across multiple carrier-neutral, Tier III+ data centers in Shanghai, Beijing, Shenzhen, and Guangzhou. From quarter-rack to private cages, we match your power density, connectivity, and compliance requirements to the right facility — at pricing secured through our aggregated purchasing. All facilities are ISO 27001 and SOC 2 certified. We manage the facility relationship; you focus on your infrastructure.",
