@@ -139,6 +139,8 @@ export default async function ProductPage({ params }: Props) {
               </div>
               <div className="hidden lg:flex items-center justify-center">
                 {product.heroImage ? (
+                  // Static export uses pre-compressed WebP assets without an image optimizer.
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={product.heroImage}
                     alt={product.name}
