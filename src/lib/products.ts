@@ -84,7 +84,7 @@ export const products: Product[] = [
     name: "Elastic Cloud Servers",
     module: "COMPUTE",
     tagline: "On-demand VMs across China — we source the best provider for your workload",
-    heroImage: "/images/products/elastic-cloud-servers-hero.webp",
+    heroImage: "/images/products/elastic-cloud-servers-hero-v3.webp",
     description:
       "We aggregate virtual machine capacity from multiple Tier III+ data center operators across China. You tell us your requirements — vCPU, RAM, storage, region — and we select the optimal provider from our partner network based on price, performance, and availability. Full root access, flexible configurations (1-96 vCPUs, 1-384 GB RAM), and integrated networking. We manage the provider relationship; you manage your servers.",
     features: [
@@ -397,7 +397,7 @@ export const products: Product[] = [
     id: "smart-hands",
     name: "Smart Hands",
     module: "DATA CENTER",
-    heroImage: "/images/products/smart-hands-hero.webp",
+    heroImage: "/images/products/smart-hands-hero-v2.webp",
     tagline: "Remote operations across any facility — your eyes and hands on the ground, 24/7",
     description:
       "On-demand remote hands services covering every facility in our partner network. Server racking, cabling, hardware diagnostics, RMAs, visual inspections — executed by trained local engineers and reported in English within your business hours. We don't just dispatch a technician; we manage the entire task lifecycle from ticket to resolution. Pay per task or subscribe to monthly blocks. Standard response within 30 minutes.",
