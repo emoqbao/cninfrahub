@@ -301,7 +301,7 @@ export const products: Product[] = [
     id: "dark-fiber",
     name: "Dark Fiber",
     module: "NETWORK",
-    heroImage: "/images/products/dark-fiber-hero.webp",
+    heroImage: "/images/products/dark-fiber-hero-v2.webp",
     tagline: "Dark fiber between your own sites — the product China's big three carriers won't sell you",
     description:
       "China Telecom, China Unicom, and China Mobile do not lease dark fiber, and the reason is commercial rather than technical: a carrier sells circuits, which are priced by bandwidth and billed every month, while leasing bare glass hands over capacity it could otherwise resell. The supply therefore comes from specialist fiber operators — regional resource holders, data centre operators, and organisations with their own ducts and wayleave — and we source from them on your behalf. You lease fiber pairs between two of your own sites, typically two data centres or two offices, and light them yourself: your transceivers, your DWDM, your protocol. Pricing follows distance rather than bandwidth, which is why a 100 Gbps pair can cost less than the equivalent leased circuit — going to 400 Gbps is a change of optics at each end, not a renegotiation. Dark fiber is a domestic resource: cross-border traffic leaves China on DPLC plus IEPL, which we arrange as one end-to-end service.",
