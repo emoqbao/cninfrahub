@@ -49,7 +49,7 @@ export const products: Product[] = [
     id: "edge-acceleration",
     name: "Edge Acceleration",
     module: "EDGE",
-    heroImage: "/images/products/edge-acceleration-hero-v4.webp",
+    heroImage: "/images/products/edge-acceleration-hero-v5.webp",
     tagline: "No ICP filing required — one CNAME record, and mainland China users reach your overseas origin over near-shore edge nodes",
     description:
       "China acceleration usually stalls on paperwork. ICP filing means a mainland entity, a mainland-hosted service, and a review measured in weeks before a single request is served. Your domain does not need it here — traffic terminates on near-shore edge nodes in Hong Kong rather than inside the mainland, and network optimization is applied across that cross-border path, so users in mainland China get low-latency, high-stability access instead of the jitter, packet loss, and timeouts of a direct connection. Onboarding is one DNS change: a single CNAME record at your existing provider, with no TXT record, no nameserver migration, and no code. Your origin, IP addressing, hosting provider, and deployment pipeline all stay exactly where they are. Every deployment is isolated — its own gateway domain, routing policy, cache rules, certificate, and firewall configuration — and response headers are normalized so the layer in between is never advertised.",
