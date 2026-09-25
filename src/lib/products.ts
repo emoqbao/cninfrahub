@@ -84,7 +84,7 @@ export const products: Product[] = [
     name: "Elastic Cloud Servers",
     module: "COMPUTE",
     tagline: "On-demand VMs across China — we source the best provider for your workload",
-    heroImage: "/images/products/elastic-cloud-servers-hero-v6.webp",
+    heroImage: "/images/products/elastic-cloud-servers-hero-v7.webp",
     description:
       "We aggregate virtual machine capacity from multiple Tier III+ data center operators across China. You tell us your requirements — vCPU, RAM, storage, region — and we select the optimal provider from our partner network based on price, performance, and availability. Full root access, flexible configurations (1-96 vCPUs, 1-384 GB RAM), and integrated networking. We manage the provider relationship; you manage your servers.",
     features: [
