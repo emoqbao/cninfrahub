@@ -1,6 +1,6 @@
 export const trustStats = [
   { title: "One Invoice", desc: "All providers, all services — unified billing and SLA" },
-  { title: "Better Value Through Channel Procurement", desc: "Channel procurement can be more cost-effective than direct enterprise purchasing. Quotes vary by route, capacity, and terms." },
+  { title: "Better Value", desc: "Channel procurement can be more cost-effective than direct enterprise purchasing. Quotes vary by route, capacity, and terms." },
   { title: "Neutral & Independent", desc: "Carrier-agnostic; we always pick the best fit for you" },
   { title: "Compliance by Default", desc: "Regulatory complexity stays on our side, not yours" },
 ];
