@@ -131,11 +131,11 @@ export function buildSearchIndex(): SearchEntry[] {
   }
 
   const pages: SearchResult[] = [
-    { id: "products", title: "Products", description: "Network, compute, AI, edge, and data center services", keywords: "all products catalog overview list", href: "/products/", category: "Page" },
-    { id: "solutions", title: "Solutions", description: "Deployment approaches for China and cross-border infrastructure", keywords: "solution patterns use cases by industry", href: "/solutions/", category: "Page" },
+    { id: "products", title: "Products", description: "Purpose-built infrastructure services for China and beyond", keywords: "all products catalog overview list", href: "/products/", category: "Page" },
+    { id: "solutions", title: "Solutions", description: "Real-world infrastructure patterns for your China strategy", keywords: "solution patterns use cases by industry", href: "/solutions/", category: "Page" },
     { id: "about", title: "About", description: "Managed service aggregator for China's infrastructure market", keywords: "company who we are aggregator model", href: "/about/", category: "Page" },
     { id: "contact", title: "Contact", description: "Start a conversation with our infrastructure architects", keywords: "talk to sales inquiry email", href: "/contact/", category: "Page" },
-    { id: "resources", title: "Resources", description: "Architecture guides, comparisons, and troubleshooting playbooks", keywords: "guides whitepapers comparisons playbooks", href: "/resources/", category: "Page" },
+    { id: "resources", title: "Resources", description: "White papers, architecture guides, and case studies", keywords: "guides whitepapers case studies downloads", href: "/resources/", category: "Page" },
   ];
   for (const p of pages) {
     entries.push({

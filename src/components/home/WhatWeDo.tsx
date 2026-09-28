@@ -4,17 +4,17 @@ export const whatWeDoSteps = [
   {
     icon: Search,
     title: "Source",
-    description: "We tap into our network of carriers, data centers, and hardware partners across China to find the right resources for your requirements. On many services, our agency relationships with the three major telecom operators and other providers offer access to channel pricing that may be unavailable through direct procurement.",
+    description: "We tap into our network of carriers, data centers, and hardware partners across China — finding the right resources at pricing individual buyers can't access.",
   },
   {
     icon: Link2,
     title: "Integrate",
-    description: "We design and connect dedicated circuits, cloud links, compute, and colocation into an architecture that fits your existing stack.",
+    description: "We design and connect the pieces — dedicated circuits, cloud links, compute, colocation — into a unified architecture that fits your existing stack.",
   },
   {
     icon: Wrench,
     title: "Manage",
-    description: "We coordinate provider handoffs, monitoring, compliance requirements, and bilingual support according to the scope agreed for your deployment.",
+    description: "We take full operational responsibility: provider management, compliance, monitoring, and 24/7 bilingual support — so you get one partner, one SLA, one invoice.",
   },
 ];
 
@@ -27,7 +27,7 @@ export function WhatWeDoTitle() {
         We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-        As a managed service aggregator, we source from established providers, bring the right services together, and coordinate delivery around your requirements. Our agency channels can provide more competitive pricing on many services; rates depend on route, capacity, location, and commercial terms.
+        As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.
       </p>
     </div>
   );

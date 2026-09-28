@@ -26,11 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const description = metaDescription(product.tagline);
   return {
-    title: product.seoTitle,
+    title: product.name,
     description,
+    keywords: product.seoKeywords,
     alternates: { canonical: `/products/${product.id}` },
     ...socialMetadata({
-      title: `${product.seoTitle} | CN-Infra Hub`,
+      title: `${product.name} | CN-Infra Hub`,
       description,
       path: `/products/${product.id}`,
     }),

@@ -111,20 +111,13 @@ export function articleSchema({
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${pageUrl(path)}#article`,
     headline: title,
     description,
+    datePublished: updated,
     dateModified: updated,
     mainEntityOfPage: pageUrl(path),
-    inLanguage: "en",
-    author: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     publisher: {
-      "@id": `${SITE_URL}/#organization`,
       "@type": "Organization",
       name: SITE_NAME,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/apple-touch-icon.png` },

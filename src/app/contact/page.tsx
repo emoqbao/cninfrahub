@@ -5,12 +5,12 @@ import { socialMetadata } from "@/lib/seo";
 import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "Contact Our China Infrastructure Team",
-  description: "Contact CN-Infra Hub about network, compute, cloud connectivity, or colocation requirements in China. Share your locations and project scope.",
+  title: "Contact",
+  description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
   alternates: { canonical: "/contact" },
   ...socialMetadata({
     title: "Contact CN-Infra Hub",
-    description: "Contact CN-Infra Hub about network, compute, cloud connectivity, or colocation requirements in China. Share your locations and project scope.",
+    description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
     path: "/contact",
   }),
 };
@@ -27,9 +27,6 @@ export default function ContactPage() {
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
             Start a conversation with our infrastructure architects
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-subtle">
-            Tell us which locations, workloads, and services you need to connect or run.
-          </p>
         </div>
       </section>
 

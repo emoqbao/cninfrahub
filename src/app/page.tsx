@@ -8,15 +8,12 @@ import CTABanner from "@/components/home/CTABanner";
 import FeaturedGuides from "@/components/home/FeaturedGuides";
 import { socialMetadata } from "@/lib/seo";
 
-const homeDescription =
-  "Source, integrate, and manage network, compute, and data center services in China through one partner. Agency relationships with major telecom operators provide channel pricing on many services.";
-
 export const metadata: Metadata = {
-  description: homeDescription,
   alternates: { canonical: "/" },
   ...socialMetadata({
-    title: "China Infrastructure Services | CN-Infra Hub",
-    description: homeDescription,
+    title: "CN-Infra Hub — Infrastructure Without Borders",
+    description:
+      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
     path: "/",
   }),
 };
@@ -82,6 +79,7 @@ export default function Home() {
         {/* Breathing space */}
         <BentoSpacer height="h-16 lg:h-24" />
 
+        {/* FEATURED GUIDES */}
         <BentoRow>
           <FeaturedGuides />
         </BentoRow>

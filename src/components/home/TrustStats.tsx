@@ -1,8 +1,8 @@
 export const trustStats = [
-  { title: "One Invoice", desc: "Bring supported network, cloud, and data center services together under one commercial relationship." },
-  { title: "Below-Market Pricing", desc: "Agency-channel rates on many services can beat direct-purchase pricing; quotes vary by route, capacity, and terms." },
-  { title: "Neutral & Independent", desc: "Compare carriers and providers against your requirements, without being tied to a single network." },
-  { title: "Compliance by Default", desc: "Factor local filing and licensing requirements into planning, with responsibilities agreed for each service." },
+  { title: "One Invoice", desc: "All providers, all services — unified billing and SLA" },
+  { title: "Below-Market Pricing", desc: "Aggregated procurement beats direct enterprise rates" },
+  { title: "Neutral & Independent", desc: "Carrier-agnostic; we always pick the best fit for you" },
+  { title: "Compliance by Default", desc: "Regulatory complexity stays on our side, not yours" },
 ];
 
 export function TrustStatItem({ stat }: { stat: (typeof trustStats)[number] }) {

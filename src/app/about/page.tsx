@@ -7,27 +7,27 @@ import Container from "@/components/ui/Container";
 import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Our China Infrastructure Services",
-  description: "Learn how CN-Infra Hub sources and manages network, compute, and data center services across China through a single partner relationship.",
+  title: "About",
+  description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market.",
   alternates: { canonical: "/about" },
   ...socialMetadata({
     title: "About CN-Infra Hub",
-    description: "Learn how CN-Infra Hub sources and manages network, compute, and data center services across China through a single partner relationship.",
+    description: "CN-Infra Hub is a managed service aggregator for China's infrastructure market.",
     path: "/about",
   }),
 };
 
 const pillars = [
-  { icon: Search, title: "Source", description: "We compare carrier, data center, and hardware options against your location, capacity, and support requirements." },
+  { icon: Search, title: "Source", description: "We tap into our network of carriers, data centers, and hardware partners — finding the right resources at pricing individual buyers can't access." },
   { icon: Link2, title: "Integrate", description: "We design and connect the pieces into a unified architecture — dedicated circuits, cross-border links, compute, and colocation." },
-  { icon: Wrench, title: "Manage", description: "We coordinate provider management, monitoring, support, and on-site work according to the agreed service scope." },
+  { icon: Wrench, title: "Manage", description: "We take full operational responsibility: 24/7 bilingual support, compliance monitoring, provider management, and Smart Hands." },
 ];
 
 const differentiators = [
   "Single point of accountability — we own the outcome, not just the referral",
-  "Provider comparison — evaluate the available options against your requirements",
-  "Comparable proposals — review price, route, capacity, and support terms side by side",
-  "Compliance coordination — identify requirements and involve appropriate specialists early",
+  "Provider-agnostic — we recommend the best option, not the one we're locked into",
+  "Aggregated pricing — our combined client volume secures rates below direct enterprise pricing",
+  "Full compliance advisory — CSL, DSL, PIPL, MLPS 2.0 guidance built into every engagement",
   "Bilingual operations — engineering and business communication in English and Mandarin",
   "Full lifecycle — from architecture design through ongoing management and optimization",
 ];
@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="mb-3 h-px w-8 bg-brand" />
               <p className="text-sm font-semibold uppercase tracking-wider text-brand">About</p>
               <h1 className="mt-3 text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-                How we source and manage infrastructure in China
+                We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
               </h1>
             </div>
             <div className="flex items-center justify-center lg:justify-end">
@@ -69,13 +69,13 @@ export default function AboutPage() {
           <Container>
             <div className="rounded-2xl border border-border p-8 lg:p-10">
               <p className="text-xl leading-relaxed text-subtle lg:text-2xl">
-                China infrastructure projects often involve several carriers, data centers, and hardware providers. Comparing routes, capacity, commercial terms, and operational responsibilities across them takes local coordination.
+                China&apos;s infrastructure market is one of the world&apos;s largest — and one of its most fragmented. Dozens of carriers, hundreds of data centers, countless hardware providers. Language barriers, opaque pricing, and evolving regulations make it nearly impossible for global enterprises to navigate alone.
               </p>
               <p className="mt-6 text-xl leading-relaxed text-subtle lg:text-2xl">
-                CN-Infra Hub is a managed service aggregator. We source network, compute, and colocation services from partner providers, design how they fit together, and coordinate delivery and support. The service scope and responsibilities are agreed for each project.
+                CN-Infra Hub is a managed service aggregator. We don&apos;t own fiber, data centers, or server hardware. Instead, we bring deep relationships across China&apos;s entire infrastructure ecosystem. We source the right resources from the right providers, negotiate pricing our clients can&apos;t get on their own, and take full operational responsibility for everything we deliver.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-muted">
-                Start with your locations, applications, traffic, and operating requirements. We compare options with you, document the proposed architecture, and manage the provider handoffs needed to put it into service.
+                Think of us as your infrastructure architect and general contractor for China. You tell us what you need. We decide which providers to use, how to connect them, and how to manage the whole thing — so you get one partner, one SLA, one invoice.
               </p>
             </div>
           </Container>
@@ -85,7 +85,7 @@ export default function AboutPage() {
           <Container>
             <h2 className="text-2xl font-bold tracking-[-0.02em] text-ink">Why the aggregator model works</h2>
             <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-              A single project can span access circuits, cloud links, compute, and colocation. Comparing each part separately can leave gaps at the handoffs. Our model brings sourcing, design, and operations into one coordinated plan.
+              Individual enterprises negotiating directly with Chinese carriers and data centers face three problems: they lack the relationships to get competitive pricing, they lack the local knowledge to evaluate providers, and they lack the operational presence to manage what they buy. We solve all three.
             </p>
             <div className="mt-10 grid gap-8 md:grid-cols-3">
               {pillars.map((p) => (

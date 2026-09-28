@@ -29,7 +29,6 @@ export interface Resource {
   seoKeywords: string[];
   /** Product ids cross-linked at the foot of the page. */
   relatedProducts: string[];
-  references?: { label: string; url: string }[];
   intro: string;
   takeaways: string[];
   sections: ResourceSection[];
@@ -41,9 +40,9 @@ const crossBorderNetworkArchitecture: Resource = {
   featured: true,
   title: "China Cross-Border Network Architecture Guide",
   excerpt:
-    "Compare four delivery patterns for China-facing sites, including direct overseas access, near-shore edge delivery, and mainland hosting.",
-  updated: "2026-09-28",
-  readingTime: "7 min read",
+    "Why direct connections to a China audience degrade, the four deployment patterns that fix it, and the trade-offs between them.",
+  updated: "2026-09-17",
+  readingTime: "12 min read",
   seoKeywords: [
     "cross-border network architecture",
     "China network optimization",
@@ -54,7 +53,7 @@ const crossBorderNetworkArchitecture: Resource = {
   ],
   relatedProducts: ["edge-acceleration", "private-connect", "cloud-connect"],
   intro:
-    "A slow China-facing site can have several causes: network path, packet loss, cache behavior, origin response time, or application design. This guide compares four deployment patterns and the measurements that help you choose between them.",
+    "Most China-facing performance problems are not capacity problems. They are path problems: requests travel further than they need to, across a link that is congested for part of every day, and every extra round trip multiplies the cost. This guide covers the patterns that fix it and what each one asks of you.",
   takeaways: [
     "Why a direct connection degrades even when nothing is down",
     "Four deployment patterns for a China-facing site, and the trade-offs between them",
@@ -69,12 +68,12 @@ const crossBorderNetworkArchitecture: Resource = {
       blocks: [
         {
           kind: "p",
-          text: "A user in Shanghai opening a page hosted overseas may wait on DNS, connection setup, the network path, and the application itself. Measure each part from the user's location before changing the architecture. Cross-border performance can vary by carrier, time, destination, and protocol.",
+          text: "A user in Shanghai opening a page hosted in Virginia is not waiting on your application. They are waiting on a path. Every request crosses the international gateway, and that hop is shared by all traffic entering and leaving the mainland. It behaves well for most of the day and degrades predictably in the evening peak, when latency climbs and packet loss appears.",
         },
         {
           kind: "ul",
           items: [
-            "Extra round trips add up when a page makes many sequential requests; record the actual timing for your users and routes.",
+            "Round trips cost 150-300 ms, so a page that needs eight of them pays over a second before your application does any work.",
             "Packet loss is more damaging than latency. One lost packet stalls the whole TCP stream until it is retransmitted, which is why these sites feel unpredictable rather than merely slow.",
             "TLS handshakes are the first thing to fail. When a connection is reset mid-handshake the user gets an error page, not a slow page.",
             "DNS adds round trips of its own, and answers pointing at distant addresses make everything downstream worse.",
@@ -82,7 +81,7 @@ const crossBorderNetworkArchitecture: Resource = {
         },
         {
           kind: "p",
-          text: "If failures appear only for users in a particular region or at certain times, origin-side monitoring may miss them. Combine real user measurements with probes from the affected networks.",
+          text: "The result is a pattern most teams recognise: fine in the morning, unusable at 21:00, with error rates that never show up in your own monitoring, because your monitoring sits next to the origin.",
         },
       ],
     },
@@ -236,11 +235,11 @@ const crossBorderNetworkArchitecture: Resource = {
 const icpFilingExplained: Resource = {
   slug: "icp-filing-explained",
   type: "Guide",
-  title: "ICP Filing for China Websites: Hosting, Eligibility, and Alternatives",
+  title: "ICP Filing, Explained: What Needs It and What Does Not",
   excerpt:
-    "Understand when a mainland internet service may need ICP filing, what to check with a hosting provider, and how overseas delivery differs.",
-  updated: "2026-09-28",
-  readingTime: "6 min read",
+    "The single rule that decides whether a China-facing site needs an ICP filing, who is allowed to file, and the legitimate alternative when you cannot.",
+  updated: "2026-09-17",
+  readingTime: "8 min read",
   seoKeywords: [
     "ICP filing",
     "ICP 备案",
@@ -250,18 +249,14 @@ const icpFilingExplained: Resource = {
     "mainland hosting requirements",
   ],
   relatedProducts: ["edge-acceleration", "colocation", "cloud-connect"],
-  references: [
-    { label: "MIIT: Measures for the Record-Filing of Non-Commercial Internet Information Services", url: "https://ynca.miit.gov.cn/zwgk/zcwj/flfg/art/2024/art_2e96227c42924af9b49b7f13b81fd124.html" },
-    { label: "MIIT: Internet Information Services Regulation", url: "https://cqca.miit.gov.cn/zwgk/zcwj/flfg/art/2026/art_3aa3d50dbe1648fda74aeab4f39b2db1.html" },
-  ],
   intro:
-    "ICP filing is a key planning question for an internet service delivered from mainland China. The answer depends on the operator, service type, hosting arrangement, and applicable rules. This guide gives a starting framework and links to the governing rules; confirm the specific deployment with your access provider and qualified advisers.",
+    "The ICP filing is the biggest gating decision on a China-facing project. It decides where your servers can live, how long the launch takes, and whether the whole thing needs a mainland entity. This guide covers what actually triggers the requirement, and what does not.",
   takeaways: [
     "What an ICP filing is, and how it differs from an ICP licence",
-    "Which parts of the service and hosting plan affect filing requirements",
-    "What the operator and access provider need to confirm",
+    "The one rule that decides whether you need one",
+    "Who is allowed to file, and why many foreign companies cannot",
     "What the process costs in time",
-    "How overseas delivery differs from mainland hosting",
+    "The legitimate alternative when you cannot or will not file",
   ],
   sections: [
     {
@@ -280,23 +275,23 @@ const icpFilingExplained: Resource = {
     },
     {
       id: "the-rule",
-      heading: "What to check before deciding",
+      heading: "The rule that decides it",
       blocks: [
         {
           kind: "p",
-          text: "Start with where and by whom the internet information service is provided, then review the access and hosting arrangement. Audience location alone does not settle the filing question.",
+          text: "The requirement follows the server, not the user.",
         },
         {
           kind: "ul",
           items: [
-            "A public internet service delivered from mainland infrastructure: review the applicable filing or licensing path with the access provider.",
-            "An overseas-hosted service reaching mainland users: assess the actual service, operator, data flows, and any other applicable obligations.",
-            "An internal service on a private network: confirm its status and access model rather than assuming the public-site rules apply.",
+            "Servers inside the mainland serving the public: filing required.",
+            "Servers outside the mainland, including Hong Kong, serving mainland users: no filing required.",
+            "Servers inside the mainland on a private network for internal use: different rules apply, so confirm with your provider.",
           ],
         },
         {
           kind: "p",
-          text: "Hong Kong is one possible near-shore location for an overseas-hosted service. Its network performance and legal treatment still need to be assessed for the specific service.",
+          text: "This is why so many China-facing sites run from Hong Kong. It is the nearest place to serve mainland users without triggering the requirement.",
         },
         {
           kind: "p",
@@ -351,7 +346,7 @@ const icpFilingExplained: Resource = {
             ],
             [
               "You need a filing to serve mainland users",
-              "The filing rules concern services provided within mainland China; confirm the operator and service scope for the proposed arrangement.",
+              "You need one to host inside the mainland. Serving mainland users from outside it does not require one.",
             ],
             [
               "A filing is a licence to operate",
@@ -375,13 +370,13 @@ const icpFilingExplained: Resource = {
       blocks: [
         {
           kind: "p",
-          text: "An overseas origin with a near-shore edge may be an option when mainland hosting is not part of the plan. Review the actual service, traffic path, and data handling before treating it as a substitute for a mainland deployment.",
+          text: "If you have no mainland entity, or no appetite for the process, the workable pattern is to serve mainland users from near-shore edge nodes outside the mainland and leave your origin where it is.",
         },
         {
           kind: "ul",
           items: [
-            "Confirm the service's filing and licensing position for the selected delivery arrangement.",
-            "Plan the DNS, TLS, cache, and rollback changes for the chosen edge service.",
+            "No filing, because no mainland hosting is involved.",
+            "One DNS record to change, and the same record to roll back.",
             "Your hostname and your certificates stay yours.",
             "If a filing becomes worthwhile later, the same hostname can move onto mainland infrastructure.",
           ],
@@ -395,10 +390,10 @@ const icpFilingExplained: Resource = {
         {
           kind: "ul",
           items: [
-            "Must the service or data be located in mainland China? If yes, assess the hosting, filing, and sector requirements at the start of the project.",
+            "Does the data legally have to stay inside the mainland? If yes, a filing is on the critical path, so start it now.",
             "Do you have a mainland entity, or a partner who does? Without one, filing is usually not available to you.",
             "Is the domain eligible? Check before you plan anything else.",
-            "What timeline has the access provider confirmed for the required filing or licence?",
+            "Is the timeline acceptable? If you need to be live next month, plan around not having one.",
             "Can the hostname stay the same either way? If it can, you can serve users now and file in parallel.",
           ],
         },
@@ -412,9 +407,9 @@ const nearShoreVsMainland: Resource = {
   type: "Comparison",
   title: "Near-Shore Edge vs Mainland Hosting vs Overseas Origin",
   excerpt:
-    "Compare overseas origin, near-shore edge, and mainland hosting by cacheability, network path, operational work, and filing review.",
-  updated: "2026-09-28",
-  readingTime: "4 min read",
+    "Three ways to put a China-facing site in front of users, compared on filing, latency, failure behaviour, and how hard each one is to leave.",
+  updated: "2026-09-17",
+  readingTime: "8 min read",
   seoKeywords: [
     "near-shore edge vs mainland hosting",
     "China hosting comparison",
@@ -424,7 +419,7 @@ const nearShoreVsMainland: Resource = {
   ],
   relatedProducts: ["edge-acceleration", "colocation", "elastic-cloud-servers"],
   intro:
-    "There are three common delivery patterns for a site with users in mainland China. The right choice depends on where the service is provided, how much traffic can be cached, the measured user experience, and the work required to operate or change the design.",
+    "There are three practical ways to put a site in front of mainland users. They differ in filing, latency, failure behaviour, and how hard they are to leave. Here is what each one is actually good at.",
   takeaways: [
     "How each option behaves under evening-peak congestion",
     "What each one requires before it can go live",
@@ -445,19 +440,19 @@ const nearShoreVsMainland: Resource = {
             "Mainland hosting, filed",
           ],
           rows: [
-            ["Filing review", "Check the service and operator", "Check edge and origin arrangement", "Plan filing or licensing with the provider"],
-            ["Launch work", "Measure and tune the existing site", "Configure DNS, TLS, cache, and security", "Arrange hosting, filing, and migration"],
+            ["Filing required", "No", "No", "Yes"],
+            ["Time to launch", "None", "Hours", "Weeks"],
             [
               "Typical round trip from major mainland cities",
-              "Measure from target user networks",
-              "Measure edge and origin-fetch paths",
-              "Measure from target user networks",
+              "150-300 ms",
+              "20-60 ms to the edge",
+              "10-40 ms",
             ],
             [
               "Evening peak behaviour",
-              "Depends on the route and origin",
-              "Cache hits avoid origin fetch; misses still depend on the route",
-              "Depends on the facility and local network",
+              "Degrades, with loss and handshake failures",
+              "Mostly unaffected, because cache hits never cross the border",
+              "Unaffected",
             ],
             [
               "Where the data sits",
@@ -491,11 +486,11 @@ const nearShoreVsMainland: Resource = {
         },
         {
           kind: "p",
-          text: "Near-shore edge. A useful option when much of the response can be cached near users while the origin stays overseas. Dynamic requests and cache misses still need a reliable path to the origin.",
+          text: "Near-shore edge. The best ratio of improvement to effort. Most requests never leave the edge, so the cross-border path stops being on the critical path for the common case, and it works with the origin you already run.",
         },
         {
           kind: "p",
-          text: "Mainland hosting. A possible choice when applications or data need to run locally, subject to the service's filing, licensing, and sector requirements. It adds migration and ongoing provider management to the technical work.",
+          text: "Mainland hosting. The best latency available, and the only option when data has to stay in the country. It also carries the most work that is not technical: the filing, ongoing compliance, and a provider relationship you cannot avoid.",
         },
       ],
     },
@@ -509,7 +504,7 @@ const nearShoreVsMainland: Resource = {
             "How much of your site is cacheable. The more static the site, the better the edge performs and the less it matters where the origin is.",
             "How much traffic is genuinely dynamic. An API returning unique data on every call gets far less from an edge than a marketing site does.",
             "Whether you have long-lived connections. Sessions and streams are the most exposed to cross-border instability, and where a near-shore edge earns the most.",
-            "Your regulatory posture. Confirm the actual data location and service obligations before selecting a hosting pattern.",
+            "Your regulatory posture. If your sector carries data residency obligations, the decision is already made and only one column is available.",
             "Organisational cost. A mainland filing is a recurring administrative commitment, not a one-off project.",
           ],
         },
@@ -525,7 +520,7 @@ const nearShoreVsMainland: Resource = {
         },
         {
           kind: "p",
-          text: "Keeping the hostname independent of the hosting platform can make a later move easier. Even with the same hostname, plan for DNS, certificates, application behavior, cache rules, and data migration before switching providers.",
+          text: "If the hostname stays the same and the DNS record is one CNAME, changing your mind is a DNS change. If moving means a new domain, new certificates, and a redirect from the old one, then the first choice you make becomes permanent, which is a good argument for keeping the hostname independent of the infrastructure underneath it.",
         },
       ],
     },
@@ -537,9 +532,9 @@ const nearShoreVsMainland: Resource = {
           kind: "ul",
           items: [
             "China traffic is small and nobody is complaining: change nothing.",
-            "China users are a significant segment and the origin remains overseas: assess an edge using real traffic measurements.",
-            "The application or data must run in the mainland: evaluate local hosting and the required approvals with the provider.",
-            "Requirements are still uncertain: keep the hostname portable while testing the available delivery paths.",
+            "China users are a real segment and you have no mainland entity: near-shore edge.",
+            "China users are the primary segment, or data must stay in-country: mainland hosting with a filing.",
+            "You are not sure yet: near-shore edge now, with the migration path kept open.",
           ],
         },
       ],
@@ -552,9 +547,9 @@ const crossBorderLinkOptions: Resource = {
   type: "Comparison",
   title: "Cross-Border Link Options: Dedicated Line, MPLS, SD-WAN, VPN",
   excerpt:
-    "Compare private circuits, MPLS, SD-WAN, and VPNs for known endpoints, then separate that decision from public website delivery.",
-  updated: "2026-09-28",
-  readingTime: "5 min read",
+    "Enterprise circuits and public web traffic need different answers. What each cross-border option is good at, and where the cost actually scales.",
+  updated: "2026-09-17",
+  readingTime: "9 min read",
   seoKeywords: [
     "IPLC",
     "IEPL",
@@ -565,7 +560,7 @@ const crossBorderLinkOptions: Resource = {
   ],
   relatedProducts: ["private-connect", "dia", "ip-transit", "virtual-edge"],
   intro:
-    "Connecting known business endpoints and delivering a public site to users in China are different design problems. This comparison explains what each transport option does, which paths it depends on, and when an edge is relevant.",
+    "Two different problems both get called connecting to China. One is getting your network into a mainland one, or your staff onto an overseas network. The other is getting a public website in front of mainland users. The right answer is different for each, and mixing them up is expensive.",
   takeaways: [
     "Why enterprise links and public web traffic need different solutions",
     "What dedicated lines, MPLS, SD-WAN, and VPNs are each good at",
@@ -585,12 +580,12 @@ const crossBorderLinkOptions: Resource = {
           kind: "ul",
           items: [
             "Company traffic: predictable volume, a known set of users, site-to-site or user-to-site, and often sensitive. It benefits from a dedicated private path.",
-            "Public traffic: users and volumes may vary, and requests travel over the open internet. Cacheability depends on the application, so test static and dynamic paths separately.",
+            "Public traffic: unpredictable volume, unknown users, largely cacheable, and delivered over the open internet. It benefits from being terminated close to the user.",
           ],
         },
         {
           kind: "p",
-          text: "A private circuit connects known endpoints; it does not directly connect every public visitor. An edge can improve delivery to visitors, but it does not replace a private path for business systems.",
+          text: "Buying a dedicated circuit to speed up a public website is expensive and mostly wasted, because it cannot help users you have never met. Conversely, an edge network cannot give your engineers a private tunnel into a mainland data centre, since that is a different product entirely.",
         },
       ],
     },
@@ -605,13 +600,13 @@ const crossBorderLinkOptions: Resource = {
             [
               "Dedicated line",
               "Reserved capacity on a private circuit between two fixed points",
-              "Reserved capacity and service targets on the contracted path",
+              "Predictable latency and loss, unaffected by internet congestion",
               "Priced by bandwidth and distance; weeks to provision; fixed endpoints",
             ],
             [
               "MPLS VPN",
               "Carrier-managed private network with quality of service",
-              "Carrier-managed multi-site connectivity with agreed service targets",
+              "Multi-site with contractual SLAs; predictable across many destinations",
               "Cost scales with sites and bandwidth; slower to change",
             ],
             [
@@ -630,7 +625,7 @@ const crossBorderLinkOptions: Resource = {
         },
         {
           kind: "p",
-          text: "VPN and SD-WAN performance depend on the underlay links they use. A carrier-managed MPLS VPN or dedicated line can use private transport with different service commitments. Compare the actual path and SLA rather than the product label alone.",
+          text: "The pattern is that everything except a dedicated circuit inherits the behaviour of the public path underneath it. SD-WAN makes better use of bad paths; it does not create a good one.",
         },
       ],
     },
@@ -654,7 +649,7 @@ const crossBorderLinkOptions: Resource = {
             [
               "Near-shore edge",
               "Terminates requests close to the mainland and caches aggressively",
-              "Public sites with overseas origins; assess API cacheability and filing requirements",
+              "Public sites and APIs with a mainland audience and no filing",
             ],
             [
               "Mainland hosting",
@@ -680,7 +675,7 @@ const crossBorderLinkOptions: Resource = {
             "Dedicated capacity is priced for peak and billed around the clock. If your peak lasts four hours a day, most of that circuit is idle.",
             "Edge networks are priced on traffic and requests, so cost tracks usage, which cuts both ways: a cache miss costs more than a hit.",
             "Cache-hit ratio is a cost lever as much as a performance lever. Improving it lowers the bill and the latency at the same time.",
-            "Provisioning time is a cost too. Ask each provider for the route-specific survey and delivery schedule.",
+            "Provisioning time is a cost too. A circuit that takes six weeks to install is six weeks of lost business.",
           ],
         },
       ],
@@ -692,8 +687,8 @@ const crossBorderLinkOptions: Resource = {
         {
           kind: "ul",
           items: [
-            "Public website or API for mainland users: measure direct delivery, then test whether an edge improves the relevant requests.",
-            "Private access into a mainland network: compare dedicated line, MPLS, and suitable overlay designs against the route and security requirements.",
+            "Public website or API for mainland users: near-shore edge.",
+            "Private access into a mainland network: dedicated line or MPLS, with SD-WAN as a cheaper approximation.",
             "Both: use the edge for users and a private path for the systems that need one. They are complementary, not competing.",
           ],
         },
@@ -707,9 +702,9 @@ const crossBorderLatencyTriage: Resource = {
   type: "Playbook",
   title: "Playbook: Diagnosing Latency, Jitter, and Packet Loss for China Users",
   excerpt:
-    "Measure DNS, connection, TLS, server response, and transfer time from affected user networks before choosing a fix.",
-  updated: "2026-09-28",
-  readingTime: "4 min read",
+    "A practical order of operations for finding which part of the path is slow, when your own monitoring sits next to the origin and cannot see the problem.",
+  updated: "2026-09-17",
+  readingTime: "9 min read",
   seoKeywords: [
     "cross-border latency troubleshooting",
     "packet loss China",
@@ -719,7 +714,7 @@ const crossBorderLatencyTriage: Resource = {
   ],
   relatedProducts: ["edge-acceleration", "private-connect", "dia"],
   intro:
-    "When users in China report slow or failed requests, start by locating the delay or error. Origin metrics alone may miss the user-side path. This playbook orders the measurements so you can distinguish network, cache, and application causes.",
+    "When users in China report that the site is slow, the useful question is which part of the path is slow, and the monitoring you already have probably cannot tell you. This is an order of operations for finding out.",
   takeaways: [
     "Why origin-side monitoring cannot see the problem",
     "How to split a request into DNS, connection, TLS, and server time",
@@ -754,7 +749,7 @@ const crossBorderLatencyTriage: Resource = {
         },
         {
           kind: "p",
-          text: "If DNS, connection, or TLS time dominates while server processing is stable, investigate the user-side path and connection setup before changing the application.",
+          text: "If the first three dominate while your application time looks fine, the problem is the network, and no amount of application tuning will fix it.",
         },
       ],
     },
@@ -765,10 +760,10 @@ const crossBorderLatencyTriage: Resource = {
         {
           kind: "ul",
           items: [
-            "Origin-side monitoring may miss delays or failures before a request reaches the origin.",
+            "Origin-side monitoring sits at the origin and cannot see the cross-border hop, which is exactly where the problem is.",
             "Regional probes from several mainland cities give you a baseline, and separate a path-wide problem from a city-specific one.",
             "Real user monitoring captures what real sessions experienced, including failures that never reached your origin.",
-            "Sample across the day and during reported incident windows; a single test can miss intermittent path problems.",
+            "Sample during the evening peak. A test at 10:00 can look perfect on a path that collapses at 21:00.",
           ],
         },
       ],
@@ -858,11 +853,11 @@ const crossBorderLatencyTriage: Resource = {
 const chinaDarkFiber: Resource = {
   slug: "china-dark-fiber",
   type: "Guide",
-  title: "Dark Fiber vs Managed Circuits in China",
+  title: "China Dark Fiber: When Leasing Glass Beats Leasing Bandwidth",
   excerpt:
-    "Compare dark fiber with managed circuits using route availability, lease terms, optics, maintenance, and expected capacity.",
-  updated: "2026-09-28",
-  readingTime: "6 min read",
+    "Dark fiber is the one way to buy bandwidth that does not get more expensive as you use more of it. Where it applies in China, how it is priced, and where it stops making sense.",
+  updated: "2026-09-18",
+  readingTime: "10 min read",
   seoKeywords: [
     "China dark fiber",
     "dark fiber China pricing",
@@ -873,26 +868,26 @@ const chinaDarkFiber: Resource = {
   ],
   relatedProducts: ["dark-fiber", "private-connect", "colocation", "smart-hands"],
   intro:
-    "At high and sustained capacity, a leased fiber pair may be worth comparing with a managed circuit. Dark fiber gives you control of the optical layer but adds equipment, maintenance, and fault responsibilities. This guide walks through the route and cost questions to check before choosing it.",
+    "Past a certain bandwidth the interesting question stops being which circuit to buy and becomes whether to buy a circuit at all. Dark fiber is the second option: you lease the glass between two of your own sites, light it yourself, and stop paying per megabit. Here is where that applies in China, how it is priced, and where it stops making sense.",
   takeaways: [
-    "Where to look for fiber availability on a specific route",
+    "Why China's three carriers do not sell dark fiber, and why it is not a technical limit",
     "How per-kilometre pricing changes the economics of high bandwidth",
     "The route types where it works, and the ones where it does not",
-    "Why cross-border segments need a separate service review",
+    "Why the cross-border leg is always a circuit, never bare fiber",
     "What you need in-house before dark fiber is the cheaper option",
   ],
   sections: [
     {
       id: "why-carriers-dont-sell-it",
-      heading: "Where dark fiber is sourced",
+      heading: "Why the big three do not sell it",
       blocks: [
         {
           kind: "p",
-          text: "Dark fiber availability is route-specific. A standard carrier circuit quote does not tell you whether a usable fiber pair is available between your two addresses. Compare carrier and specialist operator offerings, the termination points, and who owns the fault response before assuming a route can be leased as bare fiber.",
+          text: "China Telecom, China Unicom, and China Mobile will sell you almost any circuit you can describe, but not bare glass. The reason is commercial rather than technical. A carrier's product is a circuit: priced by bandwidth, billed every month, and resellable at every step up the range. Leasing dark fiber hands over the physical layer itself, and with it capacity the carrier could otherwise sell many times over. There is no incentive to do that, so the product does not appear on their price lists.",
         },
         {
           kind: "p",
-          text: "Specialist fiber operators, data centers, and other route owners may be able to quote a pair between named endpoints. Their terms can differ from a managed circuit because the customer or a service partner must provide the optical equipment and operational model.",
+          text: "The supply comes from specialist fiber operators instead: regional resource holders, data centre operators, and organisations that own their own ducts and wayleave. What they sell is a fiber pair on a specific route, between two named addresses. They are not built around selling bandwidth as a service — they rent infrastructure.",
         },
         {
           kind: "p",
@@ -906,12 +901,12 @@ const chinaDarkFiber: Resource = {
       blocks: [
         {
           kind: "p",
-          text: "A managed circuit is commonly quoted by capacity and route; a dark fiber quote also reflects route length, availability, access, term, and maintenance. Ask for both recurring lease and longer-term rights-of-use terms when available, then compare the full life-cycle cost.",
+          text: "Circuits are priced by bandwidth. Dark fiber is priced by distance. A route is quoted either as a recurring cost per kilometre per month, or as a one-off IRU payment for a long term — commonly ten to twenty years — plus an annual maintenance fee. Both forms are normal; the choice usually comes down to how long you expect to be there.",
         },
         {
           kind: "ul",
           items: [
-            "Fiber lease charges are separate from the optics and equipment needed for each capacity upgrade.",
+            "Distance sets the cost, bandwidth does not. Going from 10G to 100G to 400G is a transceiver change at each end, not a new contract.",
             "Metro routes are the easiest to justify, because the distance is short and the wayleave is usually already in place.",
             "Inter-city long-haul works on the same principle: the distance goes up, so the price goes up, but it stays independent of how much you push through the fiber.",
             "The quote is not the whole cost. Add transceivers, DWDM if you need more than one wavelength, ODF and patching at both ends, and the engineering time to run it.",
@@ -920,7 +915,7 @@ const chinaDarkFiber: Resource = {
         },
         {
           kind: "p",
-          text: "Compare quotes over the same term and capacity plan. Include optical equipment, power, space, maintenance, and repair responsibilities alongside the fiber lease.",
+          text: "Put those numbers together and the economics are easy to read: a leased circuit has one price at 10G and a different price at 100G, while a fiber pair has a single price that does not care.",
         },
       ],
     },
@@ -934,29 +929,29 @@ const chinaDarkFiber: Resource = {
           rows: [
             [
               "Two data centres of your own, 100 Gbps or more, a route that will not change",
-              "Request dark fiber and managed circuit quotes for the same route and term.",
+              "Dark fiber. This is the case it was built for.",
             ],
             [
               "Two offices, or two buildings on one campus, needing guaranteed bandwidth",
-              "Consider dark fiber if a route is available and both ends can host equipment.",
+              "Dark fiber on a metro route, provided both ends can host your equipment.",
             ],
             [
               "Inter-city between Chinese hubs at very high bandwidth",
-              "Compare route availability and total cost with a managed circuit.",
+              "Dark fiber, after comparing it against the circuit price for the same distance.",
             ],
             [
               "Under 10 Gbps, or bandwidth that swings a lot",
-              "A managed circuit may fit better; compare the actual utilization and terms.",
+              "A circuit. Paying for capacity you are not using is worse than paying per megabit.",
             ],
             [
               "It has to be live in two weeks",
-              "Ask providers for delivery dates; a new fiber build may take longer than an available circuit.",
+              "A circuit. Fiber has to be surveyed, built, and spliced, which takes far longer.",
             ],
           ],
         },
         {
           kind: "p",
-          text: "The decision depends on more than bandwidth. Check access at both endpoints, expected route life, optical expertise, and who will maintain the pair before comparing costs.",
+          text: "The practical test is not bandwidth alone. Dark fiber needs both ends to be places you control, a route you expect to keep, and somebody able to work at the optical layer. Miss any one of those and a circuit is the better answer, even at 100 Gbps.",
         },
       ],
     },
@@ -977,19 +972,19 @@ const chinaDarkFiber: Resource = {
     },
     {
       id: "cross-border-is-different",
-      heading: "Cross-border segments need a separate review",
+      heading: "Why the cross-border leg is never bare fiber",
       blocks: [
         {
           kind: "p",
-          text: "A domestic fiber pair between sites in China does not by itself provide a service to an overseas node. Treat the international segment as a separate design and procurement question.",
+          text: "Dark fiber in China is a domestic resource. It connects two of your own sites inside the country: two data centres, two offices, or a data centre and an office. It does not reach an overseas node.",
         },
         {
           kind: "p",
-          text: "International capacity, handoffs, and applicable licences differ from a domestic fiber lease. Compare the available carrier services and review the end-to-end route, data flows, and support boundaries for the proposed cross-border path.",
+          text: "Cross-border capacity sits with a small number of operators who hold the international transmission licences and the cable capacity, and it is not retailed as fiber by the kilometre. In practice the cross-border leg is DPLC for the domestic run to the border or to Hong Kong, joined to IEPL for the international segment, and the combination is normally referred to simply as an IEPL line.",
         },
         {
           kind: "p",
-          text: "A complete path may combine domestic fiber or a circuit with a separate international service. Document each handoff and escalation owner so a fault can be traced across the full route.",
+          text: "So a complete path from China to an overseas node is two technologies end to end: whatever you run inside the country — dark fiber, DPLC, or a standard circuit — handed to an IEPL segment that carries it out. We source both halves, which is why the contract stays single and the escalation path stays single, including for faults that land exactly on the seam between the two.",
         },
       ],
     },

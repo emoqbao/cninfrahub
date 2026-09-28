@@ -17,10 +17,7 @@ export default function Hero() {
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-subtle sm:text-xl">
             One partner who knows China&apos;s infrastructure ecosystem inside out.
             We source, integrate, and manage network, compute, and data center
-            resources from leading providers. For many services, our agency
-            relationships with China&apos;s three major telecom operators and other
-            providers give us access to channel pricing that customers may not get
-            through direct procurement.
+            resources from the best providers — at pricing you can&apos;t get on your own.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/products/" variant="primary" size="lg">
