@@ -8,12 +8,15 @@ import CTABanner from "@/components/home/CTABanner";
 import FeaturedGuides from "@/components/home/FeaturedGuides";
 import { socialMetadata } from "@/lib/seo";
 
+const homeDescription =
+  "Source China network, compute, and data center services through one partner. Agency-channel pricing on many services can be more competitive than direct procurement.";
+
 export const metadata: Metadata = {
+  description: homeDescription,
   alternates: { canonical: "/" },
   ...socialMetadata({
     title: "China Infrastructure Services | CN-Infra Hub",
-    description:
-      "Explore network, compute, and data center services for China and cross-border projects, coordinated through one partner.",
+    description: homeDescription,
     path: "/",
   }),
 };

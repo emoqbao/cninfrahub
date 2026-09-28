@@ -4,7 +4,7 @@ export const whatWeDoSteps = [
   {
     icon: Search,
     title: "Source",
-    description: "We compare carriers, data centers, and hardware partners against your location, capacity, support, and budget requirements.",
+    description: "Our agency relationships with China's three major telecom operators and other providers give us access to agent-channel pricing on many services, often below what customers can obtain through direct procurement. We compare routes, capacity, locations, and terms for your requirements.",
   },
   {
     icon: Link2,
@@ -27,7 +27,7 @@ export function WhatWeDoTitle() {
         One partner to source, connect, and manage your China infrastructure
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-        We bring network, compute, and data center services together around your requirements, with a clear handoff from design through ongoing operations.
+        We bring network, compute, and data center services together around your requirements. Through our agency channels, many carrier and infrastructure services are available at more competitive rates than customers can obtain by purchasing directly. Pricing depends on the route, capacity, location, and service terms.
       </p>
     </div>
   );

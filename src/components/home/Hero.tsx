@@ -15,9 +15,10 @@ export default function Hero() {
             Without Borders
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-subtle sm:text-xl">
-            Plan and run infrastructure in China through one partner. We source
-            network, compute, and data center services from multiple providers,
-            then coordinate the design, delivery, and ongoing support.
+            Plan and run infrastructure in China through one partner. Our agency
+            relationships with the three major telecom operators and other providers
+            give us access to agent-channel pricing on many services, often below
+            direct-purchase rates.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/products/" variant="primary" size="lg">
