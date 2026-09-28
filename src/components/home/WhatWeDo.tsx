@@ -4,17 +4,17 @@ export const whatWeDoSteps = [
   {
     icon: Search,
     title: "Source",
-    description: "Our agency relationships with China's three major telecom operators and other providers give us access to agent-channel pricing on many services, often below what customers can obtain through direct procurement. We compare routes, capacity, locations, and terms for your requirements.",
+    description: "We tap into our network of carriers, data centers, and hardware partners across China to find the right resources for your requirements. On many services, our agency relationships with the three major telecom operators and other providers offer access to channel pricing that may be unavailable through direct procurement.",
   },
   {
     icon: Link2,
     title: "Integrate",
-    description: "We design and connect the pieces — dedicated circuits, cloud links, compute, colocation — into a unified architecture that fits your existing stack.",
+    description: "We design and connect dedicated circuits, cloud links, compute, and colocation into an architecture that fits your existing stack.",
   },
   {
     icon: Wrench,
     title: "Manage",
-    description: "We coordinate provider handoffs, monitoring, support, and the operational work agreed for your deployment.",
+    description: "We coordinate provider handoffs, monitoring, compliance requirements, and bilingual support according to the scope agreed for your deployment.",
   },
 ];
 
@@ -24,10 +24,10 @@ export function WhatWeDoTitle() {
       <div className="mb-3 h-px w-8 bg-brand" />
       <p className="text-sm font-semibold uppercase tracking-wider text-brand">What We Do</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-        One partner to source, connect, and manage your China infrastructure
+        We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-        We bring network, compute, and data center services together around your requirements. Through our agency channels, many carrier and infrastructure services are available at more competitive rates than customers can obtain by purchasing directly. Pricing depends on the route, capacity, location, and service terms.
+        As a managed service aggregator, we source from established providers, bring the right services together, and coordinate delivery around your requirements. Our agency channels can provide more competitive pricing on many services; rates depend on route, capacity, location, and commercial terms.
       </p>
     </div>
   );

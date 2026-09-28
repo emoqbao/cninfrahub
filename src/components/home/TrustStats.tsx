@@ -1,8 +1,8 @@
 export const trustStats = [
-  { title: "One Point of Contact", desc: "One team coordinates providers and support" },
-  { title: "Provider Comparison", desc: "Compare routes, capacity, locations, and commercial terms" },
-  { title: "Joined-Up Design", desc: "Connect network, compute, and colocation decisions" },
-  { title: "China Operations", desc: "Coordinate delivery and support across local providers" },
+  { title: "One Invoice", desc: "Bring supported network, cloud, and data center services together under one commercial relationship." },
+  { title: "Below-Market Pricing", desc: "Agency-channel rates on many services can beat direct-purchase pricing; quotes vary by route, capacity, and terms." },
+  { title: "Neutral & Independent", desc: "Compare carriers and providers against your requirements, without being tied to a single network." },
+  { title: "Compliance by Default", desc: "Factor local filing and licensing requirements into planning, with responsibilities agreed for each service." },
 ];
 
 export function TrustStatItem({ stat }: { stat: (typeof trustStats)[number] }) {

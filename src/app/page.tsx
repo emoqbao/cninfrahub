@@ -9,7 +9,7 @@ import FeaturedGuides from "@/components/home/FeaturedGuides";
 import { socialMetadata } from "@/lib/seo";
 
 const homeDescription =
-  "Source China network, compute, and data center services through one partner. Agency-channel pricing on many services can be more competitive than direct procurement.";
+  "Source, integrate, and manage network, compute, and data center services in China through one partner. Agency relationships with major telecom operators provide channel pricing on many services.";
 
 export const metadata: Metadata = {
   description: homeDescription,
