@@ -46,23 +46,16 @@ export default function AboutPage() {
               </h1>
             </div>
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border bg-surface-alt flex items-center justify-center">
-                <svg viewBox="0 0 200 200" className="w-3/4 h-3/4" fill="none">
-                  <rect x="60" y="15" width="80" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <rect x="75" y="22" width="50" height="6" rx="2" fill="#0d0d0d" opacity="0.3" />
-                  <rect x="75" y="32" width="35" height="4" rx="1" fill="#0d0d0d" opacity="0.15" />
-                  <rect x="20" y="145" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <rect x="66" y="155" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <rect x="132" y="145" width="48" height="28" rx="4" stroke="#0d0d0d" strokeWidth="1.5" fill="none" />
-                  <circle cx="100" cy="90" r="22" fill="#8a6d5c" opacity="0.12" />
-                  <circle cx="100" cy="90" r="22" stroke="#8a6d5c" strokeWidth="1.5" fill="none" />
-                  <circle cx="100" cy="90" r="8" fill="#8a6d5c" />
-                  <line x1="88" y1="43" x2="95" y2="68" stroke="#d4d4d4" strokeWidth="1.5" />
-                  <line x1="112" y1="43" x2="105" y2="68" stroke="#d4d4d4" strokeWidth="1.5" />
-                  <line x1="80" y1="108" x2="44" y2="150" stroke="#d4d4d4" strokeWidth="1.5" />
-                  <line x1="100" y1="112" x2="90" y2="155" stroke="#d4d4d4" strokeWidth="1.5" />
-                  <line x1="115" y1="106" x2="156" y2="150" stroke="#d4d4d4" strokeWidth="1.5" />
-                </svg>
+              <div className="relative w-full max-w-lg aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-[#FEFDF7]">
+                {/* Static export has no image optimizer, so this stays a pre-compressed WebP. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/about-hero-v2.webp"
+                  alt="An industrial landscape with factories and cloud imagery, illustrating infrastructure and cloud services"
+                  width={1684}
+                  height={934}
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </div>
