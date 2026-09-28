@@ -51,6 +51,8 @@ export default function AboutPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/about-hero-v2.webp"
+                  srcSet="/images/about-hero-v2-480w.webp 480w, /images/about-hero-v2-768w.webp 768w, /images/about-hero-v2-1024w.webp 1024w, /images/about-hero-v2.webp 1684w"
+                  sizes="(min-width: 1024px) 512px, calc(100vw - 48px)"
                   alt="An industrial landscape with factories and cloud imagery, illustrating infrastructure and cloud services"
                   width={1684}
                   height={934}

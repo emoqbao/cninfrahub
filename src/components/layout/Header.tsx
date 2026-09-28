@@ -73,7 +73,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
               <span className="text-base font-semibold tracking-tight text-ink">CN-INFRA HUB</span>
             </Link>
 
-            <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+            <nav aria-label="Primary navigation" className="hidden flex-1 items-center justify-center gap-1 lg:flex">
               {mainNav.map((item) => {
                 if (item.label === "Products") {
                   return (
@@ -81,6 +81,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
                       <button
                         onClick={toggleMega}
                         aria-expanded={megaOpen}
+                        aria-controls={megaOpen ? "products-menu" : undefined}
                         aria-haspopup="true"
                         className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (megaOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
@@ -96,6 +97,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
                       <button
                         onClick={toggleSolutions}
                         aria-expanded={solutionsOpen}
+                        aria-controls={solutionsOpen ? "solutions-menu" : undefined}
                         aria-haspopup="true"
                         className={"flex items-center gap-1 rounded-md px-4 py-2 text-[15px] font-semibold transition-colors " + (solutionsOpen ? "text-ink" : "text-ink hover:text-faded transition-colors duration-150")}
                       >
@@ -103,7 +105,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
                         <ChevronDown className={"h-4 w-4 transition-transform " + (solutionsOpen ? "rotate-180" : "")} />
                       </button>
                       {solutionsOpen && (
-                        <div ref={solutionsPanelRef} className="absolute left-0 top-full z-50 pt-1">
+                        <div ref={solutionsPanelRef} id="solutions-menu" className="absolute left-0 top-full z-50 pt-1">
                           <div className="rounded-xl border border-border bg-white px-5 py-3">
                             <ul className="space-y-0.5">
                               {navSolutions.map((s) => (
@@ -165,7 +167,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
         </div>
 
         {megaOpen && (
-          <div ref={megaPanelRef} className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
+          <div ref={megaPanelRef} id="products-menu" className="absolute left-0 right-0 top-full z-50 px-6 pb-4 lg:px-8">
             <div className="mx-auto max-w-7xl rounded-xl border border-border bg-white px-8 py-6">
               <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-6 gap-y-6">
                 {navModules.map((mod) => (
@@ -189,7 +191,7 @@ export default function Header({ navModules, navProducts, navSolutions }: Header
 
         {mobileOpen && (
           <div className="border-t border-border bg-white px-6 pb-6 pt-4 lg:hidden max-h-[calc(100vh-64px)] overflow-y-auto">
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               {mainNav.map((item) => (
                 <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} className="rounded-md px-3 py-2.5 text-base font-semibold text-ink hover:bg-surface">
                   {item.label}

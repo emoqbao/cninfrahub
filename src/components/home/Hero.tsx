@@ -34,6 +34,8 @@ export default function Hero() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/products/home-hero-v8.webp"
+            srcSet="/images/products/home-hero-v8-480w.webp 480w, /images/products/home-hero-v8-768w.webp 768w, /images/products/home-hero-v8-1024w.webp 1024w, /images/products/home-hero-v8.webp 1536w"
+            sizes="(min-width: 1024px) 512px, calc(100vw - 48px)"
             alt="China infrastructure hub connecting AI, data centers, cloud servers, bare metal, public cloud, and web acceleration"
             width={1536}
             height={1024}

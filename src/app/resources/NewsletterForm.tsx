@@ -44,13 +44,15 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-6">
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
         <input
           type="email"
+          id="newsletter-email"
           name="email"
           required
           placeholder="your@email.com"
           aria-label="Email address"
+          aria-describedby={error ? "newsletter-error" : undefined}
           className="flex-1 rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-ink focus:outline-none"
         />
         <Button type="submit" variant="primary" size="md" disabled={loading}>
@@ -58,7 +60,7 @@ export default function NewsletterForm() {
         </Button>
       </div>
       {error && (
-        <p className="mt-3 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
+        <p id="newsletter-error" role="alert" className="mt-3 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
       )}
     </form>
   );

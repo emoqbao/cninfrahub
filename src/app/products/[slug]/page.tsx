@@ -143,7 +143,14 @@ export default async function ProductPage({ params }: Props) {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={product.heroImage}
-                    alt={product.name}
+                    srcSet={product.heroImage.endsWith(".webp")
+                      ? `${product.heroImage.replace(/\.webp$/, "-480w.webp")} 480w, ${product.heroImage.replace(/\.webp$/, "-768w.webp")} 768w, ${product.heroImage.replace(/\.webp$/, "-1024w.webp")} 1024w, ${product.heroImage} 1448w`
+                      : undefined}
+                    sizes="(min-width: 1024px) 512px, calc(100vw - 48px)"
+                    alt={`${product.name} infrastructure illustration`}
+                    width={product.heroImage.endsWith(".svg") ? 1200 : 1448}
+                    height={product.heroImage.endsWith(".svg") ? 900 : 1086}
+                    fetchPriority="high"
                     className="h-auto w-full max-w-lg rounded-2xl border border-border"
                   />
                 ) : (

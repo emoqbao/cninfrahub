@@ -143,6 +143,7 @@ export default async function SolutionPage({ params }: Props) {
                     alt={`${solution.name} architecture diagram`}
                     width={800}
                     height={450}
+                    loading="lazy"
                     className="h-auto w-full rounded-lg"
                   />
                 ) : (
