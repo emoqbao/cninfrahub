@@ -27,7 +27,7 @@ export function WhatWeDoTitle() {
         We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-        As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.
+        As a managed service aggregator, we source from established providers, bring the right services together, and coordinate delivery around your requirements. Our agency channels can provide more competitive pricing on many services.
       </p>
     </div>
   );
