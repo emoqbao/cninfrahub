@@ -29,7 +29,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center justify-center">
+        <div className="mt-10 flex items-center justify-center lg:mt-0 lg:justify-end">
           {/* Static export has no image optimizer, so this stays a pre-compressed WebP. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

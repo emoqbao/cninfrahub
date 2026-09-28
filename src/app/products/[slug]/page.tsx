@@ -137,14 +137,14 @@ export default async function ProductPage({ params }: Props) {
                   {product.tagline}
                 </p>
               </div>
-              <div className="hidden w-full items-center justify-end lg:flex">
+              <div className="flex w-full items-center justify-center lg:justify-end">
                 {product.heroImage ? (
                   // Static export uses pre-compressed WebP assets without an image optimizer.
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={product.heroImage}
                     alt={product.name}
-                    className="h-auto w-full max-w-lg rounded-2xl border border-border"
+                    className={`h-auto w-full ${product.id === "dia" || product.id === "cloud-connect" ? "max-w-none" : "max-w-lg"} rounded-2xl border border-border`}
                   />
                 ) : (
                   <ProductHeroIcon productId={product.id} />

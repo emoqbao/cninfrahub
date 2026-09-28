@@ -45,7 +45,7 @@ export default function AboutPage() {
                 We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
               </h1>
             </div>
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="flex items-center justify-center lg:justify-end">
               <div className="relative w-full max-w-lg aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-[#FEFDF7]">
                 {/* Static export has no image optimizer, so this stays a pre-compressed WebP. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}

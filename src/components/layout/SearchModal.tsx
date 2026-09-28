@@ -64,7 +64,7 @@ export default function SearchModal({ onClose }: SearchModalProps) {
         e.preventDefault();
         setSelectedIndex((prev) => Math.max(prev - 1, 0));
       }
-      if (e.key === "Enter" && results[selectedIndex]) {
+      if (e.key === "Enter" && e.target === inputRef.current && results[selectedIndex]) {
         e.preventDefault();
         router.push(results[selectedIndex].href);
         onClose();
@@ -104,8 +104,8 @@ export default function SearchModal({ onClose }: SearchModalProps) {
               value={query}
               role="combobox"
               aria-label="Search products and solutions"
-              aria-expanded={query.length >= 2}
-              aria-controls="search-results"
+              aria-expanded={query.length >= 2 && results.length > 0}
+              aria-controls={query.length >= 2 && results.length > 0 ? "search-results" : undefined}
               aria-autocomplete="list"
               aria-activedescendant={
                 results[selectedIndex]
