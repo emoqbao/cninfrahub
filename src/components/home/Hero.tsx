@@ -33,10 +33,10 @@ export default function Hero() {
           {/* Static export has no image optimizer, so this stays a pre-compressed WebP. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/products/home-hero.webp"
-            alt="A central infrastructure hub connecting cloud, AI, network, and data center systems"
-            width={1200}
-            height={850}
+            src="/images/products/home-hero-v8.webp"
+            alt="China infrastructure hub connecting AI, data centers, cloud servers, bare metal, public cloud, and web acceleration"
+            width={1536}
+            height={1024}
             fetchPriority="high"
             className="h-auto w-full max-w-lg rounded-2xl border border-border"
           />
