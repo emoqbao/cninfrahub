@@ -4,7 +4,7 @@ export const whatWeDoSteps = [
   {
     icon: Search,
     title: "Source",
-    description: "We tap into our network of carriers, data centers, and hardware partners across China — finding the right resources at pricing individual buyers can't access.",
+    description: "We tap into our network of carriers, data centers, and hardware partners across China to find the right resources for your requirements. For many services, we can offer channel pricing that may not be available through direct procurement.",
   },
   {
     icon: Link2,
