@@ -176,7 +176,7 @@ export const products: Product[] = [
     id: "dia",
     name: "Dedicated Internet Access",
     module: "NETWORK",
-    heroImage: "/images/products/dia-hero-v4-labeled.webp",
+    heroImage: "/images/products/dia-hero-v5-labeled.webp",
     tagline: "Premium dedicated internet — China and overseas, carrier-grade, uncontended, at pricing enterprises can't get directly",
     description:
       "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 10 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
@@ -270,7 +270,7 @@ export const products: Product[] = [
     id: "cloud-connect",
     name: "Cloud Connect",
     module: "NETWORK",
-    heroImage: "/images/products/cloud-connect-hero-v13.webp",
+    heroImage: "/images/products/cloud-connect-hero-v14.webp",
     tagline: "Direct China-to-cloud links — APAC, US, and Europe — from 50 Mbps managed to 100 Gbps dedicated",
     description:
       "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect (GCP). Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",

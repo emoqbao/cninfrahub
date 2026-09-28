@@ -144,7 +144,7 @@ export default async function ProductPage({ params }: Props) {
                   <img
                     src={product.heroImage}
                     alt={product.name}
-                    className={`h-auto w-full ${product.id === "dia" || product.id === "cloud-connect" ? "max-w-none" : "max-w-lg"} rounded-2xl border border-border`}
+                    className="h-auto w-full max-w-lg rounded-2xl border border-border"
                   />
                 ) : (
                   <ProductHeroIcon productId={product.id} />
