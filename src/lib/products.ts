@@ -1,6 +1,7 @@
 export interface Product {
   id: string;
   name: string;
+  seoTitle: string;
   module: ProductModule;
   tagline: string;
   heroImage?: string;
@@ -15,27 +16,28 @@ export const products: Product[] = [
   {
     id: "ai-gateway",
     name: "AI Gateway",
+    seoTitle: "AI Gateway for China and Global Models",
     module: "AI",
     heroImage: "/images/products/ai-gateway-hero-v3.svg",
-    tagline: "Compliant API relay for DeepSeek, Claude, and China's AI ecosystem",
+    tagline: "Managed API access to Chinese and global AI models, with routing and usage controls",
     description:
-      "We aggregate API access to China's top AI models — ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more — alongside global leaders OpenAI (GPT), Anthropic (Claude), and Google (Gemini). Text generation, image generation, embeddings — we cover the full spectrum. Different models carry different discount structures through our aggregated procurement, and we route each request to the optimal provider. One API key, one support contact, every model.",
+      "AI Gateway brings access to supported Chinese and global models through a managed API layer. The service can centralize routing, usage controls, billing, and provider support. Available models, commercial terms, and data-handling requirements are confirmed for the proposed deployment.",
     features: [
       "China-native: ByteDance (Doubao, Seedance), Alibaba (Tongyi), Tencent (Hunyuan), Moonshot (Kimi), DeepSeek, Zhipu (GLM), and more",
       "Global: OpenAI (GPT), Anthropic (Claude), Google (Gemini) — text and image generation",
       "Model-specific discount structures through aggregated procurement across our partner network",
       "Centralized billing, rate limiting, token-level usage analytics, and cost allocation",
       "Automatic model failover across provider networks — if one degrades, traffic reroutes",
-      "TLS 1.3 encryption end-to-end with SOC 2 compliant partner infrastructure",
+      "Encryption and provider security controls reviewed for the selected deployment",
       "Single support team for all models — no juggling multiple vendor relationships",
     ],
     benefits: [
-      "One partner, every model — China-native and global, text and image, all through one endpoint",
+      "One management layer for the supported models and usage controls",
       "Model-specific pricing advantages — different discount structures for different providers",
       "Lower latency than public API endpoints by routing through carrier-optimized paths",
-      "Full compliance with China's data regulations — we handle the legal complexity",
+      "Review data location and handling requirements for each model route",
       "Pay-as-you-go with volume discounts from aggregated purchasing power",
-      "Deploy in days with pre-configured relays — no infrastructure to build",
+      "Deployment plan and supported model routes confirmed before cutover",
     ],
     useCases: [
       "Global SaaS companies serving Chinese users with localized AI features",
@@ -48,14 +50,15 @@ export const products: Product[] = [
   {
     id: "edge-acceleration",
     name: "Edge Acceleration",
+    seoTitle: "Edge Delivery for Users in China",
     module: "EDGE",
     heroImage: "/images/products/edge-acceleration-hero-v6.webp",
-    tagline: "No ICP filing required — one CNAME record, and mainland China users reach your overseas origin over near-shore edge nodes",
+    tagline: "Near-shore edge delivery for users in China while keeping your application origin overseas",
     description:
-      "China acceleration usually stalls on paperwork. ICP filing means a mainland entity, a mainland-hosted service, and a review measured in weeks before a single request is served. Your domain does not need it here — traffic terminates on near-shore edge nodes in Hong Kong rather than inside the mainland, and network optimization is applied across that cross-border path, so users in mainland China get low-latency, high-stability access instead of the jitter, packet loss, and timeouts of a direct connection. Onboarding is one DNS change: a single CNAME record at your existing provider, with no TXT record, no nameserver migration, and no code. Your origin, IP addressing, hosting provider, and deployment pipeline all stay exactly where they are. Every deployment is isolated — its own gateway domain, routing policy, cache rules, certificate, and firewall configuration — and response headers are normalized so the layer in between is never advertised.",
+      "Edge Acceleration places a managed delivery layer near mainland China users while the application origin remains overseas. Cacheable responses can be served at the edge; dynamic requests continue to the origin over the configured path. We assess traffic, certificates, DNS, security controls, and any applicable hosting or filing requirements before a cutover. The expected performance gain depends on the application's cacheability and the user's network path.",
     features: [
-      "No ICP filing required — the acceleration region sits outside mainland China, so the domain needs no MIIT filing, no mainland entity, and no mainland-hosted service",
-      "Zero-touch onboarding: one CNAME record at your existing DNS provider — no TXT verification record, no nameserver migration, no agent to install, no application change",
+      "Assess hosting and ICP filing requirements for the exact delivery setup before launch",
+      "DNS-based onboarding plan that preserves the existing origin where the application supports it",
       "Mainland China network optimization — overseas sites are served to users in mainland China over an optimized cross-border path, not the default public-internet route",
       "Low-latency, stable access from the mainland — path and protocol optimization into near-shore nodes in Hong Kong that removes the latency, jitter, and packet loss of a direct connection to an overseas origin",
       "Reverse proxy delivery layer — your origin server, IP addresses, and hosting provider stay exactly as they are",
@@ -64,16 +67,16 @@ export const products: Product[] = [
       "Your own gateway domain, routing policy, cache rules, and firewall settings — configured for your service alone",
     ],
     benefits: [
-      "Skip ICP filing entirely — no mainland entity, no mainland-hosted service, and no review period between you and your Chinese users",
-      "Live in days, not months: one CNAME record is the whole cutover, and rollback is a single record change",
+      "Keep the origin overseas while evaluating the filing requirements of the proposed service",
+      "Document DNS, certificate, cache, and rollback steps before cutover",
       "Cut cross-border latency and packet loss for Chinese users without building anything inside the mainland",
       "We manage the certificates, routing rules, cache policy, and WAF configuration — you keep one origin and one deployment pipeline",
-      "Origin shielded — your real IP is never exposed, and attack traffic is filtered at the edge",
+      "Configure origin access controls and edge filtering to reduce direct exposure",
       "Purpose-built for mainland China users reaching an overseas-hosted site — the cross-border case this product exists to make fast and stable",
     ],
     useCases: [
       "Overseas SaaS platforms whose customers bind custom domains and then find them slow or unreachable from the mainland",
-      "Marketing, e-commerce, and corporate sites that need consistent China performance without a mainland entity or an ICP filing",
+      "Marketing, e-commerce, and corporate sites serving users in China from an overseas origin",
       "APIs and applications whose origin must stay overseas for compliance or operational reasons, with a Chinese user base that feels every slow response",
       "Teams that need WAF, DDoS, and bot protection in front of a China-facing service without deploying into the mainland",
     ],
@@ -82,11 +85,12 @@ export const products: Product[] = [
   {
     id: "elastic-cloud-servers",
     name: "Elastic Cloud Servers",
+    seoTitle: "Cloud Servers in China",
     module: "COMPUTE",
-    tagline: "On-demand VMs across China — we source the best provider for your workload",
+    tagline: "Virtual machines in China matched to your region, compute, storage, and network needs",
     heroImage: "/images/products/elastic-cloud-servers-hero-v8.webp",
     description:
-      "We aggregate virtual machine capacity from multiple Tier III+ data center operators across China. You tell us your requirements — vCPU, RAM, storage, region — and we select the optimal provider from our partner network based on price, performance, and availability. Full root access, flexible configurations (1-96 vCPUs, 1-384 GB RAM), and integrated networking. We manage the provider relationship; you manage your servers.",
+      "We source virtual machine capacity from partner providers in China. Share your region, vCPU, memory, storage, network, and support requirements, and we compare available configurations and commercial terms. Provider availability and the division of operating responsibilities are confirmed in the proposal.",
     features: [
       "Multiple provider options across Shanghai, Beijing, Shenzhen, and Guangzhou",
       "1-96 vCPUs, 1-384 GB RAM, NVMe SSD or HDD — we match specs to the right provider",
@@ -99,8 +103,8 @@ export const products: Product[] = [
       "Provider-agnostic: we switch you to better options as pricing and capacity change",
       "Competitive pricing through aggregated purchasing across our partner network",
       "Single support contact regardless of which provider runs your infrastructure",
-      "Compliance-ready: we ensure data stays in-region under full customer control",
-      "24/7 bilingual support covering both infrastructure and OS-level issues",
+      "Choose data location and access controls for the selected region",
+      "Support coverage and OS responsibility defined in the service agreement",
     ],
     useCases: [
       "Web applications and APIs serving Chinese end users",
@@ -113,11 +117,12 @@ export const products: Product[] = [
   {
     id: "bare-metal",
     name: "Bare Metal",
+    seoTitle: "Bare Metal Servers in China",
     module: "COMPUTE",
-    tagline: "Dedicated physical servers — we find the right hardware at the right price",
+    tagline: "Single-tenant physical servers selected for your hardware, location, and network needs",
     heroImage: "/images/products/bare-metal-hero-v5.webp",
     description:
-      "We source single-tenant physical servers from our network of data center and hardware partners. Latest-generation Intel Xeon and AMD EPYC processors, custom RAID configurations, NVMe SSD storage, and GPU expansion — we match your exact specs to the provider that gives you the best combination of price, location, and support. Zero hypervisor overhead, full OS control, and 24/7 Smart Hands included.",
+      "Bare Metal provides a dedicated physical server without a shared virtualization layer. We compare partner options for processor, memory, storage, network, facility location, and support. Hardware choices and on-site services depend on the selected provider and agreed service scope.",
     features: [
       "Latest-gen Intel Xeon Scalable and AMD EPYC processors sourced across our partner network",
       "Custom RAID (0/1/5/10), NVMe SSDs, GPU expansion — we find the provider that fits",
@@ -144,25 +149,26 @@ export const products: Product[] = [
   {
     id: "gpu-instances",
     name: "GPU Instances",
+    seoTitle: "GPU Instances in China",
     module: "COMPUTE",
-    tagline: "NVIDIA GPU compute in China — aggregated capacity from multiple partners",
+    tagline: "GPU compute in China for model training and inference, sourced from partner capacity",
     heroImage: "/images/products/gpu-instances-hero-v6.webp",
     description:
-      "We aggregate GPU compute across our partner network to provide NVIDIA H100, H200, A100, and L40S capacity for AI training, fine-tuning, and inference. Whether you need a single GPU or a multi-node cluster with high-speed interconnects, we find the provider with available capacity at the best rate. Pre-configured ML environments (CUDA, PyTorch, TensorFlow, vLLM) come standard. All deployments comply with China's data residency requirements.",
+      "We source GPU capacity for training, fine-tuning, and inference from partner facilities in China. Options may include single nodes or multi-node clusters, depending on current hardware availability and interconnect needs. The proposal specifies the GPU model, software environment, data location, and operating responsibilities for your workload.",
     features: [
       "NVIDIA H100, H200, A100, and L40S GPUs sourced across multiple provider partners",
       "Multi-node configurations with high-speed interconnects for distributed training",
       "Pre-configured ML stacks: CUDA, PyTorch, TensorFlow, vLLM, DeepSpeed",
       "Choice of 1-GPU, 4-GPU, and 8-GPU node configurations from our partner pool",
       "High-bandwidth networking with RDMA support for gradient synchronization",
-      "China-based infrastructure meeting data sovereignty requirements",
+      "China-based deployment options for workloads with location requirements",
     ],
     benefits: [
       "Aggregated capacity: we find available GPUs when individual providers are sold out",
       "Better pricing through volume relationships across multiple hardware partners",
       "Dedicated allocation — no shared GPU virtualization overhead",
       "Provider switching: if one partner's pricing or availability changes, we migrate you",
-      "Rapid sourcing: typical deployment within 24-48 hours across our partner network",
+      "Sourcing timeline confirmed against current GPU availability",
     ],
     useCases: [
       "Large language model training and fine-tuning (LoRA, QLoRA, full fine-tune)",
@@ -175,28 +181,29 @@ export const products: Product[] = [
   {
     id: "dia",
     name: "Dedicated Internet Access",
+    seoTitle: "Dedicated Internet Access in China",
     module: "NETWORK",
     heroImage: "/images/products/dia-hero-v5-labeled.webp",
-    tagline: "Premium dedicated internet — China and overseas, carrier-grade, uncontended, at pricing enterprises can't get directly",
+    tagline: "Dedicated internet access in China and selected overseas markets, sourced across carriers",
     description:
-      "Dedicated Internet Access (DIA) delivers guaranteed, uncontended bandwidth for businesses that cannot tolerate the variability of shared broadband. We source DIA circuits across China Telecom, China Unicom, China Mobile, and regional providers — and through our international carrier partnerships, we deliver the same aggressive pricing model overseas. At highly competitive pricing below standard enterprise rates through our aggregated purchasing. Pure dedicated internet access: guaranteed, uncontended bandwidth from 10 Mbps to 10 Gbps. No BGP, no complexity — just a premium, dedicated pipe. Available in China and key global markets.",
+      "Dedicated Internet Access gives a site a contracted internet circuit with defined capacity and service terms. We compare carrier options for the building, route, bandwidth, IP addressing, and support needs. Availability, performance commitments, and price are specific to the selected location and carrier.",
     features: [
       "Multi-carrier DIA sourcing: China Telecom, China Unicom, China Mobile, and regional ISPs",
       "Same aggressive pricing model available overseas through international carrier partnerships",
-      "10 Mbps to 10 Gbps guaranteed, uncontended bandwidth — no oversubscription, no shared capacity",
+      "Circuit capacity and contention terms specified in the carrier proposal",
       "Included DDoS mitigation through our carrier partnerships",
       "Static IP allocation with reverse DNS and RDAP/WHOIS management",
-      "SLA-backed with guaranteed uptime, latency, and packet delivery commitments",
+      "Uptime and performance commitments documented for the selected circuit",
     ],
     benefits: [
-      "Guaranteed, uncontended bandwidth — consistent performance, no peak-hour degradation",
-      "Highly competitive pricing below standard enterprise DIA rates through our carrier relationships — in China and overseas",
-      "Multi-carrier flexibility: we select the best-performing carrier for your location",
+      "Defined circuit capacity with measurable service commitments",
+      "Compare commercial terms from available carriers for the location",
+      "Compare carrier coverage and route options for your location",
       "Simple, no-BGP dedicated internet — no routing complexity, just a premium pipe",
       "One support team for all carrier relationships — no calling different providers for outages",
     ],
     useCases: [
-      "Enterprise office internet access for China locations requiring guaranteed uptime",
+      "Enterprise office internet access with documented service targets",
       "SaaS and gaming platforms hosting servers that need consistent, low-jitter connectivity",
       "Global enterprise offices requiring consistent, premium internet across China and overseas locations",
       "SD-WAN hub sites requiring premium underlay circuits for branch office aggregation",
@@ -206,11 +213,12 @@ export const products: Product[] = [
   {
     id: "ip-transit",
     name: "IP Transit",
+    seoTitle: "Multi-Homed BGP IP Transit",
     module: "NETWORK",
     heroImage: "/images/products/ip-transit-hero-v3.webp",
-    tagline: "Multi-homed BGP IP transit — blend China's Tier 1 carriers with global peers at wholesale pricing",
+    tagline: "Multi-homed BGP transit with upstream diversity and traffic-engineering controls",
     description:
-      "Full-table BGP IP transit through our global carrier and Internet Exchange (IX) partnerships. In China, direct BGP peering with the big three carriers is not available to third parties — but through our international network, we deliver multi-homed BGP transit with competitive pricing across key global markets and major IX points. Community-based traffic engineering, prefix filtering, and included DDoS mitigation. Bandwidth from 10 Gbps to 100 Gbps. Built for ISPs, CDNs, cloud providers, and content platforms that need carrier-diverse, wholesale-level IP transit.",
+      "IP Transit gives networks a BGP-connected path to the wider internet. We compare upstream carriers and exchange connectivity for the required locations, capacity, routing controls, and resilience. Features such as full-route delivery, traffic engineering, and DDoS mitigation depend on the selected service design and provider.",
     features: [
       "Full BGP table via global Tier 1 carriers and Internet Exchange (IX) peering — multi-homed and carrier-diverse",
       "Community-based traffic engineering: control inbound and outbound paths with BGP communities",
@@ -237,11 +245,12 @@ export const products: Product[] = [
   {
     id: "private-connect",
     name: "Private Connect",
+    seoTitle: "Private Lines for China Sites",
     module: "NETWORK",
     heroImage: "/images/products/private-connect-hero-v5.webp",
-    tagline: "Layer 2 P2P circuits at pricing enterprises can't get on their own — cross-city and cross-border",
+    tagline: "Private point-to-point circuits linking offices, data centers, and cloud locations",
     description:
-      "We source dedicated Layer 2 point-to-point circuits — MPLS, IEPL (International Ethernet Private Line), and standard Ethernet private line — across China Telecom, China Unicom, China Mobile, and specialized regional providers. Through deep carrier relationships and aggregated demand, we consistently secure highly competitive pricing below direct enterprise rates. For cross-city routes, we also leverage alternative non-carrier providers for even more competitive options. Bandwidth from 10 Mbps to 100 Gbps with flexible terms. Same aggressive pricing model applies overseas through our international carrier partnerships.",
+      "Private Connect is for traffic between known endpoints that needs a private transport service rather than the public internet. We compare Ethernet private line, IEPL, and other suitable carrier options for the route, bandwidth, handoff, and support needs. The transport layer and service commitments are documented for each proposed circuit.",
     features: [
       "MPLS, IEPL, and Ethernet private line — the full range of Layer 2 connectivity options",
       "Multi-carrier sourcing: China Telecom, China Unicom, China Mobile, and regional alternative providers",
@@ -252,14 +261,14 @@ export const products: Product[] = [
       "Self-service portal for monitoring, modifying, and managing your circuits",
     ],
     benefits: [
-      "Bulk pricing advantage: our carrier relationships secure rates well below enterprise direct pricing",
+      "Compare carrier pricing and terms before selecting a route",
       "Alternative routing for cross-city: cheaper non-carrier paths where traditional operators are overpriced",
       "One partner across China and overseas — same pricing model, same SLA, same support",
       "Flexible bandwidth — adjust commitments as needs change, across carrier boundaries",
-      "Provisioned in days through established relationships, not weeks of direct carrier negotiation",
+      "Provisioning schedule confirmed with each carrier and route",
     ],
     useCases: [
-      "Cross-border database replication with guaranteed throughput between China and APAC",
+      "Cross-border database replication where the route and data-transfer requirements are suitable",
       "Hybrid cloud backhaul connecting China infrastructure to AWS, Azure, or GCP",
       "Real-time financial data feeds requiring deterministic, low-jitter connectivity",
       "Global CDN origin shielding with private links between China and APAC edge nodes",
@@ -269,25 +278,26 @@ export const products: Product[] = [
   {
     id: "cloud-connect",
     name: "Cloud Connect",
+    seoTitle: "Cloud Connectivity from China",
     module: "NETWORK",
     heroImage: "/images/products/cloud-connect-hero-v14.webp",
-    tagline: "Direct China-to-cloud links — APAC, US, and Europe — from 50 Mbps managed to 100 Gbps dedicated",
+    tagline: "Managed and dedicated connections between China infrastructure and cloud regions",
     description:
-      "We provide the full spectrum of China-to-cloud connectivity — from cost-effective 50 Mbps - 1 Gbps managed virtual connections via Megaport and Equinix Fabric, to dedicated 1-100 Gbps physical cross-connects to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect (GCP). Not just China to APAC — we deliver the same compliant connectivity to US (AWS us-east/west, Azure US regions) and Europe (AWS eu-west/central, Azure Europe regions). Standard cloud provider partners cannot establish compliant cross-border links from China to overseas cloud regions. We can. Multiple enterprise customers running production workloads on these links today.",
+      "Cloud Connect links China-based infrastructure with supported cloud regions through managed virtual connections or dedicated physical connectivity. We compare available platforms and carrier routes against the cloud endpoints, required capacity, redundancy, and operating model. Cross-border design and data-transfer obligations are reviewed for the specific deployment.",
     features: [
       "Managed virtual connections (50 Mbps - 1 Gbps) via Megaport and Equinix Fabric — cost-effective, fast to provision",
       "Dedicated physical cross-connects (1-100 Gbps) to AWS Direct Connect, Azure ExpressRoute, GCP Interconnect",
-      "China-to-cloud connectivity that standard AWS/Azure/GCP partners cannot legally provide",
+      "China-to-cloud route options reviewed against the cloud endpoint and applicable requirements",
       "Multi-carrier routing from major China hubs to APAC, US, and European cloud regions with full BGP support",
-      "Full compliance documentation package for China cross-border data regulations",
+      "Document the cross-border design and identify required data-transfer reviews",
       "Carrier-diverse backup paths with automatic failover for production reliability",
     ],
     benefits: [
       "Right-sized connectivity: 50 Mbps-1 Gbps managed through Megaport/Equinix, or 1 Gbps+ dedicated — you choose",
-      "Access connectivity your cloud provider's own partners can't deliver for China routes",
+      "Compare multiple provider paths for China-to-cloud connectivity",
       "Managed option eliminates hardware cross-connect complexity — simpler, faster to provision",
-      "Compliance built in: cross-border data regulation documentation as standard, not an add-on",
-      "Production-proven — actively used by multiple enterprise customers today",
+      "Include applicable documentation needs in the project scope",
+      "Design capacity and resilience around the production workload",
     ],
     useCases: [
       "Hybrid cloud architectures with China-based compute and global cloud services (APAC, US, Europe)",
@@ -300,13 +310,14 @@ export const products: Product[] = [
   {
     id: "dark-fiber",
     name: "Dark Fiber",
+    seoTitle: "Dark Fiber Between China Sites",
     module: "NETWORK",
     heroImage: "/images/products/dark-fiber-hero-v4.webp",
-    tagline: "Dark fiber between your own sites — the product China's big three carriers won't sell you",
+    tagline: "Leased fiber pairs for high-capacity connections between sites you control",
     description:
-      "China Telecom, China Unicom, and China Mobile do not lease dark fiber, and the reason is commercial rather than technical: a carrier sells circuits, which are priced by bandwidth and billed every month, while leasing bare glass hands over capacity it could otherwise resell. The supply therefore comes from specialist fiber operators — regional resource holders, data centre operators, and organisations with their own ducts and wayleave — and we source from them on your behalf. You lease fiber pairs between two of your own sites, typically two data centres or two offices, and light them yourself: your transceivers, your DWDM, your protocol. Pricing follows distance rather than bandwidth, which is why a 100 Gbps pair can cost less than the equivalent leased circuit — going to 400 Gbps is a change of optics at each end, not a renegotiation. Dark fiber is a domestic resource: cross-border traffic leaves China on DPLC plus IEPL, which we arrange as one end-to-end service.",
+      "Dark fiber gives you control of the optical equipment and protocols on a leased fiber pair between two sites. We check route availability with specialist operators, then compare the lease, optics, maintenance, and fault response against a managed circuit. The economics depend on distance, required capacity, route diversity, and how long you expect to use the path.",
     features: [
-      "Dark fiber pairs sourced from specialist operators — a category the big three carriers do not offer",
+      "Dark fiber pairs sourced from operators with capacity on the required route",
       "Priced by distance rather than by bandwidth: capacity upgrades are optics, not contracts",
       "Connects two of your own sites — data centre to data centre, data centre to office, or office to office",
       "Metro routes as standard, with inter-city long-haul available through our operator network",
@@ -315,16 +326,16 @@ export const products: Product[] = [
       "Full lifecycle management: operator sourcing, contract negotiation, IRU or monthly terms, SLA enforcement, fault resolution",
     ],
     benefits: [
-      "Access a product the big three carriers do not sell — our operator relationships make it available",
-      "Distance sets the cost, bandwidth does not: 10G, 100G, and 400G differ by a transceiver swap at each end",
-      "Significantly lower TCO than P2P leased lines at 100 Gbps+ — you are leasing glass, not a service",
+      "Compare specialist fiber operators for the route and handoff points",
+      "Separate fiber lease costs from optics, equipment, and maintenance costs",
+      "Compare total cost against a managed circuit at the planned capacity and term",
       "Complete protocol freedom — nothing is imposed on what runs over the fiber",
-      "Physical-layer security: dedicated fiber with no shared infrastructure and no carrier equipment inline",
+      "Control the optical equipment and access policy at both endpoints",
       "One provider across both legs — domestic fiber plus the DPLC/IEPL segment that carries traffic out of the country",
     ],
     useCases: [
       "Data centre interconnects at 100 Gbps+ where leased line costs become prohibitive",
-      "Two offices or a campus pair needing guaranteed bandwidth without per-megabit pricing",
+      "Two offices or campus buildings with sustained high-capacity demand",
       "High-frequency trading platforms requiring deterministic latency at the physical layer",
       "Research and education networks needing dedicated, high-bandwidth optical infrastructure",
       "Content delivery and media production moving large datasets between facilities",
@@ -334,11 +345,12 @@ export const products: Product[] = [
   {
     id: "virtual-edge",
     name: "Virtual Edge",
+    seoTitle: "Managed Virtual Network Edge in China",
     module: "NETWORK",
     heroImage: "/images/products/virtual-edge-hero-v4.webp",
-    tagline: "Your virtual appliance, our managed infrastructure — we deploy, configure, and support",
+    tagline: "Managed virtual routers and firewalls placed where your network needs them",
     description:
-      "We're not just hosting your virtual router or firewall — we actively manage and configure it. Deploy FortiGate VM, VyOS, MikroTik RouterOS (ROS), or Zscaler Virtual Security Edge (VSE) on infrastructure we source and manage. We handle the initial configuration, ongoing policy management, OS updates, and the underlying physical connectivity across whichever carriers best serve your topology. Bring your own license or lease from us. Think of it as NaaS — Network as a Service — with you retaining full visibility and control.",
+      "Virtual Edge places routing or security software on suitable partner infrastructure. We assess platform compatibility, licensing, placement, and the underlying connectivity, then define which configuration, update, monitoring, and support tasks we will manage. Your administrative access and operational handoffs are agreed before deployment.",
     features: [
       "Managed deployment and configuration for FortiGate VM, VyOS, MikroTik RouterOS, Zscaler VSE",
       "Custom image support: bring any compatible virtual appliance image, we'll deploy it",
@@ -349,10 +361,10 @@ export const products: Product[] = [
     ],
     benefits: [
       "Beyond hosting: we actively manage and configure — not just rack-and-forget",
-      "Any image, any vendor — RouterOS, VyOS, FortiGate, Zscaler VSE, or your custom appliance",
+      "Select a supported appliance image after compatibility and licensing review",
       "Reduce operational burden: our team handles the day-to-day network device management",
-      "Carrier-agnostic connectivity — we source the best underlying circuits for your topology",
-      "No hardware, no shipping, no customs — fully virtual, deployed in hours",
+      "Compare underlying circuit options for the proposed topology",
+      "Virtual deployment avoids appliance shipping when suitable hosting is available",
     ],
     useCases: [
       "Extending global SD-WAN fabric into China without deploying physical appliances",
@@ -365,24 +377,25 @@ export const products: Product[] = [
   {
     id: "colocation",
     name: "Colocation",
+    seoTitle: "Data Center Colocation in China",
     module: "DATA CENTER",
     heroImage: "/images/products/colocation-hero-v4.webp",
-    tagline: "Tier III+ rack space across China — we find the facility that fits your needs",
+    tagline: "Rack and cage options in China matched to power, connectivity, and location needs",
     description:
-      "We aggregate colocation capacity across multiple carrier-neutral, Tier III+ data centers in Shanghai, Beijing, Shenzhen, and Guangzhou. From quarter-rack to private cages, we match your power density, connectivity, and compliance requirements to the right facility — at pricing secured through our aggregated purchasing. All facilities are ISO 27001 and SOC 2 certified. We manage the facility relationship; you focus on your infrastructure.",
+      "Colocation places your equipment in a partner data center. We compare facilities in the target city against rack space, power density, network access, physical security, and support requirements. Certifications, capacity, and commercial terms are verified for the specific facility proposed.",
     features: [
       "Multiple facility options across Shanghai, Beijing, Shenzhen, and Guangzhou",
       "1/4, 1/2, full rack, and private cage configurations — we find the right facility",
       "Power density from 3 kW to 50 kW per rack across our partner facilities",
       "Carrier-neutral facilities with cross-connects to all major Chinese and global carriers",
-      "24/7 on-site security with biometric access, CCTV, and multi-layer physical controls",
+      "Review each facility's access controls, monitoring, and on-site coverage",
       "APAC and global locations also available through our extended partner network",
     ],
     benefits: [
-      "Facility-agnostic: we match your requirements to the best data center, not one we own",
+      "Compare facilities against your power, location, and connectivity requirements",
       "Better pricing through aggregated rack purchasing across our partner network",
       "Carrier-neutral — choose your network providers freely, no facility lock-in",
-      "Compliance-ready: ISO 27001, ISO 9001, SOC 2 certified partner facilities",
+      "Request current certification documents for the specific facility under review",
       "Flexible terms from 12 to 60 months with expansion rights",
     ],
     useCases: [
@@ -396,11 +409,12 @@ export const products: Product[] = [
   {
     id: "smart-hands",
     name: "Smart Hands",
+    seoTitle: "Smart Hands at China Data Centers",
     module: "DATA CENTER",
     heroImage: "/images/products/smart-hands-hero-v3.webp",
-    tagline: "Remote operations across any facility — your eyes and hands on the ground, 24/7",
+    tagline: "On-site tasks at partner facilities, coordinated remotely with documented handoffs",
     description:
-      "On-demand remote hands services covering every facility in our partner network. Server racking, cabling, hardware diagnostics, RMAs, visual inspections — executed by trained local engineers and reported in English within your business hours. We don't just dispatch a technician; we manage the entire task lifecycle from ticket to resolution. Pay per task or subscribe to monthly blocks. Standard response within 30 minutes.",
+      "Smart Hands covers physical tasks such as racking, cabling, inspections, and hardware replacement at supported facilities. We scope the work, coordinate the local technician, and document the result for your team. Coverage hours, response targets, and pricing depend on the site and agreed service terms.",
     features: [
       "Server and network equipment racking, stacking, and structured cabling (copper and fiber)",
       "Hardware replacement, RMAs, and spare part management with vendor coordination",
@@ -412,8 +426,8 @@ export const products: Product[] = [
     benefits: [
       "Coverage across our entire partner facility network — one provider for all locations",
       "Eliminate travel — no need to fly engineers to China for routine physical tasks",
-      "Standard response in 30 minutes, emergency in 15 minutes",
-      "Detailed task reports with photos and timestamps for audit and compliance",
+      "Agree response targets for the facility and task priority",
+      "Task reports with available photos and timestamps for operational records",
       "Monthly task blocks available for predictable budgeting",
     ],
     useCases: [

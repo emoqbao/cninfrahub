@@ -23,11 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const solution = getSolutionById(slug);
   if (!solution) return { title: "Not Found" };
-  const description = metaDescription(solution.description);
+  const description = metaDescription(solution.summary);
   return {
     title: solution.name,
     description,
-    keywords: solution.seoKeywords,
     alternates: { canonical: `/solutions/${solution.id}` },
     ...socialMetadata({
       title: `${solution.name} | CN-Infra Hub`,
@@ -76,7 +75,7 @@ export default async function SolutionPage({ params }: Props) {
       <JsonLd
         data={serviceSchema({
           name: solution.name,
-          description: solution.description,
+          description: solution.summary,
           serviceType: "China infrastructure solution",
           path: `/solutions/${solution.id}`,
         })}
@@ -100,7 +99,16 @@ export default async function SolutionPage({ params }: Props) {
             <div className="max-w-3xl">
               <div className="flex flex-wrap gap-2">{solution.tags.map((t) => (<span key={t} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{t}</span>))}</div>
               <h1 className="mt-5 text-4xl font-bold tracking-[-0.03em] text-ink lg:text-5xl">{solution.name}</h1>
-              <p className="mt-6 text-xl leading-relaxed text-subtle">{solution.description}</p>
+              <p className="mt-6 text-xl leading-relaxed text-subtle">{solution.summary}</p>
+            </div>
+          </Container>
+        </section>
+
+        <section className="py-16 lg:py-20 nav-dashed-bottom">
+          <Container>
+            <div className="max-w-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.02em] text-ink">Solution overview</h2>
+              <p className="mt-5 text-lg leading-relaxed text-subtle">{solution.description}</p>
             </div>
           </Container>
         </section>

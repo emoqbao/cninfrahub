@@ -8,10 +8,10 @@ import { socialMetadata } from "@/lib/seo";
 import NewsletterForm from "./NewsletterForm";
 
 const description =
-  "White papers, architecture guides, and comparisons for teams running infrastructure in or into China.";
+  "Read China infrastructure guides on network design, hosting choices, ICP filing, troubleshooting, and dark fiber, with decision checklists and comparisons.";
 
 export const metadata: Metadata = {
-  title: "Resources",
+  title: "China Infrastructure Guides and Comparisons",
   description,
   alternates: { canonical: "/resources" },
   ...socialMetadata({
@@ -32,11 +32,11 @@ export default function ResourcesPage() {
           <div className="mb-3 h-px w-8 bg-brand" />
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Resources</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-            Practical guides for infrastructure decision-makers operating in China
+            China infrastructure guides and comparisons
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-subtle">
-            Technical, vendor-neutral resources to help you design, deploy, and operate
-            infrastructure in China.
+            Compare delivery options, understand operational trade-offs, and work through
+            common planning questions for infrastructure in and around China.
           </p>
         </Container>
       </section>

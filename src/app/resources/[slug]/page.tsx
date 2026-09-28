@@ -36,7 +36,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: resource.title,
     description,
-    keywords: resource.seoKeywords,
     alternates: { canonical: `/resources/${resource.slug}` },
     ...socialMetadata({
       title: `${resource.title} | CN-Infra Hub`,
@@ -176,6 +175,8 @@ export default async function ResourcePage({ params }: Props) {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-subtle">{resource.intro}</p>
               <p className="mt-6 text-sm text-faded">
+                By CN-Infra Hub
+                {" · "}
                 Updated{" "}
                 <time dateTime={resource.updated}>{formatUpdated(resource.updated)}</time>
                 {" · "}
@@ -186,7 +187,7 @@ export default async function ResourcePage({ params }: Props) {
             <div className="mt-10 max-w-3xl rounded-2xl border border-border bg-surface-warm p-8">
               <div className="flex items-center gap-3">
                 <BookOpen className="h-5 w-5 text-brand" strokeWidth={1.5} />
-                <h2 className="text-lg font-semibold text-ink">What this covers</h2>
+                <h2 className="text-lg font-semibold text-ink">Key takeaways</h2>
               </div>
               <ul className="mt-5 space-y-3">
                 {resource.takeaways.map((takeaway) => (
@@ -200,6 +201,18 @@ export default async function ResourcePage({ params }: Props) {
                 ))}
               </ul>
             </div>
+            <nav aria-label="On this page" className="mt-8 max-w-3xl">
+              <h2 className="text-lg font-semibold text-ink">On this page</h2>
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                {resource.sections.map((section) => (
+                  <li key={section.id}>
+                    <a href={`#${section.id}`} className="text-sm text-brand underline-offset-4 hover:underline">
+                      {section.heading}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </Container>
         </section>
 
@@ -221,6 +234,25 @@ export default async function ResourcePage({ params }: Props) {
             </article>
           </Container>
         </section>
+
+        {resource.references && resource.references.length > 0 && (
+          <section className="py-12 nav-dashed-bottom">
+            <Container>
+              <div className="max-w-3xl">
+                <h2 className="text-xl font-semibold text-ink">Primary sources</h2>
+                <ul className="mt-4 space-y-3">
+                  {resource.references.map((reference) => (
+                    <li key={reference.url}>
+                      <a href={reference.url} className="text-sm text-brand underline underline-offset-4 hover:text-brand-deep">
+                        {reference.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Container>
+          </section>
+        )}
 
         {related.length > 0 && (
           <section className="py-20 lg:py-28 nav-dashed-bottom">

@@ -4,7 +4,7 @@ export const whatWeDoSteps = [
   {
     icon: Search,
     title: "Source",
-    description: "We tap into our network of carriers, data centers, and hardware partners across China — finding the right resources at pricing individual buyers can't access.",
+    description: "We compare carriers, data centers, and hardware partners against your location, capacity, support, and budget requirements.",
   },
   {
     icon: Link2,
@@ -14,7 +14,7 @@ export const whatWeDoSteps = [
   {
     icon: Wrench,
     title: "Manage",
-    description: "We take full operational responsibility: provider management, compliance, monitoring, and 24/7 bilingual support — so you get one partner, one SLA, one invoice.",
+    description: "We coordinate provider handoffs, monitoring, support, and the operational work agreed for your deployment.",
   },
 ];
 
@@ -24,10 +24,10 @@ export function WhatWeDoTitle() {
       <div className="mb-3 h-px w-8 bg-brand" />
       <p className="text-sm font-semibold uppercase tracking-wider text-brand">What We Do</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-        We don&apos;t own the infrastructure. We own the relationships — and the responsibility.
+        One partner to source, connect, and manage your China infrastructure
       </h2>
       <p className="mt-4 max-w-2xl text-subtle leading-relaxed">
-        As a managed service aggregator, we source from the best providers, negotiate better pricing through pooled demand, and take full operational accountability for everything we deliver.
+        We bring network, compute, and data center services together around your requirements, with a clear handoff from design through ongoing operations.
       </p>
     </div>
   );

@@ -6,12 +6,12 @@ import { moduleAnchors, products, productModules } from "@/lib/products";
 import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions.",
+  title: "China Infrastructure Products and Services",
+  description: "Explore network, compute, AI, edge delivery, and data center services for China and cross-border projects. Compare capabilities and use cases by category.",
   alternates: { canonical: "/products" },
   ...socialMetadata({
     title: "Products — CN-Infra Hub",
-    description: "Purpose-built infrastructure services for China and beyond — AI Gateway, edge acceleration, compute, networking, and data center solutions.",
+    description: "Explore network, compute, AI, edge delivery, and data center services for China and cross-border projects. Compare capabilities and use cases by category.",
     path: "/products",
   }),
 };
@@ -32,8 +32,12 @@ export default function ProductsPage() {
               <div className="mb-3 h-px w-8 bg-brand" />
               <p className="text-sm font-semibold uppercase tracking-wider text-brand">Products</p>
               <h1 className="mt-3 text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-                Purpose-built infrastructure services for China and beyond
+                Network, compute, and data center services for China
               </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-subtle">
+                Browse the available services by category. Each product page explains
+                what it provides, where it fits, and common deployment use cases.
+              </p>
             </div>
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative w-full max-w-sm aspect-square rounded-2xl border border-border bg-surface-alt flex items-center justify-center">

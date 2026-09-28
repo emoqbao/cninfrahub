@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const resourcePages: MetadataRoute.Sitemap = resources.map((r) => ({
     url: url(`/resources/${r.slug}`),
+    lastModified: r.updated,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

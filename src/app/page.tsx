@@ -5,14 +5,15 @@ import { trustStats, TrustStatItem } from "@/components/home/TrustStats";
 import { WhatWeDoTitle, WhatWeDoCard, whatWeDoSteps } from "@/components/home/WhatWeDo";
 import { ProductOverviewTitle, ProductCard, moduleCards } from "@/components/home/ProductOverview";
 import CTABanner from "@/components/home/CTABanner";
+import FeaturedGuides from "@/components/home/FeaturedGuides";
 import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   ...socialMetadata({
-    title: "CN-Infra Hub — Infrastructure Without Borders",
+    title: "China Infrastructure Services | CN-Infra Hub",
     description:
-      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+      "Explore network, compute, and data center services for China and cross-border projects, coordinated through one partner.",
     path: "/",
   }),
 };
@@ -76,6 +77,12 @@ export default function Home() {
         </BentoRow>
 
         {/* Breathing space */}
+        <BentoSpacer height="h-16 lg:h-24" />
+
+        <BentoRow>
+          <FeaturedGuides />
+        </BentoRow>
+
         <BentoSpacer height="h-16 lg:h-24" />
 
         {/* CTA */}

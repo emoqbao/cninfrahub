@@ -9,12 +9,12 @@ import { getProductById } from "@/lib/products";
 import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Solutions",
-  description: "Four proven China and cross-border infrastructure patterns, from hybrid and multi-cloud connectivity to fast access for overseas-hosted sites.",
+  title: "China and Cross-Border Infrastructure Solutions",
+  description: "Compare four approaches to China and cross-border infrastructure: cloud connectivity, private circuits, managed virtual networks, and overseas site delivery.",
   alternates: { canonical: "/solutions" },
   ...socialMetadata({
     title: "Solutions — CN-Infra Hub",
-    description: "Four proven China and cross-border infrastructure patterns, from hybrid and multi-cloud connectivity to fast access for overseas-hosted sites.",
+    description: "Compare four approaches to China and cross-border infrastructure: cloud connectivity, private circuits, managed virtual networks, and overseas site delivery.",
     path: "/solutions",
   }),
 };
@@ -27,8 +27,12 @@ export default function SolutionsPage() {
           <div className="mb-3 h-px w-8 bg-brand" />
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Solutions</p>
           <h1 className="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.02em] text-ink lg:text-4xl">
-            Real-world infrastructure patterns for your China strategy
+            Infrastructure solutions for China and cross-border operations
           </h1>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-subtle">
+            Compare how each approach connects sites, clouds, or users, then open a solution
+            for its use case, delivery approach, and related services.
+          </p>
         </Container>
       </section>
 
@@ -42,7 +46,7 @@ export default function SolutionsPage() {
                     {s.tags.map((t) => (<span key={t} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{t}</span>))}
                   </div>
                   <h2 className="mt-5 text-2xl font-bold tracking-[-0.02em] text-ink group-hover:underline">{s.name}</h2>
-                  <p className="mt-4 max-w-3xl leading-relaxed text-subtle">{s.description}</p>
+                  <p className="mt-4 max-w-3xl leading-relaxed text-subtle">{s.summary}</p>
                   <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
                     <span className="text-faded">Products used:</span>
                     {s.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-md bg-surface px-2.5 py-1 text-ink">{product.name}</span>); })}

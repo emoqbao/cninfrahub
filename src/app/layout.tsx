@@ -30,7 +30,7 @@ const organizationSchema = {
   logo: `${SITE_URL}/apple-touch-icon.png`,
   email: "info@cninfrahub.com",
   description:
-    "Managed Service Aggregator for China's network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
+    "CN-Infra Hub sources and coordinates network, compute, and data center services for China and cross-border infrastructure projects.",
   areaServed: { "@type": "Place", name: "China" },
 };
 
@@ -46,20 +46,11 @@ const currentYear = new Date().getFullYear();
 
 export const metadata: Metadata = {
   title: {
-    default: "CN-Infra Hub — Infrastructure Without Borders",
+    default: "China Infrastructure Services | CN-Infra Hub",
     template: "%s | CN-Infra Hub",
   },
   description:
-    "Managed Service Aggregator for China's network, compute, and data center infrastructure. One partner for dedicated lines, multi-cloud interconnect, and AI infrastructure.",
-  keywords: [
-    "China infrastructure",
-    "China dedicated server",
-    "cross-border network",
-    "China data center",
-    "AWS Direct Connect China",
-    "China colocation",
-    "GPU hosting China",
-  ],
+    "CN-Infra Hub sources and coordinates network, compute, and data center services for China and cross-border infrastructure projects.",
   metadataBase: new URL(SITE_URL),
   manifest: "/manifest.webmanifest",
   icons: {
@@ -67,9 +58,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "CN-Infra Hub — Infrastructure Without Borders",
+    title: "China Infrastructure Services | CN-Infra Hub",
     description:
-      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+      "Explore network, compute, and data center services for China and cross-border projects, coordinated through one partner.",
     siteName: "CN-Infra Hub",
     locale: "en_US",
     type: "website",
@@ -77,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CN-Infra Hub — Infrastructure Without Borders",
+    title: "China Infrastructure Services | CN-Infra Hub",
     description:
-      "One partner for China's dedicated lines, data centers, multi-cloud interconnect, and AI infrastructure.",
+      "Explore network, compute, and data center services for China and cross-border projects, coordinated through one partner.",
     images: twitterImages,
   },
   robots: { index: true, follow: true },
