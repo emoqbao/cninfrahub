@@ -1,188 +1,26 @@
-"use client";
+import Script from "next/script";
 
-import { useState, FormEvent } from "react";
-import Button from "@/components/ui/Button";
-import { FORMSPREE_ENDPOINT } from "@/lib/forms";
+const TALLY_EMBED_URL =
+  "https://tally.so/embed/pb8OW8?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
 
-export default function ContactForm({ productNames }: { productNames: string[] }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    // Check honeypot
-    const form = e.currentTarget;
-    const honeypot = form.querySelector<HTMLInputElement>('input[name="_gotcha"]');
-    if (honeypot?.value) {
-      setLoading(false);
-      setSubmitted(true); // silently succeed for bots
-      return;
-    }
-
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-      if (res.ok) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        setError("Something went wrong. Please try again or email us directly.");
-      }
-    } catch {
-      setError("Network error. Please try again or email us directly at info@cninfrahub.com.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (submitted) {
-    return (
-      <div className="rounded-xl border border-border bg-surface-alt p-10 text-center">
-        <h2 className="text-2xl font-bold text-ink">Thanks!</h2>
-        <p className="mt-3 text-subtle">We&apos;ll be in touch within 24 hours.</p>
-        <p className="mt-6 text-sm text-faded">
-          You can also reach us directly at{" "}
-          <a href="mailto:info@cninfrahub.com" className="text-ink underline">
-            info@cninfrahub.com
-          </a>
-        </p>
-      </div>
-    );
-  }
-
+export default function ContactForm() {
   return (
-    <form onSubmit={handleSubmit} className="relative rounded-xl border border-border p-6 lg:p-8">
+    <div className="rounded-xl border border-border p-6 lg:p-8">
       <h2 className="text-xl font-semibold text-ink">Send us a message</h2>
-
-      {/* Honeypot */}
-      <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
-        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
-      </div>
-
-      {/* Hidden interest field */}
-      <input type="hidden" name="_subject" value="New inquiry from cninfrahub.com" />
-
-      {/* Name row */}
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="first-name" className="block text-sm font-medium text-ink">
-            First Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="first-name"
-            name="first-name"
-            required
-            className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
-            placeholder="John"
-          />
-        </div>
-        <div>
-          <label htmlFor="last-name" className="block text-sm font-medium text-ink">
-            Last Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="last-name"
-            name="last-name"
-            required
-            className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
-            placeholder="Smith"
-          />
-        </div>
-      </div>
-
-      {/* Email */}
-      <div className="mt-4">
-        <label htmlFor="email" className="block text-sm font-medium text-ink">
-          Work Email <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
-          placeholder="john@company.com"
-        />
-      </div>
-
-      {/* Company */}
-      <div className="mt-4">
-        <label htmlFor="company" className="block text-sm font-medium text-ink">
-          Company <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          required
-          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
-          placeholder="Acme Corp"
-        />
-      </div>
-
-      {/* Interests */}
-      <fieldset className="mt-6">
-        <legend className="block text-sm font-medium text-ink">
-          I&apos;m interested in
-        </legend>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {productNames.map((name) => (
-            <label key={name} className="flex items-center gap-2.5 text-sm text-subtle">
-              <input
-                type="checkbox"
-                name="interests"
-                value={name}
-                className="h-4 w-4 rounded border-brand-light accent-brand focus:ring-brand"
-              />
-              {name}
-            </label>
-          ))}
-          <label className="flex items-center gap-2.5 text-sm text-subtle">
-            <input
-              type="checkbox"
-              name="interests"
-              value="Other / Not sure"
-              className="h-4 w-4 rounded border-brand-light accent-brand focus:ring-brand"
-            />
-            Other / Not sure
-          </label>
-        </div>
-      </fieldset>
-
-      {/* Message */}
-      <div className="mt-4">
-        <label htmlFor="message" className="block text-sm font-medium text-ink">
-          Message <span className="text-faded">(optional)</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          className="mt-1.5 block w-full rounded-lg border border-border px-4 py-2.5 text-ink placeholder:text-ghost focus:border-brand focus:outline-none"
-          placeholder="Tell us about your project..."
-        />
-      </div>
-
-      {error && (
-        <p className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
-      )}
-
       <div className="mt-6">
-        <Button type="submit" variant="primary" size="md" className="w-full sm:w-auto" disabled={loading}>
-          {loading ? "Sending..." : "Send Inquiry"}
-        </Button>
+        <iframe
+          data-tally-src={TALLY_EMBED_URL}
+          loading="lazy"
+          width="100%"
+          height="200"
+          frameBorder={0}
+          marginHeight={0}
+          marginWidth={0}
+          title="Send us a message"
+          className="w-full border-0"
+        />
       </div>
-    </form>
+      <Script src="https://tally.so/widgets/embed.js" strategy="afterInteractive" />
+    </div>
   );
 }

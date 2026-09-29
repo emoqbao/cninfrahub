@@ -1,6 +1,7 @@
 /**
- * Both on-site forms post here. It is still a placeholder: Formspree answers
- * 404 for it, so the forms surface their inline error instead of pretending the
- * submission worked. Swap in the real form id once the account exists.
+ * The newsletter form posts here. This remains a placeholder: Formspree answers
+ * 404 for it, so the form surfaces its inline error instead of pretending the
+ * subscription worked. Replace it with the live newsletter form endpoint when
+ * that integration is configured.
  */
 export const FORMSPREE_ENDPOINT = "https://formspree.io/f/PLACEHOLDER";

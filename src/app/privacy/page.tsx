@@ -6,7 +6,7 @@ import { socialMetadata } from "@/lib/seo";
  * Values that change when the policy is revised. The rest of the page reads
  * from them so a review only has to touch this block.
  */
-const LAST_UPDATED = "17 September 2026";
+const LAST_UPDATED = "29 September 2026";
 const PRIVACY_EMAIL = "info@cninfrahub.com";
 
 export const metadata: Metadata = {
@@ -43,10 +43,9 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-subtle">
-              This website collects very little. It sets no cookies, loads no analytics and no
-              third-party scripts, and the only personal information it ever receives is what you
-              choose to type into the contact form or the newsletter field. This page explains what
-              happens to that information.
+              This website does not run advertising or analytics scripts. The contact page embeds
+              its sales form from Tally, which processes the details you submit. This page explains
+              what information the site and its service providers handle.
             </p>
             <p className="mt-6 text-sm text-faded">Last updated: {LAST_UPDATED}</p>
           </div>
@@ -87,9 +86,19 @@ export default function PrivacyPage() {
 
             <Section title="Cookies and tracking">
               <p>
-                This site currently sets no cookies, and no first- or third-party analytics,
-                advertising, or tracking script runs on it. The only outbound requests your browser
-                makes are for the pages, styles, images, and fonts served by the site itself.
+                This site does not use analytics or advertising cookies. The contact page embeds a
+                Tally form and loads Tally&apos;s embed script, so your browser connects to{" "}
+                <span className="font-medium text-ink">tally.so</span> to display the form. When you
+                submit it, your answers are sent to Tally. See{" "}
+                <a
+                  href="https://tally.so/help/privacy-policy"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-deep font-medium hover:underline"
+                >
+                  Tally&apos;s privacy notice
+                </a>{" "}
+                for information about how its service handles form data and technical information.
               </p>
               <p>
                 If we ever add measurement or marketing tooling, this section and the date at the
@@ -123,13 +132,28 @@ export default function PrivacyPage() {
             <Section title="Who we share it with">
               <p>
                 We do not sell your information, and we do not share it for advertising. We rely on
-                two service providers to run this site:
+                these service providers to run this site and its forms:
               </p>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <span className="font-medium text-ink">Formspree</span> — delivers form
-                  submissions to our inbox. Submissions, including the fields listed above, are
-                  processed on their platform.
+                  <span className="font-medium text-ink">Tally</span> — hosts the contact form and
+                  processes the answers you submit there. It sends a notification containing the
+                  answers to our enquiry inbox at {PRIVACY_EMAIL}. Tally says its form data is
+                  stored in Europe; see its{" "}
+                  <a
+                    href="https://tally.so/help/gdpr"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-deep font-medium hover:underline"
+                  >
+                    data and privacy information
+                  </a>
+                  .
+                </li>
+                <li>
+                  <span className="font-medium text-ink">Formspree</span> — the newsletter form is
+                  currently pointed at an unconfigured placeholder endpoint, so newsletter
+                  subscriptions are not yet being collected.
                 </li>
                 <li>
                   <span className="font-medium text-ink">Cloudflare</span> — serves the site and
@@ -145,9 +169,10 @@ export default function PrivacyPage() {
             <Section title="Where your information goes">
               <p>
                 Our service providers operate globally, so information we receive may be processed
-                outside the country you are writing from, including outside mainland China. Where
-                the law requires safeguards for that transfer, we rely on our providers&rsquo;
-                contractual transfer mechanisms.
+                outside the country you are writing from, including outside mainland China. Tally
+                says contact form data is stored in Europe, and notification emails are sent to our
+                enquiry inbox. Where the law requires safeguards for a transfer, we rely on our
+                providers&rsquo; contractual transfer mechanisms.
               </p>
             </Section>
 
