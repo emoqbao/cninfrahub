@@ -273,9 +273,9 @@ export const products: Product[] = [
     heroImage: "/images/products/cloud-connect-hero-v14.webp",
     tagline: "Direct China-to-cloud links — APAC, US, and Europe — from 50 Mbps managed to 100 Gbps dedicated",
     description:
-      "We coordinate China-to-cloud connectivity options ranging from 50 Mbps-1 Gbps managed virtual connections via Megaport and Equinix Fabric to dedicated 1-100 Gbps physical connections to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. Depending on provider and route availability, these options can connect mainland China environments with public cloud regions in APAC, the US, and Europe. China-based cloud environments and global cloud regions are operated separately, so the connection must be designed and provisioned for the selected architecture. Availability, delivery, and permitted use depend on the provider, route, workload, and applicable requirements. Multiple enterprise customers run production workloads on these links today.",
+      "We coordinate China-to-cloud connectivity options ranging from 50 Mbps-1 Gbps managed virtual connections through partners such as Megaport and Equinix Fabric, among others, to dedicated 1-100 Gbps physical connections to AWS Direct Connect, Azure ExpressRoute, and Google Cloud Interconnect. Depending on provider and route availability, these options can connect mainland China environments with public cloud regions in APAC, the US, and Europe. China-based cloud environments and global cloud regions are operated separately, so the connection must be designed and provisioned for the selected architecture. Availability, delivery, and permitted use depend on the provider, route, workload, and applicable requirements. Multiple enterprise customers run production workloads on these links today.",
     features: [
-      "Managed virtual connections (50 Mbps - 1 Gbps) via Megaport and Equinix Fabric — cost-effective, fast to provision",
+      "Managed virtual connections (50 Mbps - 1 Gbps) through partners such as Megaport and Equinix Fabric, among others",
       "Dedicated physical cross-connects (1-100 Gbps) to AWS Direct Connect, Azure ExpressRoute, GCP Interconnect",
       "Connectivity options between mainland China environments and overseas public cloud regions, subject to route and provider availability",
       "Multi-carrier routing from major China hubs to APAC, US, and European cloud regions with full BGP support",
@@ -283,13 +283,14 @@ export const products: Product[] = [
       "Carrier-diverse backup paths with automatic failover for production reliability",
     ],
     benefits: [
-      "Right-sized connectivity: 50 Mbps-1 Gbps managed through Megaport/Equinix, or 1 Gbps+ dedicated — you choose",
+      "Right-sized connectivity: 50 Mbps-1 Gbps managed through partners such as Megaport and Equinix Fabric, among others, or 1 Gbps+ dedicated — you choose",
       "One coordinated connectivity design for your China-based environment and overseas cloud regions",
       "Managed option eliminates hardware cross-connect complexity — simpler, faster to provision",
       "Provider and route options assessed against your architecture, bandwidth, latency, and data flows",
       "Production-proven — actively used by multiple enterprise customers today",
     ],
     useCases: [
+      "China branches or mainland cloud environments connecting to AWS, Azure, or Google Cloud regions overseas",
       "Hybrid cloud architectures with China-based compute and global cloud services (APAC, US, Europe)",
       "Moderate-bandwidth managed virtual links for development, staging, and cost-sensitive production",
       "High-bandwidth dedicated links for data-heavy production workloads and cross-continent DR replication",
