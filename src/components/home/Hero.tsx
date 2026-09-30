@@ -15,9 +15,10 @@ export default function Hero() {
             Without Borders
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-subtle sm:text-xl">
-            Network connectivity, cloud interconnect, compute, and data center
-            services for organizations operating in China — plus edge acceleration
-            for overseas-hosted sites serving users in mainland China.
+            One partner to source, integrate, and manage network connectivity, cloud
+            interconnect, compute, and data center services for organizations operating
+            in China. We coordinate providers end to end, including edge acceleration
+            for overseas-hosted sites serving mainland China users.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/products/" variant="primary" size="lg">

@@ -9,7 +9,7 @@ import FeaturedGuides from "@/components/home/FeaturedGuides";
 import { socialMetadata } from "@/lib/seo";
 
 const description =
-  "China network connectivity, cloud interconnect, compute, data center services, and edge acceleration for overseas-hosted sites serving mainland China users.";
+  "One partner for network connectivity, cloud interconnect, compute, and data center services in China, plus edge acceleration for overseas-hosted sites serving mainland China users.";
 
 export const metadata: Metadata = {
   description,
