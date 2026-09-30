@@ -14,7 +14,6 @@ export interface Solution {
    * an empty diagram slot.
    */
   architectureImage?: string;
-  architectureImageAlt?: string;
 }
 
 export const solutions: Solution[] = [
@@ -35,8 +34,6 @@ export const solutions: Solution[] = [
     approach: "We assess your cloud architecture and bandwidth requirements, then recommend managed or dedicated connectivity based on the route and workload. Managed options are sourced through partners such as Megaport and Equinix Fabric, among others. We coordinate provisioning and BGP configuration with the selected providers and document the technical design. Availability, delivery timelines, and permitted use depend on the provider, route, architecture, and applicable requirements.",
     products: ["cloud-connect", "private-connect"],
     seoKeywords: ["cross-border cloud connectivity", "China cloud interconnect", "domestic cloud interconnect China", "hybrid cloud architecture China", "multi-cloud strategy China", "China to AWS connectivity", "China to Azure connectivity", "China to GCP connectivity"],
-    architectureImage: "/images/solutions/hybrid-multi-cloud-connectivity.svg",
-    architectureImageAlt: "Reference architecture connecting China data centers and cloud environments with GCP and Azure regions through primary, standby, and dual links, plus Tencent Cloud and Volcano Engine through a Beijing node.",
   },
   {
     id: "site-to-site-connectivity",

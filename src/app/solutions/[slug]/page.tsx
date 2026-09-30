@@ -133,32 +133,27 @@ export default async function SolutionPage({ params }: Props) {
         <section className="py-20 lg:py-28 nav-dashed-bottom">
           <Container>
             <div className="flex items-center gap-3 mb-8"><Network className="h-6 w-6 text-brand" strokeWidth={1.5} /><h2 className="text-2xl font-bold tracking-[-0.02em] text-ink">Architecture overview</h2></div>
-            <div>
-              <div className="overflow-x-auto rounded-xl border border-border bg-surface-alt p-3 sm:p-5">
+            <div className="grid gap-8 lg:grid-cols-3">
+              <div className="lg:col-span-2 rounded-xl border border-border border-dashed bg-surface-alt p-8 flex items-center justify-center min-h-[360px]">
                 {solution.architectureImage ? (
                   // Static export has no image optimizer, so this stays a plain img.
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={solution.architectureImage}
-                    alt={solution.architectureImageAlt ?? `${solution.name} architecture diagram`}
-                    width={1600}
-                    height={1160}
+                    alt={`${solution.name} architecture diagram`}
+                    width={800}
+                    height={450}
                     loading="lazy"
-                    className="h-auto min-w-[860px] w-full rounded-lg"
+                    className="h-auto w-full rounded-lg"
                   />
                 ) : (
-                  <div className="flex min-h-[360px] items-center justify-center">
-                    <div className="text-center">
-                      <Network className="h-12 w-12 text-light mx-auto" strokeWidth={1.5} />
-                      <p className="mt-4 text-sm text-muted">Architecture diagram</p>
-                    </div>
+                  <div className="text-center">
+                    <Network className="h-12 w-12 text-light mx-auto" strokeWidth={1.5} />
+                    <p className="mt-4 text-sm text-muted">Architecture diagram</p>
                   </div>
                 )}
               </div>
-              <div className="mt-10 grid gap-8 lg:grid-cols-3">
-                <div className="lg:col-span-2"><h3 className="text-lg font-semibold text-ink">How it works</h3><p className="mt-4 text-subtle leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p></div>
-                <div className="flex flex-wrap content-start gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{product.name}</span>); })}</div>
-              </div>
+              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-ink">How it works</h3><p className="mt-4 text-subtle leading-relaxed">We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support.</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{product.name}</span>); })}</div></div>
             </div>
           </Container>
         </section>
