@@ -5,11 +5,11 @@ import { socialMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
+  description: "Contact our infrastructure team. We aim to respond within 24 hours on business days (Beijing Time, UTC+8).",
   alternates: { canonical: "/contact" },
   ...socialMetadata({
     title: "Contact CN-Infra Hub",
-    description: "Start a conversation with our infrastructure architects. We respond within 24 hours.",
+    description: "Contact our infrastructure team. We aim to respond within 24 hours on business days (Beijing Time, UTC+8).",
     path: "/contact",
   }),
 };
@@ -46,7 +46,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-faded">Response time</p>
-                      <p className="mt-1 text-subtle">Within 24 hours</p>
+                      <p className="mt-1 text-subtle">Within 24 hours on business days (Beijing Time, UTC+8)</p>
                     </div>
                   </div>
                   <hr className="my-6 border-border" />

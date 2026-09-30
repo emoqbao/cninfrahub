@@ -15,10 +15,9 @@ export default function Hero() {
             Without Borders
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-subtle sm:text-xl">
-            One partner who knows China&apos;s infrastructure ecosystem inside out.
-            We source, integrate, and manage network, compute, and data center
-            resources from leading providers, often at more competitive channel
-            rates than direct procurement.
+            Network connectivity, cloud interconnect, compute, and data center
+            services for organizations operating in China — plus edge acceleration
+            for overseas-hosted sites serving users in mainland China.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="/products/" variant="primary" size="lg">

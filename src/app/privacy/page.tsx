@@ -6,7 +6,7 @@ import { socialMetadata } from "@/lib/seo";
  * Values that change when the policy is revised. The rest of the page reads
  * from them so a review only has to touch this block.
  */
-const LAST_UPDATED = "29 September 2026";
+const LAST_UPDATED = "30 September 2026";
 const PRIVACY_EMAIL = "info@cninfrahub.com";
 
 export const metadata: Metadata = {
@@ -43,9 +43,8 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-subtle">
-              This website does not run advertising or analytics scripts. The contact page embeds
-              its sales form from Tally, which processes the details you submit. This page explains
-              what information the site and its service providers handle.
+              This policy explains what information we collect through this website, how we use it,
+              and which service providers help us operate the site and contact form.
             </p>
             <p className="mt-6 text-sm text-faded">Last updated: {LAST_UPDATED}</p>
           </div>
@@ -58,7 +57,8 @@ export default function PrivacyPage() {
             <Section title="Who this policy covers">
               <p>
                 CN-Infra Hub (&ldquo;we&rdquo;, &ldquo;us&rdquo;) operates cninfrahub.com. This
-                policy covers the information you send through this website.
+                policy covers information you provide through the contact form and technical
+                information collected when you visit the site.
               </p>
               <p>
                 It does not cover the infrastructure services we deliver. Once you are a customer,
@@ -71,9 +71,7 @@ export default function PrivacyPage() {
               <p>
                 <span className="font-medium text-ink">Information you give us.</span> The contact
                 form asks for your first and last name, work email address, company name, and a
-                description of what you are trying to solve. The newsletter field asks for an email
-                address. Both are optional to complete and we do not ask for anything beyond those
-                fields.
+                description of your enquiry.
               </p>
               <p>
                 <span className="font-medium text-ink">Information collected automatically.</span>{" "}
@@ -100,46 +98,40 @@ export default function PrivacyPage() {
                 </a>{" "}
                 for information about how its service handles form data and technical information.
               </p>
-              <p>
-                If we ever add measurement or marketing tooling, this section and the date at the
-                top of the page will be updated before it goes live.
-              </p>
             </Section>
 
             <Section title="How we use your information">
               <ul className="list-disc space-y-2 pl-5">
                 <li>To respond to your enquiry and answer the question you asked.</li>
                 <li>To scope, quote, and deliver services you request from us.</li>
-                <li>To send the newsletter, if and only if you subscribed to it.</li>
                 <li>To keep the website available and secure.</li>
               </ul>
               <p>
-                We do not profile you, we do not make automated decisions about you, and we do not
-                use your enquiry to send you unrelated marketing.
+                We do not use enquiry details for unrelated marketing or make automated decisions
+                about you.
               </p>
             </Section>
 
             <Section title="Why we are allowed to hold it">
               <p>
-                Where the GDPR, the UK GDPR, or similar law applies, we rely on your consent when
-                you submit a form, and on our legitimate interest in answering business enquiries
-                and securing the site. Where the Personal Information Protection Law (PIPL) or the
-                Data Security Law (DSL) apply, we process on the grounds set out in those laws and,
-                where required, on the basis of the consent you give when submitting a form.
+                Where applicable, we process enquiry details to respond to your request and, where
+                relevant, take steps toward a service agreement. We process technical logs to
+                operate and secure the site. Where the GDPR, UK GDPR, PIPL, or other privacy laws
+                apply, we rely on the legal grounds available for the specific processing and obtain
+                consent where required.
               </p>
             </Section>
 
             <Section title="Who we share it with">
               <p>
-                We do not sell your information, and we do not share it for advertising. We rely on
-                these service providers to run this site and its forms:
+                We do not sell your information or share it for advertising. These service
+                providers help us operate the site and respond to enquiries:
               </p>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
                   <span className="font-medium text-ink">Tally</span> — hosts the contact form and
-                  processes the answers you submit there. It sends a notification containing the
-                  answers to our enquiry inbox at {PRIVACY_EMAIL}. Tally says its form data is
-                  stored in Europe; see its{" "}
+                  processes the information you submit. Tally says form data is stored in Europe;
+                  see its{" "}
                   <a
                     href="https://tally.so/help/gdpr"
                     target="_blank"
@@ -151,13 +143,12 @@ export default function PrivacyPage() {
                   .
                 </li>
                 <li>
-                  <span className="font-medium text-ink">Formspree</span> — the newsletter form is
-                  currently pointed at an unconfigured placeholder endpoint, so newsletter
-                  subscriptions are not yet being collected.
-                </li>
-                <li>
                   <span className="font-medium text-ink">Cloudflare</span> — serves the site and
                   terminates its traffic, and therefore sees the request logs described above.
+                </li>
+                <li>
+                  <span className="font-medium text-ink">Business email provider</span> — delivers
+                  and stores enquiry correspondence so our team can respond.
                 </li>
               </ul>
               <p>
@@ -168,20 +159,17 @@ export default function PrivacyPage() {
 
             <Section title="Where your information goes">
               <p>
-                Our service providers operate globally, so information we receive may be processed
-                outside the country you are writing from, including outside mainland China. Tally
-                says contact form data is stored in Europe, and notification emails are sent to our
-                enquiry inbox. Where the law requires safeguards for a transfer, we rely on our
-                providers&rsquo; contractual transfer mechanisms.
+                Our service providers may process information outside the country you are writing
+                from. Tally says contact form data is stored in Europe. Where applicable law
+                requires safeguards for cross-border processing, we use the required measures.
               </p>
             </Section>
 
             <Section title="How long we keep it">
               <p>
                 Enquiries are kept for as long as the conversation is active, and for up to 24
-                months afterwards so we can pick up a thread you return to, then deleted. Newsletter
-                subscriptions are kept until you unsubscribe. Server logs are retained by our
-                providers under their own short retention schedules.
+                months afterwards so we can pick up a thread you return to, then deleted. Server
+                logs are retained by our providers under their own retention schedules.
               </p>
             </Section>
 
@@ -196,9 +184,9 @@ export default function PrivacyPage() {
             <Section title="Your rights">
               <p>
                 You can ask us for a copy of the information we hold about you, ask us to correct or
-                delete it, ask us to stop using it, or withdraw consent you previously gave. There is
-                an unsubscribe link in every newsletter. If you are in the EU or UK, you also have
-                the right to lodge a complaint with your local supervisory authority; if you are in
+                delete it, ask us to stop using it, or withdraw consent you previously gave. If you
+                are in the EU or UK, you also have the right to lodge a complaint with your local
+                supervisory authority; if you are in
                 mainland China, you may contact the relevant cyberspace administration or industry
                 regulator.
               </p>

@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, FileText, Mail } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import Container from "@/components/ui/Container";
 import { featuredResource, resources } from "@/lib/resources";
 import { socialMetadata } from "@/lib/seo";
-import NewsletterForm from "./NewsletterForm";
 
 const description =
   "White papers, architecture guides, and comparisons for teams running infrastructure in or into China.";
@@ -100,21 +99,6 @@ export default function ResourcesPage() {
           </Container>
         </section>
 
-        <section className="py-20 lg:py-28">
-          <Container>
-            <div className="mx-auto max-w-xl text-center">
-              <Mail className="mx-auto h-10 w-10 text-brand" strokeWidth={1.5} />
-              <h2 className="mt-4 text-xl font-bold text-ink">
-                Stay informed on China infrastructure
-              </h2>
-              <p className="mt-2 text-muted">
-                Get our latest guides, white papers, and infrastructure insights delivered to
-                your inbox.
-              </p>
-              <NewsletterForm />
-            </div>
-          </Container>
-        </section>
       </BentoFrame>
     </>
   );
