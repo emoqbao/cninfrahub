@@ -148,7 +148,25 @@ export default async function SolutionPage({ params }: Props) {
                   </div>
                 )}
               </div>
-              <div className="flex flex-col justify-center"><h3 className="text-lg font-semibold text-ink">How it works</h3><p className="mt-4 text-subtle leading-relaxed">{solution.howItWorks ?? "We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support."}</p><div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{product.name}</span>); })}</div></div>
+              <div className="flex flex-col justify-center">
+                <h3 className="text-lg font-semibold text-ink">How it works</h3>
+                {solution.howItWorksSteps ? (
+                  <ol className="mt-5 space-y-5">
+                    {solution.howItWorksSteps.map((step, index) => (
+                      <li key={step.title} className="flex gap-3">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-surface text-sm font-semibold text-brand-deep">{index + 1}</span>
+                        <div>
+                          <h4 className="font-semibold text-ink">{step.title}</h4>
+                          <p className="mt-1 text-sm leading-relaxed text-subtle">{step.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="mt-4 text-subtle leading-relaxed">{solution.howItWorks ?? "We provision and configure the infrastructure components, coordinate across providers, and deliver a fully operational solution — with ongoing management and support."}</p>
+                )}
+                <div className="mt-6 flex flex-wrap gap-2">{solution.products.map((pid) => { const product = getProductById(pid); if (!product) return null; return (<span key={pid} className="rounded-full border border-brand-light bg-brand-surface px-3 py-1 text-xs font-medium text-brand-deep">{product.name}</span>); })}</div>
+              </div>
             </div>
           </Container>
         </section>

@@ -7,6 +7,7 @@ export interface Solution {
   whoItsFor: string;
   approach: string;
   howItWorks?: string;
+  howItWorksSteps?: { title: string; description: string }[];
   products: string[];
   seoKeywords: string[];
   /**
@@ -34,8 +35,20 @@ export const solutions: Solution[] = [
     ],
     whoItsFor: "Enterprises running hybrid cloud architectures that need domestic cloud-to-cloud links, or to connect China-based infrastructure to AWS, Azure, or GCP. SaaS platforms, financial services, and organizations evaluating cross-border connectivity for mainland China workloads.",
     approach: "We assess your cloud architecture and bandwidth requirements, then recommend managed or dedicated connectivity based on the route and workload. Managed options are sourced through partners such as Megaport and Equinix Fabric, among others. We coordinate provisioning and BGP configuration with the selected providers and document the technical design. Availability, delivery timelines, and permitted use depend on the provider, route, architecture, and applicable requirements.",
-    howItWorks:
-      "We connect China-based infrastructure and public cloud environments through selected carriers and partners. Our managed backbone provides connectivity to overseas public cloud regions. Based on your requirements, we design redundant paths, configure BGP, and handle cloud-provider interconnection requirements between China and global environments.",
+    howItWorksSteps: [
+      {
+        title: "Access",
+        description: "Provision carrier handoffs and cloud interconnects to bring China-based sites and domestic cloud environments into the CIH connectivity core.",
+      },
+      {
+        title: "Backbone transport",
+        description: "Carry traffic across managed backbone capacity to the selected overseas public cloud regions.",
+      },
+      {
+        title: "Routing and resilience",
+        description: "Design primary and backup paths where supported, implement BGP routing policies, and coordinate each cloud provider’s interconnection requirements.",
+      },
+    ],
     architectureImage: "/images/solutions/hybrid-multi-cloud-connectivity.svg",
     architectureAlt:
       "Topology diagram showing China-based on-premises, AWS China, and Azure 21Vianet environments connected through CIH to overseas AWS, Azure, and Google Cloud regions.",
