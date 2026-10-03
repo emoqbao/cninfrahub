@@ -6,9 +6,11 @@ import { RotateCcw, X, ZoomIn, ZoomOut } from "lucide-react";
 interface ArchitectureDiagramProps {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
-export default function ArchitectureDiagram({ src, alt }: ArchitectureDiagramProps) {
+export default function ArchitectureDiagram({ src, alt, width = 1582, height = 816 }: ArchitectureDiagramProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [zoom, setZoom] = useState(1);
 
@@ -22,7 +24,7 @@ export default function ArchitectureDiagram({ src, alt }: ArchitectureDiagramPro
       >
         {/* Static export has no image optimizer, so this stays a plain img. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} width={1582} height={816} loading="lazy" className="h-auto w-full rounded-lg" />
+        <img src={src} alt={alt} width={width} height={height} loading="lazy" className="h-auto w-full rounded-lg" />
         <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-white/95 px-3 py-1.5 text-sm font-medium text-ink shadow-sm transition-colors group-hover:bg-white">
           <ZoomIn className="h-4 w-4" aria-hidden="true" /> View larger
         </span>
@@ -49,7 +51,7 @@ export default function ArchitectureDiagram({ src, alt }: ArchitectureDiagramPro
         </div>
         <div className="max-h-[calc(100vh-8rem)] overflow-auto bg-white p-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt} width={1582} height={816} className="h-auto max-w-none" style={{ width: `${zoom * 100}%` }} />
+          <img src={src} alt={alt} width={width} height={height} className="h-auto max-w-none" style={{ width: `${zoom * 100}%` }} />
         </div>
       </dialog>
     </>

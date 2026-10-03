@@ -140,6 +140,8 @@ export default async function SolutionPage({ params }: Props) {
                   <ArchitectureDiagram
                     src={solution.architectureImage}
                     alt={solution.architectureAlt ?? `${solution.name} architecture diagram`}
+                    width={solution.architectureWidth}
+                    height={solution.architectureHeight}
                   />
                 ) : (
                   <div className="text-center">

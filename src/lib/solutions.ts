@@ -17,6 +17,8 @@ export interface Solution {
    */
   architectureImage?: string;
   architectureAlt?: string;
+  architectureWidth?: number;
+  architectureHeight?: number;
 }
 
 export const solutions: Solution[] = [
@@ -73,6 +75,25 @@ export const solutions: Solution[] = [
     ],
     whoItsFor: "Enterprises linking China offices, factories, or data centres to a regional headquarters, a cloud region, or to each other — and overseas site pairs that never touch the mainland. Typically any team that has outgrown VPN or SD-WAN over the public internet but does not want to negotiate with three carriers across two countries.",
     approach: "We map your sites and traffic profile, then design the path: DPLC for the domestic legs, IEPL or MPLS for the cross-border leg, or a mix of carrier and alternative operators where that is cheaper. Because every segment is Layer 2, your existing addressing and routing plan carries over unchanged. We provision with every carrier involved, coordinate the hand-off points, and remain the single escalation path for faults — including the ones that sit exactly on the boundary between two carriers.",
+    howItWorksSteps: [
+      {
+        title: "Local access",
+        description: "Connect each selected branch or data center to a carrier PoP through an appropriate local access circuit, using DPLC for China domestic legs where applicable.",
+      },
+      {
+        title: "Private backbone",
+        description: "Hand off traffic at the interconnect edges and carry it across the CIH managed backbone and selected international private capacity.",
+      },
+      {
+        title: "Remote delivery",
+        description: "Extend the connection from the destination PoP to the remote site, coordinating carrier handoffs and any required routing or path diversity.",
+      },
+    ],
+    architectureImage: "/images/solutions/private-site-to-site-connectivity.svg",
+    architectureAlt:
+      "Illustrative private site-to-site topology connecting a China branch or data center through carrier PoPs, interconnect edges, and the CIH managed backbone to an overseas branch or data center.",
+    architectureWidth: 1676,
+    architectureHeight: 490,
     products: ["private-connect", "dia", "colocation", "dark-fiber"],
     seoKeywords: ["China DPLC", "IEPL China", "cross-border MPLS", "China private line", "China to Hong Kong private line", "Layer 2 connectivity China"],
   },
