@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import CheckIcon from "@/components/ui/CheckIcon";
 import { BentoFrame } from "@/components/ui/BentoFrame";
 import JsonLd from "@/components/ui/JsonLd";
+import ArchitectureDiagram from "@/components/ui/ArchitectureDiagram";
 import { solutions, getSolutionById, type Solution } from "@/lib/solutions";
 import { getProductById } from "@/lib/products";
 import { breadcrumbSchema, metaDescription, serviceSchema, socialMetadata } from "@/lib/seo";
@@ -136,15 +137,9 @@ export default async function SolutionPage({ params }: Props) {
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="lg:col-span-2 rounded-xl border border-border border-dashed bg-surface-alt p-8 flex items-center justify-center min-h-[360px]">
                 {solution.architectureImage ? (
-                  // Static export has no image optimizer, so this stays a plain img.
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <ArchitectureDiagram
                     src={solution.architectureImage}
                     alt={solution.architectureAlt ?? `${solution.name} architecture diagram`}
-                    width={800}
-                    height={450}
-                    loading="lazy"
-                    className="h-auto w-full rounded-lg"
                   />
                 ) : (
                   <div className="text-center">
