@@ -78,20 +78,20 @@ export const solutions: Solution[] = [
     howItWorksSteps: [
       {
         title: "Local access",
-        description: "Connect each selected branch or data center to a carrier PoP through an appropriate local access circuit, using DPLC for China domestic legs where applicable.",
+        description: "We select China Telecom, China Unicom, China Mobile, or another transmission provider to deliver last-mile access from the China site to a CIH-managed PoP.",
       },
       {
         title: "Private backbone",
-        description: "Hand off traffic at the interconnect edges and carry it across the CIH managed backbone and selected international private capacity.",
+        description: "Traffic travels between CIH-managed PoPs over our private backbone, using IEPL or a suitable MPLS-based private line for the international segment.",
       },
       {
-        title: "Remote delivery",
-        description: "Extend the connection from the destination PoP to the remote site, coordinating carrier handoffs and any required routing or path diversity.",
+        title: "Destination access",
+        description: "At the destination CIH-managed PoP, we provision the last mile to your site through an established local carrier or one you nominate.",
       },
     ],
     architectureImage: "/images/solutions/private-site-to-site-connectivity.svg",
     architectureAlt:
-      "Illustrative private site-to-site topology connecting a China branch or data center through carrier PoPs, interconnect edges, and the CIH managed backbone to an overseas branch or data center.",
+      "Illustrative private site-to-site topology connecting a China branch or data center through CIH-managed PoPs, interconnect edges, and the CIH managed backbone to an overseas branch or data center.",
     architectureWidth: 1676,
     architectureHeight: 490,
     products: ["private-connect", "dia", "colocation", "dark-fiber"],
